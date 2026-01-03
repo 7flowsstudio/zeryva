@@ -5,8 +5,8 @@ import s from "./About.module.css";
 const About = () => {
   return (
     <div className={`container ${s.heroCont}`}>
-      <h2>Технології, що працюють у полі</h2>
-      <p>
+      <h2 className={s.title}>Технології, що працюють у полі</h2>
+      <p className={s.textFirst}>
         Історія бренду «Зерива» розпочалася у 2013 році. Компанія з’явилася як
         відповідь на зростаючий запит українських аграріїв на якісні, ефективні
         та доступні біологічні рішення для рослинництва. З перших днів «Зерива»
@@ -17,9 +17,9 @@ const About = () => {
       <picture className={s.imgFirst}>
         <source media="(max-width: 767px)" srcSet="/about/mob_first.webp" />
         <source media="(min-width: 768px)" srcSet="/about/desc_first.webp" />
-        <Image src="/about/desc_first.webp" alt="Hero" fill />
+        <Image src="/about/desc_first.webp" alt="Agronomists" fill />
       </picture>
-      <p>
+      <p className={s.textSec}>
         «Зерива» — український виробник мікробних і біологічних препаратів для
         живлення та захисту рослин. Продукція створюється за сучасними
         технологіями та спрямована на покращення стану ґрунту, стимуляцію
@@ -31,9 +31,9 @@ const About = () => {
       <picture className={s.imgSec}>
         <source media="(max-width: 767px)" srcSet="/about/mob_sec.webp" />
         <source media="(min-width: 768px)" srcSet="/about/desc_sec.webp" />
-        <Image src="/about/desc_sec.webp" alt="Hero" fill />
+        <Image src="/about/desc_sec.webp" alt="Field" fill />
       </picture>
-      <p>
+      <p className={s.textTh}>
         Команда спеціалістів бренду — агрономи, агрохіміки та біотехнологи —
         розробила лінійку біопрепаратів на основі результатів тривалих
         досліджень і спостережень у різних ґрунтово-кліматичних зонах. Кожен

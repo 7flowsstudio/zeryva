@@ -1,7 +1,48 @@
 .imgFirst,
 .imgSec {
   position: relative;
-  width: 588px;
-  height: 363px;
+  /* width: 588px;
+  height: 363px; */
   display: block;
+  /* width: clamp(343px, calc((343 / 588) * 100vw), 588px);
+  min-height: 212px;
+  height: 100%; */
+  width: clamp(343px, 58vw, 588px);
+  aspect-ratio: 588 / 363;
+}
+.heroCont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    grid-area: title;
+  }
+  .textFirst {
+    grid-area: textFirst;
+  }
+  .imgFirst {
+    grid-area: imgFirst;
+  }
+  .textSec {
+    grid-area: textSec;
+  }
+  .imgSec {
+    grid-area: imgSec;
+  }
+  .textTh {
+    grid-area: textTh;
+  }
+  .heroCont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "textFirst imgFirst"
+      "textSec imgFirst"
+      "imgSec textTh";
+    gap: 30px;
+  }
 }
