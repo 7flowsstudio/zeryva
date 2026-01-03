@@ -66,7 +66,7 @@ p {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 14px;
-  color: var(--black);
+  color: var(--text);
 }
 
 p:last-child {
