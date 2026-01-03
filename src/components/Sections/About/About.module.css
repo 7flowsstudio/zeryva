@@ -7,7 +7,8 @@
   /* width: clamp(343px, calc((343 / 588) * 100vw), 588px);
   min-height: 212px;
   height: 100%; */
-  width: clamp(343px, 58vw, 588px);
+  /* width: clamp(343px, 58vw, 588px); */
+  width: clamp(343px, calc((588 / 1440) * 100vw), 588px);
   aspect-ratio: 588 / 363;
 }
 .heroCont {
@@ -16,7 +17,13 @@
   gap: 20px;
 }
 
-@media (min-width: 768px) {
+@media screen and (max-width: 374px) {
+  .imgFirst,
+  .imgSec {
+    width: 324px;
+  }
+}
+@media screen and (min-width: 980px) {
   .title {
     grid-area: title;
   }
