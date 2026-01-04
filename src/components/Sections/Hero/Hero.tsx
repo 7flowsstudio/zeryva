@@ -9,6 +9,7 @@ import s from "./Hero.module.css";
 import Image from "next/image";
 import InfoBlock from "./InfoBlock/InfoBlock";
 import HeroImg from "./HeroInfo.json";
+import BtnConsultation from "./BtnConsultation/BtnConsultation";
 
 const Hero = () => {
 	const [activeIndex, setActiveIndex] = React.useState(0);
@@ -41,6 +42,7 @@ const Hero = () => {
 							</picture>
 						</div>
 						<InfoBlock item={item} />
+						<BtnConsultation />
 					</SwiperSlide>
 				))}
 			</Swiper>
