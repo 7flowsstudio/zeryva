@@ -1,9 +1,12 @@
 .wrappCall {
   background-color: var(--accent-2);
+  /* width: 100vh; */
 }
 .callCont {
   display: flex;
   padding: 32px 12px;
+  justify-content: space-between;
+  /* min-width: 100%; */
 }
 .wrappTitle {
   display: flex;
@@ -37,4 +40,16 @@
   margin-top: 132px;
   min-width: 138px;
   min-height: 134px;
+}
+@media screen and (min-width: 880px) {
+  .callCont {
+    padding: 32px 120px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .callCont {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
