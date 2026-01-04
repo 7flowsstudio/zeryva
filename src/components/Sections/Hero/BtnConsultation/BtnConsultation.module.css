@@ -1,0 +1,44 @@
+.elipse {
+	position: absolute;
+	bottom: 20px;
+	right: 16px;
+	z-index: 1;
+	/* Ellipse 55 */
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	box-shadow: 1px 2px 4px 0px var(--accent-3);
+	background: var(--accent-3);
+
+	color: rgba(239, 243, 229, 1);
+
+	font-family: var(--font-family);
+	font-size: 9px;
+	font-weight: 700;
+	line-height: 13px;
+	letter-spacing: 0%;
+	text-align: center;
+}
+@media screen and (min-width: 768px) {
+	.elipse {
+		position: absolute;
+		bottom: 48px;
+		right: 40px;
+		z-index: 1;
+		/* Ellipse 55 */
+		width: 72px;
+		height: 72px;
+		border-radius: 50%;
+		box-shadow: 1px 2px 4px 0px var(--accent-3);
+		background: var(--accent-3);
+
+		color: rgba(239, 243, 229, 1);
+
+		font-family: var(--font-family);
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 15px;
+		letter-spacing: 0%;
+		text-align: center;
+	}
+}
