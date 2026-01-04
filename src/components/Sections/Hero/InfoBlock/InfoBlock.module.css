@@ -1,0 +1,40 @@
+.infoWrapper {
+	position: absolute;
+	top: 0;
+	margin-top: 204px;
+	z-index: 3;
+}
+.infoContainer {
+	/* height: calc(100dvh - 244px); */
+
+	width: 833px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 24px;
+}
+.title {
+	width: 654px;
+	height: 208px;
+
+	color: rgba(239, 243, 229, 1);
+
+	font-family: var(--third-family);
+	font-size: 100px;
+	font-weight: 800;
+	line-height: 104px;
+	letter-spacing: 0%;
+	text-align: left;
+}
+.description {
+	color: var(--fone-1);
+
+	font-family: Work Sans;
+	font-style: SemiBold;
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 54px;
+	letter-spacing: 0%;
+	text-align: left;
+}

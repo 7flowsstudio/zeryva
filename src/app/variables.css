@@ -90,9 +90,10 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans/WorkSans-Bold.ttf") format("truetype");
-	font-weight: 700;
+	src: url("/fonts/WorkSans/WorkSans-SemiBold.ttf") format("truetype");
+	font-weight: 600;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -100,6 +101,7 @@
 	src: url("/fonts/WorkSans/WorkSans-ExtraBold.ttf") format("truetype");
 	font-weight: 800;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -107,4 +109,5 @@
 	src: url("/fonts/WorkSans/WorkSans-Black.ttf") format("truetype");
 	font-weight: 900;
 	font-style: normal;
+	font-display: swap;
 }
