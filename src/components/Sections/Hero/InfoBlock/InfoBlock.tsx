@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./InfoBlock.module.css";
-import { title } from "process";
 
 type HeroItem = {
 	id: number;
