@@ -1,0 +1,72 @@
+.wrappCall {
+  background-color: var(--accent-2);
+  /* width: 100vh; */
+}
+.callCont {
+  display: flex;
+  padding: 32px 12px;
+  justify-content: space-between;
+  /* min-width: 100%; */
+}
+.wrappTitle {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  text-align: start;
+  color: var(--fone-1);
+  margin-right: -110px;
+  font-family: var(--third-family);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
+  /* max-width: 347px; */
+}
+.btnCall {
+  font-family: var(--font-family);
+  padding: 8px;
+  border-radius: 30px;
+  box-shadow: 1px 2px 4px 0px #83bd1678;
+  background-color: var(--accent-3);
+  max-width: 183px;
+  /* width: clamp(183px, calc((239 / 1440) * 100vw), 239px); */
+  margin-top: 24;
+  font-size: 14px;
+}
+.img {
+  position: relative;
+  display: block;
+  width: clamp(138px, calc((238 / 1440) * 100vw), 238px);
+  aspect-ratio: 238 / 231;
+  margin-top: 132px;
+  min-width: 138px;
+  min-height: 134px;
+}
+
+@media screen and (min-width: 680px) {
+  .callCont {
+    padding: 32px 64px;
+  }
+}
+@media screen and (min-width: 880px) {
+  .callCont {
+    padding: 32px 120px;
+  }
+  .btnCall {
+    font-size: 15px;
+    max-width: 239px;
+    padding: 12px 30px;
+    margin-top: 32;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .callCont {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
