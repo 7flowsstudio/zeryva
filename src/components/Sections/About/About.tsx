@@ -43,8 +43,9 @@ const About = () => {
           отримують стабільно високі результати та покращують ефективність
           вирощування навіть у складних погодних умовах.
         </p>
+        <button className={s.btnAbout}>Наша продукція</button>
       </div>
-      <button className={s.btnAbout}>Наша продукція</button>
+      {/* <button className={s.btnAbout}>Наша продукція</button> */}
     </div>
   );
 };
