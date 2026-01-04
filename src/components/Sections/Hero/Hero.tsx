@@ -1,45 +1,18 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import s from "./Hero.module.css";
 import Image from "next/image";
 import InfoBlock from "./InfoBlock/InfoBlock";
+import HeroImg from "./HeroInfo.json";
 
 const Hero = () => {
-	const HeroImg = [
-		{
-			id: 0,
-			imgMob: "/hero/first_mob_1.webp",
-			img: "/hero/first_1.webp",
-			title: "Інноваційні підходи",
-			description: "До природного та стійкого розвитку культур",
-		},
-		{
-			id: 1,
-			imgMob: "/hero/second_mob_1.webp",
-			img: "/hero/second_1.webp",
-			title: "Унікальні біопрепарати",
-			description: "Для розкриття потенціалу врожайності ",
-		},
-		{
-			id: 2,
-			imgMob: "/hero/third_mob_1.webp",
-			img: "/hero/third_1.webp",
-			title: "Розробка і виробництво",
-			description: "Добрив нового покоління",
-		},
-		{
-			id: 3,
-			imgMob: "/hero/last_mob_1.webp",
-			img: "/hero/last_1.webp",
-			title: "Чесне партнерство",
-			description: "Та підтримка на кожному етапі",
-		},
-	];
+	const [activeIndex, setActiveIndex] = React.useState(0);
+	const slidesCount = HeroImg.length;
 
 	return (
 		<div id="hero" className={s.sliderContainer}>
@@ -49,10 +22,13 @@ const Hero = () => {
 					nextEl: ".hero-next",
 					prevEl: ".hero-prev",
 				}}
-				modules={[Pagination, Navigation]}
+				onSlideChange={(swiper) => {
+					setActiveIndex(swiper.realIndex);
+				}}
+				modules={[Navigation]}
 				loop={true}
 				breakpoints={{
-					320: { slidesPerView: 1, spaceBetween: 4 },
+					320: { slidesPerView: 1, spaceBetween: 0 },
 				}}
 			>
 				{HeroImg?.map((item, index) => (
@@ -69,16 +45,26 @@ const Hero = () => {
 				))}
 			</Swiper>
 			<div className={s.paginationBlock}>
-				<button className={`hero-prev ${s.navButton} ${s.prevButton}`}>
-					<svg className={s.navButton_icon}>
-						<use href="/sprite.svg#icon-arrow-top-right"></use>
-					</svg>
-				</button>
-				<button className={`hero-next ${s.navButton} ${s.nextButton}`}>
-					<svg className={`${s.navButton_icon} ${s.right}`}>
-						<use href="/sprite.svg#icon-arrow-top-right"></use>
-					</svg>
-				</button>
+				<div className={s.blockBtn}>
+					<button className={`hero-prev ${s.navButton} ${s.prevButton}`}>
+						<svg className={s.navButton_icon}>
+							<use href="/sprite.svg#icon-hero-arrow-left"></use>
+						</svg>
+					</button>
+					<button className={`hero-next ${s.navButton} ${s.nextButton}`}>
+						<svg className={`${s.navButton_icon} ${s.right}`}>
+							<use href="/sprite.svg#icon-hero-arrow-left"></use>
+						</svg>
+					</button>
+				</div>
+				<div className={s.progressBar}>
+					<div
+						className={s.progressFill}
+						style={{
+							width: `${((activeIndex + 1) / slidesCount) * 100}%`,
+						}}
+					/>
+				</div>
 			</div>
 		</div>
 	);
