@@ -1,4 +1,121 @@
 .mobHeader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+.mobHeaderTop {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+}
+.mobLogoBlock {
+	width: 183px;
+	height: 38px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+}
+.image {
+	width: 45px;
+	height: 38px;
+}
+.titleMob {
+	width: 130px;
+	height: 36px;
+	color: rgba(239, 243, 229, 1);
+
+	font-family: var(--font-family);
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 0%;
+	text-align: left;
+}
+.burgerBtn {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 10px;
+	padding: 4px;
+
+	border-radius: 16px;
+	background: rgba(239, 243, 229, 1);
+}
+.scrollBtn {
+	background: rgba(122, 170, 141, 1);
+}
+.iconBurger {
+	width: 19px;
+	height: 14px;
+	fill: var(--accent-2);
+}
+
+.line {
+	width: calc(100% + 32px);
+	height: 1px;
+	background: rgba(239, 243, 229, 0.44);
+}
+
+.mobHeaderBotom {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.searchBtn {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 4px;
+
+	border-radius: 16px;
+	background: rgba(239, 243, 229, 1);
+}
+.iconSearch {
+	width: 18px;
+	height: 18px;
+	fill: var(--accent-2);
+}
+
+.socIconBlock {
+	width: 136px;
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	padding: 4px 8px;
+
+	border-radius: 40px;
+	background: rgba(244, 166, 0, 1);
+}
+.socLink {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.socIconMob {
+	width: 20px;
+	height: 20px;
+	fill: rgba(249, 249, 249, 1);
+}
+
+@media screen and (min-width: 768px) {
+	.line {
+		width: calc(100% + 128px);
+	}
 }
 @media screen and (min-width: 1280px) {
 	.mobHeader {
