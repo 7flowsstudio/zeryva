@@ -13,6 +13,6 @@
 }
 .headerBlock {
 	margin-top: 16px;
-	height: 148px;
+	height: auto;
 	/* border: 1px solid red; */
 }

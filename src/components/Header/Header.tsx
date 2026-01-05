@@ -6,7 +6,6 @@ import MobHeader from "./MobHeader/MobHeader";
 
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
-	console.log("ISSCROLED", isScrolled);
 
 	useEffect(() => {
 		const scrollContainer = document.getElementById("app-scroll");
@@ -28,7 +27,7 @@ const Header = () => {
 		>
 			<div className={s.headerBlock}>
 				<DescHeader />
-				<MobHeader />
+				<MobHeader isScrolled={isScrolled} />
 			</div>
 		</div>
 	);
