@@ -11,6 +11,7 @@
   color: var(--accent-2);
   font-family: var(--font-family);
   font-size: 16px;
+  padding-bottom: 16px;
 }
 .list {
   display: flex;
@@ -78,6 +79,9 @@
 @media screen and (min-width: 980px) {
   .bestsCont {
     padding-bottom: 80px;
+  }
+  .text {
+    padding-bottom: 24px;
   }
   .scrollbar {
     margin-top: 31;

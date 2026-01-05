@@ -16,14 +16,16 @@ interface ItemProps {
 
 export const BestsellerItem: React.FC<ItemProps> = ({ product }) => {
   return (
-    <li className={s.card}>
+    <div className={s.card}>
       <Image src={product.image} alt={product.title} width={180} height={165} />
-      <h3>{product.title}</h3>
-      <p>{product.description}</p>
-      <div className="footer">
-        <span>{product.price}</span>
-        <Link href={`/products/${product.id}`}>Дізнатись більше</Link>
+      <h3 className={s.title}>{product.title}</h3>
+      <p className={s.description}>{product.description}</p>
+      <p className={s.price}>{product.price}</p>
+      <div className={s.linkWrapp}>
+        <Link href={`/products/${product.id}`} className={s.link}>
+          Дізнатись більше
+        </Link>
       </div>
-    </li>
+    </div>
   );
 };
