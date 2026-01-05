@@ -1,0 +1,224 @@
+.DescHeaderList {
+	display: none;
+}
+@media screen and (min-width: 1280px) {
+	.DescHeaderList {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		gap: 14px;
+	}
+	.topHead {
+		width: 100%;
+		height: 68px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.blockLogo {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+	}
+	.logoImage {
+		width: 81px;
+		height: 68px;
+	}
+	.logoText {
+		width: 186px;
+		height: 50px;
+
+		color: rgba(239, 243, 229, 1);
+
+		font-family: var(--font-family);
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 25px;
+		letter-spacing: 0%;
+		text-align: left;
+	}
+
+	.socialList {
+		height: 40px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 24px;
+	}
+	.socialItem {
+		width: 152px;
+		height: 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+		padding: 8px 16px;
+
+		border-radius: 40px;
+		background: rgba(244, 166, 0, 1);
+	}
+	.phone {
+		width: 141px;
+		height: 25px;
+
+		color: rgba(239, 243, 229, 1);
+
+		font-family: var(--font-family);
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 25px;
+		letter-spacing: 0%;
+		text-align: left;
+	}
+	.phone:hover {
+		color: var(--accent-1);
+	}
+	.phone:active {
+		color: rgba(237, 209, 150, 1);
+	}
+	.atherSoc {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+	}
+	.iconBlock {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 24px;
+		height: 24px;
+	}
+	.icon_a,
+	.icon {
+		width: 20px;
+		height: 20px;
+		fill: var(--color-white);
+	}
+	.iconBlock:hover .icon {
+		fill: var(--color-state-add);
+	}
+	.iconBlock:active .icon {
+		fill: var(--color-add-2);
+	}
+	.iconBlock:hover .icon_a {
+		fill: var(--accent-1);
+	}
+	.iconBlock:active .icon_a {
+		fill: var(--color-state-add);
+	}
+	.line {
+		width: 100%;
+		height: 1px;
+		background: var(--color-add);
+	}
+
+	.botomHead {
+		width: 100%;
+		height: 48px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 200px;
+	}
+	.navigation {
+		width: 400px;
+		height: 25px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 40px;
+	}
+	.link {
+		color: rgba(239, 243, 229, 1);
+
+		font-family: var(--font-family);
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 25px;
+		letter-spacing: 0%;
+		text-align: left;
+		white-space: nowrap;
+	}
+	.link:hover {
+		color: rgba(244, 166, 0, 1);
+	}
+	.link:active {
+		color: rgba(237, 209, 150, 1);
+	}
+	.searchBlock {
+		width: 100%;
+		max-width: 588px;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+
+		border-radius: 50px;
+		box-shadow: 1px 2px 4px 0px rgba(104, 103, 103, 0.25);
+		background: rgba(249, 249, 249, 1);
+	}
+	.blockSearch {
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: nowrap;
+		margin-left: 16px;
+	}
+	.iconSearch {
+		width: 20px;
+		height: 20px;
+		fill: var(--text);
+	}
+	.input {
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: inherit;
+
+		color: rgba(146, 146, 146, 1);
+
+		font-family: var(--font-family);
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 25px;
+		letter-spacing: 0%;
+		text-align: left;
+	}
+	.searchBtn {
+		border-radius: 24px;
+		min-width: 88px;
+		height: 48px;
+		box-shadow: 1px 2px 4px 0 rgba(244, 166, 0, 0.53);
+		background: var(--accent-1);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		color: rgba(26, 75, 56, 1);
+
+		font-family: var(--font-family);
+		font-style: Bold;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 25px;
+		letter-spacing: 0%;
+		text-align: left;
+	}
+	.searchBtn:hover {
+		box-shadow: 1px 2px 4px 0px rgba(122, 170, 141, 0.47);
+		background: rgba(122, 170, 141, 1);
+	}
+	.searchBtn:active {
+		box-shadow: 1px 2px 4px 0px rgba(131, 189, 22, 0.47);
+		background: rgba(131, 189, 22, 1);
+	}
+}

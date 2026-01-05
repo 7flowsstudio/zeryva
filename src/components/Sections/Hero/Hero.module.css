@@ -63,7 +63,7 @@
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	z-index: 9;
+	z-index: 1;
 	border-radius: 50%;
 	border: 2px solid var(--fone-1);
 }
@@ -83,10 +83,10 @@
 	flex: 1;
 	width: 100%;
 	max-height: 8px;
-	background: var(--collor-white);
+	background: var(--color-white);
 	border-radius: 4px;
 	overflow: hidden;
-	z-index: 5;
+	z-index: 1;
 }
 
 .progressFill {
@@ -125,5 +125,14 @@
 		position: absolute;
 		bottom: 40px;
 		left: 120px;
+	}
+}
+@media screen and (min-width: 1440px) {
+	.paginationBlock {
+		position: absolute;
+		bottom: 40px;
+		left: 50%;
+		transform: translateX(-156%);
+		z-index: 1;
 	}
 }
