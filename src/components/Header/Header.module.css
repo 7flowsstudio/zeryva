@@ -1,0 +1,18 @@
+.headerWrapper {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 2;
+	background-color: transparent;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.scrolled {
+	background-color: var(--accent-2); /* потрібний фон */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.headerBlock {
+	margin-top: 16px;
+	height: 148px;
+	/* border: 1px solid red; */
+}

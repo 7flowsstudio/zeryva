@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body>
+			<body id="app-scroll">
 				<ClientLayout>{children}</ClientLayout>
 			</body>
 		</html>

@@ -1,6 +1,8 @@
 .infoWrapper {
 	position: absolute;
 	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
 	margin-top: 134px;
 	z-index: 3;
 }
@@ -75,13 +77,13 @@
 	.title {
 		width: 654px;
 		/* height: 208px; */
-		font-size: clamp(64px, calc((64 / 768) * 100vw), 80px);
-		line-height: clamp(64px, calc((64 / 768) * 100vw), 80px);
+		font-size: clamp(64px, calc((64 / 768) * 100vw), 72px);
+		line-height: clamp(64px, calc((64 / 768) * 100vw), 72px);
 	}
 	.description {
 		height: auto;
-		font-size: clamp(32px, calc((32 / 768) * 100vw), 36px);
-		line-height: clamp(46px, calc((46 / 375) * 100vw), 54px);
+		font-size: 32px;
+		line-height: 32px;
 	}
 	.downloadBtn {
 		width: 221px;
@@ -97,7 +99,7 @@
 	}
 	.title {
 		/* height: 208px; */
-		font-size: clamp(80px, calc((80 / 1280) * 100vw), 100px);
-		line-height: clamp(80px, calc((80 / 1280) * 100vw), 104px);
+		font-size: clamp(72px, calc((72 / 1280) * 100vw), 80px);
+		line-height: clamp(72px, calc((72 / 1280) * 100vw), 84px);
 	}
 }

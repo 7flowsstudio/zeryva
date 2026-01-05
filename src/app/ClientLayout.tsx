@@ -10,7 +10,7 @@ export const ClientLayout = ({ children }: { children: React.ReactNode }) => {
 
 	return (
 		<>
-			{/* {!isAdmin && <Header />} */}
+			{!isAdmin && <Header />}
 			<main>{children}</main>
 			{!isAdmin && <Footer />}
 		</>
