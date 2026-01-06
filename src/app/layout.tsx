@@ -20,6 +20,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body id="app-scroll">
 				<ClientLayout>{children}</ClientLayout>
+				<div id="modal-root" />
 			</body>
 		</html>
 	);

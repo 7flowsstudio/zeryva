@@ -57,5 +57,9 @@
 <path stroke-width="5.3333" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="miter" d="M2.667 27.804l25.145-25.138M2.667 2.667l25.145 25.138"></path>
 </symbol>
 
+<symbol id="icon-close-modal" viewBox="0 0 32 32">
+<path stroke-width="3.554" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="miter" d="M30.216 30.216l-28.432-28.432M30.216 1.784l-28.432 28.432"></path>
+</symbol>
+
   </defs>
 </svg>

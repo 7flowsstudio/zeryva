@@ -1,8 +1,8 @@
 .elipse {
-	position: absolute;
+	position: fixed;
 	bottom: 20px;
 	right: 16px;
-	z-index: 1;
+	z-index: 2;
 	/* Ellipse 55 */
 	width: 65px;
 	height: 65px;
@@ -21,10 +21,10 @@
 }
 @media screen and (min-width: 768px) {
 	.elipse {
-		position: absolute;
+		position: fixed;
 		bottom: 48px;
 		right: 40px;
-		z-index: 1;
+		z-index: 2;
 		/* Ellipse 55 */
 		width: 72px;
 		height: 72px;

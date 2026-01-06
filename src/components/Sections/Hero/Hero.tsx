@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,7 +9,7 @@ import s from "./Hero.module.css";
 import Image from "next/image";
 import InfoBlock from "./InfoBlock/InfoBlock";
 import HeroImg from "./HeroInfo.json";
-import BtnConsultation from "./BtnConsultation/BtnConsultation";
+// import BtnConsultation from "./BtnConsultation/BtnConsultation";
 
 const Hero = () => {
 	const [activeIndex, setActiveIndex] = React.useState(0);
@@ -26,8 +26,13 @@ const Hero = () => {
 				onSlideChange={(swiper) => {
 					setActiveIndex(swiper.realIndex);
 				}}
-				modules={[Navigation]}
+				modules={[Navigation, Autoplay]}
 				loop={true}
+				// autoplay={{
+				// 	delay: 2000, // час між автоперегортаннями у мс
+				// 	disableOnInteraction: false, // щоб автоперегортання не зупинялось після ручного свайпу
+				// 	pauseOnMouseEnter: true, // пауза при наведені миші
+				// }}
 				breakpoints={{
 					320: { slidesPerView: 1, spaceBetween: 0 },
 				}}
@@ -42,7 +47,7 @@ const Hero = () => {
 							</picture>
 						</div>
 						<InfoBlock item={item} />
-						<BtnConsultation />
+						{/* <BtnConsultation /> */}
 					</SwiperSlide>
 				))}
 			</Swiper>
