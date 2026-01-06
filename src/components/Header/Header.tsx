@@ -22,12 +22,12 @@ const Header = () => {
 	}, []);
 
 	return (
-		<div
-			className={`container ${s.headerWrapper} ${isScrolled ? s.scrolled : ""}`}
-		>
-			<div className={s.headerBlock}>
-				<DescHeader />
-				<MobHeader isScrolled={isScrolled} />
+		<div className={`${s.header} ${isScrolled ? s.scrolled : ""}`}>
+			<div className="container">
+				<div className={s.headerBlock}>
+					<DescHeader />
+					<MobHeader isScrolled={isScrolled} />
+				</div>
 			</div>
 		</div>
 	);

@@ -112,12 +112,12 @@
 	fill: rgba(249, 249, 249, 1);
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
 	.line {
 		width: calc(100% + 128px);
 	}
-}
-@media screen and (min-width: 1280px) {
+} */
+@media screen and (min-width: 768px) {
 	.mobHeader {
 		display: none;
 	}
