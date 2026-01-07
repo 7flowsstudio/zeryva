@@ -1,3 +1,8 @@
+.wrappContacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .title,
 .phone {
   font-family: var(--font-family);
@@ -6,6 +11,13 @@
   font-size: 20px;
   line-height: 27px;
   letter-spacing: 0;
+}
+.wrappLoc,
+.wrappTel,
+.otherSoc,
+.wrappMail {
+  display: flex;
+  gap: 8px;
 }
 .icon_a {
   fill: var(--fone-1);

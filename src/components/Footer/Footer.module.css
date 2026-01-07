@@ -33,11 +33,31 @@
 .logoImage {
   width: clamp(45px, calc((81 / 1440) * 100vw), 81px);
 }
+
+@media screen and (min-width: 680px) {
+  .contFooter {
+    padding: 24px 64px;
+  }
+}
 @media screen and (min-width: 880px) {
   .contFooter {
     display: flex;
+    justify-content: space-between;
     padding: 24px;
     margin: 0 auto;
     max-width: 1140px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .contFooter {
+    justify-content: start;
+    padding: 24px 0px;
+  }
+  .nav {
+    padding-left: 123px;
+    padding-right: 212px;
+  }
+  .socials {
+    padding-left: 75px;
   }
 }

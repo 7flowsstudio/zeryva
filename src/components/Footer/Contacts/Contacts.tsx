@@ -9,9 +9,9 @@ const Contacts = () => {
   ];
   return (
     <div>
-      <div>
+      <div className={s.wrappContacts}>
         <h3 className={s.title}>Контакти</h3>
-        <div>
+        <div className={s.wrappLoc}>
           <svg className={s.icon_a}>
             <use href="/sprite.svg#icon-location"></use>
           </svg>
@@ -20,7 +20,7 @@ const Contacts = () => {
             <span>с. Велика Омеляна, вул. Шевченка, 35</span>
           </p>
         </div>
-        <div>
+        <div className={s.wrappTel}>
           <svg className={s.icon_a}>
             <use href="/sprite.svg#icon-phone"></use>
           </svg>
@@ -42,7 +42,7 @@ const Contacts = () => {
             ))}
           </div>
         </div>
-        <div>
+        <div className={s.wrappMail}>
           <svg className={s.icon_a}>
             <use href="/sprite.svg#icon-email"></use>
           </svg>
