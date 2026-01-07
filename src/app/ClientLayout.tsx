@@ -6,15 +6,16 @@ import Footer from "@/components/Footer/Footer";
 import BtnConsultation from "@/components/Sections/Hero/BtnConsultation/BtnConsultation";
 
 export const ClientLayout = ({ children }: { children: React.ReactNode }) => {
-	const pathname = usePathname();
-	const isAdmin = pathname.startsWith("/admin");
+  const pathname = usePathname();
+  const isAdminOrLogin =
+    pathname.startsWith("/admin") || pathname.startsWith("/login");
 
-	return (
-		<>
-			{!isAdmin && <Header />}
-			{!isAdmin && <BtnConsultation />}
-			<main>{children}</main>
-			{!isAdmin && <Footer />}
-		</>
-	);
+  return (
+    <>
+      {!isAdminOrLogin && <Header />}
+      {!isAdminOrLogin && <BtnConsultation />}
+      <main>{children}</main>
+      {!isAdminOrLogin && <Footer />}
+    </>
+  );
 };
