@@ -10,7 +10,7 @@ const Navigation = () => {
     { id: 3, srs: "/", text: "Контакти" },
   ];
   return (
-    <div>
+    <div className={s.navigationCont}>
       <h3 className={s.title}>Навігація</h3>
       <nav className={s.navigation}>
         {navList.map((item) => (
