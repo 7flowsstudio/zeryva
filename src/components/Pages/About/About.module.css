@@ -1,0 +1,13 @@
+.aboutWrapper {
+	margin-top: 119px;
+}
+@media screen and (min-width: 768px) {
+	.aboutWrapper {
+		margin-top: 107px;
+	}
+}
+@media screen and (min-width: 1280px) {
+	.aboutWrapper {
+		margin-top: 177px;
+	}
+}
