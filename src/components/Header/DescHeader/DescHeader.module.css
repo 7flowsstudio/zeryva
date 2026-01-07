@@ -22,8 +22,8 @@
 		gap: 25px;
 	}
 	.logoImage {
-		width: clamp(45px, calc((45 / 768) * 100vw), 81px);
-		height: clamp(38px, calc((38 / 768) * 100vw), 68px);
+		width: clamp(45px, calc((45 / 768) * 100vw), 61px);
+		height: clamp(38px, calc((38 / 768) * 100vw), 50px);
 	}
 	.logoText {
 		width: clamp(130px, calc((130 / 768) * 100vw), 186px);
@@ -105,6 +105,15 @@
 	}
 	.iconBlock:active .icon_a {
 		fill: var(--color-state-add);
+	}
+	.icon_green {
+		fill: rgba(26, 75, 56, 1);
+	}
+	.iconBlock:hover .icon_green {
+		fill: var(--accent-1);
+	}
+	.iconBlock:active .icon_green {
+		fill: var(--fone-1);
 	}
 	.line {
 		width: 100%;
@@ -200,6 +209,9 @@
 		line-height: clamp(18px, calc((18 / 768) * 100vw), 25px);
 		letter-spacing: 0%;
 		text-align: left;
+	}
+	.colorGreen {
+		color: rgba(26, 75, 56, 1);
 	}
 }
 @media screen and (min-width: 1280px) {

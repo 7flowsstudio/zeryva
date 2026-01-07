@@ -2,8 +2,11 @@ import React from "react";
 import s from "./DescHeader.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const DescHeader = () => {
+	const pathname = usePathname();
+	const isAbout = pathname.startsWith("/about");
 	const socialList = [
 		{ id: 0, srs: "/sprite.svg#icon-instagram", href: "/" },
 		{ id: 1, srs: "/sprite.svg#icon-tiktok", href: "/" },
@@ -35,7 +38,9 @@ const DescHeader = () => {
 						/>
 					</Link>
 
-					<h4 className={s.logoText}>Природа, що працює на урожай</h4>
+					<h4 className={`${s.logoText} ${isAbout ? s.colorGreen : ""}`}>
+						Природа, що працює на урожай
+					</h4>
 				</div>
 				<ul className={s.socialList}>
 					<li className={s.socialItem}>
@@ -52,7 +57,7 @@ const DescHeader = () => {
 							</Link>
 						))}
 					</li>
-					<li className={s.phone}>
+					<li className={`${s.phone} ${isAbout ? s.colorGreen : ""}`}>
 						<Link href="tel:+38 099 188 56 37">+38 099 188 56 37</Link>
 					</li>
 					<li className={s.atherSoc}>
@@ -63,7 +68,7 @@ const DescHeader = () => {
 								className={s.iconBlock}
 								target="_blank"
 							>
-								<svg className={s.icon_a}>
+								<svg className={`${s.icon_a} ${isAbout ? s.icon_green : ""}`}>
 									<use href={item.srs}></use>
 								</svg>
 							</Link>
@@ -75,7 +80,11 @@ const DescHeader = () => {
 			<li className={s.botomHead}>
 				<nav className={s.navigation}>
 					{navList.map((item) => (
-						<Link key={item.id} href={item.srs} className={s.link}>
+						<Link
+							key={item.id}
+							href={item.srs}
+							className={`${s.link} ${isAbout ? s.colorGreen : ""}`}
+						>
 							{item.text}
 						</Link>
 					))}
