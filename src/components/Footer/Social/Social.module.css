@@ -1,0 +1,14 @@
+.title {
+  font-family: var(--font-family);
+}
+.socialItem {
+  display: flex;
+  gap: 8px;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+.iconBlock {
+  fill: var(--fone-1);
+}

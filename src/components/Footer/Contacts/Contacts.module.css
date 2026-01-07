@@ -1,0 +1,17 @@
+.title,
+.phone {
+  font-family: var(--font-family);
+}
+.icon_a {
+  fill: var(--fone-1);
+  width: 20px;
+  height: 20px;
+}
+.address {
+  display: flex;
+  flex-direction: column;
+}
+.address,
+.mail {
+  color: var(--fone-1);
+}

@@ -1,5 +1,5 @@
 .card {
-  background-color: var(--collor-add-search);
+  background-color: var(--color-add-search);
   box-shadow: 2px 2px 4px 0px #d2c9b569, -1px -1px 4px 0px #d2c9b530;
   border-radius: 20px;
   padding: 5px 8px 8px 8px;
