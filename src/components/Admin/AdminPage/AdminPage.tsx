@@ -4,13 +4,13 @@ import s from "./AdminPage.module.css";
 import MenuSide from "./MenuSide/MenuSide";
 import OptionSide from "./OptionSide/OptionSide";
 
-export type AdminSection = "gallery" | "reviews" | "services";
+export type AdminSection = "add" | "products";
 
 const AdminPage = () => {
-  const [activeSection, setActiveSection] = useState<AdminSection>("gallery");
+  const [activeSection, setActiveSection] = useState<AdminSection>("add");
   return (
     <div className={s.adminWraper}>
-      <MenuSide />
+      <MenuSide onSelect={setActiveSection} active={activeSection} />
       <OptionSide />
     </div>
   );
