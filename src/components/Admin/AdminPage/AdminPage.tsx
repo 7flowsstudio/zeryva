@@ -11,7 +11,7 @@ const AdminPage = () => {
   return (
     <div className={s.adminWraper}>
       <MenuSide onSelect={setActiveSection} active={activeSection} />
-      <OptionSide />
+      <OptionSide active={activeSection} />
     </div>
   );
 };
