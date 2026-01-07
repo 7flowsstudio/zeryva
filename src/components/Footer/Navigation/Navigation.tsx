@@ -1,0 +1,26 @@
+import Link from "next/link";
+import React from "react";
+import s from "./Navigation.module.css";
+
+const Navigation = () => {
+  const navList = [
+    { id: 0, srs: "/", text: "Про нас" },
+    { id: 1, srs: "/", text: "Продукти" },
+    { id: 2, srs: "/", text: "Послуги" },
+    { id: 3, srs: "/", text: "Контакти" },
+  ];
+  return (
+    <div>
+      <h3 className={s.title}>Навігація</h3>
+      <nav className={s.navigation}>
+        {navList.map((item) => (
+          <Link key={item.id} href={item.srs} className={s.link}>
+            {item.text}
+          </Link>
+        ))}
+      </nav>
+    </div>
+  );
+};
+
+export default Navigation;
