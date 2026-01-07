@@ -26,6 +26,7 @@ const Social = () => {
           </Link>
         ))}
       </div>
+      <button className={s.btnSoc}>Завантажити каталог</button>
     </div>
   );
 };

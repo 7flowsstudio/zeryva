@@ -13,7 +13,7 @@ const Contacts = () => {
         <h3 className={s.title}>Контакти</h3>
         <div>
           <svg className={s.icon_a}>
-            <use href="/sprite.svg#icon-telegram"></use>
+            <use href="/sprite.svg#icon-location"></use>
           </svg>
           <p className={s.address}>
             Рівненська обл., Рівненський р-н,
@@ -21,6 +21,9 @@ const Contacts = () => {
           </p>
         </div>
         <div>
+          <svg className={s.icon_a}>
+            <use href="/sprite.svg#icon-phone"></use>
+          </svg>
           <div className={s.phone}>
             <Link href="tel:+38 099 188 56 37">+38 099 188 56 37</Link>
           </div>
@@ -41,7 +44,7 @@ const Contacts = () => {
         </div>
         <div>
           <svg className={s.icon_a}>
-            <use href="/sprite.svg#icon-telegram"></use>
+            <use href="/sprite.svg#icon-email"></use>
           </svg>
           <p className={s.mail}>zadynamik@ukr.net</p>
         </div>

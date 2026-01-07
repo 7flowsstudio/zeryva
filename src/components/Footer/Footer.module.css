@@ -30,6 +30,9 @@
   grid-area: socials;
   align-self: start;
 }
+.logoImage {
+  width: clamp(45px, calc((81 / 1440) * 100vw), 81px);
+}
 @media screen and (min-width: 880px) {
   .contFooter {
     display: flex;
