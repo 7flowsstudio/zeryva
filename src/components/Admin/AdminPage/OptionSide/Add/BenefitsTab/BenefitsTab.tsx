@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Product } from "../../../../../../../utils/types";
+import s from "./BenefitsTab.module.css";
 
 interface BenefitsTabProps {
   product: Product;
@@ -26,7 +27,7 @@ const BenefitsTab: React.FC<BenefitsTabProps> = ({ product, setProduct }) => {
   };
 
   return (
-    <div>
+    <div className={s.benefCont}>
       <ul>
         {product.benefits.map((benefit, index) => (
           <li key={index}>

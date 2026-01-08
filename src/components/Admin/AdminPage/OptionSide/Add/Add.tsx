@@ -6,15 +6,20 @@ import DescriptionTab from "./DescriptionTab/DescriptionTab";
 import BenefitsTab from "./BenefitsTab/BenefitsTab";
 import InstructionTab from "./InstructionTab/InstructionTab";
 import { Product } from "../../../../../../utils/types";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../../../../../../firebaseConfig";
 
 type Tab = "main" | "description" | "benefits" | "instruction";
 
 const Add = () => {
   const [activeTab, setActiveTab] = useState<Tab>("main");
+  const [loading, setLoading] = useState(false);
+
   const [product, setProduct] = useState<Product>({
     title: "",
     price: "",
     images: [],
+    certificates: [],
     youtubeUrl: "",
     properties: { consistency: "", volume: "", shelfLife: "", storageTemp: "" },
     description: {
@@ -29,6 +34,55 @@ const Add = () => {
     benefits: [],
     instructionTable: { columns: [], rows: [] },
   });
+
+  const saveProduct = async () => {
+    if (!product.title || !product.price) {
+      alert("Заповни назву і ціну");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      await addDoc(collection(db, "products"), {
+        ...product,
+        createdAt: serverTimestamp(),
+      });
+
+      alert("Продукт додано ✅");
+
+      // reset
+      setProduct({
+        title: "",
+        price: "",
+        images: [],
+        certificates: [],
+        youtubeUrl: "",
+        properties: {
+          consistency: "",
+          volume: "",
+          shelfLife: "",
+          storageTemp: "",
+        },
+        description: {
+          composition: "",
+          purpose: "",
+          characteristics: "",
+          form: "",
+          packaging: "",
+          shelfLife: "",
+          compatibility: "",
+        },
+        benefits: [],
+        instructionTable: { columns: [], rows: [] },
+      });
+    } catch (e) {
+      console.error(e);
+      alert("Помилка збереження");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className={s.wrapper}>
       <div className={s.tabs}>
@@ -77,7 +131,9 @@ const Add = () => {
         )}
       </div>
 
-      <button className={s.saveBtn}>Зберегти продукт</button>
+      <button className={s.saveBtn} onClick={saveProduct} disabled={loading}>
+        {loading ? "Збереження..." : "Зберегти продукт"}
+      </button>
     </div>
   );
 };
