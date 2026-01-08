@@ -10,68 +10,102 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
   product,
   setProduct,
 }) => {
-  const addRow = () => {
-    const newRow = product.instructionTable.columns.map(() => ""); // новий рядок з пустих клітинок
-    setProduct({
-      ...product,
-      instructionTable: {
-        ...product.instructionTable,
-        rows: [...product.instructionTable.rows, newRow],
-      },
-    });
-  };
+  const { instructionTable } = product;
 
   const addColumn = () => {
     setProduct({
       ...product,
       instructionTable: {
         columns: [
-          ...product.instructionTable.columns,
-          `Колонка ${product.instructionTable.columns.length + 1}`,
+          ...instructionTable.columns,
+          `Колонка ${instructionTable.columns.length + 1}`,
         ],
-        rows: product.instructionTable.rows.map((row) => [...row, ""]),
+        rows: instructionTable.rows.map((row) =>
+          row.type === "normal" ? { ...row, cells: [...row.cells, ""] } : row
+        ),
+      },
+    });
+  };
+
+  const addRow = () => {
+    setProduct({
+      ...product,
+      instructionTable: {
+        ...instructionTable,
+        rows: [
+          ...instructionTable.rows,
+          {
+            type: "normal",
+            cells: instructionTable.columns.map(() => ""),
+          },
+        ],
+      },
+    });
+  };
+
+  const addFullRow = () => {
+    setProduct({
+      ...product,
+      instructionTable: {
+        ...instructionTable,
+        rows: [...instructionTable.rows, { type: "full", value: "" }],
       },
     });
   };
 
   const updateCell = (rowIndex: number, colIndex: number, value: string) => {
-    const newRows = product.instructionTable.rows.map((row, r) =>
-      r === rowIndex
-        ? row.map((cell, c) => (c === colIndex ? value : cell))
+    const newRows = instructionTable.rows.map((row, r) =>
+      r === rowIndex && row.type === "normal"
+        ? {
+            ...row,
+            cells: row.cells.map((cell, c) => (c === colIndex ? value : cell)),
+          }
         : row
     );
+
     setProduct({
       ...product,
-      instructionTable: {
-        ...product.instructionTable,
-        rows: newRows,
-      },
+      instructionTable: { ...instructionTable, rows: newRows },
+    });
+  };
+
+  const updateFullRow = (rowIndex: number, value: string) => {
+    const newRows = instructionTable.rows.map((row, r) =>
+      r === rowIndex && row.type === "full" ? { ...row, value } : row
+    );
+
+    setProduct({
+      ...product,
+      instructionTable: { ...instructionTable, rows: newRows },
     });
   };
 
   return (
     <div>
+      <button type="button" onClick={addColumn}>
+        Додати колонку
+      </button>
       <button type="button" onClick={addRow}>
         Додати рядок
       </button>
-      <button type="button" onClick={addColumn}>
-        Додати колонку
+      <button type="button" onClick={addFullRow}>
+        Додати рядок на всю ширину
       </button>
 
       <table>
         <thead>
           <tr>
-            {product.instructionTable.columns.map((col, i) => (
+            {instructionTable.columns.map((col, i) => (
               <th key={i}>
                 <input
                   value={col}
                   onChange={(e) => {
-                    const newColumns = [...product.instructionTable.columns];
+                    const newColumns = [...instructionTable.columns];
                     newColumns[i] = e.target.value;
                     setProduct({
                       ...product,
                       instructionTable: {
-                        ...product.instructionTable,
+                        ...instructionTable,
                         columns: newColumns,
                       },
                     });
@@ -81,19 +115,34 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
             ))}
           </tr>
         </thead>
+
         <tbody>
-          {product.instructionTable.rows.map((row, rIndex) => (
-            <tr key={rIndex}>
-              {row.map((cell, cIndex) => (
-                <td key={cIndex}>
+          {instructionTable.rows.map((row, rIndex) =>
+            row.type === "normal" ? (
+              <tr key={rIndex}>
+                {row.cells.map((cell, cIndex) => (
+                  <td key={cIndex}>
+                    <input
+                      value={cell}
+                      onChange={(e) =>
+                        updateCell(rIndex, cIndex, e.target.value)
+                      }
+                    />
+                  </td>
+                ))}
+              </tr>
+            ) : (
+              <tr key={rIndex}>
+                <td colSpan={instructionTable.columns.length}>
                   <input
-                    value={cell}
-                    onChange={(e) => updateCell(rIndex, cIndex, e.target.value)}
+                    value={row.value}
+                    placeholder="Текст на всю ширину"
+                    onChange={(e) => updateFullRow(rIndex, e.target.value)}
                   />
                 </td>
-              ))}
-            </tr>
-          ))}
+              </tr>
+            )
+          )}
         </tbody>
       </table>
     </div>

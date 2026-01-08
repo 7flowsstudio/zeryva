@@ -5,9 +5,21 @@ export interface ProductProperties {
   storageTemp: string;
 }
 
+export interface InstructionRowNormal {
+  type: "normal";
+  cells: string[];
+}
+
+export interface InstructionRowFull {
+  type: "full";
+  value: string;
+}
+
+export type InstructionRow = InstructionRowNormal | InstructionRowFull;
+
 export interface InstructionTable {
   columns: string[];
-  rows: string[][];
+  rows: InstructionRow[];
 }
 
 export interface Description {

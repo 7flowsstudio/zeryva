@@ -31,7 +31,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
       />
 
       <input
-        type="number"
+        type="text"
         placeholder="Ціна"
         value={product.price}
         onChange={(e) => setProduct({ ...product, price: e.target.value })}
