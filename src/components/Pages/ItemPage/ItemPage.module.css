@@ -1,3 +1,15 @@
 .cont {
   padding-top: 150px;
 }
+.iconWrap {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-add-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  fill: var(--accent-2);
+}

@@ -8,27 +8,33 @@ import { useEffect, useState } from "react";
 import { Product } from "../../../../utils/types";
 import { db } from "../../../../firebaseConfig";
 import Image from "next/image";
+import Description from "./Description/Description";
+import Benefits from "./Benefits/Benefits";
+import Instruction from "./Instruction/Instruction";
+
+type Tab = "description" | "benefits" | "instruction";
 
 const ItemPage = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
+  const [activeTab, setActiveTab] = useState<Tab>("description");
 
   const propertiesConfig = [
     {
       key: "consistency",
-      icon: "/sprite.svg#icon-location",
+      icon: "/sprite.svg#icon-fluent",
     },
     {
       key: "volume",
-      icon: "/sprite.svg#icon-location",
+      icon: "/sprite.svg#icon-weight",
     },
     {
       key: "shelfLife",
-      icon: "/sprite.svg#icon-location",
+      icon: "/sprite.svg#icon-duration",
     },
     {
       key: "storageTemp",
-      icon: "/sprite.svg#icon-location",
+      icon: "/sprite.svg#icon-temperature",
     },
   ] as const;
 
@@ -46,24 +52,59 @@ const ItemPage = () => {
   return (
     <div className={s.cont}>
       <h1>{product.title}</h1>
-      <Image
-        src={product.images[0]}
-        alt={product.title}
-        width={200}
-        height={200}
-      />
+      {product.images?.[0] && (
+        <Image
+          src={product.images[0]}
+          alt={product.title}
+          width={200}
+          height={200}
+        />
+      )}
       <p>{product.descriptionText}</p>
       <p>{product.price}</p>
       <ul>
         {propertiesConfig.map(({ key, icon }) => (
           <li key={key}>
-            <svg width={16} height={16}>
-              <use href={icon} />
-            </svg>
+            <div className={s.iconWrap}>
+              <svg width={16} height={16} className={s.icon}>
+                <use href={icon} />
+              </svg>
+            </div>
             <span>{product.properties[key]}</span>
           </li>
         ))}
       </ul>
+      <div>
+        <div className={s.tabs}>
+          <button
+            className={activeTab === "description" ? s.active : ""}
+            onClick={() => setActiveTab("description")}
+          >
+            Опис
+          </button>
+          <button
+            className={activeTab === "benefits" ? s.active : ""}
+            onClick={() => setActiveTab("benefits")}
+          >
+            Переваги
+          </button>
+          <button
+            className={activeTab === "instruction" ? s.active : ""}
+            onClick={() => setActiveTab("instruction")}
+          >
+            Інструкція
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className={s.content}>
+          {activeTab === "description" && <Description product={product} />}
+
+          {activeTab === "benefits" && <Benefits product={product} />}
+
+          {activeTab === "instruction" && <Instruction product={product} />}
+        </div>
+      </div>
     </div>
   );
 };
