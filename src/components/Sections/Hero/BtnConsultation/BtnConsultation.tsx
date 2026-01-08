@@ -14,7 +14,9 @@ const BtnConsultation = ({ isScrolled }: IsScroledProp) => {
 
 	return (
 		<>
-			<ul className={s.socialList}>
+			<ul
+				className={`${s.socialList} ${isScrolled ? s.socialListVisible : ""}`}
+			>
 				{socialList.map((item) => (
 					<li key={item.id} className={s.socialItem}>
 						<Link href={item.href}>

@@ -68,7 +68,8 @@ const Hero = () => {
 					<div
 						className={s.progressFill}
 						style={{
-							width: `${((activeIndex + 1) / slidesCount) * 100}%`,
+							left: `${activeIndex * (100 / slidesCount)}%`,
+							width: `${100 / slidesCount}%`,
 						}}
 					/>
 				</div>

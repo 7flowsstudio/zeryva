@@ -5,6 +5,7 @@ import Link from "next/link";
 import ModalSearch from "./ModalSearch/ModalSearch";
 import ModalMobMenu from "./ModalMobMenu/ModalMobMenu";
 import { socialList } from "@/components/Sections/UI/data/data";
+import { usePathname } from "next/navigation";
 
 type MobMenuProp = {
 	isScrolled?: boolean;
@@ -13,6 +14,7 @@ type MobMenuProp = {
 const MobHeader = ({ isScrolled }: MobMenuProp) => {
 	const [openSearch, setOpenSearch] = useState(false);
 	const [openMobMenu, setOpenMobMenu] = useState(false);
+	const isMain = !usePathname().split("/")[1];
 	return (
 		<>
 			<ul className={s.mobHeader}>
@@ -25,14 +27,26 @@ const MobHeader = ({ isScrolled }: MobMenuProp) => {
 							alt="image"
 							className={s.image}
 						/>
-						<h4 className={s.titleMob}>Природа, що працює на урожай</h4>
+						<h4
+							className={`${s.titleMob} ${
+								isMain ? s.mainTitle : s.notMainTitle
+							} ${isScrolled ? s.titleScroll : ""}`}
+						>
+							Природа, що працює на урожай
+						</h4>
 					</div>
 					<button
 						type="button"
-						className={`${s.burgerBtn} ${isScrolled ? s.scrollBtn : ""}`}
+						className={`${s.burgerBtn} ${isMain ? s.mainBtn : s.notMainBtn} ${
+							isScrolled ? s.scrollBtn : ""
+						}`}
 						onClick={() => setOpenMobMenu(true)}
 					>
-						<svg className={s.iconBurger}>
+						<svg
+							className={`${s.iconBurger} ${
+								isMain ? s.mainIconBurger : s.notMainIconBurger
+							} ${isScrolled ? s.iconBurgerScrolled : ""}`}
+						>
 							<use href="/sprite.svg#icon-button-mob"></use>
 						</svg>
 					</button>
@@ -41,10 +55,16 @@ const MobHeader = ({ isScrolled }: MobMenuProp) => {
 				<li className={s.mobHeaderBotom}>
 					<button
 						type="button"
-						className={s.searchBtn}
+						className={`${s.searchBtn} ${
+							isMain ? s.mainSearchBtn : s.notMainSearchBtn
+						} ${isScrolled ? s.scrollSearchBtn : ""}`}
 						onClick={() => setOpenSearch(true)}
 					>
-						<svg className={s.iconSearch}>
+						<svg
+							className={`${s.iconSearch} ${
+								isMain ? s.mainIconColor : s.notMainIconColor
+							} ${isScrolled ? s.scrolledIconSearch : ""}`}
+						>
 							<use href="/sprite.svg#icon-search-mob"></use>
 						</svg>
 					</button>

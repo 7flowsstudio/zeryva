@@ -90,11 +90,15 @@
 }
 
 .progressFill {
+	position: absolute;
+	top: 0;
+	left: 0;
 	height: 100%;
 	background-color: var(--accent-1);
-	width: 0%;
-	transition: width 0.4s ease;
 	border-radius: 4px;
+
+	transition: left 0.4s ease;
+	will-change: left;
 }
 @media screen and (min-width: 768px) {
 	.paginationBlock {

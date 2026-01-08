@@ -13,22 +13,24 @@
 	color: rgba(26, 75, 56, 1);
 
 	font-family: var(--third-family);
-	font-size: 46px;
+	font-size: 32px;
 	font-weight: 800;
-	line-height: 69px;
+	line-height: 48px;
 	letter-spacing: 0%;
 	text-align: left;
 }
+
 .KeyValuesList {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
 	gap: 24px;
 }
 .KeyValuesItem {
-	width: calc((100% - 72px) / 4);
+	width: calc((100% - 24px) / 2);
 	/* height: 128px; */
 	display: flex;
 	flex-direction: column;
@@ -66,4 +68,19 @@
 	line-height: 25px;
 	letter-spacing: 0%;
 	text-align: left;
+}
+@media screen and (min-width: 768px) {
+	.title {
+		font-size: 36px;
+		line-height: 58px;
+	}
+	.KeyValuesItem {
+		width: calc((100% - 72px) / 4);
+	}
+}
+@media screen and (min-width: 1280px) {
+	.title {
+		font-size: 46px;
+		line-height: 69px;
+	}
 }
