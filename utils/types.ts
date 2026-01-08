@@ -44,3 +44,6 @@ export interface Product {
   benefits: string[];
   instructionTable: InstructionTable;
 }
+export type ProductWithId = Product & {
+  id: string;
+};
