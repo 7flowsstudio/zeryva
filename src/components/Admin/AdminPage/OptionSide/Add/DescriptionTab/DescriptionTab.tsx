@@ -1,5 +1,6 @@
 import React from "react";
 import { Description, Product } from "../../../../../../../utils/types";
+import s from "./DescriptionTab.module.css"
 
 interface DescriptionTabProps {
   product: Product;
@@ -21,7 +22,7 @@ const DescriptionTab: React.FC<DescriptionTabProps> = ({
   };
 
   return (
-    <div>
+    <div className={s.descrCont}>
       <input
         placeholder="Склад"
         value={product.description.composition}

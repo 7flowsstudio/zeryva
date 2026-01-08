@@ -36,6 +36,7 @@ export interface Product {
   title: string;
   price: string;
   images: string[];
+  certificates: string[];
   youtubeUrl: string;
   properties: ProductProperties;
   description: Description;

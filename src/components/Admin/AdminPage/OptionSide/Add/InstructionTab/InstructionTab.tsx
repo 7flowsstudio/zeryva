@@ -1,5 +1,6 @@
 import React from "react";
 import { Product } from "../../../../../../../utils/types";
+import s from "./InstructionTab.module.css";
 
 interface InstructionTabProps {
   product: Product;
@@ -81,7 +82,7 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
   };
 
   return (
-    <div>
+    <div className={s.instrCont}>
       <button type="button" onClick={addColumn}>
         Додати колонку
       </button>
