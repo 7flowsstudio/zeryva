@@ -4,20 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import ModalSearch from "./ModalSearch/ModalSearch";
 import ModalMobMenu from "./ModalMobMenu/ModalMobMenu";
+import { socialList } from "@/components/Sections/UI/data/data";
 
 type MobMenuProp = {
-	isScrolled: boolean;
+	isScrolled?: boolean;
 };
 
 const MobHeader = ({ isScrolled }: MobMenuProp) => {
 	const [openSearch, setOpenSearch] = useState(false);
 	const [openMobMenu, setOpenMobMenu] = useState(false);
-	const socList = [
-		{ id: 0, src: "/sprite.svg#icon-instagram", link: "/" },
-		{ id: 1, src: "/sprite.svg#icon-tiktok", link: "/" },
-		{ id: 2, src: "/sprite.svg#icon-facebook", link: "/" },
-		{ id: 3, src: "/sprite.svg#icon-youtube", link: "/" },
-	];
 	return (
 		<>
 			<ul className={s.mobHeader}>
@@ -54,8 +49,8 @@ const MobHeader = ({ isScrolled }: MobMenuProp) => {
 						</svg>
 					</button>
 					<div className={s.socIconBlock}>
-						{socList.map((item) => (
-							<Link key={item.id} href={item.link} className={s.socLink}>
+						{socialList.map((item) => (
+							<Link key={item.id} href={item.href} className={s.socLink}>
 								<svg className={s.socIconMob}>
 									<use href={item.src}></use>
 								</svg>
