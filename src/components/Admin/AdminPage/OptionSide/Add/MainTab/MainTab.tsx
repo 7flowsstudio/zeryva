@@ -60,6 +60,14 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         onChange={(e) => setProduct({ ...product, title: e.target.value })}
       />
 
+      <textarea
+        placeholder="Опис продукту"
+        value={product.descriptionText}
+        onChange={(e) =>
+          setProduct({ ...product, descriptionText: e.target.value })
+        }
+      />
+
       <input
         placeholder="Ціна"
         value={product.price}

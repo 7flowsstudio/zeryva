@@ -5,7 +5,7 @@ import s from "./Navigation.module.css";
 const Navigation = () => {
   const navList = [
     { id: 0, srs: "/about", text: "Про нас" },
-    { id: 1, srs: "/", text: "Продукти" },
+    { id: 1, srs: "/products", text: "Продукти" },
     { id: 2, srs: "/", text: "Послуги" },
     { id: 3, srs: "/", text: "Контакти" },
   ];
