@@ -17,6 +17,7 @@ const Add = () => {
 
   const [product, setProduct] = useState<Product>({
     title: "",
+    descriptionText: "",
     price: "",
     images: [],
     certificates: [],
@@ -53,6 +54,7 @@ const Add = () => {
       // reset
       setProduct({
         title: "",
+        descriptionText: "",
         price: "",
         images: [],
         certificates: [],

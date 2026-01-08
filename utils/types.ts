@@ -34,6 +34,7 @@ export interface Description {
 
 export interface Product {
   title: string;
+  descriptionText: string;
   price: string;
   images: string[];
   certificates: string[];

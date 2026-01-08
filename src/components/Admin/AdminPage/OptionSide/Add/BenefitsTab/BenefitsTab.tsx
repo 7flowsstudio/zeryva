@@ -39,8 +39,7 @@ const BenefitsTab: React.FC<BenefitsTabProps> = ({ product, setProduct }) => {
         ))}
       </ul>
 
-      <input
-        type="text"
+      <textarea
         value={newBenefit}
         placeholder="Нова перевага"
         onChange={(e) => setNewBenefit(e.target.value)}
