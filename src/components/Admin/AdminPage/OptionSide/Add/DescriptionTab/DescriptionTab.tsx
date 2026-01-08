@@ -1,6 +1,6 @@
 import React from "react";
 import { Description, Product } from "../../../../../../../utils/types";
-import s from "./DescriptionTab.module.css"
+import s from "./DescriptionTab.module.css";
 
 interface DescriptionTabProps {
   product: Product;
@@ -23,37 +23,37 @@ const DescriptionTab: React.FC<DescriptionTabProps> = ({
 
   return (
     <div className={s.descrCont}>
-      <input
+      <textarea
         placeholder="Склад"
         value={product.description.composition}
         onChange={(e) => handleChange("composition", e.target.value)}
       />
-      <input
+      <textarea
         placeholder="Мета застосування"
         value={product.description.purpose}
         onChange={(e) => handleChange("purpose", e.target.value)}
       />
-      <input
+      <textarea
         placeholder="Характеристика"
         value={product.description.characteristics}
         onChange={(e) => handleChange("characteristics", e.target.value)}
       />
-      <input
+      <textarea
         placeholder="Форма випуску"
         value={product.description.form}
         onChange={(e) => handleChange("form", e.target.value)}
       />
-      <input
+      <textarea
         placeholder="Пакування"
         value={product.description.packaging}
         onChange={(e) => handleChange("packaging", e.target.value)}
       />
-      <input
+      <textarea
         placeholder="Термін придатності"
         value={product.description.shelfLife}
         onChange={(e) => handleChange("shelfLife", e.target.value)}
       />
-      <input
+      <textarea
         placeholder="Сумісність"
         value={product.description.compatibility}
         onChange={(e) => handleChange("compatibility", e.target.value)}
