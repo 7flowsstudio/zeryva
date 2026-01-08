@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import s from "./Sertification.module.css";
 import Image from "next/image";
 import {
@@ -26,7 +26,11 @@ const getConfigByWidth = (): Config => {
 	return { itemsPerClick: 4, visibleCount: 8 };
 };
 
-const Sertification = () => {
+const Sertification = ({
+	setImage,
+}: {
+	setImage: React.Dispatch<SetStateAction<string>>;
+}) => {
 	const [config, setConfig] = useState<Config>(INITIAL_CONFIG);
 	const { itemsPerClick, visibleCount } = config;
 
@@ -78,6 +82,7 @@ const Sertification = () => {
 										height={255}
 										alt={`sertification_${item.id}`}
 										className={s.image}
+										onClick={() => setImage(item.link)}
 									/>
 									<p className={s.sertText}>{item.text}</p>
 								</li>
@@ -104,6 +109,7 @@ const Sertification = () => {
 										height={255}
 										alt={`sertification_${item.id}`}
 										className={`${s.image} ${s.image_s}`}
+										onClick={() => setImage(item.link)}
 									/>
 									<p className={s.sertText}>{item.text}</p>
 								</li>

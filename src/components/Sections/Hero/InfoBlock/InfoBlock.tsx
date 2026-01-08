@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./InfoBlock.module.css";
+import Link from "next/link";
 
 type HeroItem = {
 	id: number;
@@ -19,9 +20,13 @@ const InfoBlock: React.FC<InfoBlockProps> = ({ item }) => {
 			<div className={s.infoContainer}>
 				<h1 className={s.title}>{item.title}</h1>
 				<h2 className={s.description}>{item.description}</h2>
-				<button type="button" className={s.downloadBtn}>
+				<Link
+					href="https://drive.google.com/file/d/1PFw6ed9tHJiNI61ebCjlSbfmqubnkBa0/view"
+					className={s.downloadBtn}
+					target="_blank"
+				>
 					Завантажити каталог
-				</button>
+				</Link>
 			</div>
 		</div>
 	);
