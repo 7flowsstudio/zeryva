@@ -1,8 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import s from "./Products.module.css";
-import Image from "next/image";
-import Link from "next/link";
 import { Product, ProductWithId } from "../../../../../utils/types";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../../../../../firebaseConfig";
@@ -33,8 +30,6 @@ const Products = () => {
 
   return (
     <div>
-      <h1>Продукти</h1>
-
       <div style={{ display: "grid", gap: 24 }}>
         {products.map((product) => (
           <Card key={product.id} product={product} />
