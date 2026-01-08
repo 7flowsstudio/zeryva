@@ -25,7 +25,6 @@
 .titleMob {
 	width: 130px;
 	height: 36px;
-	color: rgba(239, 243, 229, 1);
 
 	font-family: var(--font-family);
 	font-size: 12px;
@@ -33,6 +32,15 @@
 	line-height: 18px;
 	letter-spacing: 0%;
 	text-align: left;
+}
+.mainTitle {
+	color: rgba(239, 243, 229, 1);
+}
+.notMainTitle {
+	color: var(--accent-2);
+}
+.titleScroll {
+	color: rgba(239, 243, 229, 1);
 }
 .burgerBtn {
 	width: 32px;
@@ -47,12 +55,39 @@
 	border-radius: 16px;
 	background: rgba(239, 243, 229, 1);
 }
+.burgerBtn {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 10px;
+	padding: 4px;
+
+	border-radius: 16px;
+}
+.mainBtn {
+	background: var(--fone-1);
+}
+.notMainBtn {
+	background: var(--accent-2);
+}
 .scrollBtn {
-	background: rgba(122, 170, 141, 1);
+	background: var(--fone-1);
 }
 .iconBurger {
 	width: 19px;
 	height: 14px;
+}
+.mainIconBurger {
+	fill: var(--accent-2);
+}
+
+.notMainIconBurger {
+	fill: var(--fone-1);
+}
+.iconBurgerScrolled {
 	fill: var(--accent-2);
 }
 
@@ -79,14 +114,29 @@
 	padding: 4px;
 
 	border-radius: 16px;
+}
+.mainSearchBtn {
+	background: rgba(239, 243, 229, 1);
+}
+.notMainSearchBtn {
+	background: var(--accent-2);
+}
+.scrollSearchBtn {
 	background: rgba(239, 243, 229, 1);
 }
 .iconSearch {
 	width: 18px;
 	height: 18px;
+}
+.mainIconColor {
 	fill: var(--accent-2);
 }
-
+.notMainIconColor {
+	fill: var(--fone-1);
+}
+.scrolledIconSearch {
+	fill: var(--accent-2);
+}
 .socIconBlock {
 	width: 136px;
 	height: 32px;

@@ -1,67 +1,9 @@
 import React from "react";
 import s from "./Advantages.module.css";
 import Image from "next/image";
+import { advantagesList } from "@/components/Sections/UI/data/data";
 
 const Advantages = () => {
-	const advantagesList = [
-		{
-			id: 0,
-			img: "",
-			icon: "sprite.svg#icon-microscope",
-			title: "Сучасні технології з доведеною ефективністю",
-			text: "Кожен продукт проходить повний цикл перевірки — від лабораторних досліджень до польових випробувань",
-		},
-		{
-			id: 1,
-			img: "",
-			icon: "sprite.svg#icon-regenerative",
-			title: "Адаптація до конкретних умов господарства",
-			text: "Продукти підбираються з урахуванням культури, типу ґрунту та кліматичних особливостей регіону",
-		},
-		{
-			id: 2,
-			img: "",
-			icon: "sprite.svg#icon-drop-minus",
-			title: "Зменшення хімічного навантаження",
-			text: "Ви економите на хімічних препаратах та отримуєте вищий урожай — у кожному колосі, стручку та кілограмі зібраного зерна",
-		},
-		{
-			id: 3,
-			img: "",
-			icon: "sprite.svg#icon-subtract",
-			title: "Стійкість культур до стресових факторів",
-			text: "Посіви краще переносять приморозки, погодні коливання та інші стресові фактори. Рослини залишаються здоровими та добре розвиненим",
-		},
-		{
-			id: 4,
-			img: "/Page/About/corn.webp",
-			icon: "",
-			title: "",
-			text: "",
-		},
-		{
-			id: 5,
-			img: "",
-			icon: "sprite.svg#icon-agriculture",
-			title: "Комплексний агрономічний супровід",
-			text: "Компанія гарантує професійну підтримку — від консультації до впровадження технологій у полі",
-		},
-		{
-			id: 6,
-			img: "",
-			icon: "sprite.svg#icon-streamline",
-			title: "Оптимізація врожайного потенціалу та витрат",
-			text: "Препарати «Зерива» сприяють отриманню високих показників у полі та раціональному використанню ресурсів",
-		},
-		{
-			id: 7,
-			img: "/Page/About/sunflower.webp",
-			icon: "",
-			title: "",
-			text: "",
-		},
-	];
-
 	return (
 		<section className={s.Advantages}>
 			<div className="container">

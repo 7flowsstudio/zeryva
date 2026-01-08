@@ -1,29 +1,8 @@
 import React from "react";
 import s from "./KeyValues.module.css";
+import { keyValues } from "@/components/Sections/UI/data/data";
 
 const KeyValues = () => {
-	const keyValues = [
-		{
-			id: 0,
-			icon: "/sprite.svg#icon-key-values-1",
-			text: "Орієнтація на збалансований розвиток культур на всіх етапах росту",
-		},
-		{
-			id: 1,
-			icon: "/sprite.svg#icon-key-values-2",
-			text: "Науковий підхід і постійний розвиток через дослідження та інновації",
-		},
-		{
-			id: 2,
-			icon: "/sprite.svg#icon-key-values-3",
-			text: "Фокус на реальному ефекті в польових умовах",
-		},
-		{
-			id: 3,
-			icon: "/sprite.svg#icon-key-values-4",
-			text: "Відкритість і довіра у довгостроковому партнерстві з аграріями",
-		},
-	];
 	return (
 		<section className={s.SectionKeyValues}>
 			<div className="container">
