@@ -80,7 +80,32 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
       instructionTable: { ...instructionTable, rows: newRows },
     });
   };
+  const removeColumn = (colIndex: number) => {
+    setProduct({
+      ...product,
+      instructionTable: {
+        columns: instructionTable.columns.filter((_, i) => i !== colIndex),
+        rows: instructionTable.rows.map((row) =>
+          row.type === "normal"
+            ? {
+                ...row,
+                cells: row.cells.filter((_, i) => i !== colIndex),
+              }
+            : row
+        ),
+      },
+    });
+  };
 
+  const removeRow = (rowIndex: number) => {
+    setProduct({
+      ...product,
+      instructionTable: {
+        ...instructionTable,
+        rows: instructionTable.rows.filter((_, i) => i !== rowIndex),
+      },
+    });
+  };
   return (
     <div className={s.instrCont}>
       <button type="button" onClick={addColumn}>
@@ -112,6 +137,9 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
                     });
                   }}
                 />
+                <button type="button" onClick={() => removeColumn(i)}>
+                  ✕
+                </button>
               </th>
             ))}
           </tr>
@@ -131,6 +159,12 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
                     />
                   </td>
                 ))}
+
+                <td>
+                  <button type="button" onClick={() => removeRow(rIndex)}>
+                    ✕
+                  </button>
+                </td>
               </tr>
             ) : (
               <tr key={rIndex}>
@@ -140,6 +174,10 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
                     placeholder="Текст на всю ширину"
                     onChange={(e) => updateFullRow(rIndex, e.target.value)}
                   />
+
+                  <button type="button" onClick={() => removeRow(rIndex)}>
+                    ✕
+                  </button>
                 </td>
               </tr>
             )

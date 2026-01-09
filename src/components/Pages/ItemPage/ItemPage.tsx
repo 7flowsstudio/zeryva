@@ -11,6 +11,7 @@ import Image from "next/image";
 import Description from "./Description/Description";
 import Benefits from "./Benefits/Benefits";
 import Instruction from "./Instruction/Instruction";
+import BreadCrumbs from "@/components/Sections/UI/BreadCrumbs/BreadCrumbs";
 
 type Tab = "description" | "benefits" | "instruction";
 
@@ -51,6 +52,13 @@ const ItemPage = () => {
 
   return (
     <div className={s.cont}>
+      <BreadCrumbs
+        crumbs={[
+          { label: "Головна", href: "/" },
+          { label: "Продукти", href: "/products" },
+          { label: product.title },
+        ]}
+      />
       <h1>{product.title}</h1>
       {product.images?.[0] && (
         <Image

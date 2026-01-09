@@ -25,7 +25,7 @@ const Products = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
+      const q = query(collection(db, "products"), orderBy("createdAt", "asc"));
       const snapshot = await getDocs(q);
       const data = snapshot.docs.map((doc) => ({
         id: doc.id,
