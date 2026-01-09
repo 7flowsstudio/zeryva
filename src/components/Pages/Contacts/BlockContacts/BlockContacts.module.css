@@ -1,0 +1,76 @@
+.contactSection {
+	margin-bottom: 24px;
+}
+.contactsWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
+}
+.topBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+}
+.title {
+	font-family: var(--third-family);
+	font-weight: 800;
+	font-size: 46px;
+	line-height: 150%;
+	color: var(--accent-2);
+}
+.contactsList {
+	width: 100%;
+	max-width: 918px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.contactsItem {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+}
+.titleItem {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 156%;
+	color: var(--text);
+}
+.messegeList {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.description,
+.link,
+.addressText {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 156%;
+	color: var(--text);
+}
+.messageLink {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+.iconMessage {
+	width: 21px;
+	height: 21px;
+	fill: var(--accent-2);
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1280px) {
+	.contactSection {
+		margin-bottom: 32px;
+	}
+}

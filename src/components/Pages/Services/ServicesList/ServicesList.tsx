@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const ServicesList = () => {
 	return (
-		<section className={s.servicesWrapper}>
+		<section className={s.servicesSection}>
 			<div className="container">
-				<div className={s.servicesBlock}>
+				<div className={s.servicesWrapper}>
 					<h2 className={s.title}>Що входить до послуг «Зерива:</h2>
 					<div className={s.servicesBlock}>
 						<ul className={s.servicesList}>

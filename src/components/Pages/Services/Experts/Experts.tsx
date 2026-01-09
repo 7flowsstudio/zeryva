@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Experts = () => {
 	return (
-		<section className={s.expertsBlock}>
+		<section className={s.expertsSection}>
 			<div className="container">
 				<div className={s.expertWrapper}>
 					<div className={s.imageWrapper}>

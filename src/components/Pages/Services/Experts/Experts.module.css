@@ -1,4 +1,4 @@
-.expertsBlock {
+.expertsSection {
 	margin-bottom: 47px;
 }
 .expertWrapper {
@@ -47,7 +47,7 @@
 	}
 }
 @media screen and (min-width: 1280px) {
-	.expertsBlock {
+	.expertsSection {
 		margin-bottom: 67px;
 	}
 	.expertWrapper {

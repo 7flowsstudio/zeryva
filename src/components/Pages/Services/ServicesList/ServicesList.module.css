@@ -1,8 +1,8 @@
-.servicesWrapper {
+.servicesSection {
 	margin-bottom: 48px;
 }
 
-.servicesBlock {
+.servicesWrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -120,7 +120,7 @@
 	}
 }
 @media screen and (min-width: 1280px) {
-	.servicesWrapper {
+	.servicesSection {
 		margin-bottom: 80px;
 	}
 	.title {
