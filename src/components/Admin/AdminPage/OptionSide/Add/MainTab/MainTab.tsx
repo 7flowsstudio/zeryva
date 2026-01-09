@@ -177,6 +177,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
           })
         }
       />
+      <h4>Обрати варіанти для фільтрації на сторінці з продуктами</h4>
       <select
         value={product.formType}
         onChange={(e) =>

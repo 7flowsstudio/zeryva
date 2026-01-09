@@ -51,7 +51,6 @@ const Products = () => {
 
   return (
     <div>
-      {/* Тип продукту */}
       <div style={{ display: "flex", gap: 12, marginBottom: 16 }}>
         {productTypes.map((type) => (
           <button
@@ -73,7 +72,6 @@ const Products = () => {
         ))}
       </div>
 
-      {/* Форма продукту */}
       <div style={{ display: "flex", gap: 16, marginBottom: 24 }}>
         {["Сухі", "Рідкі"].map((form) => (
           <label
@@ -98,7 +96,6 @@ const Products = () => {
         ))}
       </div>
 
-      {/* Список продуктів */}
       <div style={{ display: "grid", gap: 24 }}>
         {filteredProducts.map((product) => (
           <Card key={product.id} product={product} />
