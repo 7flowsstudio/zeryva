@@ -177,6 +177,41 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
           })
         }
       />
+      <select
+        value={product.formType}
+        onChange={(e) =>
+          setProduct({
+            ...product,
+            formType: e.target.value as "Сухі" | "Рідкі",
+          })
+        }
+      >
+        <option value="Сухі">Сухі</option>
+        <option value="Рідкі">Рідкі</option>
+      </select>
+
+      <select
+        value={product.productType}
+        onChange={(e) =>
+          setProduct({
+            ...product,
+            productType: e.target.value as
+              | "Інокулянти"
+              | "Контроль патогенів"
+              | "Деструктори"
+              | "Стимулятори росту"
+              | "Мікро-монодобрива"
+              | "Прилипачі (ПАР)",
+          })
+        }
+      >
+        <option value="Інокулянти">Інокулянти</option>
+        <option value="Контроль патогенів">Контроль патогенів</option>
+        <option value="Деструктори">Деструктори</option>
+        <option value="Стимулятори росту">Стимулятори росту</option>
+        <option value="Мікро-монодобрива">Мікро-монодобрива</option>
+        <option value="Прилипачі (ПАР)">Прилипачі (ПАР)</option>
+      </select>
     </div>
   );
 };

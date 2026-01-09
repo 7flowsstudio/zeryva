@@ -2,12 +2,14 @@
   padding-bottom: 48px;
 }
 .title {
+  text-align: start;
   font-family: var(--third-family);
   color: var(--accent-2);
   padding-bottom: 32px;
   font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
 }
 .text {
+  text-align: start;
   color: var(--accent-2);
   font-family: var(--font-family);
   font-size: 16px;

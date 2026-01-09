@@ -26,7 +26,14 @@ const Social = () => {
           </Link>
         ))}
       </div>
-      <button className={s.btnSoc}>Завантажити каталог</button>
+      {/* <button className={s.btnSoc}>Завантажити каталог</button> */}
+      <Link
+        href="https://drive.google.com/file/d/1PFw6ed9tHJiNI61ebCjlSbfmqubnkBa0/view"
+        className={s.btnSoc}
+        target="_blank"
+      >
+        Завантажити каталог
+      </Link>
     </div>
   );
 };
