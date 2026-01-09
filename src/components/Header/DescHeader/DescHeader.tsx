@@ -12,7 +12,10 @@ import {
 const DescHeader = () => {
 	const pathname = usePathname();
 	const isAther =
-		pathname.startsWith("/about") || pathname.startsWith("/services");
+		pathname.startsWith("/about") ||
+		pathname.startsWith("/services") ||
+		pathname.startsWith("/products") ||
+		pathname.startsWith("/contacts");
 	return (
 		<ul className={s.DescHeaderList}>
 			<li className={s.topHead}>
