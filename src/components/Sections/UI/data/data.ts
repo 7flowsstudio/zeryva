@@ -11,9 +11,9 @@ export const atherList = [
 
 export const navList = [
 	{ id: 0, src: "/about", text: "Про нас" },
-	{ id: 1, src: "/", text: "Продукти" },
-	{ id: 2, src: "/", text: "Послуги" },
-	{ id: 3, src: "/", text: "Контакти" },
+	{ id: 1, src: "/products", text: "Продукти" },
+	{ id: 2, src: "/services", text: "Послуги" },
+	{ id: 3, src: "/contacts", text: "Контакти" },
 ];
 
 export const advantagesList = [
@@ -169,5 +169,52 @@ export const sertificationAll = [
 		id: 11,
 		link: "/Page/About/Кальцій_compressed 1.webp",
 		text: "Сертифікат «Zeryva CaO»",
+	},
+	{
+		id: 12,
+		link: "/Page/About/Молібден+Кобальт_compressed 1.webp",
+		text: "Сертифікат «Zeryva Mo + CO»",
+	},
+	{
+		id: 13,
+		link: "/Page/About/Марганець_compressed 1.webp",
+		text: "Сертифікат «Zeryva Mn»",
+	},
+	{
+		id: 14,
+		link: "/Page/About/Зернові_compressed 1.webp",
+		text: "Сертифікат «Zeryva зернові»",
+	},
+	{
+		id: 15,
+		link: "/Page/About/Зернобобові_compressed 1.webp",
+		text: "Сертифікат «Zeryva зернобобові»",
+	},
+	{
+		id: 16,
+		link: "/Page/About/ЛіпроТенс_ПАР_compressed 1.webp",
+		text: "Сертифікат «Ліпротенс»",
+	},
+];
+export const servicesList = [
+	{
+		id: 0,
+		src: "/sprite.svg#icon-analize",
+		text: "Детальний аналіз виробничих процесів та агрономічних умов",
+	},
+	{
+		id: 1,
+		src: "/sprite.svg#icon-laboratory",
+		text: "Індивідуальні рекомендації та експертні консультації щодо застосування біопрепаратів",
+	},
+	{
+		id: 2,
+		src: "/sprite.svg#icon-farm",
+		text: "Виїзд спеціалістів у господарства для оцінки умов безпосередньо в полі",
+	},
+	{
+		id: 3,
+		src: "/sprite.svg#icon-delivery",
+		text: "Оперативна доставка біопрепаратів у погоджені терміни",
 	},
 ];

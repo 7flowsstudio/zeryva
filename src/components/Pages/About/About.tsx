@@ -12,7 +12,6 @@ import ImageWrapper from "@/components/Sections/UI/ImageWrapper/ImageWrapper";
 
 const About = () => {
 	const [image, setImage] = useState("");
-	console.log("IMage", image);
 	const isModalOpen = Boolean(image);
 
 	return (
