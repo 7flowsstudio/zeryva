@@ -4,6 +4,7 @@ import { Product, ProductWithId } from "../../../../../utils/types";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../../../../../firebaseConfig";
 import Card from "./Card/Card";
+import s from "./Products.module.css";
 
 const Products = () => {
   const [products, setProducts] = useState<ProductWithId[]>([]);
@@ -24,7 +25,7 @@ const Products = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
+      const q = query(collection(db, "products"), orderBy("createdAt", "asc"));
       const snapshot = await getDocs(q);
       const data = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -96,7 +97,7 @@ const Products = () => {
         ))}
       </div>
 
-      <div style={{ display: "grid", gap: 24 }}>
+      <div className={s.prodList}>
         {filteredProducts.map((product) => (
           <Card key={product.id} product={product} />
         ))}

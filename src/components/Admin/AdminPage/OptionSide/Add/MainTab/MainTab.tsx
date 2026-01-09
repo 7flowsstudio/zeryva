@@ -177,6 +177,16 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
           })
         }
       />
+      <label>
+        <input
+          type="checkbox"
+          checked={product.isBestseller}
+          onChange={(e) =>
+            setProduct({ ...product, isBestseller: e.target.checked })
+          }
+        />
+        Бестселлер
+      </label>
       <h4>Обрати варіанти для фільтрації на сторінці з продуктами</h4>
       <select
         value={product.formType}

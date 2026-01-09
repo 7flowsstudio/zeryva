@@ -22,6 +22,7 @@ const Add = () => {
     images: [],
     certificates: [],
     youtubeUrl: "",
+    isBestseller: false,
     properties: { consistency: "", volume: "", shelfLife: "", storageTemp: "" },
     description: {
       composition: "",
@@ -61,6 +62,7 @@ const Add = () => {
         images: [],
         certificates: [],
         youtubeUrl: "",
+        isBestseller: false,
         properties: {
           consistency: "",
           volume: "",
