@@ -28,6 +28,7 @@
   /* max-width: 347px; */
 }
 .btnCall {
+  color: var(--accent-2);
   font-family: var(--font-family);
   padding: 8px;
   border-radius: 30px;

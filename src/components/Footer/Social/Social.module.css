@@ -24,6 +24,7 @@
   border: 2px solid #f4a600;
   box-shadow: 1px 2px 4px 0px #f4a60078;
   border-radius: 30px;
-  height: 37px;
-  width: 158px;
+  min-height: 37px;
+  min-width: 158px;
+  padding: 8px 9px;
 }

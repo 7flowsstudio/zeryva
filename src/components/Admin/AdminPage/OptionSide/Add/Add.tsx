@@ -34,6 +34,8 @@ const Add = () => {
     },
     benefits: [],
     instructionTable: { columns: [], rows: [] },
+    formType: "Сухі",
+    productType: "Інокулянти",
   });
 
   const saveProduct = async () => {
@@ -76,6 +78,8 @@ const Add = () => {
         },
         benefits: [],
         instructionTable: { columns: [], rows: [] },
+        formType: "Сухі",
+        productType: "Інокулянти",
       });
     } catch (e) {
       console.error(e);

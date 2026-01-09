@@ -43,6 +43,14 @@ export interface Product {
   description: Description;
   benefits: string[];
   instructionTable: InstructionTable;
+  formType: "Сухі" | "Рідкі";
+  productType:
+    | "Інокулянти"
+    | "Контроль патогенів"
+    | "Деструктори"
+    | "Стимулятори росту"
+    | "Мікро-монодобрива"
+    | "Прилипачі (ПАР)";
 }
 export type ProductWithId = Product & {
   id: string;

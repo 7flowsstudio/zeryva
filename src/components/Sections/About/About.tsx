@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import s from "./About.module.css";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -43,7 +44,10 @@ const About = () => {
           отримують стабільно високі результати та покращують ефективність
           вирощування навіть у складних погодних умовах.
         </p>
-        <button className={s.btnAbout}>Наша продукція</button>
+        <Link href="/products" className={s.btnAbout}>
+          Наша продукція
+        </Link>
+        {/* <button className={s.btnAbout}>Наша продукція</button> */}
       </div>
       {/* <button className={s.btnAbout}>Наша продукція</button> */}
     </div>
