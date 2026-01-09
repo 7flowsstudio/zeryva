@@ -11,7 +11,8 @@ import {
 
 const DescHeader = () => {
 	const pathname = usePathname();
-	const isAbout = pathname.startsWith("/about");
+	const isAther =
+		pathname.startsWith("/about") || pathname.startsWith("/services");
 	return (
 		<ul className={s.DescHeaderList}>
 			<li className={s.topHead}>
@@ -26,7 +27,7 @@ const DescHeader = () => {
 						/>
 					</Link>
 
-					<h4 className={`${s.logoText} ${isAbout ? s.colorGreen : ""}`}>
+					<h4 className={`${s.logoText} ${isAther ? s.colorGreen : ""}`}>
 						Природа, що працює на урожай
 					</h4>
 				</div>
@@ -45,7 +46,7 @@ const DescHeader = () => {
 							</Link>
 						))}
 					</li>
-					<li className={`${s.phone} ${isAbout ? s.colorGreen : ""}`}>
+					<li className={`${s.phone} ${isAther ? s.colorGreen : ""}`}>
 						<Link href="tel:+38 099 188 56 37">+38 099 188 56 37</Link>
 					</li>
 					<li className={s.atherSoc}>
@@ -56,7 +57,7 @@ const DescHeader = () => {
 								className={s.iconBlock}
 								target="_blank"
 							>
-								<svg className={`${s.icon_a} ${isAbout ? s.icon_green : ""}`}>
+								<svg className={`${s.icon_a} ${isAther ? s.icon_green : ""}`}>
 									<use href={item.src}></use>
 								</svg>
 							</Link>
@@ -71,7 +72,7 @@ const DescHeader = () => {
 						<Link
 							key={item.id}
 							href={item.src}
-							className={`${s.link} ${isAbout ? s.colorGreen : ""}`}
+							className={`${s.link} ${isAther ? s.colorGreen : ""}`}
 						>
 							{item.text}
 						</Link>
