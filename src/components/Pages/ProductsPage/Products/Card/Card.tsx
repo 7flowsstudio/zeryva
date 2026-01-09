@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProductWithId } from "../../../../../../utils/types";
+import s from "./Card.module.css";
 
 interface ProductCardProps {
   product: ProductWithId;
@@ -10,13 +11,7 @@ interface ProductCardProps {
 
 const Card: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div
-      style={{
-        border: "1px solid #ddd",
-        padding: 16,
-        borderRadius: 8,
-      }}
-    >
+    <div className={s.card}>
       {product.images?.[0] && (
         <Image
           src={product.images[0]}
@@ -26,10 +21,14 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
         />
       )}
 
-      <h3>{product.title}</h3>
-      <p>{product.price}</p>
-
-      <Link href={`/products/${product.id}`}>Дізнатись більше →</Link>
+      <h3 className={s.title}>{product.title}</h3>
+      <p className={s.description}>{product.descriptionText}</p>
+      <p className={s.price}>{product.price}</p>
+      <div className={s.linkWrapp}>
+        <Link href={`/products/${product.id}`} className={s.link}>
+          Дізнатись більше
+        </Link>
+      </div>
     </div>
   );
 };

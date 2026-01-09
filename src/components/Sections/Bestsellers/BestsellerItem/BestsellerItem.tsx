@@ -1,25 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
 import s from "./BestsellerItem.module.css";
+import { ProductWithId } from "../../../../../utils/types";
 
-interface Product {
-  id: string;
-  title: string;
-  description: string;
-  price: string | number;
-  image: string;
+// interface Product {
+//   id: string;
+//   title: string;
+//   description: string;
+//   price: string | number;
+//   image: string;
+// }
+
+// interface ItemProps {
+//   product: Product;
+// }
+interface ProductCardProps {
+  product: ProductWithId;
 }
 
-interface ItemProps {
-  product: Product;
-}
-
-export const BestsellerItem: React.FC<ItemProps> = ({ product }) => {
+export const BestsellerItem: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className={s.card}>
-      <Image src={product.image} alt={product.title} width={180} height={165} />
+      {product.images?.[0] && (
+        <Image
+          src={product.images[0]}
+          alt={product.title}
+          width={180}
+          height={165}
+        />
+      )}
+
       <h3 className={s.title}>{product.title}</h3>
-      <p className={s.description}>{product.description}</p>
+      <p className={s.description}>{product.descriptionText}</p>
       <p className={s.price}>{product.price}</p>
       <div className={s.linkWrapp}>
         <Link href={`/products/${product.id}`} className={s.link}>
