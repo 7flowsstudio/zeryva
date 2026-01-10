@@ -39,6 +39,11 @@ const DescriptionTab: React.FC<DescriptionTabProps> = ({
         onChange={(e) => handleChange("characteristics", e.target.value)}
       />
       <textarea
+        placeholder="Особливості"
+        value={product.description.features}
+        onChange={(e) => handleChange("features", e.target.value)}
+      />
+      <textarea
         placeholder="Форма випуску"
         value={product.description.form}
         onChange={(e) => handleChange("form", e.target.value)}

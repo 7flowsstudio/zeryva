@@ -17,6 +17,7 @@ const Add = () => {
 
   const [product, setProduct] = useState<Product>({
     title: "",
+    shortDescription: "",
     descriptionText: "",
     price: "",
     images: [],
@@ -28,6 +29,7 @@ const Add = () => {
       composition: "",
       purpose: "",
       characteristics: "",
+      features: "",
       form: "",
       packaging: "",
       shelfLife: "",
@@ -36,7 +38,7 @@ const Add = () => {
     benefits: [],
     instructionTable: { columns: [], rows: [] },
     formType: "Сухі",
-    productType: "Інокулянти",
+    productType: [],
   });
 
   const saveProduct = async () => {
@@ -57,6 +59,7 @@ const Add = () => {
       // reset
       setProduct({
         title: "",
+        shortDescription: "",
         descriptionText: "",
         price: "",
         images: [],
@@ -73,6 +76,7 @@ const Add = () => {
           composition: "",
           purpose: "",
           characteristics: "",
+          features: "",
           form: "",
           packaging: "",
           shelfLife: "",
@@ -81,7 +85,7 @@ const Add = () => {
         benefits: [],
         instructionTable: { columns: [], rows: [] },
         formType: "Сухі",
-        productType: "Інокулянти",
+        productType: [],
       });
     } catch (e) {
       console.error(e);

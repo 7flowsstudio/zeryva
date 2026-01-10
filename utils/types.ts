@@ -26,6 +26,7 @@ export interface Description {
   composition: string;
   purpose: string;
   characteristics: string;
+  features: string;
   form: string;
   packaging: string;
   shelfLife: string;
@@ -34,6 +35,7 @@ export interface Description {
 
 export interface Product {
   title: string;
+  shortDescription: string;
   descriptionText: string;
   price: string;
   images: string[];
@@ -45,13 +47,14 @@ export interface Product {
   benefits: string[];
   instructionTable: InstructionTable;
   formType: "Сухі" | "Рідкі";
-  productType:
+  productType: (
     | "Інокулянти"
     | "Контроль патогенів"
     | "Деструктори"
     | "Стимулятори росту"
     | "Мікро-монодобрива"
-    | "Прилипачі (ПАР)";
+    | "Прилипачі (ПАР)"
+  )[];
 }
 export type ProductWithId = Product & {
   id: string;

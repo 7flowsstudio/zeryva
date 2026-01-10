@@ -18,6 +18,9 @@ const Description: React.FC<DescriptionProps> = ({ product }) => {
         <strong>Характеристика:</strong> {product.description.characteristics}
       </p>
       <p>
+        <strong>Особливості:</strong> {product.description.features}
+      </p>
+      <p>
         <strong>Форма випуску:</strong> {product.description.form}
       </p>
       <p>

@@ -9,6 +9,15 @@ interface MainTabProps {
   setProduct: React.Dispatch<React.SetStateAction<Product>>;
 }
 
+const PRODUCT_TYPES: Product["productType"] = [
+  "Інокулянти",
+  "Контроль патогенів",
+  "Деструктори",
+  "Стимулятори росту",
+  "Мікро-монодобрива",
+  "Прилипачі (ПАР)",
+];
+
 const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
   // Додати нове фото
   const uploadImage = async (files: File[]) => {
@@ -58,6 +67,14 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         placeholder="Назва продукту"
         value={product.title}
         onChange={(e) => setProduct({ ...product, title: e.target.value })}
+      />
+
+      <textarea
+        placeholder="Короткий опис продукту"
+        value={product.shortDescription}
+        onChange={(e) =>
+          setProduct({ ...product, shortDescription: e.target.value })
+        }
       />
 
       <textarea
@@ -201,28 +218,27 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         <option value="Рідкі">Рідкі</option>
       </select>
 
-      <select
-        value={product.productType}
-        onChange={(e) =>
-          setProduct({
-            ...product,
-            productType: e.target.value as
-              | "Інокулянти"
-              | "Контроль патогенів"
-              | "Деструктори"
-              | "Стимулятори росту"
-              | "Мікро-монодобрива"
-              | "Прилипачі (ПАР)",
-          })
-        }
-      >
-        <option value="Інокулянти">Інокулянти</option>
-        <option value="Контроль патогенів">Контроль патогенів</option>
-        <option value="Деструктори">Деструктори</option>
-        <option value="Стимулятори росту">Стимулятори росту</option>
-        <option value="Мікро-монодобрива">Мікро-монодобрива</option>
-        <option value="Прилипачі (ПАР)">Прилипачі (ПАР)</option>
-      </select>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {PRODUCT_TYPES.map((type) => (
+          <label key={type} style={{ display: "flex", gap: 6 }}>
+            <input
+              type="checkbox"
+              checked={product.productType.includes(type)}
+              onChange={(e) => {
+                const next = e.target.checked
+                  ? [...product.productType, type]
+                  : product.productType.filter((t) => t !== type);
+
+                setProduct({
+                  ...product,
+                  productType: next,
+                });
+              }}
+            />
+            {type}
+          </label>
+        ))}
+      </div>
     </div>
   );
 };
