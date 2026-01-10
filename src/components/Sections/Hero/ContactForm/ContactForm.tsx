@@ -125,7 +125,9 @@ const ContactForm = ({ setOpenModal }: Props) => {
 						<div className={s.btnBlock}>
 							<button
 								type="submit"
-								className={s.btnSend}
+								className={`${s.btnSend} ${
+									isValid && dirty ? s.btnSendActive : ""
+								}`}
 								disabled={!(isValid && dirty)}
 							>
 								{isLoading ? "Відсилання..." : "Відправити"}
