@@ -19,10 +19,9 @@
 	justify-content: center;
 	animation: slideIn 0.3s ease-out;
 	position: relative;
-
-	max-width: 80vw;
+	width: 90vw;
+	max-width: 90vw;
 	max-height: 100vh;
-	width: 80vw;
 }
 .scrollContainer {
 	width: 100%;

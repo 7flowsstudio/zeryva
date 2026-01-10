@@ -37,8 +37,8 @@
 }
 .btnFullScreen {
 	position: absolute;
-	top: 24px;
-	right: 24px;
+	top: 16px;
+	right: 16px;
 	width: 32px;
 	height: 32px;
 	display: flex;
@@ -80,6 +80,11 @@
 @media screen and (min-width: 768px) {
 	.sectionMapCall {
 		margin-bottom: 80px;
+	}
+	.btnFullScreen {
+		position: absolute;
+		top: 24px;
+		right: 24px;
 	}
 	.roadBtn {
 		padding: 12px 12px;

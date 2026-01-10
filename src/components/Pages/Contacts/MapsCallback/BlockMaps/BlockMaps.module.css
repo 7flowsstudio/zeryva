@@ -18,8 +18,8 @@
 }
 .btnSmallScreen {
 	position: absolute;
-	top: 24px;
-	right: 24px;
+	top: 16px;
+	right: 16px;
 	width: 32px;
 	height: 32px;
 	display: flex;
@@ -39,5 +39,10 @@
 		border-radius: 50px;
 		width: 100%;
 		aspect-ratio: 1198 / 707;
+	}
+	.btnSmallScreen {
+		position: absolute;
+		top: 24px;
+		right: 24px;
 	}
 }
