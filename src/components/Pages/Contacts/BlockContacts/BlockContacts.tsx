@@ -17,7 +17,7 @@ const BlockContacts = () => {
 						<li className={s.contactsItem}>
 							<h4 className={s.titleItem}>Телефон:</h4>
 							<ul className={s.messegeList}>
-								<li className={s.phone}>
+								<li className={s.messegeItem}>
 									<Link href="tel:+380991885637" className={s.link}>
 										+38 099 188 56 37
 									</Link>

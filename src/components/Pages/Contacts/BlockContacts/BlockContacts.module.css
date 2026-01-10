@@ -16,22 +16,26 @@
 .title {
 	font-family: var(--third-family);
 	font-weight: 800;
-	font-size: 46px;
+	font-size: clamp(32px, calc((32 / 375) * 100vw), 36px);
 	line-height: 150%;
 	color: var(--accent-2);
 }
+
 .contactsList {
 	width: 100%;
 	max-width: 918px;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 24px;
 }
 .contactsItem {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 8px;
+	flex-shrink: 0;
 }
 .titleItem {
 	font-family: var(--font-family);
@@ -41,9 +45,14 @@
 	color: var(--text);
 }
 .messegeList {
+	width: 160px;
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	gap: 8px;
+}
+.messegeItem {
+	flex-shrink: 0;
 }
 .description,
 .link,
@@ -67,10 +76,26 @@
 	height: 21px;
 	fill: var(--accent-2);
 }
+@media screen and (min-width: 420px) {
+	.messegeList {
+		width: 100%;
+	}
+}
 @media screen and (min-width: 768px) {
+	.title {
+		font-size: clamp(36px, calc((36 / 768) * 100vw), 40px);
+	}
 }
 @media screen and (min-width: 1280px) {
 	.contactSection {
 		margin-bottom: 32px;
+	}
+	.title {
+		font-size: clamp(40px, calc((40 / 1280) * 100vw), 46px);
+	}
+}
+@media screen and (min-width: 1280px) {
+	.title {
+		font-size: 46px;
 	}
 }
