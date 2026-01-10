@@ -168,4 +168,10 @@
 		background: var(--white);
 		color: var(--brand);
 	}
+	@media screen and (min-width: 1280px) {
+		.btnSendActive:hover {
+			box-shadow: 1px 2px 4px 0 rgba(122, 170, 141, 0.48);
+			background: var(--color-add-2);
+		}
+	}
 }
