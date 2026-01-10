@@ -32,7 +32,21 @@ const Instruction: React.FC<InstructionProps> = ({ product }) => {
             } else if (row.type === "full") {
               return (
                 <tr key={i}>
-                  <td colSpan={instructionTable.columns.length}>{row.value}</td>
+                  <td colSpan={instructionTable.columns.length}>
+                    {row.value.split("\n").map((line, index) => {
+                      const [label, ...rest] = line.split(":");
+                      return rest.length > 0 ? (
+                        <div key={index} style={{ marginBottom: 8 }}>
+                          <strong>{label}:</strong>
+                          <div style={{ marginTop: 2 }}>
+                            {rest.join(":").trim()}
+                          </div>
+                        </div>
+                      ) : (
+                        <div key={index}>{line}</div>
+                      );
+                    })}
+                  </td>
                 </tr>
               );
             }
