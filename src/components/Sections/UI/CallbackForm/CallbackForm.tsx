@@ -1,6 +1,6 @@
 "use client";
 import React, { SetStateAction, useState } from "react";
-import s from "./ContactForm.module.css";
+import s from "./CallbackForm.module.css";
 import {
 	ErrorMessage,
 	Field,
@@ -10,7 +10,7 @@ import {
 	FormikHelpers,
 } from "formik";
 import SuccessModdal from "./SuccessModdal/SuccessModdal";
-import { ValidationSchemaCallback } from "../../../../../utils/validationSchema";
+import { ValidationSchemaCallbackWithMessage } from "../../../../../utils/validationSchema";
 
 type Props = {
 	setOpenModal?: React.Dispatch<SetStateAction<boolean>>;
@@ -19,15 +19,17 @@ type Props = {
 type InitialValuesType = {
 	name: string;
 	phone: string;
+	message: string;
 };
 
-const ContactForm = ({ setOpenModal }: Props) => {
+const CallbackForm = ({ setOpenModal }: Props) => {
 	const [successMessage, setSuccessMessage] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 
 	const initialValues = {
 		name: "",
 		phone: "",
+		message: "",
 	};
 
 	const hundlerSubmit = async (
@@ -37,7 +39,7 @@ const ContactForm = ({ setOpenModal }: Props) => {
 		const data = {
 			name: values.name,
 			phone: `+38${values.phone}`,
-			message: "Заявка з контактної форми (без повідомлення)",
+			message: values.message,
 		};
 
 		try {
@@ -62,15 +64,15 @@ const ContactForm = ({ setOpenModal }: Props) => {
 	return (
 		<div className={s.formWrapper}>
 			<div className={s.infoBlock}>
-				<h3 className={s.title}>Потрібна допомога?</h3>
+				<h3 className={s.title}>Зворотній зв’язок</h3>
 				<p className={s.text}>
-					Вкажіть контактні дані, і ми зателефонуємо для консультації
+					Заповніть форму, і наші спеціалісти зв’яжуться з вами найближчим часом
 				</p>
 			</div>
 
 			<Formik
 				initialValues={initialValues}
-				validationSchema={ValidationSchemaCallback}
+				validationSchema={ValidationSchemaCallbackWithMessage}
 				onSubmit={hundlerSubmit}
 			>
 				{({ isValid, dirty }) => (
@@ -120,20 +122,42 @@ const ContactForm = ({ setOpenModal }: Props) => {
 								</Field>
 								<ErrorMessage name="phone" component="p" className={s.error} />
 							</label>
+
+							<label className={s.labelTexarea}>
+								<span className={s.labelSpan}>Коментар</span>
+								{/* <Field
+									type="text"
+									name="phone"
+									className={s.input}
+									placeholder="+380 (00) 000 00 00 "
+								/> */}
+								<Field name="message">
+									{({ field, meta }: FieldProps) => (
+										<textarea
+											{...field}
+											placeholder="Введіть свій коментар"
+											className={`${s.textarea} ${
+												meta.touched && meta.error ? s.inputError : ""
+											}`}
+											rows={4}
+										/>
+									)}
+								</Field>
+								<ErrorMessage
+									name="message"
+									component="p"
+									className={s.error}
+								/>
+							</label>
 						</div>
 
-						<div className={s.btnBlock}>
-							<button
-								type="submit"
-								className={s.btnSend}
-								disabled={!(isValid && dirty)}
-							>
-								{isLoading ? "Відсилання..." : "Відправити"}
-							</button>
-							<p className={s.text}>
-								Із радістю допоможемо розібратися з усіма питаннями!
-							</p>
-						</div>
+						<button
+							type="submit"
+							className={s.btnSend}
+							disabled={!(isValid && dirty)}
+						>
+							{isLoading ? "Відсилання..." : "Надіслати запит"}
+						</button>
 					</Form>
 				)}
 			</Formik>
@@ -148,4 +172,4 @@ const ContactForm = ({ setOpenModal }: Props) => {
 	);
 };
 
-export default ContactForm;
+export default CallbackForm;

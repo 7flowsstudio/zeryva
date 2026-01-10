@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import s from "./ModalMobMenu.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import {
+	atherList,
+	navList,
+	socListMob,
+} from "@/components/Sections/UI/data/data";
 
 type ModalMobMenuProps = {
 	onClose: () => void;
@@ -20,24 +25,6 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 		}
 	};
 
-	const menuMob = [
-		{ id: 0, name: "Про нас", link: "/" },
-		{ id: 1, name: "Продукти", link: "/" },
-		{ id: 2, name: "Послуги", link: "/" },
-		{ id: 3, name: "Контакти", link: "/" },
-	];
-
-	const messengerList = [
-		{ id: 0, src: "/sprite.svg#icon-watsapp", link: "/" },
-		{ id: 1, src: "/sprite.svg#icon-telegram", link: "/" },
-	];
-
-	const socLink = [
-		{ id: 0, src: "/sprite.svg#icon-instagram", link: "/" },
-		{ id: 1, src: "/sprite.svg#icon-tiktok-mob", link: "/" },
-		{ id: 2, src: "/sprite.svg#icon-facebook", link: "/" },
-		{ id: 3, src: "/sprite.svg#icon-youtube-mob", link: "/" },
-	];
 	return (
 		<div
 			className={`${s.mobMenuWrapper} ${isClosing ? s.closing : s.opening}`}
@@ -62,9 +49,9 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 			</div>
 			<div className={s.line}></div>
 			<ul className={s.menuList}>
-				{menuMob.map((item) => (
-					<li key={item.id} className={s.menuItem}>
-						<Link href={item.link}>{item.name}</Link>
+				{navList.map((item) => (
+					<li key={item.id} className={s.menuItem} onClick={handleClose}>
+						<Link href={item.src}>{item.text}</Link>
 					</li>
 				))}
 			</ul>
@@ -73,13 +60,21 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 				<div className={s.messengers}>
 					<h5 className={s.name}>Телефон:</h5>
 					<div className={s.listWrapper}>
-						<Link href="tel:+38 099 188 56 37" className={s.link}>
+						<Link
+							href="tel:+38 099 188 56 37"
+							className={s.link}
+							onClick={handleClose}
+						>
 							+38 099 188 56 37
 						</Link>
 						<ul className={s.messengersList}>
-							{messengerList.map((item) => (
-								<li key={item.id} className={s.messengersItem}>
-									<Link href={item.link} target="_blank">
+							{atherList.map((item) => (
+								<li
+									key={item.id}
+									className={s.messengersItem}
+									onClick={handleClose}
+								>
+									<Link href={item.href} target="_blank">
 										<svg className={s.iconMessengers}>
 											<use href={item.src}></use>
 										</svg>
@@ -93,8 +88,8 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 					<div className={s.social}>
 						<h5 className={s.name}>Соціальні мережі</h5>
 						<ul className={s.socList}>
-							{socLink.map((item) => (
-								<li key={item.id} className={s.socItem}>
+							{socListMob.map((item) => (
+								<li key={item.id} className={s.socItem} onClick={handleClose}>
 									<Link href={item.link} target="_blank">
 										<svg className={s.iconSoc}>
 											<use href={item.src}></use>
@@ -104,9 +99,14 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 							))}
 						</ul>
 					</div>
-					<button type="button" className={s.btnUpload}>
+					<Link
+						href="https://drive.google.com/file/d/1PFw6ed9tHJiNI61ebCjlSbfmqubnkBa0/view"
+						className={s.btnUpload}
+						target="_blank"
+						onClick={handleClose}
+					>
 						Завантажити каталог
-					</button>
+					</Link>
 				</div>
 			</div>
 		</div>

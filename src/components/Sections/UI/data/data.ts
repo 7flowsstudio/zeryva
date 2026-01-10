@@ -4,6 +4,13 @@ export const socialList = [
 	{ id: 2, src: "/sprite.svg#icon-facebook", href: "/" },
 	{ id: 3, src: "/sprite.svg#icon-youtube", href: "/" },
 ];
+
+export const socListMob = [
+	{ id: 0, src: "/sprite.svg#icon-instagram", link: "/" },
+	{ id: 1, src: "/sprite.svg#icon-tiktok-mob", link: "/" },
+	{ id: 2, src: "/sprite.svg#icon-facebook", link: "/" },
+	{ id: 3, src: "/sprite.svg#icon-youtube-mob", link: "/" },
+];
 export const atherList = [
 	{ id: 0, src: "/sprite.svg#icon-watsapp", href: "/" },
 	{ id: 1, src: "/sprite.svg#icon-telegram", href: "/" },
@@ -137,7 +144,7 @@ export const sertificationAll = [
 	},
 	{
 		id: 5,
-		link: "/Page/About/Ризогумат_compressed 2.webp",
+		link: "/Page/About/РизоФос_compressed 1.webp",
 		text: "Сертифікат «Ризофос»",
 	},
 	{
