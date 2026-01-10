@@ -10,7 +10,7 @@ const Products = () => {
   const [products, setProducts] = useState<ProductWithId[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const productTypes = [
+  const productType = [
     "Всі",
     "Інокулянти",
     "Контроль патогенів",
@@ -20,7 +20,10 @@ const Products = () => {
     "Прилипачі (ПАР)",
   ] as const;
 
-  const [selectedProductType, setSelectedProductType] = useState<string>("Всі");
+  type ProductType = Exclude<(typeof productType)[number], "Всі">;
+
+  const [selectedProductType, setSelectedProductType] =
+    useState<(typeof productType)[number]>("Всі");
   const [selectedFormTypes, setSelectedFormTypes] = useState<string[]>([]); // масив чекбоксів
 
   useEffect(() => {
@@ -44,7 +47,8 @@ const Products = () => {
   // фільтрація
   const filteredProducts = products.filter((p) => {
     const matchType =
-      selectedProductType === "Всі" || p.productType === selectedProductType;
+      selectedProductType === "Всі" ||
+      p.productType.includes(selectedProductType as ProductType);
     const matchForm =
       selectedFormTypes.length === 0 || selectedFormTypes.includes(p.formType);
     return matchType && matchForm;
@@ -53,7 +57,7 @@ const Products = () => {
   return (
     <div>
       <div style={{ display: "flex", gap: 12, marginBottom: 16 }}>
-        {productTypes.map((type) => (
+        {productType.map((type) => (
           <button
             key={type}
             style={{

@@ -5,7 +5,7 @@ import { BestsellerItem } from "./BestsellerItem/BestsellerItem";
 import { useSmoothScroll } from "../../../../utils/useSmoothScroll";
 import Image from "next/image";
 import { useCustomScrollbar } from "../../../../utils/useCustomScrollbar";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../../firebaseConfig";
 import { ProductWithId } from "../../../../utils/types";
 
@@ -20,6 +20,7 @@ const Bestsellers = () => {
     const fetchBestsellers = async () => {
       const q = query(
         collection(db, "products"),
+        orderBy("createdAt", "asc"),
         where("isBestseller", "==", true)
       );
 

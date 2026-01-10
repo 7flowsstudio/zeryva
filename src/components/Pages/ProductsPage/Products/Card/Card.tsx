@@ -22,7 +22,7 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
       )}
 
       <h3 className={s.title}>{product.title}</h3>
-      <p className={s.description}>{product.descriptionText}</p>
+      <p className={s.description}>{product.shortDescription}</p>
       <p className={s.price}>{product.price}</p>
       <div className={s.linkWrapp}>
         <Link href={`/products/${product.id}`} className={s.link}>
