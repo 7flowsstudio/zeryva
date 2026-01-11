@@ -1,17 +1,27 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./Add.module.css";
 import MainTab from "./MainTab/MainTab";
 import DescriptionTab from "./DescriptionTab/DescriptionTab";
 import BenefitsTab from "./BenefitsTab/BenefitsTab";
 import InstructionTab from "./InstructionTab/InstructionTab";
-import { Product } from "../../../../../../utils/types";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { Product, ProductWithId } from "../../../../../../utils/types";
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../../../../../../firebaseConfig";
 
 type Tab = "main" | "description" | "benefits" | "instruction";
+type AddProps = {
+  editProduct: ProductWithId | null;
+  onSaved: () => void;
+};
 
-const Add = () => {
+const Add: React.FC<AddProps> = ({ editProduct, onSaved }) => {
   const [activeTab, setActiveTab] = useState<Tab>("main");
   const [loading, setLoading] = useState(false);
 
@@ -41,6 +51,12 @@ const Add = () => {
     productType: [],
   });
 
+  useEffect(() => {
+    if (editProduct) {
+      setProduct(editProduct);
+    }
+  }, [editProduct]);
+
   const saveProduct = async () => {
     if (!product.title || !product.price) {
       alert("Заповни назву і ціну");
@@ -49,44 +65,54 @@ const Add = () => {
 
     try {
       setLoading(true);
-      await addDoc(collection(db, "products"), {
-        ...product,
-        createdAt: serverTimestamp(),
-      });
 
-      alert("Продукт додано ✅");
+      if (editProduct?.id) {
+        // 🔹 редагування
+        await updateDoc(doc(db, "products", editProduct.id), { ...product });
+        alert("Продукт оновлено ✅");
+      } else {
+        // 🔹 додавання
+        await addDoc(collection(db, "products"), {
+          ...product,
+          createdAt: serverTimestamp(),
+        });
 
-      // reset
-      setProduct({
-        title: "",
-        shortDescription: "",
-        descriptionText: "",
-        price: "",
-        images: [],
-        certificates: [],
-        youtubeUrl: "",
-        isBestseller: false,
-        properties: {
-          consistency: "",
-          volume: "",
-          shelfLife: "",
-          storageTemp: "",
-        },
-        description: {
-          composition: "",
-          purpose: "",
-          characteristics: "",
-          features: "",
-          form: "",
-          packaging: "",
-          shelfLife: "",
-          compatibility: "",
-        },
-        benefits: [],
-        instructionTable: { columns: [], rows: [] },
-        formType: "Сухі",
-        productType: [],
-      });
+        alert("Продукт додано ✅");
+
+        // reset ТІЛЬКИ при створенні
+        setProduct({
+          title: "",
+          shortDescription: "",
+          descriptionText: "",
+          price: "",
+          images: [],
+          certificates: [],
+          youtubeUrl: "",
+          isBestseller: false,
+          properties: {
+            consistency: "",
+            volume: "",
+            shelfLife: "",
+            storageTemp: "",
+          },
+          description: {
+            composition: "",
+            purpose: "",
+            characteristics: "",
+            features: "",
+            form: "",
+            packaging: "",
+            shelfLife: "",
+            compatibility: "",
+          },
+          benefits: [],
+          instructionTable: { columns: [], rows: [] },
+          formType: "Сухі",
+          productType: [],
+        });
+      }
+
+      onSaved();
     } catch (e) {
       console.error(e);
       alert("Помилка збереження");
