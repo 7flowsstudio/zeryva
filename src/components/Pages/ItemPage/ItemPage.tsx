@@ -19,6 +19,7 @@ const ItemPage = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [activeTab, setActiveTab] = useState<Tab>("description");
+  const [mainImageIndex, setMainImageIndex] = useState(0);
 
   const propertiesConfig = [
     {
@@ -44,11 +45,15 @@ const ItemPage = () => {
       const ref = doc(db, "products", id);
       const snap = await getDoc(ref);
       if (snap.exists()) setProduct(snap.data() as Product);
+      setMainImageIndex(0);
     };
     fetchProduct();
   }, [id]);
 
   if (!product) return <p>Завантаження...</p>;
+
+  const thumbnailImages =
+    product.images?.filter((_, i) => i !== mainImageIndex) || [];
 
   return (
     <div className={s.cont}>
@@ -60,14 +65,32 @@ const ItemPage = () => {
         ]}
       />
       <h1>{product.title}</h1>
-      {product.images?.[0] && (
+      <div className={s.mainImage}>
         <Image
-          src={product.images[0]}
+          src={product.images[mainImageIndex]}
           alt={product.title}
-          width={200}
-          height={200}
+          width={400}
+          height={400}
         />
-      )}
+      </div>
+
+      {/* Мініатюри без головного */}
+      <div className={s.thumbnails}>
+        {thumbnailImages.map((img, i) => {
+          const originalIndex = product.images.findIndex(
+            (pImg) => pImg === img
+          );
+          return (
+            <div
+              key={originalIndex}
+              className={s.thumb}
+              onClick={() => setMainImageIndex(originalIndex)}
+            >
+              <Image src={img} alt={product.title} width={80} height={80} />
+            </div>
+          );
+        })}
+      </div>
       <p>{product.descriptionText}</p>
       <p>{product.price}</p>
       <ul>
