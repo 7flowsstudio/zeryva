@@ -1,39 +1,69 @@
 .card {
-  background-color: var(--color-add-search);
-  box-shadow: 2px 2px 4px 0px #d2c9b569, -1px -1px 4px 0px #d2c9b530;
-  border-radius: 20px;
-  padding: 5px 8px 8px 8px;
-  width: clamp(160px, calc((180 / 1440) * 100vw), 180px);
-  min-width: 160px;
+	background-color: var(--color-add-search);
+	box-shadow: 2px 2px 4px 0px #d2c9b569, -1px -1px 4px 0px #d2c9b530;
+	border-radius: 20px;
+	padding: 5px 8px 8px 8px;
+	/* width: clamp(160px, calc((180 / 1440) * 100vw), 180px); */
+	width: calc((100% - 24px) / 2);
+	max-width: 180px;
+	/* min-width: 160px; */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
 }
+.blockDescr {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	min-height: 125px;
+	margin-top: 16px;
+	margin-bottom: 8px;
+}
+
 .title {
-  color: var(--accent-3);
-  font-family: var(--third-family);
-  padding-top: 16px;
-  padding-bottom: 58px;
+	color: var(--accent-3);
+	font-family: var(--third-family);
+	/* padding-top: 16px;
+	padding-bottom: 58px; */
 }
 .description {
-  padding-bottom: 29px;
+	min-height: 63px;
 }
+/* .description {
+	padding-bottom: 29px;
+} */
 .price {
-  padding-bottom: 8px;
-  font-weight: 700;
-  font-size: 16px;
+	padding-bottom: 8px;
+	font-weight: 700;
+	font-size: 16px;
 }
 .linkWrapp {
-  background-color: var(--accent-1);
-  box-shadow: 1px 2px 4px 0px #f4a60078;
-  border-radius: 30px;
-  padding: 6px 16px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--accent-1);
+	box-shadow: 1px 2px 4px 0px #f4a60078;
+	border-radius: 30px;
+	padding: 6px 16px;
 }
 .link {
-  font-family: var(--font-family);
-  font-size: 12px;
-  min-width: 100%;
-  display: block;
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 167%;
+	color: var(--accent-2);
+
+	min-width: 100%;
+	display: block;
 }
-@media screen and (min-width: 980px) {
-  .price {
-    padding-bottom: 16px;
-  }
+@media screen and (min-width: 768px) {
+	.blockDescr {
+		min-height: 121px;
+	}
+	.price {
+		padding-bottom: 16px;
+	}
 }
