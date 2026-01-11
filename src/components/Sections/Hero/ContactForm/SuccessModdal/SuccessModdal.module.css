@@ -58,7 +58,7 @@
 	z-index: 10;
 }
 .iconClose {
-	width: 16px;
+	width: 18px;
 	height: 16px;
 	stroke: var(--text);
 }
@@ -104,4 +104,14 @@
 	fill: #1a4b38;
 }
 @media screen and (min-width: 768px) {
+	.modalContent {
+		border-radius: 30px;
+		width: 513px;
+		height: 249px;
+	}
+	.modalCloseBtn {
+		position: absolute;
+		top: 24px;
+		right: 24px;
+	}
 }

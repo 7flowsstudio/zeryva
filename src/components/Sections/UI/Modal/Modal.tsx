@@ -1,5 +1,6 @@
 import React, { SetStateAction } from "react";
 import s from "./Modal.module.css";
+import { usePathname } from "next/navigation";
 
 type ModalProps = {
 	children: React.ReactNode;
@@ -8,14 +9,21 @@ type ModalProps = {
 };
 
 const Modal = ({ children, setImage, closeModal }: ModalProps) => {
+	const pathname = usePathname();
+	const isAbout = pathname.startsWith("/about");
+	console.log("ISAbout", isAbout);
+
 	const hundlerClose = () => {
 		setImage?.("");
 		closeModal?.();
 	};
 	return (
 		<div className={s.modal} onClick={hundlerClose}>
-			<div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
-				<div className={s.scrollContainer}>{children}</div>
+			<div
+				className={`${s.modalContent} ${isAbout ? s.width60 : ""}`}
+				onClick={(e) => e.stopPropagation()}
+			>
+				{children}
 			</div>
 		</div>
 	);

@@ -1,3 +1,9 @@
+.scrollContainer {
+	width: 100%;
+	max-height: 100vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
 .imageWrapper {
 	width: 100%;
 	aspect-ratio: 751 / 1062;
