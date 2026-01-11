@@ -4,21 +4,42 @@ import s from "./OptionSide.module.css";
 import Add from "./Add/Add";
 import Products from "./Products/Products";
 import { AdminSection } from "../MenuSide/MenuSide";
+import { Product, ProductWithId } from "../../../../../utils/types";
 
 type OptionSideProps = {
   active: AdminSection;
+  editProduct: ProductWithId | null;
+  setEditProduct: (p: ProductWithId | null) => void;
+  setActive: (v: AdminSection) => void;
 };
-const OptionSide = ({ active }: OptionSideProps) => {
+
+const OptionSide = ({
+  active,
+  editProduct,
+  setEditProduct,
+  setActive,
+}: OptionSideProps) => {
   if (active === "add")
     return (
       <div className={s.optionSideWrapper}>
-        <Add />
+        <Add
+          editProduct={editProduct}
+          onSaved={() => {
+            setEditProduct(null);
+            setActive("products");
+          }}
+        />
       </div>
     );
   if (active === "products")
     return (
       <div className={s.optionSideWrapper}>
-        <Products />
+        <Products
+          onEdit={(product) => {
+            setEditProduct(product);
+            setActive("add");
+          }}
+        />
       </div>
     );
   return null;
