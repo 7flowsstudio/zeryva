@@ -130,8 +130,8 @@ const ItemPage = () => {
                     <Image
                       src={img}
                       alt={product.title}
-                      width={80}
-                      height={80}
+                      width={160}
+                      height={160}
                     />
                   </div>
                 );
