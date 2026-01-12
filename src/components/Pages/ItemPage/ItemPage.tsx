@@ -70,7 +70,7 @@ const ItemPage = () => {
   };
 
   return (
-    <div className={`container ${s.cont}`}>
+    <div className={s.contItem}>
       <BreadCrumbs
         crumbs={[
           { label: "Головна", href: "/" },
@@ -78,120 +78,126 @@ const ItemPage = () => {
           { label: product.title },
         ]}
       />
+      <div className={`container ${s.cont}`}>
+        <div className={s.wrapper}>
+          <div className={s.title}>
+            <h2 className={s.titleProd}>{product.title}</h2>
+            <p>{product.descriptionText}</p>
+            <p className={s.price}>{product.price}</p>
+            <ul className={s.propertiesList}>
+              {propertiesConfig.map(({ key, icon }) => (
+                <li className={s.propertiesItem} key={key}>
+                  <div className={s.iconWrap}>
+                    <svg width={16} height={16} className={s.icon}>
+                      <use href={icon} />
+                    </svg>
+                  </div>
+                  <span>{product.properties[key]}</span>
+                </li>
+              ))}
+            </ul>
+            <button
+              className={s.btnCertf}
+              disabled={!product.certificates?.length}
+              onClick={() => setActiveCertificate(product.certificates[0])}
+            >
+              Проглянути сертифікат відповідності
+            </button>
+          </div>
+          <div className={s.image}>
+            <div className={s.wrapper}>
+              <div className={s.mainImage}>
+                <Image
+                  src={product.images[mainImageIndex]}
+                  alt={product.title}
+                  width={588}
+                  height={588}
+                />
+              </div>
+            </div>
 
-      <div className={s.wrapper}>
-        <div className={s.title}>
-          <h2 className={s.titleProd}>{product.title}</h2>
-          <p>{product.descriptionText}</p>
-          <p className={s.price}>{product.price}</p>
-          <ul className={s.propertiesList}>
-            {propertiesConfig.map(({ key, icon }) => (
-              <li className={s.propertiesItem} key={key}>
-                <div className={s.iconWrap}>
-                  <svg width={16} height={16} className={s.icon}>
-                    <use href={icon} />
-                  </svg>
-                </div>
-                <span>{product.properties[key]}</span>
-              </li>
-            ))}
-          </ul>
-          <button
-            className={s.btnCertf}
-            disabled={!product.certificates?.length}
-            onClick={() => setActiveCertificate(product.certificates[0])}
-          >
-            Проглянути сертифікат відповідності
-          </button>
-        </div>
-        <div className={s.image}>
-          <div className={s.wrapper}>
-            <div className={s.mainImage}>
-              <Image
-                src={product.images[mainImageIndex]}
-                alt={product.title}
-                width={588}
-                height={588}
+            <div className={s.thumbnails}>
+              {thumbnailImages.map((img, i) => {
+                const originalIndex = product.images.findIndex(
+                  (pImg) => pImg === img
+                );
+                return (
+                  <div
+                    key={originalIndex}
+                    className={s.thumb}
+                    onClick={() => setMainImageIndex(originalIndex)}
+                  >
+                    <Image
+                      src={img}
+                      alt={product.title}
+                      width={80}
+                      height={80}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            <div className={s.youtubePlayer}>
+              <iframe
+                src={getYoutubeEmbedUrl(product.youtubeUrl)}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
             </div>
           </div>
 
-          <div className={s.thumbnails}>
-            {thumbnailImages.map((img, i) => {
-              const originalIndex = product.images.findIndex(
-                (pImg) => pImg === img
-              );
-              return (
-                <div
-                  key={originalIndex}
-                  className={s.thumb}
-                  onClick={() => setMainImageIndex(originalIndex)}
-                >
-                  <Image src={img} alt={product.title} width={80} height={80} />
-                </div>
-              );
-            })}
-          </div>
-          <div className={s.youtubePlayer}>
-            <iframe
-              src={getYoutubeEmbedUrl(product.youtubeUrl)}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
+          <div className={s.description}>
+            <div className={s.tabs}>
+              <button
+                className={tabClass("description")}
+                onClick={() => setActiveTab("description")}
+              >
+                Опис
+              </button>
 
-        <div className={s.description}>
-          <div className={s.tabs}>
-            <button
-              className={tabClass("description")}
-              onClick={() => setActiveTab("description")}
-            >
-              Опис
-            </button>
+              <button
+                className={tabClass("benefits")}
+                onClick={() => setActiveTab("benefits")}
+              >
+                Переваги
+              </button>
 
-            <button
-              className={tabClass("benefits")}
-              onClick={() => setActiveTab("benefits")}
-            >
-              Переваги
-            </button>
+              <button
+                className={tabClass("instruction")}
+                onClick={() => setActiveTab("instruction")}
+              >
+                Інструкція
+              </button>
+            </div>
 
-            <button
-              className={tabClass("instruction")}
-              onClick={() => setActiveTab("instruction")}
-            >
-              Інструкція
-            </button>
-          </div>
+            <div className={s.line}>
+              <span className={s.activeLine} data-tab={activeTab} />
+            </div>
 
-          <div className={s.line}>
-            <span className={s.activeLine} data-tab={activeTab} />
-          </div>
+            <div className={s.content}>
+              {activeTab === "description" && <Description product={product} />}
 
-          <div className={s.content}>
-            {activeTab === "description" && <Description product={product} />}
+              {activeTab === "benefits" && <Benefits product={product} />}
 
-            {activeTab === "benefits" && <Benefits product={product} />}
-
-            {activeTab === "instruction" && <Instruction product={product} />}
+              {activeTab === "instruction" && <Instruction product={product} />}
+            </div>
           </div>
         </div>
+        {activeCertificate && (
+          <div className={s.overlay} onClick={() => setActiveCertificate(null)}>
+            <div className={s.modal} onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={activeCertificate}
+                alt="certificate"
+                width={600}
+                height={800}
+              />
+            </div>
+          </div>
+        )}
       </div>
-      {activeCertificate && (
-        <div className={s.overlay} onClick={() => setActiveCertificate(null)}>
-          <div className={s.modal} onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={activeCertificate}
-              alt="certificate"
-              width={600}
-              height={800}
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };
