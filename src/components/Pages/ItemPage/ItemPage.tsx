@@ -105,9 +105,10 @@ const ItemPage = () => {
             </button>
           </div>
           <div className={s.image}>
-            <div className={s.wrapper}>
+            <div className={s.wrapperImg}>
               <div className={s.mainImage}>
                 <Image
+                  className={s.img}
                   src={product.images[mainImageIndex]}
                   alt={product.title}
                   width={588}
@@ -128,6 +129,7 @@ const ItemPage = () => {
                     onClick={() => setMainImageIndex(originalIndex)}
                   >
                     <Image
+                      // className={s.img}
                       src={img}
                       alt={product.title}
                       width={160}
