@@ -1,5 +1,7 @@
 import React from "react";
 import { Product } from "../../../../../utils/types";
+import Image from "next/image";
+import s from "./Benefits.module.css";
 
 interface BenefitsProps {
   product: Product;
@@ -8,9 +10,17 @@ interface BenefitsProps {
 const Benefits: React.FC<BenefitsProps> = ({ product }) => {
   return (
     <div>
-      <ul>
+      <ul className={s.list}>
         {product.benefits.map((benefit, index) => (
-          <li key={index}>{benefit}</li>
+          <li className={s.benefit} key={index}>
+            <Image
+              src="/Page/Item/iconCheck.svg"
+              alt=""
+              width={24}
+              height={24}
+            />
+            <span className={s.text}>{benefit}</span>
+          </li>
         ))}
       </ul>
     </div>
