@@ -20,6 +20,9 @@ const ItemPage = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [activeTab, setActiveTab] = useState<Tab>("description");
   const [mainImageIndex, setMainImageIndex] = useState(0);
+  const [activeCertificate, setActiveCertificate] = useState<string | null>(
+    null
+  );
 
   const propertiesConfig = [
     {
@@ -40,6 +43,9 @@ const ItemPage = () => {
     },
   ] as const;
 
+  const tabClass = (tab: Tab) =>
+    `${s.tabBtn} ${activeTab === tab ? s.active : ""}`;
+
   useEffect(() => {
     const fetchProduct = async () => {
       const ref = doc(db, "products", id);
@@ -55,8 +61,16 @@ const ItemPage = () => {
   const thumbnailImages =
     product.images?.filter((_, i) => i !== mainImageIndex) || [];
 
+  const getYoutubeEmbedUrl = (url: string) => {
+    const id = url.includes("youtu.be")
+      ? url.split("youtu.be/")[1]?.split("?")[0]
+      : url.split("v=")[1]?.split("&")[0];
+
+    return id ? `https://www.youtube.com/embed/${id}` : "";
+  };
+
   return (
-    <div className={s.cont}>
+    <div className={`container ${s.cont}`}>
       <BreadCrumbs
         crumbs={[
           { label: "Головна", href: "/" },
@@ -64,78 +78,120 @@ const ItemPage = () => {
           { label: product.title },
         ]}
       />
-      <h1>{product.title}</h1>
-      <div className={s.mainImage}>
-        <Image
-          src={product.images[mainImageIndex]}
-          alt={product.title}
-          width={400}
-          height={400}
-        />
-      </div>
 
-      {/* Мініатюри без головного */}
-      <div className={s.thumbnails}>
-        {thumbnailImages.map((img, i) => {
-          const originalIndex = product.images.findIndex(
-            (pImg) => pImg === img
-          );
-          return (
-            <div
-              key={originalIndex}
-              className={s.thumb}
-              onClick={() => setMainImageIndex(originalIndex)}
+      <div className={s.wrapper}>
+        <div className={s.title}>
+          <h2 className={s.titleProd}>{product.title}</h2>
+          <p>{product.descriptionText}</p>
+          <p className={s.price}>{product.price}</p>
+          <ul className={s.propertiesList}>
+            {propertiesConfig.map(({ key, icon }) => (
+              <li className={s.propertiesItem} key={key}>
+                <div className={s.iconWrap}>
+                  <svg width={16} height={16} className={s.icon}>
+                    <use href={icon} />
+                  </svg>
+                </div>
+                <span>{product.properties[key]}</span>
+              </li>
+            ))}
+          </ul>
+          <button
+            className={s.btnCertf}
+            disabled={!product.certificates?.length}
+            onClick={() => setActiveCertificate(product.certificates[0])}
+          >
+            Проглянути сертифікат відповідності
+          </button>
+        </div>
+        <div className={s.image}>
+          <div className={s.wrapper}>
+            <div className={s.mainImage}>
+              <Image
+                src={product.images[mainImageIndex]}
+                alt={product.title}
+                width={588}
+                height={588}
+              />
+            </div>
+          </div>
+
+          <div className={s.thumbnails}>
+            {thumbnailImages.map((img, i) => {
+              const originalIndex = product.images.findIndex(
+                (pImg) => pImg === img
+              );
+              return (
+                <div
+                  key={originalIndex}
+                  className={s.thumb}
+                  onClick={() => setMainImageIndex(originalIndex)}
+                >
+                  <Image src={img} alt={product.title} width={80} height={80} />
+                </div>
+              );
+            })}
+          </div>
+          <div className={s.youtubePlayer}>
+            <iframe
+              src={getYoutubeEmbedUrl(product.youtubeUrl)}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
+        <div className={s.description}>
+          <div className={s.tabs}>
+            <button
+              className={tabClass("description")}
+              onClick={() => setActiveTab("description")}
             >
-              <Image src={img} alt={product.title} width={80} height={80} />
-            </div>
-          );
-        })}
-      </div>
-      <p>{product.descriptionText}</p>
-      <p>{product.price}</p>
-      <ul>
-        {propertiesConfig.map(({ key, icon }) => (
-          <li key={key}>
-            <div className={s.iconWrap}>
-              <svg width={16} height={16} className={s.icon}>
-                <use href={icon} />
-              </svg>
-            </div>
-            <span>{product.properties[key]}</span>
-          </li>
-        ))}
-      </ul>
-      <div>
-        <div className={s.tabs}>
-          <button
-            className={activeTab === "description" ? s.active : ""}
-            onClick={() => setActiveTab("description")}
-          >
-            Опис
-          </button>
-          <button
-            className={activeTab === "benefits" ? s.active : ""}
-            onClick={() => setActiveTab("benefits")}
-          >
-            Переваги
-          </button>
-          <button
-            className={activeTab === "instruction" ? s.active : ""}
-            onClick={() => setActiveTab("instruction")}
-          >
-            Інструкція
-          </button>
-        </div>
+              Опис
+            </button>
 
-        {/* Content */}
-        <div className={s.content}>
-          {activeTab === "description" && <Description product={product} />}
+            <button
+              className={tabClass("benefits")}
+              onClick={() => setActiveTab("benefits")}
+            >
+              Переваги
+            </button>
 
-          {activeTab === "benefits" && <Benefits product={product} />}
+            <button
+              className={tabClass("instruction")}
+              onClick={() => setActiveTab("instruction")}
+            >
+              Інструкція
+            </button>
+          </div>
 
-          {activeTab === "instruction" && <Instruction product={product} />}
+          <div className={s.line}>
+            <span className={s.activeLine} data-tab={activeTab} />
+          </div>
+
+          <div className={s.content}>
+            {activeTab === "description" && <Description product={product} />}
+
+            {activeTab === "benefits" && <Benefits product={product} />}
+
+            {activeTab === "instruction" && <Instruction product={product} />}
+          </div>
         </div>
       </div>
+      {activeCertificate && (
+        <div className={s.overlay} onClick={() => setActiveCertificate(null)}>
+          <div className={s.modal} onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={activeCertificate}
+              alt="certificate"
+              width={600}
+              height={800}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

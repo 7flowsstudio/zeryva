@@ -8,7 +8,6 @@ interface BenefitsProps {
 const Benefits: React.FC<BenefitsProps> = ({ product }) => {
   return (
     <div>
-      <h3>Переваги</h3>
       <ul>
         {product.benefits.map((benefit, index) => (
           <li key={index}>{benefit}</li>
