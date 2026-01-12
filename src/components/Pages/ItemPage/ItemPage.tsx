@@ -43,6 +43,9 @@ const ItemPage = () => {
     },
   ] as const;
 
+  const tabClass = (tab: Tab) =>
+    `${s.tabBtn} ${activeTab === tab ? s.active : ""}`;
+
   useEffect(() => {
     const fetchProduct = async () => {
       const ref = doc(db, "products", id);
@@ -143,23 +146,29 @@ const ItemPage = () => {
         <div className={s.description}>
           <div className={s.tabs}>
             <button
-              className={activeTab === "description" ? s.active : ""}
+              className={tabClass("description")}
               onClick={() => setActiveTab("description")}
             >
               Опис
             </button>
+
             <button
-              className={activeTab === "benefits" ? s.active : ""}
+              className={tabClass("benefits")}
               onClick={() => setActiveTab("benefits")}
             >
               Переваги
             </button>
+
             <button
-              className={activeTab === "instruction" ? s.active : ""}
+              className={tabClass("instruction")}
               onClick={() => setActiveTab("instruction")}
             >
               Інструкція
             </button>
+          </div>
+
+          <div className={s.line}>
+            <span className={s.activeLine} data-tab={activeTab} />
           </div>
 
           <div className={s.content}>

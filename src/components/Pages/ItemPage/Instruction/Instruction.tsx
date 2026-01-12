@@ -10,7 +10,6 @@ const Instruction: React.FC<InstructionProps> = ({ product }) => {
 
   return (
     <div>
-      <h3>Інструкція</h3>
       <table>
         <thead>
           <tr>
