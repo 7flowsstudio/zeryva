@@ -4,9 +4,11 @@ import React, { SetStateAction, useEffect, useState } from "react";
 import s from "./Sertification.module.css";
 import Image from "next/image";
 import {
-	sertificationAll,
+	// sertificationAll,
 	sertificationList,
 } from "@/components/Sections/UI/data/data";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../../../firebaseConfig";
 
 type Config = {
 	itemsPerClick: number;
@@ -16,6 +18,12 @@ type Config = {
 const INITIAL_CONFIG: Config = {
 	itemsPerClick: 4,
 	visibleCount: 8,
+};
+
+type SertificationItem = {
+	id: number;
+	link: string;
+	text: string;
 };
 
 const getConfigByWidth = (): Config => {
@@ -31,8 +39,40 @@ const Sertification = ({
 }: {
 	setImage: React.Dispatch<SetStateAction<string>>;
 }) => {
+	const [sertificationAll, setSertificationAll] = useState<SertificationItem[]>(
+		[]
+	);
+
 	const [config, setConfig] = useState<Config>(INITIAL_CONFIG);
-	const { itemsPerClick, visibleCount } = config;
+	const { visibleCount } = config;
+
+	useEffect(() => {
+		const fetchSertifications = async () => {
+			const snapshot = await getDocs(collection(db, "products"));
+
+			if (snapshot.empty) return;
+
+			const mapped: SertificationItem[] = [];
+
+			snapshot.docs.forEach((doc) => {
+				const data = doc.data();
+
+				if (Array.isArray(data.certificates) && data.certificates.length) {
+					data.certificates.forEach((url: string) => {
+						mapped.push({
+							id: mapped.length, // стабільний id
+							link: url,
+							text: `Сертифікат «${data.title ?? "Продукт"}»`,
+						});
+					});
+				}
+			});
+
+			setSertificationAll(mapped);
+		};
+
+		fetchSertifications();
+	}, []);
 
 	useEffect(() => {
 		const applyConfig = () => {

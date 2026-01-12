@@ -116,93 +116,93 @@ export const sertificationList = [
 	},
 ];
 
-export const sertificationAll = [
-	{
-		id: 0,
-		link: "/Page/About/РизоСтарт_compressed 1.webp",
-		text: "Сертифікат «РизоСтарт»",
-	},
-	{
-		id: 1,
-		link: "/Page/About/Глеон_compressed 1.webp",
-		text: "Сертифікат «Глеон»",
-	},
-	{
-		id: 2,
-		link: "/Page/About/Арія_compressed 1.webp",
-		text: "Сертифікат «Арія»",
-	},
-	{
-		id: 3,
-		link: "/Page/About/Ризогумат_compressed 1.webp",
-		text: "Сертифікат «РизоГумат»",
-	},
-	{
-		id: 4,
-		link: "/Page/About/Віолон_compressed 2.webp",
-		text: "Сертифікат «Віолон»",
-	},
-	{
-		id: 5,
-		link: "/Page/About/РизоФос_compressed 1.webp",
-		text: "Сертифікат «Ризофос»",
-	},
-	{
-		id: 6,
-		link: "/Page/About/Фунгіблок_compressed 1.webp",
-		text: "Сертифікат «Фунгіблок»",
-	},
-	{
-		id: 7,
-		link: "/Page/About/Деструмаг_compressed 1.webp",
-		text: "Сертифікат «Деструмаг»",
-	},
-	{
-		id: 8,
-		link: "/Page/About/Бор-Молібден_compressed 1.webp",
-		text: "Сертифікат «Zeryva B + Mo»",
-	},
-	{
-		id: 9,
-		link: "/Page/About/Мультимікс_compressed 1.webp",
-		text: "Сертифікат «Zeryva Multimix»",
-	},
-	{
-		id: 10,
-		link: "/Page/About/Цинк_compressed 1.webp",
-		text: "Сертифікат «Zeryva Zn»",
-	},
-	{
-		id: 11,
-		link: "/Page/About/Кальцій_compressed 1.webp",
-		text: "Сертифікат «Zeryva CaO»",
-	},
-	{
-		id: 12,
-		link: "/Page/About/Молібден+Кобальт_compressed 1.webp",
-		text: "Сертифікат «Zeryva Mo + CO»",
-	},
-	{
-		id: 13,
-		link: "/Page/About/Марганець_compressed 1.webp",
-		text: "Сертифікат «Zeryva Mn»",
-	},
-	{
-		id: 14,
-		link: "/Page/About/Зернові_compressed 1.webp",
-		text: "Сертифікат «Zeryva зернові»",
-	},
-	{
-		id: 15,
-		link: "/Page/About/Зернобобові_compressed 1.webp",
-		text: "Сертифікат «Zeryva зернобобові»",
-	},
-	{
-		id: 16,
-		link: "/Page/About/ЛіпроТенс_ПАР_compressed 1.webp",
-		text: "Сертифікат «Ліпротенс»",
-	},
-];
+// export const sertificationAll = [
+// 	{
+// 		id: 0,
+// 		link: "/Page/About/РизоСтарт_compressed 1.webp",
+// 		text: "Сертифікат «РизоСтарт»",
+// 	},
+// 	{
+// 		id: 1,
+// 		link: "/Page/About/Глеон_compressed 1.webp",
+// 		text: "Сертифікат «Глеон»",
+// 	},
+// 	{
+// 		id: 2,
+// 		link: "/Page/About/Арія_compressed 1.webp",
+// 		text: "Сертифікат «Арія»",
+// 	},
+// 	{
+// 		id: 3,
+// 		link: "/Page/About/Ризогумат_compressed 1.webp",
+// 		text: "Сертифікат «РизоГумат»",
+// 	},
+// 	{
+// 		id: 4,
+// 		link: "/Page/About/Віолон_compressed 2.webp",
+// 		text: "Сертифікат «Віолон»",
+// 	},
+// 	{
+// 		id: 5,
+// 		link: "/Page/About/РизоФос_compressed 1.webp",
+// 		text: "Сертифікат «Ризофос»",
+// 	},
+// 	{
+// 		id: 6,
+// 		link: "/Page/About/Фунгіблок_compressed 1.webp",
+// 		text: "Сертифікат «Фунгіблок»",
+// 	},
+// 	{
+// 		id: 7,
+// 		link: "/Page/About/Деструмаг_compressed 1.webp",
+// 		text: "Сертифікат «Деструмаг»",
+// 	},
+// 	{
+// 		id: 8,
+// 		link: "/Page/About/Бор-Молібден_compressed 1.webp",
+// 		text: "Сертифікат «Zeryva B + Mo»",
+// 	},
+// 	{
+// 		id: 9,
+// 		link: "/Page/About/Мультимікс_compressed 1.webp",
+// 		text: "Сертифікат «Zeryva Multimix»",
+// 	},
+// 	{
+// 		id: 10,
+// 		link: "/Page/About/Цинк_compressed 1.webp",
+// 		text: "Сертифікат «Zeryva Zn»",
+// 	},
+// 	{
+// 		id: 11,
+// 		link: "/Page/About/Кальцій_compressed 1.webp",
+// 		text: "Сертифікат «Zeryva CaO»",
+// 	},
+// 	{
+// 		id: 12,
+// 		link: "/Page/About/Молібден+Кобальт_compressed 1.webp",
+// 		text: "Сертифікат «Zeryva Mo + CO»",
+// 	},
+// 	{
+// 		id: 13,
+// 		link: "/Page/About/Марганець_compressed 1.webp",
+// 		text: "Сертифікат «Zeryva Mn»",
+// 	},
+// 	{
+// 		id: 14,
+// 		link: "/Page/About/Зернові_compressed 1.webp",
+// 		text: "Сертифікат «Zeryva зернові»",
+// 	},
+// 	{
+// 		id: 15,
+// 		link: "/Page/About/Зернобобові_compressed 1.webp",
+// 		text: "Сертифікат «Zeryva зернобобові»",
+// 	},
+// 	{
+// 		id: 16,
+// 		link: "/Page/About/ЛіпроТенс_ПАР_compressed 1.webp",
+// 		text: "Сертифікат «Ліпротенс»",
+// 	},
+// ];
 export const servicesList = [
 	{
 		id: 0,

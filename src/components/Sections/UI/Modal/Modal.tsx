@@ -11,6 +11,7 @@ type ModalProps = {
 const Modal = ({ children, setImage, closeModal }: ModalProps) => {
 	const pathname = usePathname();
 	const isAbout = pathname.startsWith("/about");
+	const isContacts = pathname.startsWith("/contacts");
 	console.log("ISAbout", isAbout);
 
 	const hundlerClose = () => {
@@ -20,7 +21,9 @@ const Modal = ({ children, setImage, closeModal }: ModalProps) => {
 	return (
 		<div className={s.modal} onClick={hundlerClose}>
 			<div
-				className={`${s.modalContent} ${isAbout ? s.width60 : ""}`}
+				className={`${s.modalContent} ${isAbout ? s.width60 : ""} ${
+					isContacts ? s.width75 : ""
+				}`}
 				onClick={(e) => e.stopPropagation()}
 			>
 				{children}
