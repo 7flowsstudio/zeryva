@@ -106,6 +106,7 @@
 .tabs {
   display: flex;
   justify-content: space-between;
+  /* padding-bottom: clamp(16px, calc((24 / 1440) * 100vw), 24px); */
 }
 
 .tabBtn {
@@ -124,6 +125,7 @@
   position: relative;
   height: 3px;
   background: var(--accent-2);
+  margin-bottom: clamp(16px, calc((24 / 1440) * 100vw), 24px);
 }
 
 .activeLine {
