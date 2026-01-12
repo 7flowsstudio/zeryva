@@ -16,7 +16,7 @@
 .mainImage {
   display: flex;
   justify-content: center;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
 }
 
 .thumbnails {
@@ -31,7 +31,45 @@
   border: 2px solid transparent;
   transition: border 0.2s;
 }
+.youtubePlayer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 588 / 326;
+}
 
-/* .thumb.active {
-  border: 2px solid #0070f3;
-} */
+.youtubePlayer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "image"
+    "description";
+  /* gap: 16px; */
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "image title"
+      "image description";
+    align-items: start;
+  }
+}
+
+.title {
+  grid-area: title;
+}
+.image {
+  grid-area: image;
+}
+.description {
+  grid-area: description;
+}

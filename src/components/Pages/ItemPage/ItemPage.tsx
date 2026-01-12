@@ -55,8 +55,16 @@ const ItemPage = () => {
   const thumbnailImages =
     product.images?.filter((_, i) => i !== mainImageIndex) || [];
 
+  const getYoutubeEmbedUrl = (url: string) => {
+    const id = url.includes("youtu.be")
+      ? url.split("youtu.be/")[1]?.split("?")[0]
+      : url.split("v=")[1]?.split("&")[0];
+
+    return id ? `https://www.youtube.com/embed/${id}` : "";
+  };
+
   return (
-    <div className={s.cont}>
+    <div className={`container ${s.cont}`}>
       <BreadCrumbs
         crumbs={[
           { label: "Головна", href: "/" },
@@ -64,76 +72,94 @@ const ItemPage = () => {
           { label: product.title },
         ]}
       />
-      <h1>{product.title}</h1>
-      <div className={s.mainImage}>
-        <Image
-          src={product.images[mainImageIndex]}
-          alt={product.title}
-          width={400}
-          height={400}
-        />
-      </div>
 
-      {/* Мініатюри без головного */}
-      <div className={s.thumbnails}>
-        {thumbnailImages.map((img, i) => {
-          const originalIndex = product.images.findIndex(
-            (pImg) => pImg === img
-          );
-          return (
-            <div
-              key={originalIndex}
-              className={s.thumb}
-              onClick={() => setMainImageIndex(originalIndex)}
-            >
-              <Image src={img} alt={product.title} width={80} height={80} />
+      <div className={s.wrapper}>
+        <div className={s.title}>
+          <h1>{product.title}</h1>
+          <p>{product.descriptionText}</p>
+          <p>{product.price}</p>
+          <ul>
+            {propertiesConfig.map(({ key, icon }) => (
+              <li key={key}>
+                <div className={s.iconWrap}>
+                  <svg width={16} height={16} className={s.icon}>
+                    <use href={icon} />
+                  </svg>
+                </div>
+                <span>{product.properties[key]}</span>
+              </li>
+            ))}
+          </ul>
+          <button>Проглянути сертифікат відповідності</button>
+        </div>
+        <div className={s.image}>
+          <div className={s.wrapper}>
+            <div className={s.mainImage}>
+              <Image
+                src={product.images[mainImageIndex]}
+                alt={product.title}
+                width={400}
+                height={400}
+              />
             </div>
-          );
-        })}
-      </div>
-      <p>{product.descriptionText}</p>
-      <p>{product.price}</p>
-      <ul>
-        {propertiesConfig.map(({ key, icon }) => (
-          <li key={key}>
-            <div className={s.iconWrap}>
-              <svg width={16} height={16} className={s.icon}>
-                <use href={icon} />
-              </svg>
-            </div>
-            <span>{product.properties[key]}</span>
-          </li>
-        ))}
-      </ul>
-      <div>
-        <div className={s.tabs}>
-          <button
-            className={activeTab === "description" ? s.active : ""}
-            onClick={() => setActiveTab("description")}
-          >
-            Опис
-          </button>
-          <button
-            className={activeTab === "benefits" ? s.active : ""}
-            onClick={() => setActiveTab("benefits")}
-          >
-            Переваги
-          </button>
-          <button
-            className={activeTab === "instruction" ? s.active : ""}
-            onClick={() => setActiveTab("instruction")}
-          >
-            Інструкція
-          </button>
+          </div>
+
+          <div className={s.thumbnails}>
+            {thumbnailImages.map((img, i) => {
+              const originalIndex = product.images.findIndex(
+                (pImg) => pImg === img
+              );
+              return (
+                <div
+                  key={originalIndex}
+                  className={s.thumb}
+                  onClick={() => setMainImageIndex(originalIndex)}
+                >
+                  <Image src={img} alt={product.title} width={80} height={80} />
+                </div>
+              );
+            })}
+          </div>
+          <div className={s.youtubePlayer}>
+            <iframe
+              src={getYoutubeEmbedUrl(product.youtubeUrl)}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
 
-        {/* Content */}
-        <div className={s.content}>
-          {activeTab === "description" && <Description product={product} />}
+        <div className={s.description}>
+          <div className={s.tabs}>
+            <button
+              className={activeTab === "description" ? s.active : ""}
+              onClick={() => setActiveTab("description")}
+            >
+              Опис
+            </button>
+            <button
+              className={activeTab === "benefits" ? s.active : ""}
+              onClick={() => setActiveTab("benefits")}
+            >
+              Переваги
+            </button>
+            <button
+              className={activeTab === "instruction" ? s.active : ""}
+              onClick={() => setActiveTab("instruction")}
+            >
+              Інструкція
+            </button>
+          </div>
 
-          {activeTab === "benefits" && <Benefits product={product} />}
+          <div className={s.content}>
+            {activeTab === "description" && <Description product={product} />}
 
-          {activeTab === "instruction" && <Instruction product={product} />}
+            {activeTab === "benefits" && <Benefits product={product} />}
+
+            {activeTab === "instruction" && <Instruction product={product} />}
+          </div>
         </div>
       </div>
     </div>
