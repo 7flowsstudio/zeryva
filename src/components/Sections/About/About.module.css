@@ -1,4 +1,5 @@
 .heroCont {
+  padding-top: 48px;
   padding-bottom: 48px;
 }
 
@@ -51,6 +52,7 @@
 }
 @media screen and (min-width: 980px) {
   .heroCont {
+    padding-top: 80px;
     padding-bottom: 80px;
   }
   .textFirst {
