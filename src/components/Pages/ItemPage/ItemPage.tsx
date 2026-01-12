@@ -94,6 +94,7 @@ const ItemPage = () => {
             ))}
           </ul>
           <button
+            className={s.btnCertf}
             disabled={!product.certificates?.length}
             onClick={() => setActiveCertificate(product.certificates[0])}
           >

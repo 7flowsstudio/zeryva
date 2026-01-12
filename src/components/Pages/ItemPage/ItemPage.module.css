@@ -80,13 +80,17 @@
 .title {
   max-height: 344px;
 }
+.btnCertf {
+  box-shadow: 1px 2px 4px 0px #f4a6007a;
+  background-color: var(--accent-1);
+  padding: 8px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 343px;
+}
 .wrapper {
-  display: grid;
-  grid-template-areas:
-    "title"
-    "image"
-    "description";
-  /* gap: 16px; */
+  display: flex;
+  flex-direction: column;
 }
 
 .overlay {
@@ -110,8 +114,18 @@
   display: none; /* Chrome, Safari, Edge */
 }
 
+@media screen and (max-width: 374px) {
+  .mainImage {
+    width: 100%;
+  }
+}
 @media screen and (min-width: 768px) {
   .wrapper {
+    display: grid;
+    grid-template-areas:
+      "title"
+      "image"
+      "description";
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "image title"
