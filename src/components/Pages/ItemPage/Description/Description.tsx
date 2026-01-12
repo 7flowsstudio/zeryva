@@ -15,10 +15,10 @@ const Field: React.FC<FieldProps> = ({ label, value }) => {
   if (!value?.trim()) return null;
 
   return (
-    <div className={s.contDescrItem} style={{ marginBottom: 16 }}>
-      <strong>{label}:</strong>
+    <div className={s.contDescrItem}>
+      <p className={s.title}>{label}:</p>
       <div style={{ height: 8 }} />
-      <div>{value}</div>
+      <p className={s.text}>{value}</p>
     </div>
   );
 };

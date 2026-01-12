@@ -1,5 +1,6 @@
 .contItem {
-  padding-top: 150px;
+  padding-top: 54px;
+  padding-bottom: 48px;
 }
 .titleProd {
   font-family: var(--third-family);
@@ -187,6 +188,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .contItem {
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
   .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;

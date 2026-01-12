@@ -1,13 +1,15 @@
-.contDescrItem {
+.benefit {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding: 16px;
   border-radius: 20px;
-  margin-bottom: 16px;
   background-color: var(--color-add-search);
-}
-.title {
-  font-family: var(--font-family);
-  font-size: 20px;
-  font-weight: 700;
 }
 .text {
   font-family: var(--font-family);
