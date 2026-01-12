@@ -20,6 +20,9 @@ const ItemPage = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [activeTab, setActiveTab] = useState<Tab>("description");
   const [mainImageIndex, setMainImageIndex] = useState(0);
+  const [activeCertificate, setActiveCertificate] = useState<string | null>(
+    null
+  );
 
   const propertiesConfig = [
     {
@@ -75,12 +78,12 @@ const ItemPage = () => {
 
       <div className={s.wrapper}>
         <div className={s.title}>
-          <h1>{product.title}</h1>
+          <h2 className={s.titleProd}>{product.title}</h2>
           <p>{product.descriptionText}</p>
-          <p>{product.price}</p>
-          <ul>
+          <p className={s.price}>{product.price}</p>
+          <ul className={s.propertiesList}>
             {propertiesConfig.map(({ key, icon }) => (
-              <li key={key}>
+              <li className={s.propertiesItem} key={key}>
                 <div className={s.iconWrap}>
                   <svg width={16} height={16} className={s.icon}>
                     <use href={icon} />
@@ -90,7 +93,12 @@ const ItemPage = () => {
               </li>
             ))}
           </ul>
-          <button>Проглянути сертифікат відповідності</button>
+          <button
+            disabled={!product.certificates?.length}
+            onClick={() => setActiveCertificate(product.certificates[0])}
+          >
+            Проглянути сертифікат відповідності
+          </button>
         </div>
         <div className={s.image}>
           <div className={s.wrapper}>
@@ -98,8 +106,8 @@ const ItemPage = () => {
               <Image
                 src={product.images[mainImageIndex]}
                 alt={product.title}
-                width={400}
-                height={400}
+                width={588}
+                height={588}
               />
             </div>
           </div>
@@ -162,6 +170,18 @@ const ItemPage = () => {
           </div>
         </div>
       </div>
+      {activeCertificate && (
+        <div className={s.overlay} onClick={() => setActiveCertificate(null)}>
+          <div className={s.modal} onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={activeCertificate}
+              alt="certificate"
+              width={600}
+              height={800}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
