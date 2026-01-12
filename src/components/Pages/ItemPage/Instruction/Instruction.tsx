@@ -1,6 +1,6 @@
 import React from "react";
 import { Product } from "../../../../../utils/types";
-
+import s from "./Instruction.module.css";
 interface InstructionProps {
   product: Product;
 }
@@ -10,7 +10,7 @@ const Instruction: React.FC<InstructionProps> = ({ product }) => {
 
   return (
     <div>
-      <table>
+      <table className={s.table}>
         <thead>
           <tr>
             {instructionTable.columns.map((col, i) => (
@@ -37,7 +37,7 @@ const Instruction: React.FC<InstructionProps> = ({ product }) => {
                       return rest.length > 0 ? (
                         <div key={index} style={{ marginBottom: 8 }}>
                           <strong>{label}:</strong>
-                          <div style={{ marginTop: 2 }}>
+                          <div style={{ marginTop: 8 }}>
                             {rest.join(":").trim()}
                           </div>
                         </div>
