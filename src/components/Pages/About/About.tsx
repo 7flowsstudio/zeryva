@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import s from "./About.module.css";
 import BreadCrumbs from "@/components/Sections/UI/BreadCrumbs/BreadCrumbs";
 import Efficiency from "./Efficiency/Efficiency";

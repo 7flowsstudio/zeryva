@@ -4,7 +4,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	backdrop-filter: blur(14.300000190734863px);
+	backdrop-filter: blur(2px);
 	background: rgba(0, 0, 0, 0.5);
 	display: flex;
 	justify-content: center;
@@ -29,6 +29,9 @@
 @media screen and (min-width: 768px) {
 	.width60 {
 		width: 60vw;
+	}
+	.width75 {
+		width: 75vw;
 	}
 }
 
