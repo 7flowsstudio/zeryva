@@ -47,7 +47,7 @@
   fill: var(--accent-2);
 }
 .mainImage {
-  border-radius: 30px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
