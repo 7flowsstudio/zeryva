@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import s from "./Products.module.css";
 import { Product, ProductWithId } from "../../../../../../utils/types";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../../../../../../firebaseConfig";
 
 type ProductsProps = {
@@ -14,7 +14,8 @@ const Products: React.FC<ProductsProps> = ({ onEdit }) => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const snapshot = await getDocs(collection(db, "products"));
+      const q = query(collection(db, "products"), orderBy("createdAt", "asc"));
+      const snapshot = await getDocs(q);
       const data: ProductWithId[] = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...(doc.data() as Product),
@@ -25,11 +26,14 @@ const Products: React.FC<ProductsProps> = ({ onEdit }) => {
   }, []);
 
   return (
-    <div>
+    <div className={s.cont}>
+      <h2>Всі продукти</h2>
       {products.map((product) => (
-        <div key={product.id}>
-          <span>{product.title}</span>
-          <button onClick={() => onEdit(product)}>Редагувати</button>
+        <div className={s.wrapp} key={product.id}>
+          <p className={s.name}>{product.title}</p>
+          <button className={s.btn} onClick={() => onEdit(product)}>
+            Редагувати
+          </button>
         </div>
       ))}
     </div>

@@ -28,11 +28,15 @@ const BenefitsTab: React.FC<BenefitsTabProps> = ({ product, setProduct }) => {
 
   return (
     <div className={s.benefCont}>
-      <ul>
+      <ul className={s.listBenefits}>
         {product.benefits.map((benefit, index) => (
-          <li key={index}>
+          <li className={s.item} key={index}>
             {benefit}{" "}
-            <button type="button" onClick={() => removeBenefit(index)}>
+            <button
+              className={s.btn}
+              type="button"
+              onClick={() => removeBenefit(index)}
+            >
               Видалити
             </button>
           </li>
@@ -40,11 +44,12 @@ const BenefitsTab: React.FC<BenefitsTabProps> = ({ product, setProduct }) => {
       </ul>
 
       <textarea
+        className={s.textar}
         value={newBenefit}
         placeholder="Нова перевага"
         onChange={(e) => setNewBenefit(e.target.value)}
       />
-      <button type="button" onClick={addBenefit}>
+      <button className={s.add} type="button" onClick={addBenefit}>
         Додати перевагу
       </button>
     </div>

@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { Product } from "../../../../../../../utils/types";
 import s from "./InstructionTab.module.css";
+import ss from "../Add.module.css";
 
 interface InstructionTabProps {
   product: Product;
@@ -52,6 +54,18 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
         rows: [...instructionTable.rows, { type: "full", value: "" }],
       },
     });
+  };
+
+  const autoResize = (el: HTMLTextAreaElement) => {
+    el.style.height = "auto";
+    const computed = window.getComputedStyle(el);
+    const padding =
+      parseFloat(computed.paddingTop) + parseFloat(computed.paddingBottom);
+    const border =
+      parseFloat(computed.borderTopWidth) +
+      parseFloat(computed.borderBottomWidth);
+
+    el.style.height = `${el.scrollHeight + padding + border}px`;
   };
 
   const updateCell = (rowIndex: number, colIndex: number, value: string) => {
@@ -108,24 +122,29 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
   };
   return (
     <div className={s.instrCont}>
-      <button type="button" onClick={addColumn}>
+      <button className={s.btn} type="button" onClick={addColumn}>
         Додати колонку
       </button>
-      <button type="button" onClick={addRow}>
+      <button className={s.btn} type="button" onClick={addRow}>
         Додати рядок
       </button>
-      <button type="button" onClick={addFullRow}>
+      <button className={s.btn} type="button" onClick={addFullRow}>
         Додати рядок на всю ширину
       </button>
 
-      <table>
+      <table className={s.table}>
         <thead>
           <tr>
             {instructionTable.columns.map((col, i) => (
-              <th key={i}>
-                <input
+              <th className={s.th} key={i}>
+                <button type="button" onClick={() => removeColumn(i)}>
+                  Видал.стовпець
+                </button>
+                <textarea
+                  className={ss.textarea}
                   value={col}
                   onChange={(e) => {
+                    autoResize(e.currentTarget);
                     const newColumns = [...instructionTable.columns];
                     newColumns[i] = e.target.value;
                     setProduct({
@@ -136,10 +155,11 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
                       },
                     });
                   }}
+                  onInput={(e) => autoResize(e.currentTarget)}
                 />
-                <button type="button" onClick={() => removeColumn(i)}>
-                  ✕
-                </button>
+                {/* <button type="button" onClick={() => removeColumn(i)}>
+                  Видалити стовпець
+                </button> */}
               </th>
             ))}
           </tr>
@@ -151,11 +171,14 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
               <tr key={rIndex}>
                 {row.cells.map((cell, cIndex) => (
                   <td key={cIndex}>
-                    <input
+                    <textarea
+                      className={ss.textarea}
                       value={cell}
-                      onChange={(e) =>
-                        updateCell(rIndex, cIndex, e.target.value)
-                      }
+                      onChange={(e) => {
+                        autoResize(e.currentTarget);
+                        updateCell(rIndex, cIndex, e.target.value);
+                      }}
+                      onInput={(e) => autoResize(e.currentTarget)}
                     />
                   </td>
                 ))}
@@ -169,10 +192,15 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
             ) : (
               <tr key={rIndex}>
                 <td colSpan={instructionTable.columns.length}>
-                  <input
+                  <textarea
+                    className={ss.textarea}
                     value={row.value}
                     placeholder="Текст на всю ширину"
-                    onChange={(e) => updateFullRow(rIndex, e.target.value)}
+                    onChange={(e) => {
+                      autoResize(e.currentTarget);
+                      updateFullRow(rIndex, e.target.value);
+                    }}
+                    onInput={(e) => autoResize(e.currentTarget)}
                   />
 
                   <button type="button" onClick={() => removeRow(rIndex)}>
