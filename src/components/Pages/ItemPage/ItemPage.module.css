@@ -47,7 +47,7 @@
   fill: var(--accent-2);
 }
 .mainImage {
-  border-radius: 30px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -68,11 +68,12 @@
 }
 
 .thumb {
-  padding-top: 16px;
-  border-radius: 30px;
+  border-radius: 20px;
+  margin-top: 16px;
   cursor: pointer;
   border: 2px solid transparent;
   transition: border 0.2s;
+  overflow: hidden;
 }
 .youtubePlayer {
   position: relative;

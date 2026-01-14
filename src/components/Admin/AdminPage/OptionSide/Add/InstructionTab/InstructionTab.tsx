@@ -137,7 +137,11 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
           <tr>
             {instructionTable.columns.map((col, i) => (
               <th className={s.th} key={i}>
-                <button type="button" onClick={() => removeColumn(i)}>
+                <button
+                  className={s.delBtn}
+                  type="button"
+                  onClick={() => removeColumn(i)}
+                >
                   Видал.стовпець
                 </button>
                 <textarea

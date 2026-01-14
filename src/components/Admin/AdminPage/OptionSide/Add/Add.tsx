@@ -125,25 +125,29 @@ const Add: React.FC<AddProps> = ({ editProduct, onSaved }) => {
     <div className={s.wrapper}>
       <div className={s.tabs}>
         <button
-          className={activeTab === "main" ? s.active : ""}
+          className={`${s.tabBtn} ${activeTab === "main" ? s.active : ""}`}
           onClick={() => setActiveTab("main")}
         >
           Основне
         </button>
         <button
-          className={activeTab === "description" ? s.active : ""}
+          className={`${s.tabBtn} ${
+            activeTab === "description" ? s.active : ""
+          }`}
           onClick={() => setActiveTab("description")}
         >
           Опис
         </button>
         <button
-          className={activeTab === "benefits" ? s.active : ""}
+          className={`${s.tabBtn} ${activeTab === "benefits" ? s.active : ""}`}
           onClick={() => setActiveTab("benefits")}
         >
           Переваги
         </button>
         <button
-          className={activeTab === "instruction" ? s.active : ""}
+          className={`${s.tabBtn} ${
+            activeTab === "instruction" ? s.active : ""
+          }`}
           onClick={() => setActiveTab("instruction")}
         >
           Інструкція

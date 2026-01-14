@@ -61,19 +61,22 @@ const DescriptionTab: React.FC<DescriptionTabProps> = ({
   return (
     <div className={s.descrCont}>
       {FIELDS.map((field) => (
-        <textarea
-          key={field}
-          ref={(el): void => {
-            if (el) textareasRef.current[field] = el;
-          }}
-          className={ss.textarea}
-          placeholder={PLACEHOLDERS[field]}
-          value={product.description[field]}
-          onChange={(e) => {
-            autoResize(e.target);
-            handleChange(field, e.target.value);
-          }}
-        />
+        <div key={field} className={s.field}>
+          <label className={s.label}>{PLACEHOLDERS[field]}</label>
+
+          <textarea
+            ref={(el): void => {
+              if (el) textareasRef.current[field] = el;
+            }}
+            className={ss.textarea}
+            placeholder={PLACEHOLDERS[field]}
+            value={product.description[field]}
+            onChange={(e) => {
+              autoResize(e.target);
+              handleChange(field, e.target.value);
+            }}
+          />
+        </div>
       ))}
     </div>
   );
