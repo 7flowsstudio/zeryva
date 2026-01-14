@@ -141,7 +141,11 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
       {product.images.map((img, i) => (
         <div key={i}>
           <Image src={img} alt="" width={80} height={80} />
-          <button type="button" onClick={() => removeImage(i)}>
+          <button
+            className={s.btnDelete}
+            type="button"
+            onClick={() => removeImage(i)}
+          >
             Видалити
           </button>
         </div>
@@ -166,7 +170,11 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
       {product.certificates.map((cert, i) => (
         <div key={i}>
           <Image src={cert} alt={`Certificate ${i}`} width={80} height={80} />
-          <button type="button" onClick={() => removeCertificate(i)}>
+          <button
+            className={s.btnDelete}
+            type="button"
+            onClick={() => removeCertificate(i)}
+          >
             Видалити
           </button>
         </div>
@@ -233,16 +241,16 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
           })
         }
       />
-      <label>
+      <label className={s.checkboxSell}>
         <input
-          className={ss.input}
+          className={s.inpCheck}
           type="checkbox"
           checked={product.isBestseller}
           onChange={(e) =>
             setProduct({ ...product, isBestseller: e.target.checked })
           }
         />
-        Бестселлер
+        Хіт продажу
       </label>
       <h4>Обрати варіанти для фільтрації на сторінці з продуктами</h4>
       <select
