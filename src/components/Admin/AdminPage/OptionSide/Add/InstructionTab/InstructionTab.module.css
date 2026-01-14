@@ -15,3 +15,7 @@
   background-color: var(--fone-1);
   padding: 4px;
 }
+.table {
+  max-width: 573px;
+  padding-top: 16px;
+}

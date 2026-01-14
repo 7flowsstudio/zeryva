@@ -132,11 +132,14 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
         Додати рядок на всю ширину
       </button>
 
-      <table>
+      <table className={s.table}>
         <thead>
           <tr>
             {instructionTable.columns.map((col, i) => (
-              <th key={i}>
+              <th className={s.th} key={i}>
+                <button type="button" onClick={() => removeColumn(i)}>
+                  Видал.стовпець
+                </button>
                 <textarea
                   className={ss.textarea}
                   value={col}
@@ -154,9 +157,9 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
                   }}
                   onInput={(e) => autoResize(e.currentTarget)}
                 />
-                <button type="button" onClick={() => removeColumn(i)}>
-                  ✕
-                </button>
+                {/* <button type="button" onClick={() => removeColumn(i)}>
+                  Видалити стовпець
+                </button> */}
               </th>
             ))}
           </tr>
