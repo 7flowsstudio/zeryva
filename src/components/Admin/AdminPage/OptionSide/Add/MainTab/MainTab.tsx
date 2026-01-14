@@ -81,46 +81,63 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
 
   return (
     <div className={s.mainCont}>
-      <input
-        className={ss.input}
-        placeholder="Назва продукту"
-        value={product.title}
-        onChange={(e) => setProduct({ ...product, title: e.target.value })}
-      />
+      <div className={s.field}>
+        <label className={s.label}>Назва продукту</label>
+        <input
+          className={ss.input}
+          placeholder="Назва продукту"
+          value={product.title}
+          onChange={(e) => setProduct({ ...product, title: e.target.value })}
+        />
+      </div>
 
-      <textarea
-        className={ss.textarea}
-        placeholder="Короткий опис продукту"
-        value={product.shortDescription}
-        onChange={(e) => {
-          autoResize(e);
-          setProduct({ ...product, shortDescription: e.target.value });
-        }}
-      />
+      <div className={s.field}>
+        <label className={s.label}>Короткий опис продукту</label>
+        <textarea
+          className={ss.textarea}
+          placeholder="Короткий опис продукту"
+          value={product.shortDescription}
+          onChange={(e) => {
+            autoResize(e);
+            setProduct({ ...product, shortDescription: e.target.value });
+          }}
+        />
+      </div>
 
-      <textarea
-        className={ss.textarea}
-        placeholder="Опис продукту"
-        value={product.descriptionText}
-        onChange={(e) => {
-          autoResize(e);
-          setProduct({ ...product, descriptionText: e.target.value });
-        }}
-      />
+      <div className={s.field}>
+        <label className={s.label}>Опис продукту</label>
+        <textarea
+          className={ss.textarea}
+          placeholder="Опис продукту"
+          value={product.descriptionText}
+          onChange={(e) => {
+            autoResize(e);
+            setProduct({ ...product, descriptionText: e.target.value });
+          }}
+        />
+      </div>
 
-      <input
-        className={ss.input}
-        placeholder="Ціна"
-        value={product.price}
-        onChange={(e) => setProduct({ ...product, price: e.target.value })}
-      />
+      <div className={s.field}>
+        <label className={s.label}>Ціна</label>
+        <input
+          className={ss.input}
+          placeholder="Ціна"
+          value={product.price}
+          onChange={(e) => setProduct({ ...product, price: e.target.value })}
+        />
+      </div>
 
-      <input
-        className={ss.input}
-        placeholder="YouTube відео (URL)"
-        value={product.youtubeUrl}
-        onChange={(e) => setProduct({ ...product, youtubeUrl: e.target.value })}
-      />
+      <div className={s.field}>
+        <label className={s.label}>YouTube відео (URL)</label>
+        <input
+          className={ss.input}
+          placeholder="YouTube відео (URL)"
+          value={product.youtubeUrl}
+          onChange={(e) =>
+            setProduct({ ...product, youtubeUrl: e.target.value })
+          }
+        />
+      </div>
 
       <h4 className={s.title}>Фото</h4>
       <input
@@ -182,65 +199,71 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
 
       <h4 className={s.title}>Властивості продукту</h4>
 
-      <input
-        className={ss.input}
-        placeholder="Консистенція"
-        value={product.properties.consistency}
-        onChange={(e) =>
-          setProduct({
-            ...product,
-            properties: {
-              ...product.properties,
-              consistency: e.target.value,
-            },
-          })
-        }
-      />
+      <div className={s.field}>
+        <label className={s.label}>Консистенція</label>
+        <input
+          className={ss.input}
+          placeholder="Консистенція"
+          value={product.properties.consistency}
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              properties: {
+                ...product.properties,
+                consistency: e.target.value,
+              },
+            })
+          }
+        />
+      </div>
 
-      <input
-        className={ss.input}
-        placeholder="Обʼєм"
-        value={product.properties.volume}
-        onChange={(e) =>
-          setProduct({
-            ...product,
-            properties: {
-              ...product.properties,
-              volume: e.target.value,
-            },
-          })
-        }
-      />
+      <div className={s.field}>
+        <label className={s.label}>Обʼєм</label>
+        <input
+          className={ss.input}
+          placeholder="Обʼєм"
+          value={product.properties.volume}
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              properties: { ...product.properties, volume: e.target.value },
+            })
+          }
+        />
+      </div>
 
-      <input
-        className={ss.input}
-        placeholder="Термін придатності"
-        value={product.properties.shelfLife}
-        onChange={(e) =>
-          setProduct({
-            ...product,
-            properties: {
-              ...product.properties,
-              shelfLife: e.target.value,
-            },
-          })
-        }
-      />
+      <div className={s.field}>
+        <label className={s.label}>Термін придатності</label>
+        <input
+          className={ss.input}
+          placeholder="Термін придатності"
+          value={product.properties.shelfLife}
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              properties: { ...product.properties, shelfLife: e.target.value },
+            })
+          }
+        />
+      </div>
 
-      <input
-        className={ss.input}
-        placeholder="Температура зберігання"
-        value={product.properties.storageTemp}
-        onChange={(e) =>
-          setProduct({
-            ...product,
-            properties: {
-              ...product.properties,
-              storageTemp: e.target.value,
-            },
-          })
-        }
-      />
+      <div className={s.field}>
+        <label className={s.label}>Температура зберігання</label>
+        <input
+          className={ss.input}
+          placeholder="Температура зберігання"
+          value={product.properties.storageTemp}
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              properties: {
+                ...product.properties,
+                storageTemp: e.target.value,
+              },
+            })
+          }
+        />
+      </div>
       <label className={s.checkboxSell}>
         <input
           className={s.inpCheck}
