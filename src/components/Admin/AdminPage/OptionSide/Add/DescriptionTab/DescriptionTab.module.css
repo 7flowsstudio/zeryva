@@ -1,4 +1,6 @@
 .descrCont {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-add-2);
   padding: 20px;
 }

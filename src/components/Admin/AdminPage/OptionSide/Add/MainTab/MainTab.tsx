@@ -1,8 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Product } from "../../../../../../../utils/types";
 import axios from "axios";
 import s from "./MainTab.module.css";
+import ss from "../Add.module.css";
 
 interface MainTabProps {
   product: Product;
@@ -19,19 +20,49 @@ const PRODUCT_TYPES: Product["productType"] = [
 ];
 
 const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
-  // Додати нове фото
+  // --- Автопідгонка textarea ---
+  const autoResize = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    e.target.style.height = "auto";
+    e.target.style.height = `${e.target.scrollHeight}px`;
+  };
+
+  // --- Завантаження зображень ---
   const uploadImage = async (files: File[]) => {
-    const formData = new FormData();
-    files.forEach((file) => formData.append("files", file)); // ключ "files" співпадає з бекендом
+    try {
+      const formData = new FormData();
+      files.forEach((file) => formData.append("files", file));
 
-    const { data } = await axios.post("/api/upload", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
+      const { data } = await axios.post("/api/upload", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
 
-    setProduct((prev) => ({
-      ...prev,
-      images: [...prev.images, ...data.urls], // додаємо всі URL
-    }));
+      setProduct((prev) => ({
+        ...prev,
+        images: [...prev.images, ...data.urls],
+      }));
+    } catch (err) {
+      console.error("Помилка завантаження зображень", err);
+      alert("Помилка завантаження зображень");
+    }
+  };
+
+  const uploadCertificate = async (files: File[]) => {
+    try {
+      const formData = new FormData();
+      files.forEach((file) => formData.append("files", file));
+
+      const { data } = await axios.post("/api/upload", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      setProduct((prev) => ({
+        ...prev,
+        certificates: [...prev.certificates, ...data.urls],
+      }));
+    } catch (err) {
+      console.error("Помилка завантаження сертифікатів", err);
+      alert("Помилка завантаження сертифікатів");
+    }
   };
 
   const removeImage = (index: number) => {
@@ -41,19 +72,6 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
     }));
   };
 
-  const uploadCertificate = async (files: File[]) => {
-    const formData = new FormData();
-    files.forEach((file) => formData.append("files", file)); // ключ "files" співпадає з бекендом
-
-    const { data } = await axios.post("/api/upload", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-
-    setProduct((prev) => ({
-      ...prev,
-      certificates: [...prev.certificates, ...data.urls],
-    }));
-  };
   const removeCertificate = (index: number) => {
     setProduct((prev) => ({
       ...prev,
@@ -64,34 +82,41 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
   return (
     <div className={s.mainCont}>
       <input
+        className={ss.input}
         placeholder="Назва продукту"
         value={product.title}
         onChange={(e) => setProduct({ ...product, title: e.target.value })}
       />
 
       <textarea
+        className={ss.textarea}
         placeholder="Короткий опис продукту"
         value={product.shortDescription}
-        onChange={(e) =>
-          setProduct({ ...product, shortDescription: e.target.value })
-        }
+        onChange={(e) => {
+          autoResize(e);
+          setProduct({ ...product, shortDescription: e.target.value });
+        }}
       />
 
       <textarea
+        className={ss.textarea}
         placeholder="Опис продукту"
         value={product.descriptionText}
-        onChange={(e) =>
-          setProduct({ ...product, descriptionText: e.target.value })
-        }
+        onChange={(e) => {
+          autoResize(e);
+          setProduct({ ...product, descriptionText: e.target.value });
+        }}
       />
 
       <input
+        className={ss.input}
         placeholder="Ціна"
         value={product.price}
         onChange={(e) => setProduct({ ...product, price: e.target.value })}
       />
 
       <input
+        className={ss.input}
         placeholder="YouTube відео (URL)"
         value={product.youtubeUrl}
         onChange={(e) => setProduct({ ...product, youtubeUrl: e.target.value })}
@@ -99,6 +124,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
 
       <h4>Фото</h4>
       <input
+        id="imageUpload"
         type="file"
         accept="image/*"
         multiple
@@ -106,7 +132,11 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
           const files = e.target.files;
           if (files) uploadImage(Array.from(files));
         }}
+        style={{ display: "none" }}
       />
+      <label htmlFor="imageUpload" className={s.uploadBtn}>
+        Додати зображення
+      </label>
 
       {product.images.map((img, i) => (
         <div key={i}>
@@ -119,6 +149,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
 
       <h4>Сертифікати</h4>
       <input
+        id="certUpload"
         type="file"
         accept="image/*"
         multiple
@@ -126,7 +157,11 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
           const files = e.target.files;
           if (files) uploadCertificate(Array.from(files));
         }}
+        style={{ display: "none" }}
       />
+      <label htmlFor="certUpload" className={s.uploadBtn}>
+        Додати сертифікат
+      </label>
 
       {product.certificates.map((cert, i) => (
         <div key={i}>
@@ -140,6 +175,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
       <h4>Властивості продукту</h4>
 
       <input
+        className={ss.input}
         placeholder="Консистенція"
         value={product.properties.consistency}
         onChange={(e) =>
@@ -154,6 +190,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
       />
 
       <input
+        className={ss.input}
         placeholder="Обʼєм"
         value={product.properties.volume}
         onChange={(e) =>
@@ -168,6 +205,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
       />
 
       <input
+        className={ss.input}
         placeholder="Термін придатності"
         value={product.properties.shelfLife}
         onChange={(e) =>
@@ -182,6 +220,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
       />
 
       <input
+        className={ss.input}
         placeholder="Температура зберігання"
         value={product.properties.storageTemp}
         onChange={(e) =>
@@ -196,6 +235,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
       />
       <label>
         <input
+          className={ss.input}
           type="checkbox"
           checked={product.isBestseller}
           onChange={(e) =>
