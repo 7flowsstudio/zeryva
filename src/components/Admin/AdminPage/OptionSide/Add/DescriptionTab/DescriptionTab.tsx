@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import { Description, Product } from "../../../../../../../utils/types";
 import s from "./DescriptionTab.module.css";
@@ -41,21 +42,35 @@ const DescriptionTab: React.FC<DescriptionTabProps> = ({
     });
   };
 
-  const autoResize = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    e.target.style.height = "auto";
-    e.target.style.height = `${e.target.scrollHeight}px`;
+  const textareasRef = useRef<
+    Partial<Record<keyof Description, HTMLTextAreaElement>>
+  >({});
+
+  const autoResize = (el: HTMLTextAreaElement) => {
+    el.style.height = "auto";
+    el.style.height = `${el.scrollHeight}px`;
   };
+
+  useEffect(() => {
+    FIELDS.forEach((field) => {
+      const el = textareasRef.current[field];
+      if (el) autoResize(el);
+    });
+  }, [product.description]);
 
   return (
     <div className={s.descrCont}>
       {FIELDS.map((field) => (
         <textarea
           key={field}
+          ref={(el): void => {
+            if (el) textareasRef.current[field] = el;
+          }}
           className={ss.textarea}
           placeholder={PLACEHOLDERS[field]}
           value={product.description[field]}
           onChange={(e) => {
-            autoResize(e);
+            autoResize(e.target);
             handleChange(field, e.target.value);
           }}
         />
