@@ -51,3 +51,10 @@
   border-radius: 8px;
   color: var(--text);
 }
+.tabBtn {
+  font-family: var(--third-family);
+  font-size: 16px;
+}
+.active {
+  font-size: 28px;
+}

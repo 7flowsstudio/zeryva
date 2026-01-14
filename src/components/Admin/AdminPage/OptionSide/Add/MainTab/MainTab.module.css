@@ -16,7 +16,7 @@
   box-shadow: 0.5px 1px 2px 0px #1a4b3882;
   font-family: var(--font-family);
   padding: 4px;
-  max-width: 156px;
+  max-width: 164px;
   /* margin-top: 8px;
   margin-bottom: 8px; */
 }
@@ -24,6 +24,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  font-family: var(--font-family);
 }
 /* .inpCheck {
   width: 24px;
@@ -39,4 +40,12 @@
   box-shadow: 0.5px 1px 2px 0px #1a4b3882;
   font-family: var(--font-family);
   padding: 4px;
+  margin-top: 4px;
+}
+.title {
+  font-family: var(--font-family);
+  color: var(--text);
+}
+.values {
+  font-family: var(--font-family);
 }

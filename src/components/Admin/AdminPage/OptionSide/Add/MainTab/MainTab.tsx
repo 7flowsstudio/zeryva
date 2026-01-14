@@ -122,7 +122,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         onChange={(e) => setProduct({ ...product, youtubeUrl: e.target.value })}
       />
 
-      <h4>Фото</h4>
+      <h4 className={s.title}>Фото</h4>
       <input
         id="imageUpload"
         type="file"
@@ -135,7 +135,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         style={{ display: "none" }}
       />
       <label htmlFor="imageUpload" className={s.uploadBtn}>
-        Додати зображення
+        + Додати зображення
       </label>
 
       {product.images.map((img, i) => (
@@ -151,7 +151,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         </div>
       ))}
 
-      <h4>Сертифікати</h4>
+      <h4 className={s.title}>Сертифікати</h4>
       <input
         id="certUpload"
         type="file"
@@ -164,7 +164,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         style={{ display: "none" }}
       />
       <label htmlFor="certUpload" className={s.uploadBtn}>
-        Додати сертифікат
+        + Додати сертифікат
       </label>
 
       {product.certificates.map((cert, i) => (
@@ -180,7 +180,7 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         </div>
       ))}
 
-      <h4>Властивості продукту</h4>
+      <h4 className={s.title}>Властивості продукту</h4>
 
       <input
         className={ss.input}
@@ -252,7 +252,9 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
         />
         Хіт продажу
       </label>
-      <h4>Обрати варіанти для фільтрації на сторінці з продуктами</h4>
+      <h4 className={s.title}>
+        Обрати варіанти для фільтрації на сторінці з продуктами
+      </h4>
       <select
         value={product.formType}
         onChange={(e) =>
@@ -268,7 +270,11 @@ const MainTab: React.FC<MainTabProps> = ({ product, setProduct }) => {
 
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {PRODUCT_TYPES.map((type) => (
-          <label key={type} style={{ display: "flex", gap: 6 }}>
+          <label
+            className={s.values}
+            key={type}
+            style={{ display: "flex", gap: 6 }}
+          >
             <input
               type="checkbox"
               checked={product.productType.includes(type)}

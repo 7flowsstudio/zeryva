@@ -13,6 +13,8 @@
   border-radius: 20px;
   padding: 8px;
   background-color: var(--fone-1);
+  font-family: var(--third-family);
+  font-size: 14px;
 }
 .textar {
   font-family: var(--font-family);
@@ -36,6 +38,9 @@
   font-family: var(--font-family);
   background-color: var(--color-add-line);
   padding: 4px;
+}
+.btn {
+  margin-top: 4px;
 }
 .add {
   font-size: 14px;
