@@ -53,12 +53,12 @@ const Hero = () => {
 			</Swiper>
 			<div className={s.paginationBlock}>
 				<div className={s.blockBtn}>
-					<button className={`hero-prev ${s.navButton} ${s.prevButton}`}>
+					<button className={`hero-prev ${s.navButton}`}>
 						<svg className={s.navButton_icon}>
 							<use href="/sprite.svg#icon-hero-arrow-left"></use>
 						</svg>
 					</button>
-					<button className={`hero-next ${s.navButton} ${s.nextButton}`}>
+					<button className={`hero-next ${s.navButton}`}>
 						<svg className={`${s.navButton_icon} ${s.right}`}>
 							<use href="/sprite.svg#icon-hero-arrow-left"></use>
 						</svg>

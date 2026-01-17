@@ -130,6 +130,18 @@
 		bottom: 40px;
 		left: 120px;
 	}
+	.navButton:hover {
+		border-color: var(--accent-1);
+	}
+	.navButton:hover .navButton_icon {
+		fill: var(--accent-1);
+	}
+	.navButton:active {
+		border-color: var(--color-state-add);
+	}
+	.navButton:active .navButton_icon {
+		fill: var(--color-state-add);
+	}
 }
 @media screen and (min-width: 1440px) {
 	.paginationBlock {
