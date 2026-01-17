@@ -1,8 +1,8 @@
 export const socialList = [
 	{ id: 0, src: "/sprite.svg#icon-instagram", href: "/" },
-	{ id: 1, src: "/sprite.svg#icon-tiktok", href: "/" },
+	{ id: 1, src: "/sprite.svg#icon-tiktokk", href: "/" },
 	{ id: 2, src: "/sprite.svg#icon-facebook", href: "/" },
-	{ id: 3, src: "/sprite.svg#icon-youtube", href: "/" },
+	{ id: 3, src: "/sprite.svg#icon-youtubee", href: "/" },
 ];
 
 export const socListMob = [
