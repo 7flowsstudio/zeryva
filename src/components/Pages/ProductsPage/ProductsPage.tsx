@@ -6,8 +6,6 @@ import Products from "./Products/Products";
 import BreadCrumbs from "@/components/Sections/UI/BreadCrumbs/BreadCrumbs";
 import TitleVideo from "./TitleVideo/TitleVideo";
 
-export const dynamic = "client";
-
 const ProductsPage = () => {
 	return (
 		<div className={s.cont}>

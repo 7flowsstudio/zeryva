@@ -14,8 +14,6 @@ import Benefits from "./Benefits/Benefits";
 import Instruction from "./Instruction/Instruction";
 import BreadCrumbs from "@/components/Sections/UI/BreadCrumbs/BreadCrumbs";
 
-export const dynamic = "force-dynamic";
-
 type Tab = "description" | "benefits" | "instruction";
 
 const ItemPage = () => {
