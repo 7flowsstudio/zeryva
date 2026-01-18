@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
+export const dynamic = "client";
 
-export const dynamic = "force-dynamic";
+import React from "react";
 import ProductsPage from "@/components/Pages/ProductsPage/ProductsPage";
 
 const Page = () => {
