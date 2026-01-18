@@ -1,21 +1,70 @@
-import React from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import s from "./DescHeader.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
 	atherList,
 	navList,
 	socialList,
 } from "@/components/Sections/UI/data/data";
 
-const DescHeader = () => {
+type SearchItem = {
+	id: string;
+	title: string;
+	shortDescription: string;
+};
+
+const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
+	const searchRef = useRef<HTMLDivElement | null>(null);
+	const router = useRouter();
 	const pathname = usePathname();
+	const [query, setQuery] = useState("");
+	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+	useEffect(() => {
+		const handleClickOutside = (e: MouseEvent) => {
+			if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+				setIsDropdownOpen(false);
+				setQuery(""); // очищаємо поле пошуку
+			}
+		};
+
+		document.addEventListener("mousedown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
+
 	const isAther =
 		pathname.startsWith("/about") ||
 		pathname.startsWith("/services") ||
 		pathname.startsWith("/products") ||
 		pathname.startsWith("/contacts");
+
+	const filtered = useMemo(() => {
+		if (!query) return [];
+
+		const q = query.toLowerCase();
+
+		return searchItems.filter(
+			(item) =>
+				item.title.toLowerCase().includes(q) ||
+				item.shortDescription.toLowerCase().includes(q)
+		);
+	}, [query, searchItems]);
+
+	const handleSearchSubmit = () => {
+		if (!query.trim()) return;
+
+		setIsDropdownOpen(false);
+		router.push(`/products?search=${encodeURIComponent(query)}`);
+
+		// Очищуємо поле пошуку
+		setQuery("");
+	};
+
 	return (
 		<ul className={s.DescHeaderList}>
 			<li className={s.topHead}>
@@ -81,7 +130,7 @@ const DescHeader = () => {
 						</Link>
 					))}
 				</nav>
-				<div className={s.searchBlock}>
+				<div className={s.searchBlock} ref={searchRef}>
 					<div className={s.blockSearch}>
 						<svg className={s.iconSearch}>
 							<use href="/sprite.svg#icon-search"></use>
@@ -92,10 +141,42 @@ const DescHeader = () => {
 						name="search"
 						placeholder="Пошук..."
 						className={s.input}
+						value={query}
+						onChange={(e) => {
+							setQuery(e.target.value);
+							setIsDropdownOpen(true);
+						}}
+						onKeyDown={(e) => {
+							if (e.key === "Enter") {
+								handleSearchSubmit();
+							}
+						}}
 					/>
-					<button type="button" className={s.searchBtn}>
+					<button
+						type="button"
+						className={s.searchBtn}
+						onClick={handleSearchSubmit}
+					>
 						Знайти
 					</button>
+
+					{filtered.length > 0 && isDropdownOpen && (
+						<ul className={s.searchDropdown}>
+							{filtered.map((item) => (
+								<li key={item.id} className={s.searchItem}>
+									<Link
+										href={`/products/${item.id}`}
+										onClick={() => {
+											setIsDropdownOpen(false);
+											setQuery("");
+										}}
+									>
+										<strong>{item.title}</strong> – {item.shortDescription}
+									</Link>
+								</li>
+							))}
+						</ul>
+					)}
 				</div>
 			</li>
 		</ul>

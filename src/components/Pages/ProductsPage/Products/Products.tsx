@@ -5,10 +5,14 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../../../../../firebaseConfig";
 import Card from "./Card/Card";
 import s from "./Products.module.css";
+import { useSearchParams } from "next/navigation";
 
 const Products = () => {
 	const [products, setProducts] = useState<ProductWithId[]>([]);
 	const [loading, setLoading] = useState(true);
+
+	const searchParams = useSearchParams();
+	const searchQuery = searchParams.get("search")?.toLowerCase() || "";
 
 	const productType = [
 		"Всі",
@@ -24,6 +28,7 @@ const Products = () => {
 
 	const [selectedProductType, setSelectedProductType] =
 		useState<(typeof productType)[number]>("Всі");
+
 	const [selectedFormTypes, setSelectedFormTypes] = useState<string[]>([]); // масив чекбоксів
 
 	useEffect(() => {
@@ -45,13 +50,30 @@ const Products = () => {
 	if (loading) return <p>Завантаження...</p>;
 
 	// фільтрація
+	// const filteredProducts = products.filter((p) => {
+	// 	const matchType =
+	// 		selectedProductType === "Всі" ||
+	// 		p.productType.includes(selectedProductType as ProductType);
+	// 	const matchForm =
+	// 		selectedFormTypes.length === 0 || selectedFormTypes.includes(p.formType);
+	// 	return matchType && matchForm;
+	// });
+
+	// 🔍 ФІЛЬТРАЦІЯ (додано matchSearch)
 	const filteredProducts = products.filter((p) => {
 		const matchType =
 			selectedProductType === "Всі" ||
 			p.productType.includes(selectedProductType as ProductType);
+
 		const matchForm =
 			selectedFormTypes.length === 0 || selectedFormTypes.includes(p.formType);
-		return matchType && matchForm;
+
+		const matchSearch =
+			!searchQuery ||
+			p.title.toLowerCase().includes(searchQuery) ||
+			p.shortDescription.toLowerCase().includes(searchQuery);
+
+		return matchType && matchForm && matchSearch;
 	});
 
 	return (
