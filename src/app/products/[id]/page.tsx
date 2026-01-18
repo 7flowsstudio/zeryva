@@ -1,7 +1,8 @@
 "use client";
-export const dynamic = "force-dynamic";
 
 import ItemPage from "@/components/Pages/ItemPage/ItemPage";
+
+export const dynamic = "force-dynamic";
 
 const Page = () => {
 	return (

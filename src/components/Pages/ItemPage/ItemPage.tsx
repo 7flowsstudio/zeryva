@@ -1,7 +1,5 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
 import React from "react";
 import s from "./ItemPage.module.css";
 
@@ -15,6 +13,8 @@ import Description from "./Description/Description";
 import Benefits from "./Benefits/Benefits";
 import Instruction from "./Instruction/Instruction";
 import BreadCrumbs from "@/components/Sections/UI/BreadCrumbs/BreadCrumbs";
+
+export const dynamic = "force-dynamic";
 
 type Tab = "description" | "benefits" | "instruction";
 
