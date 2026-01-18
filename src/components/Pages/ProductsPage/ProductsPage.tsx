@@ -1,3 +1,5 @@
+"use client";
+export const dynamic = "client";
 import React from "react";
 import s from "./ProductsPage.module.css";
 import Products from "./Products/Products";
