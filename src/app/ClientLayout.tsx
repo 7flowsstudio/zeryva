@@ -30,7 +30,7 @@ export const ClientLayout = ({ children }: { children: React.ReactNode }) => {
 		<>
 			{!isAdminOrLogin && <Header isScrolled={isScrolled} />}
 			{!isAdminOrLogin && <BtnConsultation isScrolled={isScrolled} />}
-			<main>{children}</main>
+			<main style={{ flex: 1 }}>{children}</main>
 			{!isAdminOrLogin && <Footer />}
 		</>
 	);

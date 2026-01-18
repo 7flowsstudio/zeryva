@@ -6,12 +6,14 @@ import ModalSearch from "./ModalSearch/ModalSearch";
 import ModalMobMenu from "./ModalMobMenu/ModalMobMenu";
 import { socialList } from "@/components/Sections/UI/data/data";
 import { usePathname } from "next/navigation";
+import { SearchItem } from "../Header";
 
 type MobMenuProp = {
 	isScrolled?: boolean;
+	searchItems: SearchItem[];
 };
 
-const MobHeader = ({ isScrolled }: MobMenuProp) => {
+const MobHeader = ({ isScrolled, searchItems }: MobMenuProp) => {
 	const [openSearch, setOpenSearch] = useState(false);
 	const [openMobMenu, setOpenMobMenu] = useState(false);
 	const isMain = !usePathname().split("/")[1];
@@ -79,7 +81,12 @@ const MobHeader = ({ isScrolled }: MobMenuProp) => {
 					</div>
 				</li>
 			</ul>
-			{openSearch && <ModalSearch onClose={() => setOpenSearch(false)} />}
+			{openSearch && (
+				<ModalSearch
+					onClose={() => setOpenSearch(false)}
+					searchItems={searchItems}
+				/>
+			)}
 			{openMobMenu && <ModalMobMenu onClose={() => setOpenMobMenu(false)} />}
 		</>
 	);
