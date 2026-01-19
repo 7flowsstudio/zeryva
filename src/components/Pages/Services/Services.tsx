@@ -5,15 +5,15 @@ import Experts from "./Experts/Experts";
 import ServicesList from "./ServicesList/ServicesList";
 
 const Services = () => {
-	return (
-		<div className={s.servicesWrapper}>
-			<BreadCrumbs
-				crumbs={[{ label: "Головна", href: "/" }, { label: "Послуги" }]}
-			/>
-			<Experts />
-			<ServicesList />
-		</div>
-	);
+  return (
+    <div className={s.servicesWrapper}>
+      <BreadCrumbs
+        crumbs={[{ label: "Головна", href: "/" }, { label: "Послуги" }]}
+      />
+      <Experts />
+      <ServicesList />
+    </div>
+  );
 };
 
 export default Services;

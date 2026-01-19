@@ -6,8 +6,8 @@ const Navigation = () => {
   const navList = [
     { id: 0, srs: "/about", text: "Про нас" },
     { id: 1, srs: "/products", text: "Продукти" },
-    { id: 2, srs: "/", text: "Послуги" },
-    { id: 3, srs: "/", text: "Контакти" },
+    { id: 2, srs: "/services", text: "Послуги" },
+    { id: 3, srs: "/contacts", text: "Контакти" },
   ];
   return (
     <div className={s.navigationCont}>

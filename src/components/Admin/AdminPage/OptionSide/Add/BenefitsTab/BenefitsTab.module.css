@@ -41,8 +41,17 @@
 }
 .btn {
   margin-top: 4px;
+  color: var(--color-add-red);
+  background-color: transparent;
 }
 .add {
   font-size: 14px;
   background-color: var(--fone-1);
+}
+.inpBenef {
+  padding: 4px;
+  width: 100%;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 14px;
 }
