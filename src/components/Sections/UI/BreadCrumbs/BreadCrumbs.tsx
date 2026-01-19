@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import s from "./BreadCrumbs.module.css";
 import Link from "next/link";
