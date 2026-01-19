@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import s from "./TitleVideo.module.css";
 import Link from "next/link";
