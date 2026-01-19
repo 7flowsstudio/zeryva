@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import s from "./ProductsPage.module.css";
 import Products from "./Products/Products";
 import BreadCrumbs from "@/components/Sections/UI/BreadCrumbs/BreadCrumbs";
@@ -13,7 +13,9 @@ const ProductsPage = () => {
 				crumbs={[{ label: "Головна", href: "/" }, { label: "Продукти" }]}
 			/>
 			<TitleVideo />
-			<Products />
+			<Suspense fallback={<p>Завантаження продуктів...</p>}>
+				<Products />
+			</Suspense>
 		</div>
 	);
 };
