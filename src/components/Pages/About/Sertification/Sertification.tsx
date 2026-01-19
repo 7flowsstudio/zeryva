@@ -3,22 +3,9 @@
 import React, { SetStateAction, useEffect, useState } from "react";
 import s from "./Sertification.module.css";
 import Image from "next/image";
-import {
-	// sertificationAll,
-	sertificationList,
-} from "@/components/Sections/UI/data/data";
+import { sertificationList } from "@/components/Sections/UI/data/data";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../../../firebaseConfig";
-
-type Config = {
-	itemsPerClick: number;
-	visibleCount: number;
-};
-
-const INITIAL_CONFIG: Config = {
-	itemsPerClick: 4,
-	visibleCount: 8,
-};
 
 type SertificationItem = {
 	id: number;
@@ -26,12 +13,14 @@ type SertificationItem = {
 	text: string;
 };
 
-const getConfigByWidth = (): Config => {
+const getInitialVisibleCount = () => {
+	if (typeof window === "undefined") return 8;
+
 	const width = window.innerWidth;
 
-	if (width <= 767) return { itemsPerClick: 2, visibleCount: 4 };
-	if (width <= 1279) return { itemsPerClick: 3, visibleCount: 6 };
-	return { itemsPerClick: 4, visibleCount: 8 };
+	if (width <= 767) return 4;
+	if (width <= 1279) return 8;
+	return 12;
 };
 
 const Sertification = ({
@@ -43,13 +32,13 @@ const Sertification = ({
 		[]
 	);
 
-	const [config, setConfig] = useState<Config>(INITIAL_CONFIG);
-	const { visibleCount } = config;
+	const [initialVisibleCount, setInitialVisibleCount] = useState(8);
+	const [visibleCount, setVisibleCount] = useState(8);
 
+	// 🔹 Firebase
 	useEffect(() => {
 		const fetchSertifications = async () => {
 			const snapshot = await getDocs(collection(db, "products"));
-
 			if (snapshot.empty) return;
 
 			const mapped: SertificationItem[] = [];
@@ -60,7 +49,7 @@ const Sertification = ({
 				if (Array.isArray(data.certificates) && data.certificates.length) {
 					data.certificates.forEach((url: string) => {
 						mapped.push({
-							id: mapped.length, // стабільний id
+							id: mapped.length,
 							link: url,
 							text: `Сертифікат «${data.title ?? "Продукт"}»`,
 						});
@@ -74,32 +63,35 @@ const Sertification = ({
 		fetchSertifications();
 	}, []);
 
+	// 🔹 responsive стартове значення
 	useEffect(() => {
-		const applyConfig = () => {
-			setConfig(getConfigByWidth());
+		const applyInitialCount = () => {
+			const count = getInitialVisibleCount();
+			setInitialVisibleCount(count);
+			setVisibleCount(count);
 		};
 
-		applyConfig(); // ✔️ після mount — без hydration проблем
-		window.addEventListener("resize", applyConfig);
+		applyInitialCount();
+		window.addEventListener("resize", applyInitialCount);
 
-		return () => window.removeEventListener("resize", applyConfig);
+		return () => window.removeEventListener("resize", applyInitialCount);
 	}, []);
 
-	const addItem = () => {
-		setConfig((prev) => ({
-			...prev,
-			visibleCount: prev.visibleCount + prev.itemsPerClick,
-		}));
+	const showAll = () => {
+		setVisibleCount(sertificationAll.length);
 	};
 
-	const resetItem = () => {
-		setConfig(getConfigByWidth());
+	const reset = () => {
+		setVisibleCount(initialVisibleCount);
 	};
+
+	const isAllVisible = visibleCount >= sertificationAll.length;
 
 	return (
 		<section className={s.SectionSertification}>
 			<div className="container">
 				<div className={s.SertificationWrapper}>
+					{/* 🔹 Загальні сертифікати */}
 					<div className={s.sertification}>
 						<div className={s.textWrapper}>
 							<h2 className={s.title}>
@@ -116,20 +108,22 @@ const Sertification = ({
 						<ul className={s.SertificationList}>
 							{sertificationList.map((item) => (
 								<li key={item.id} className={s.sertificationItem}>
-									<Image
-										src={item.link}
-										width={180}
-										height={255}
-										alt={`sertification_${item.id}`}
-										className={s.image}
-										onClick={() => setImage(item.link)}
-									/>
+									<div className={s.imageWrapper}>
+										<Image
+											src={item.link}
+											fill
+											alt={`sertification_${item.id}`}
+											className={s.image}
+											onClick={() => setImage(item.link)}
+										/>
+									</div>
 									<p className={s.sertText}>{item.text}</p>
 								</li>
 							))}
 						</ul>
 					</div>
 
+					{/* 🔹 Сертифікати продуктів */}
 					<div className={s.sertificationAll}>
 						<div className={s.textWrapperAll}>
 							<h3 className={s.titleSmall}>
@@ -143,30 +137,29 @@ const Sertification = ({
 						<ul className={s.SertificationList}>
 							{sertificationAll.slice(0, visibleCount).map((item) => (
 								<li key={item.id} className={s.sertificationItem}>
-									<Image
-										src={item.link}
-										width={180}
-										height={255}
-										alt={`sertification_${item.id}`}
-										className={`${s.image} ${s.image_s}`}
-										onClick={() => setImage(item.link)}
-									/>
+									<div className={s.imageWrapper}>
+										<Image
+											src={item.link}
+											fill
+											alt={`sertification_${item.id}`}
+											className={s.image}
+											onClick={() => setImage(item.link)}
+										/>
+									</div>
 									<p className={s.sertText}>{item.text}</p>
 								</li>
 							))}
 						</ul>
 
-						<button
-							type="button"
-							className={s.moreSertification}
-							onClick={
-								visibleCount < sertificationAll.length ? addItem : resetItem
-							}
-						>
-							{visibleCount < sertificationAll.length
-								? "Дивитись всі сертифікати"
-								: "На початок"}
-						</button>
+						{sertificationAll.length > initialVisibleCount && (
+							<button
+								type="button"
+								className={s.moreSertification}
+								onClick={isAllVisible ? reset : showAll}
+							>
+								{isAllVisible ? "На початок" : "Дивитись всі сертифікати"}
+							</button>
+						)}
 					</div>
 				</div>
 			</div>

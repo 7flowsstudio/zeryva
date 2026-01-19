@@ -68,12 +68,7 @@
 		letter-spacing: 0%;
 		text-align: left;
 	}
-	.phone:hover {
-		color: var(--accent-1);
-	}
-	.phone:active {
-		color: rgba(237, 209, 150, 1);
-	}
+
 	.atherSoc {
 		display: flex;
 		justify-content: space-between;
@@ -94,27 +89,19 @@
 		height: 20px;
 		fill: var(--color-white);
 	}
-	.iconBlock:hover .icon {
-		fill: var(--color-state-add);
-	}
 	.iconBlock:active .icon {
 		fill: var(--color-add-2);
-	}
-	.iconBlock:hover .icon_a {
-		fill: var(--accent-1);
 	}
 	.iconBlock:active .icon_a {
 		fill: var(--color-state-add);
 	}
-	.icon_green {
-		fill: rgba(26, 75, 56, 1);
-	}
-	.iconBlock:hover .icon_green {
-		fill: var(--accent-1);
-	}
 	.iconBlock:active .icon_green {
 		fill: var(--fone-1);
 	}
+	.icon_green {
+		fill: rgba(26, 75, 56, 1);
+	}
+
 	.line {
 		width: 100%;
 		height: 1px;
@@ -127,7 +114,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		gap: 100px;
+		gap: 50px;
 	}
 	.navigation {
 		display: flex;
@@ -146,6 +133,9 @@
 		letter-spacing: 0%;
 		text-align: left;
 		white-space: nowrap;
+	}
+	.link:active {
+		color: rgba(237, 209, 150, 1);
 	}
 	.searchBlock {
 		width: 100%;
@@ -182,7 +172,9 @@
 		border: none;
 		background: inherit;
 
-		color: rgba(146, 146, 146, 1);
+		color: var(--text);
+
+		/* color: rgba(146, 146, 146, 1); */
 
 		font-family: var(--font-family);
 		font-size: 16px;
@@ -212,6 +204,7 @@
 		letter-spacing: 0%;
 		text-align: left;
 	}
+
 	.colorGreen {
 		color: rgba(26, 75, 56, 1);
 	}
@@ -272,6 +265,22 @@
 		font-size: 16px;
 		line-height: 25px;
 	}
+	.phone:hover {
+		color: var(--accent-1);
+	}
+	.phone:active {
+		color: rgba(237, 209, 150, 1);
+	}
+	.iconBlock:hover .icon {
+		fill: var(--color-state-add);
+	}
+	.iconBlock:hover .icon_a {
+		fill: var(--accent-1);
+	}
+	.iconBlock:hover .icon_green {
+		fill: var(--accent-1);
+	}
+
 	.botomHead {
 		width: 100%;
 		height: 48px;
@@ -287,9 +296,7 @@
 	.link:hover {
 		color: rgba(244, 166, 0, 1);
 	}
-	.link:active {
-		color: rgba(237, 209, 150, 1);
-	}
+
 	.searchBlock {
 		max-width: 588px;
 		height: 48px;

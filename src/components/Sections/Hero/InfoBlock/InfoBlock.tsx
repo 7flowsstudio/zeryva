@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./InfoBlock.module.css";
-import Link from "next/link";
 
 type HeroItem = {
 	id: number;
@@ -15,18 +14,21 @@ type InfoBlockProps = {
 };
 
 const InfoBlock: React.FC<InfoBlockProps> = ({ item }) => {
+	const handleDownload = () => {
+		window.open("/doc/katalog.pdf", "_blank", "noopener,noreferrer");
+	};
 	return (
 		<div className={`container ${s.infoWrapper}`}>
 			<div className={s.infoContainer}>
 				<h1 className={s.title}>{item.title}</h1>
 				<h2 className={s.description}>{item.description}</h2>
-				<Link
-					href="https://drive.google.com/file/d/1PFw6ed9tHJiNI61ebCjlSbfmqubnkBa0/view"
+				<button
+					type="button"
 					className={s.downloadBtn}
-					target="_blank"
+					onClick={handleDownload}
 				>
 					Завантажити каталог
-				</Link>
+				</button>
 			</div>
 		</div>
 	);
