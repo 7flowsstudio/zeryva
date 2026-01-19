@@ -20,7 +20,8 @@ export const navList = [
 	{ id: 0, src: "/about", text: "Про нас" },
 	{ id: 1, src: "/products", text: "Продукти" },
 	{ id: 2, src: "/services", text: "Послуги" },
-	{ id: 3, src: "/contacts", text: "Контакти" },
+	{ id: 3, src: "/dilers", text: "Дилери" },
+	{ id: 4, src: "/contacts", text: "Контакти" },
 ];
 
 export const advantagesList = [

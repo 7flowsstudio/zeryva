@@ -1,19 +1,24 @@
 .SectionSertification {
 	margin-bottom: 40px;
 }
+
+/* ===== WRAPPERS ===== */
+
+.SertificationWrapper,
 .sertification,
-.sertificationAll,
-.SertificationWrapper {
+.sertificationAll {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
 	gap: 40px;
 }
+
 .sertification,
 .sertificationAll {
 	gap: 24px;
 }
+
 .textWrapper,
 .textWrapperAll {
 	display: flex;
@@ -22,135 +27,130 @@
 	justify-content: flex-start;
 	gap: 16px;
 }
+
+/* ===== TITLES & TEXT ===== */
+
 .title {
 	color: rgba(26, 75, 56, 1);
-
 	font-family: var(--third-family);
 	font-size: 32px;
 	font-weight: 800;
 	line-height: 48px;
-	letter-spacing: 0%;
 	text-align: left;
 }
 
 .titleSmall {
 	color: rgba(26, 75, 56, 1);
-
 	font-family: var(--font-family);
 	font-size: 24px;
 	font-weight: 700;
 	line-height: 36px;
-	letter-spacing: 0%;
 	text-align: left;
 }
+
 .text {
 	color: rgba(40, 40, 40, 1);
-
 	font-family: var(--font-family);
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 25px;
-	letter-spacing: 0%;
 	text-align: left;
 }
+
+/* ===== LIST & ITEMS ===== */
+
 .SertificationList {
+	width: 100%;
 	display: flex;
-	align-items: flex-start;
-	justify-content: flex-start;
-	flex-shrink: 0;
 	flex-wrap: wrap;
 	gap: 24px;
 }
+
+/* mobile: 2 items */
 .sertificationItem {
-	width: calc((100% - 24px) / 2);
-	max-width: 180px;
-	/* max-height: 259px; */
-	height: auto;
+	flex: 0 0 calc((100% - 24px) / 2);
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
 	align-items: flex-start;
 	gap: 8px;
 }
-.image {
+
+/* ===== IMAGE ===== */
+
+.imageWrapper {
 	width: 100%;
 	max-width: 180px;
 	aspect-ratio: 180 / 255;
-	height: 255px;
+	position: relative;
+	overflow: hidden;
 }
-.image_s {
-	aspect-ratio: 160 / 226;
-	max-height: 226px;
+
+.image {
+	object-fit: contain;
 }
+
+/* ===== TEXT UNDER IMAGE ===== */
+
 .sertText {
 	color: rgba(26, 75, 56, 1);
-
 	font-family: var(--font-family);
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 25px;
-	letter-spacing: 0%;
 	text-align: left;
 }
+
+/* ===== BUTTON ===== */
+
 .moreSertification {
-	/* width: 207px; */
 	height: 25px;
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
 
 	color: rgba(26, 75, 56, 1);
-
 	font-family: var(--font-family);
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 25px;
-	letter-spacing: 0%;
-	text-align: left;
 	text-decoration-line: underline;
 }
+
+/* ===== TABLET ===== */
+
 @media screen and (min-width: 768px) {
 	.title {
 		font-size: 36px;
 		line-height: 58px;
 	}
+
 	.titleSmall {
 		font-size: 28px;
 		line-height: 42px;
 	}
+
+	/* 4 items */
+	.sertificationItem {
+		flex: 0 0 calc((100% - 72px) / 4);
+	}
 }
+
+/* ===== DESKTOP ===== */
+
 @media screen and (min-width: 1280px) {
 	.title {
 		font-size: 46px;
 		line-height: 69px;
 	}
+
 	.titleSmall {
 		font-size: 32px;
 		line-height: 48px;
 	}
-	.SertificationList {
-		display: flex;
-		align-items: flex-start;
-		justify-content: flex-start;
-		flex-shrink: 0;
-		flex-wrap: wrap;
-		gap: 24px;
-	}
+
+	/* 6 items */
 	.sertificationItem {
-		width: 180px;
-		height: auto;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
-		gap: 8px;
-	}
-	.image {
-		width: 100%;
-		max-width: 180px;
-		aspect-ratio: 180 / 255;
-		height: 255px;
+		flex: 0 0 calc((100% - 120px) / 6);
 	}
 }

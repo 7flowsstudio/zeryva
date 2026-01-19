@@ -21,6 +21,7 @@ const ModalSearch: React.FC<ModalSearchProps> = ({ onClose, searchItems }) => {
 
 	const [query, setQuery] = useState("");
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+	const [isFocused, setIsFocused] = useState(false);
 
 	// ref НА WRAPPER
 	const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -83,8 +84,10 @@ const ModalSearch: React.FC<ModalSearchProps> = ({ onClose, searchItems }) => {
 					<input
 						type="text"
 						className={s.input}
-						placeholder="Пошук..."
+						placeholder={isFocused ? "" : "Пошук..."}
 						value={query}
+						onFocus={() => setIsFocused(true)}
+						onBlur={() => setIsFocused(false)}
 						onChange={(e) => {
 							setQuery(e.target.value);
 							setIsDropdownOpen(true);

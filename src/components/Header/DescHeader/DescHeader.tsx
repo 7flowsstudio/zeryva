@@ -19,6 +19,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 	const searchRef = useRef<HTMLDivElement | null>(null);
 	const router = useRouter();
 	const pathname = usePathname();
+	const [isFocused, setIsFocused] = useState(false);
 	const [query, setQuery] = useState("");
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -139,9 +140,11 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 					<input
 						type="text"
 						name="search"
-						placeholder="Пошук..."
+						placeholder={isFocused ? "" : "Пошук..."}
 						className={s.input}
 						value={query}
+						onFocus={() => setIsFocused(true)}
+						onBlur={() => setIsFocused(false)}
 						onChange={(e) => {
 							setQuery(e.target.value);
 							setIsDropdownOpen(true);

@@ -16,7 +16,7 @@ const TitleVideo = () => {
 							стандартам сертифікатів відповідності
 						</p>
 						<Link
-							href="https://drive.google.com/file/d/1PFw6ed9tHJiNI61ebCjlSbfmqubnkBa0/view"
+							href="/doc/katalog.pdf"
 							className={s.downloadBtn}
 							target="_blank"
 						>
