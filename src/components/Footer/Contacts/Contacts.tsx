@@ -4,8 +4,16 @@ import Link from "next/link";
 
 const Contacts = () => {
   const contactList = [
-    { id: 0, srs: "/sprite.svg#icon-watsapp", href: "/" },
-    { id: 1, srs: "/sprite.svg#icon-telegram", href: "/" },
+    {
+      id: 0,
+      src: "/sprite.svg#icon-watsapp",
+      href: "viber://chat?number=%2B380991885637",
+    },
+    {
+      id: 1,
+      src: "/sprite.svg#icon-telegram",
+      href: "https://web.telegram.org/k/#@Vas_Kr",
+    },
   ];
   return (
     <div>
@@ -36,7 +44,7 @@ const Contacts = () => {
                 target="_blank"
               >
                 <svg className={s.icon_a}>
-                  <use href={item.srs}></use>
+                  <use href={item.src}></use>
                 </svg>
               </Link>
             ))}
