@@ -28,11 +28,11 @@ const Hero = () => {
 				}}
 				modules={[Navigation, Autoplay]}
 				loop={true}
-				// autoplay={{
-				// 	delay: 2000, // час між автоперегортаннями у мс
-				// 	disableOnInteraction: false, // щоб автоперегортання не зупинялось після ручного свайпу
-				// 	pauseOnMouseEnter: true, // пауза при наведені миші
-				// }}
+				autoplay={{
+					delay: 2000, // час між автоперегортаннями у мс
+					disableOnInteraction: false, // щоб автоперегортання не зупинялось після ручного свайпу
+					pauseOnMouseEnter: true, // пауза при наведені миші
+				}}
 				breakpoints={{
 					320: { slidesPerView: 1, spaceBetween: 0 },
 				}}

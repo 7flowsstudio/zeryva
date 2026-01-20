@@ -157,7 +157,9 @@ const Sertification = ({
 								className={s.moreSertification}
 								onClick={isAllVisible ? reset : showAll}
 							>
-								{isAllVisible ? "На початок" : "Дивитись всі сертифікати"}
+								{isAllVisible
+									? "Приховати сертифікати"
+									: "Дивитись всі сертифікати"}
 							</button>
 						)}
 					</div>

@@ -109,12 +109,13 @@
 	align-items: center;
 	gap: 10px;
 
-	color: rgba(26, 75, 56, 1);
 	font-family: var(--font-family);
-	font-size: 16px;
 	font-weight: 700;
-	line-height: 25px;
-	text-decoration-line: underline;
+	font-size: 16px;
+	line-height: 156%;
+	text-decoration: underline;
+	text-decoration-skip-ink: none;
+	color: var(--accent-2);
 }
 
 /* ===== TABLET ===== */
@@ -133,6 +134,7 @@
 	/* 4 items */
 	.sertificationItem {
 		flex: 0 0 calc((100% - 72px) / 4);
+		cursor: pointer;
 	}
 }
 
@@ -152,5 +154,11 @@
 	/* 6 items */
 	.sertificationItem {
 		flex: 0 0 calc((100% - 120px) / 6);
+	}
+	.moreSertification:hover {
+		color: var(--color-add-2);
+	}
+	.moreSertification:active {
+		color: var(--accent-1);
 	}
 }
