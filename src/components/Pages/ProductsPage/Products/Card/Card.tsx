@@ -13,16 +13,21 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
 	return (
 		<div className={s.card}>
 			{product.images?.[0] && (
-				<Image
-					src={product.images[0]}
-					alt={product.title}
-					width={200}
-					height={200}
-				/>
+				<Link href={`/products/${product.id}`}>
+					<Image
+						src={product.images[0]}
+						alt={product.title}
+						width={200}
+						height={200}
+					/>
+				</Link>
 			)}
 
 			<div className={s.blockDescr}>
-				<h3 className={s.title}>{product.title}</h3>
+				<Link href={`/products/${product.id}`}>
+					<h3 className={s.title}>{product.title}</h3>
+				</Link>
+
 				<p className={s.description}>{product.shortDescription}</p>
 			</div>
 

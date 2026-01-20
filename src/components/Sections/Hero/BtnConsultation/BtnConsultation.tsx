@@ -19,7 +19,7 @@ const BtnConsultation = ({ isScrolled }: IsScroledProp) => {
 			>
 				{socialList.map((item) => (
 					<li key={item.id} className={s.socialItem}>
-						<Link href={item.href}>
+						<Link href={item.href} target="_blank">
 							<svg className={s.icon}>
 								<use href={item.src}></use>
 							</svg>
