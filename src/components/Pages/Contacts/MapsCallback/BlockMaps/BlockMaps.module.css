@@ -46,3 +46,15 @@
 		right: 24px;
 	}
 }
+@media screen and (min-width: 1280px) {
+	.btnSmallScreen:hover {
+		background: var(--color-add-2);
+	}
+	.btnSmallScreen:active {
+		background: var(--accent-3);
+	}
+	.btnSmallScreen:hover .iconSmall,
+	.btnSmallScreen:active .iconSmall {
+		stroke: var(--accent-2);
+	}
+}

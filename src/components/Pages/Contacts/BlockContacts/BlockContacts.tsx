@@ -18,19 +18,31 @@ const BlockContacts = () => {
 							<h4 className={s.titleItem}>Телефон:</h4>
 							<ul className={s.messegeList}>
 								<li className={s.messegeItem}>
-									<Link href="tel:+380991885637" className={s.link}>
+									<Link
+										href="tel:+380991885637"
+										className={s.link}
+										target="_blank"
+									>
 										+38 099 188 56 37
 									</Link>
 								</li>
 								<li className={s.messegeItem}>
-									<Link href="/" className={s.messageLink}>
+									<Link
+										href="viber://chat?number=%2B380991885637"
+										className={s.messageLink}
+										target="_blank"
+									>
 										<svg className={s.iconMessage}>
 											<use href="/sprite.svg#icon-watsapp"></use>
 										</svg>
 									</Link>
 								</li>
 								<li className={s.messegeItem}>
-									<Link href="/" className={s.messageLink}>
+									<Link
+										href="https://t.me/+380991885637"
+										className={s.messageLink}
+										target="_blank"
+									>
 										<svg className={s.iconMessage}>
 											<use href="/sprite.svg#icon-telegram"></use>
 										</svg>

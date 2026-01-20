@@ -115,4 +115,14 @@
 		box-shadow: 0 2px 4px 0 rgba(131, 189, 22, 0.48);
 		background: var(--accent-3);
 	}
+	.btnFullScreen:hover {
+		background: var(--color-add-2);
+	}
+	.btnFullScreen:active {
+		background: var(--accent-3);
+	}
+	.btnFullScreen:hover .iconFull,
+	.btnFullScreen:active .iconFull {
+		stroke: var(--accent-2);
+	}
 }

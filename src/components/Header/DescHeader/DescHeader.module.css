@@ -87,19 +87,25 @@
 	.icon {
 		width: 20px;
 		height: 20px;
+	}
+	.icon {
 		fill: var(--color-white);
 	}
+	.icon_a {
+		color: var(--color-white);
+	}
+
 	.iconBlock:active .icon {
 		fill: var(--color-add-2);
 	}
 	.iconBlock:active .icon_a {
-		fill: var(--color-state-add);
+		color: var(--color-state-add);
 	}
 	.iconBlock:active .icon_green {
-		fill: var(--fone-1);
+		color: var(--fone-1);
 	}
 	.icon_green {
-		fill: rgba(26, 75, 56, 1);
+		color: rgba(26, 75, 56, 1);
 	}
 
 	.line {
@@ -274,11 +280,11 @@
 	.iconBlock:hover .icon {
 		fill: var(--color-state-add);
 	}
-	.iconBlock:hover .icon_a {
-		fill: var(--accent-1);
+	.iconBlock:hover:not(:active) .icon_a {
+		color: var(--accent-1);
 	}
-	.iconBlock:hover .icon_green {
-		fill: var(--accent-1);
+	.iconBlock:hover:not(:active) .icon_green {
+		color: var(--accent-1);
 	}
 
 	.botomHead {

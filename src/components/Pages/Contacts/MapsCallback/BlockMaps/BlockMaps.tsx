@@ -14,7 +14,7 @@ const BlockMaps = ({ closeModal }: { closeModal: () => void }) => {
 				</svg>
 			</button>
 			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28660.434685061646!2d26.08724172742902!3d50.58533404776613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472f6d9a76acfea7%3A0xbd14bd128d1ff930!2z0LLRg9C70LjRhtGPINCo0LXQstGH0LXQvdC60LAsIDM1LCDQktC10LvQuNC60LAg0J7QvNC10LvRj9C90LAsINCg0ZbQstC90LXQvdGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCDQo9C60YDQsNC40L3QsCwgMzUzNjA!5e0!3m2!1sru!2spl!4v1767994205677!5m2!1sru!2spl"
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.5792303519693!2d26.1260138!3d50.57918649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaf5c29b5189ba741%3A0xdca8653b9c654222!2sTov%20Zeryva%20-%20Dobryva%20Dlya%20Roslyn!5e0!3m2!1sru!2spl!4v1768945195864!5m2!1sru!2spl"
 				allowFullScreen
 				loading="lazy"
 				referrerPolicy="no-referrer-when-downgrade"
