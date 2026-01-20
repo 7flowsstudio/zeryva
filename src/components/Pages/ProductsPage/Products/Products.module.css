@@ -112,6 +112,9 @@
 }
 
 @media (min-width: 1280px) {
+	/* .prodList {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  } */
 	.sectionProducts {
 		margin-bottom: 80px;
 	}

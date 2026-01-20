@@ -4,10 +4,26 @@ import s from "./Social.module.css";
 
 const Social = () => {
   const socialList = [
-    { id: 0, srs: "/sprite.svg#icon-instagram", href: "/" },
-    { id: 1, srs: "/sprite.svg#icon-tiktok-mob", href: "/" },
-    { id: 2, srs: "/sprite.svg#icon-facebook", href: "/" },
-    { id: 3, srs: "/sprite.svg#icon-youtube-mob", href: "/" },
+    {
+      id: 0,
+      src: "/sprite.svg#icon-instagram",
+      href: "https://www.instagram.com/zeryva_?igsh=cmNqOTh5MnZ2eDlz",
+    },
+    {
+      id: 1,
+      src: "/sprite.svg#icon-tiktokk",
+      href: "https://www.tiktok.com/@zeryva_?_t=ZM-90Z94XolicV&_r=1",
+    },
+    {
+      id: 2,
+      src: "/sprite.svg#icon-facebook",
+      href: "https://www.facebook.com/Zeryvaa/?rdid=gdSoZRg4myc63N5i",
+    },
+    {
+      id: 3,
+      src: "/sprite.svg#icon-youtubee",
+      href: "https://www.youtube.com/@zeryva",
+    },
   ];
   return (
     <div>
@@ -21,7 +37,7 @@ const Social = () => {
             target="_blank"
           >
             <svg className={s.icon}>
-              <use href={item.srs}></use>
+              <use href={item.src}></use>
             </svg>
           </Link>
         ))}

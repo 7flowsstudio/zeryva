@@ -17,6 +17,13 @@
 .iconBlock {
   fill: var(--fone-1);
 }
+.iconBlock:hover {
+  fill: var(--color-add-2);
+}
+.iconBlock:active {
+  fill: var(--accent-1);
+}
+
 .btnSoc {
   color: var(--accent-1);
   font-size: 13px;
@@ -27,4 +34,15 @@
   min-height: 37px;
   min-width: 158px;
   padding: 8px 9px;
+}
+.btnSoc:hover,
+.btnSoc:active {
+  border: 2px solid #eff3e5;
+  color: var(--fone-1);
+}
+@media screen and (min-width: 1200px) {
+  .btnSoc:active {
+    color: var(--accent-3);
+    border: 2px solid #83bd16;
+  }
 }

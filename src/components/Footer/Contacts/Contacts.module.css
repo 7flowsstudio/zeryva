@@ -33,3 +33,15 @@
 .mail {
   color: var(--fone-1);
 }
+.phone:hover {
+  color: var(--color-add-2);
+}
+.phone:active {
+  color: var(--accent-1);
+}
+.icon_a:hover {
+  fill: var(--color-add-2);
+}
+.icon_a:active {
+  fill: var(--accent-1);
+}

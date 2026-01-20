@@ -88,4 +88,13 @@
   .scrollbar {
     margin-top: 31;
   }
+  .thumb {
+    height: 100%;
+    width: 50%;
+    background: #f4a600;
+    border-radius: 4px;
+    transform: translateX(0);
+    touch-action: none;
+    cursor: grab;
+  }
 }
