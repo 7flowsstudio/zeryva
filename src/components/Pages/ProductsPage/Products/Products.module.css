@@ -79,9 +79,9 @@
 
 .prodList {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
 	gap: 24px;
-	justify-items: start;
+	justify-items: center;
 }
 
 /* .prodList {
@@ -102,6 +102,9 @@
 	}
 	.productPreparats {
 		margin-bottom: 24px;
+	}
+	.prodList {
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 	}
 	/* .prodList {
 		grid-template-columns: repeat(4, 1fr);

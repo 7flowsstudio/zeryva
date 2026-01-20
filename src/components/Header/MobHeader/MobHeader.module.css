@@ -27,7 +27,7 @@
 	height: 36px;
 
 	font-family: var(--font-family);
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: 700;
 	line-height: 18px;
 	letter-spacing: 0%;
@@ -42,6 +42,63 @@
 .titleScroll {
 	color: rgba(239, 243, 229, 1);
 }
+
+.mobInfoAndBurger {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+.socialInfo {
+	display: flex;
+	flex-direction: column;
+}
+.link {
+	font-family: var(--font-family);
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 16px;
+	letter-spacing: 0%;
+	text-align: left;
+	padding-top: 6px;
+}
+.mainLink {
+	color: rgba(239, 243, 229, 1);
+}
+.notMainLink {
+	color: var(--accent-2);
+}
+.linkScroll {
+	color: rgba(239, 243, 229, 1);
+}
+.messengersList {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 8px;
+}
+.messengersItem {
+}
+.blockIcon {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+.iconMessengers {
+	width: 20px;
+	height: 20px;
+}
+.mainIconMessengers {
+	fill: rgba(239, 243, 229, 1);
+}
+.notMainIconMessengers {
+	fill: var(--accent-2);
+}
+.iconMessengersScroll {
+	fill: rgba(239, 243, 229, 1);
+}
 .burgerBtn {
 	width: 32px;
 	height: 32px;
@@ -55,18 +112,7 @@
 	border-radius: 16px;
 	background: rgba(239, 243, 229, 1);
 }
-.burgerBtn {
-	width: 32px;
-	height: 32px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: nowrap;
-	gap: 10px;
-	padding: 4px;
 
-	border-radius: 16px;
-}
 .mainBtn {
 	background: var(--fone-1);
 }

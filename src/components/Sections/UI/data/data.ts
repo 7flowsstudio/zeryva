@@ -1,19 +1,59 @@
 export const socialList = [
-	{ id: 0, src: "/sprite.svg#icon-instagram", href: "/" },
-	{ id: 1, src: "/sprite.svg#icon-tiktokk", href: "/" },
-	{ id: 2, src: "/sprite.svg#icon-facebook", href: "/" },
-	{ id: 3, src: "/sprite.svg#icon-youtubee", href: "/" },
+	{
+		id: 0,
+		src: "/sprite.svg#icon-instagram",
+		href: "https://www.instagram.com/zeryva_?igsh=cmNqOTh5MnZ2eDlz",
+	},
+	{
+		id: 1,
+		src: "/sprite.svg#icon-tiktokk",
+		href: "https://www.tiktok.com/@zeryva_?_t=ZM-90Z94XolicV&_r=1",
+	},
+	{
+		id: 2,
+		src: "/sprite.svg#icon-facebook",
+		href: "https://www.facebook.com/Zeryvaa/?rdid=gdSoZRg4myc63N5i",
+	},
+	{
+		id: 3,
+		src: "/sprite.svg#icon-youtubee",
+		href: "https://www.youtube.com/@zeryva",
+	},
 ];
 
 export const socListMob = [
-	{ id: 0, src: "/sprite.svg#icon-instagram", link: "/" },
-	{ id: 1, src: "/sprite.svg#icon-tiktok-mob", link: "/" },
-	{ id: 2, src: "/sprite.svg#icon-facebook", link: "/" },
-	{ id: 3, src: "/sprite.svg#icon-youtube-mob", link: "/" },
+	{
+		id: 0,
+		src: "/sprite.svg#icon-instagram",
+		link: "https://www.instagram.com/zeryva_?igsh=cmNqOTh5MnZ2eDlz",
+	},
+	{
+		id: 1,
+		src: "/sprite.svg#icon-tiktok-mob",
+		link: "https://www.tiktok.com/@zeryva_?_t=ZM-90Z94XolicV&_r=1",
+	},
+	{
+		id: 2,
+		src: "/sprite.svg#icon-facebook",
+		link: "https://www.facebook.com/Zeryvaa/?rdid=gdSoZRg4myc63N5i",
+	},
+	{
+		id: 3,
+		src: "/sprite.svg#icon-youtube-mob",
+		link: "https://www.youtube.com/@zeryva",
+	},
 ];
 export const atherList = [
-	{ id: 0, src: "/sprite.svg#icon-watsapp", href: "/" },
-	{ id: 1, src: "/sprite.svg#icon-telegram", href: "/" },
+	{
+		id: 0,
+		src: "/sprite.svg#icon-watsapp",
+		href: "viber://chat?number=%2B380991885637",
+	},
+	{
+		id: 1,
+		src: "/sprite.svg#icon-telegram",
+		href: "https://t.me/+380991885637",
+	},
 ];
 
 export const navList = [

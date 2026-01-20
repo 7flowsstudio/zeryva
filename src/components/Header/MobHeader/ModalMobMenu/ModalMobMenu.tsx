@@ -32,13 +32,16 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 		>
 			<div className={s.head}>
 				<div className={s.logoBlock}>
-					<Image
-						src="/logo.svg"
-						width={45}
-						height={38}
-						alt="logo"
-						className={s.image}
-					/>
+					<Link href="/" onClick={handleClose}>
+						<Image
+							src="/logo.svg"
+							width={45}
+							height={38}
+							alt="logo"
+							className={s.image}
+						/>
+					</Link>
+
 					<h4 className={s.logoText}>Природа, що працює на урожай</h4>
 				</div>
 				<button type="button" className={s.closeBtn} onClick={handleClose}>
