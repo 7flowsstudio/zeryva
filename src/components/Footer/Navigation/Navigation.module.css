@@ -17,3 +17,9 @@
   line-height: 27px;
   letter-spacing: 0;
 }
+.link:hover {
+  color: var(--color-add-2);
+}
+.link:active {
+  color: var(--accent-1);
+}

@@ -29,9 +29,10 @@ export const BestsellerItem: React.FC<ProductCardProps> = ({ product }) => {
           height={165}
         />
       )}
-
-      <h3 className={s.title}>{product.title}</h3>
-      <p className={s.description}>{product.shortDescription}</p>
+      <div className={s.blockDescr}>
+        <h3 className={s.title}>{product.title}</h3>
+        <p className={s.description}>{product.shortDescription}</p>
+      </div>
       <p className={s.price}>{product.price}</p>
       <div className={s.linkWrapp}>
         <Link href={`/products/${product.id}`} className={s.link}>

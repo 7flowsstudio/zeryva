@@ -27,11 +27,20 @@ const Call = () => {
             </Portal>
           )}
         </div>
-        <picture className={s.img}>
+        {/* <picture className={s.img}>
           <source media="(max-width: 767px)" srcSet="/call/img_mob_4.webp" />
           <source media="(min-width: 768px)" srcSet="/call/img_desc_4.webp" />
           <Image src="/call/img_desc_4.webp" alt="Field" fill />
-        </picture>
+        </picture> */}
+        <div className={s.img}>
+          <Image
+            src="/call/img_desc_4.webp"
+            alt="Field"
+            fill
+            style={{ objectFit: "contain" }}
+            sizes="(max-width: 767px) 138px, 238px"
+          />
+        </div>
       </div>
     </div>
   );
