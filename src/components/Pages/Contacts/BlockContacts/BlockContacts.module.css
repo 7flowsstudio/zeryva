@@ -72,10 +72,11 @@
 	flex-shrink: 0;
 }
 .iconMessage {
-	width: 21px;
-	height: 21px;
-	fill: var(--accent-2);
+	width: 22px;
+	height: 20px;
+	color: var(--accent-2);
 }
+
 @media screen and (min-width: 420px) {
 	.messegeList {
 		width: 100%;
@@ -93,8 +94,16 @@
 	.title {
 		font-size: clamp(40px, calc((40 / 1280) * 100vw), 46px);
 	}
+	.link:hover,
+	.iconMessage:hover {
+		color: var(--accent-1);
+	}
+	.link:active,
+	.iconMessage:active {
+		color: var(--color-state-add);
+	}
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
 	.title {
 		font-size: 46px;
 	}
