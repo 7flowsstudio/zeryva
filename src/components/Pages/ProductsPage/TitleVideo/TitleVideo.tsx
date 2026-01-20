@@ -1,9 +1,16 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import s from "./TitleVideo.module.css";
 import Link from "next/link";
 
 const TitleVideo = () => {
+	const videoRef = useRef<HTMLVideoElement | null>(null);
+
+	const handlePlay = () => {
+		if (!videoRef.current) return;
+		videoRef.current.volume = 0.3;
+	};
+
 	return (
 		<section className={s.sectionTitleVideo}>
 			<div className="container">
@@ -25,12 +32,12 @@ const TitleVideo = () => {
 					</div>
 
 					<div className={s.youtubePlayer}>
-						<iframe
-							src="https://www.youtube.com/embed/jvt1CJ0kdLw"
-							title="YouTube video player"
-							frameBorder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
+						<video
+							ref={videoRef}
+							src="/products/IMG_5259.MOV"
+							controls
+							playsInline
+							onPlay={handlePlay}
 						/>
 					</div>
 				</div>
@@ -40,5 +47,3 @@ const TitleVideo = () => {
 };
 
 export default TitleVideo;
-
-// https://www.youtube.com/watch?v=jvt1CJ0kdLw

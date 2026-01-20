@@ -67,12 +67,10 @@
 	aspect-ratio: 588 / 326;
 }
 
-.youtubePlayer iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
+.youtubePlayer video {
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
 }
 @media screen and (min-width: 1080px) {
 	.sectionTitleVideo {
