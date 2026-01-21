@@ -5,7 +5,7 @@
   text-align: start;
   font-family: var(--third-family);
   color: var(--accent-2);
-  padding-bottom: 32px;
+  padding-bottom: 8px;
   font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
 }
 .text {
@@ -60,8 +60,8 @@
 }
 
 .navButton {
-  /* width: 36px;
-  height: 36px; */
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -69,18 +69,37 @@
   font-size: 16px;
   font-weight: bold;
   transition: transform 0.15s ease;
+  border: 2px solid #1a4b38;
+  border-radius: 50px;
 }
 .arrLeft,
 .arrRight {
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
+  fill: var(--accent-2);
+}
+.arrRight {
+  transform: translateX(3px) rotate(180deg);
 }
 .navButton:active {
   transform: scale(0.8);
 }
+.navButton:hover,
+.navButton:active {
+  border: 2px solid #7aaa8d;
+}
+.arrLeft:hover,
+.arrRight:hover,
+.arrLeft:active,
+.arrRight:active {
+  fill: var(--color-add-2);
+}
 @media screen and (min-width: 980px) {
   .bestsCont {
     padding-bottom: 80px;
+  }
+  .title {
+    padding-bottom: 16px;
   }
   .text {
     padding-bottom: 24px;
@@ -96,5 +115,12 @@
     transform: translateX(0);
     touch-action: none;
     cursor: grab;
+  }
+  .navButton:active {
+    border: 2px solid #83bd16;
+  }
+  .arrLeft:active,
+  .arrRight:active {
+    fill: var(--accent-3);
   }
 }

@@ -19,12 +19,15 @@
   display: flex;
   gap: 8px;
 }
-.icon_a {
+.icon_a,
+.icon_aa {
   fill: var(--fone-1);
   width: 20px;
   height: 20px;
   display: block;
+  transition: color 0.25s ease;
 }
+
 .address {
   display: flex;
   flex-direction: column;
@@ -39,9 +42,9 @@
 .phone:active {
   color: var(--accent-1);
 }
-.icon_a:hover {
-  fill: var(--color-add-2);
+.icon_aa:hover {
+  color: var(--color-add-2);
 }
-.icon_a:active {
-  fill: var(--accent-1);
+.icon_aa:active {
+  color: var(--accent-1);
 }
