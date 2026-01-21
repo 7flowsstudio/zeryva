@@ -53,7 +53,17 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 			<div className={s.line}></div>
 			<ul className={s.menuList}>
 				{navList.map((item) => (
-					<li key={item.id} className={s.menuItem} onClick={handleClose}>
+					<li
+						key={item.id}
+						className={`${s.menuItem} ${
+							item.src === "/dilers" ? s.disabled : ""
+						}`}
+						onClick={(e) => {
+							if (item.src === "/dilers") {
+								e.preventDefault();
+							} else handleClose();
+						}}
+					>
 						<Link href={item.src}>{item.text}</Link>
 					</li>
 				))}
@@ -103,7 +113,7 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 						</ul>
 					</div>
 					<Link
-						href="https://drive.google.com/file/d/1PFw6ed9tHJiNI61ebCjlSbfmqubnkBa0/view"
+						href="/doc/katalog.pdf"
 						className={s.btnUpload}
 						target="_blank"
 						onClick={handleClose}

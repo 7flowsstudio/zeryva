@@ -29,7 +29,7 @@ export const socListMob = [
 	},
 	{
 		id: 1,
-		src: "/sprite.svg#icon-tiktok-mob",
+		src: "/sprite.svg#icon-tiktokk",
 		link: "https://www.tiktok.com/@zeryva_?_t=ZM-90Z94XolicV&_r=1",
 	},
 	{
@@ -39,7 +39,7 @@ export const socListMob = [
 	},
 	{
 		id: 3,
-		src: "/sprite.svg#icon-youtube-mob",
+		src: "/sprite.svg#icon-youtubee",
 		link: "https://www.youtube.com/@zeryva",
 	},
 ];
