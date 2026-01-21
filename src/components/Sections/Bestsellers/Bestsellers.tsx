@@ -21,7 +21,7 @@ const Bestsellers = () => {
       const q = query(
         collection(db, "products"),
         orderBy("createdAt", "asc"),
-        where("isBestseller", "==", true)
+        where("isBestseller", "==", true),
       );
 
       const snapshot = await getDocs(q);
@@ -60,22 +60,28 @@ const Bestsellers = () => {
 
         <div className={s.sliderControls}>
           <button onClick={() => scrollSmooth("left")} className={s.navButton}>
-            <Image
+            {/* <Image
               className={s.arrLeft}
               src="/bestsellers/left.svg"
               alt="Left"
               width={48}
               height={48}
-            />
+            /> */}
+            <svg className={s.arrLeft}>
+              <use href="/sprite.svg#icon-hero-arrow-left"></use>
+            </svg>
           </button>
           <button onClick={() => scrollSmooth("right")} className={s.navButton}>
-            <Image
+            {/* <Image
               className={s.arrRight}
               src="/bestsellers/right.svg"
               alt="Right"
               width={48}
               height={48}
-            />
+            /> */}
+            <svg className={s.arrRight}>
+              <use href="/sprite.svg#icon-hero-arrow-left"></use>
+            </svg>
           </button>
         </div>
         <div className={s.scrollbar}>

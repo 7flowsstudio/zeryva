@@ -12,7 +12,7 @@ const Contacts = () => {
     {
       id: 1,
       src: "/sprite.svg#icon-telegram",
-      href: "https://web.telegram.org/k/#@Vas_Kr",
+      href: "https://t.me/+380991885637",
     },
   ];
   return (
@@ -43,7 +43,7 @@ const Contacts = () => {
                 className={s.iconBlock}
                 target="_blank"
               >
-                <svg className={s.icon_a}>
+                <svg className={s.icon_aa}>
                   <use href={item.src}></use>
                 </svg>
               </Link>

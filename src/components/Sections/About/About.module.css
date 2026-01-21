@@ -40,7 +40,7 @@
   box-shadow: 1px 2px 4px 0px #1a4b3882;
   /* padding: 8px 32px; */
   font-family: var(--font-family);
-  margin-top: 24px;
+  /* margin-top: 24px; */
   width: 179px;
   height: 37px;
 }
@@ -61,11 +61,17 @@
     width: 310px;
   }
 }
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 768px) {
   .heroCont {
     padding-top: 80px;
     padding-bottom: 80px;
   }
+}
+@media screen and (min-width: 980px) {
+  /* .heroCont {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  } */
   .textFirst {
     grid-area: textFirst;
   }
@@ -104,5 +110,10 @@
     color: var(--accent-3);
     border: 2px solid var(--accent-3);
     box-shadow: 1px 2px 4px 0px #1a4b3882;
+  }
+}
+@media screen and (min-width: 1230px) {
+  .btnAbout {
+    margin-top: -84px;
   }
 }
