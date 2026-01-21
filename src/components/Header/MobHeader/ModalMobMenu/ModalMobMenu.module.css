@@ -169,7 +169,7 @@
 .iconMessengers {
 	width: 19px;
 	height: 21px;
-	fill: rgba(239, 243, 229, 1);
+	color: rgba(239, 243, 229, 1);
 }
 .iconSoc {
 	width: 20px;
@@ -198,4 +198,7 @@
 	line-height: 21px;
 	letter-spacing: 0%;
 	text-align: left;
+}
+.disabled {
+	pointer-events: none;
 }

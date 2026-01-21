@@ -120,12 +120,29 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 			</li>
 			<li className={s.line}></li>
 			<li className={s.botomHead}>
-				<nav className={s.navigation}>
+				{/* <nav className={s.navigation}>
 					{navList.map((item) => (
 						<Link
 							key={item.id}
 							href={item.src}
 							className={`${s.link} ${isAther ? s.colorGreen : ""}`}
+						>
+							{item.text}
+						</Link>
+					))}
+				</nav> */}
+
+				<nav className={s.navigation}>
+					{navList.map((item) => (
+						<Link
+							key={item.id}
+							href={item.src}
+							className={`${s.link} ${isAther ? s.colorGreen : ""} ${
+								item.src === "/dilers" ? s.disabled : ""
+							}`}
+							onClick={(e) => {
+								if (item.src === "/dilers") e.preventDefault();
+							}}
 						>
 							{item.text}
 						</Link>
