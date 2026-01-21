@@ -11,6 +11,7 @@ import {
 } from "formik";
 import SuccessModdal from "./SuccessModdal/SuccessModdal";
 import { ValidationSchemaCallback } from "../../../../../utils/validationSchema";
+import formatPhoneUA from "./formatPhoneUA/formatPhoneUA";
 
 type Props = {
 	setOpenModal?: React.Dispatch<SetStateAction<boolean>>;
@@ -24,6 +25,7 @@ type InitialValuesType = {
 const ContactForm = ({ setOpenModal }: Props) => {
 	const [successMessage, setSuccessMessage] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
+	const [phoneFocused, setPhoneFocused] = useState(false);
 
 	const initialValues = {
 		name: "",
@@ -107,16 +109,34 @@ const ContactForm = ({ setOpenModal }: Props) => {
 									placeholder="+380 (00) 000 00 00 "
 								/> */}
 								<Field name="phone">
-									{({ field, meta }: FieldProps) => (
-										<input
-											{...field}
-											type="text"
-											placeholder="+380 (00) 000 00 00"
-											className={`${s.input} ${
-												meta.touched && meta.error ? s.inputError : ""
-											}`}
-										/>
-									)}
+									{({ field, meta, form }: FieldProps) => {
+										const formattedValue =
+											!field.value && !phoneFocused
+												? "" // ← тоді показується placeholder
+												: formatPhoneUA(field.value);
+
+										return (
+											<input
+												type="text"
+												value={formattedValue}
+												placeholder="+380 (00) 000 00 00"
+												className={`${s.input} ${
+													meta.touched && meta.error ? s.inputError : ""
+												}`}
+												onFocus={() => setPhoneFocused(true)}
+												onBlur={(e) => {
+													setPhoneFocused(false);
+													field.onBlur(e);
+												}}
+												onChange={(e) => {
+													const digits = e.target.value
+														.replace(/\D/g, "")
+														.slice(3);
+													form.setFieldValue(field.name, digits);
+												}}
+											/>
+										);
+									}}
 								</Field>
 								<ErrorMessage name="phone" component="p" className={s.error} />
 							</label>
