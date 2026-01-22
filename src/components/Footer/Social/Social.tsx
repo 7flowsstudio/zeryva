@@ -25,6 +25,9 @@ const Social = () => {
       href: "https://www.youtube.com/@zeryva",
     },
   ];
+  const handleDownload = () => {
+    window.open("/doc/katalog.pdf", "_blank", "noopener,noreferrer");
+  };
   return (
     <div>
       <h3 className={s.title}>Соціальні мережі</h3>
@@ -43,13 +46,16 @@ const Social = () => {
         ))}
       </div>
       {/* <button className={s.btnSoc}>Завантажити каталог</button> */}
-      <Link
+      {/* <Link
         href="https://drive.google.com/file/d/1PFw6ed9tHJiNI61ebCjlSbfmqubnkBa0/view"
         className={s.btnSoc}
         target="_blank"
       >
         Завантажити каталог
-      </Link>
+      </Link> */}
+      <button type="button" className={s.btnSoc} onClick={handleDownload}>
+        Завантажити каталог
+      </button>
     </div>
   );
 };
