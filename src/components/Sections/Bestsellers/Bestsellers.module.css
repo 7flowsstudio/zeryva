@@ -1,126 +1,137 @@
 .bestsCont {
-  padding-bottom: 48px;
+	padding-bottom: 48px;
 }
 .title {
-  text-align: start;
-  font-family: var(--third-family);
-  color: var(--accent-2);
-  padding-bottom: 8px;
-  font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
+	text-align: start;
+	font-family: var(--third-family);
+	color: var(--accent-2);
+	padding-bottom: 8px;
+	font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
 }
 .text {
-  text-align: start;
-  color: var(--accent-2);
-  font-family: var(--font-family);
-  font-size: 16px;
-  padding-bottom: 16px;
+	text-align: start;
+	color: var(--accent-2);
+	font-family: var(--font-family);
+	font-size: 16px;
+	padding-bottom: 16px;
 }
 .list {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  /* scroll-behavior: smooth; */
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 16px;
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	/* scroll-behavior: smooth; */
+	-webkit-overflow-scrolling: touch;
+	padding-bottom: 16px;
 
-  overflow-x: auto;
-  scrollbar-width: none;
+	overflow-x: auto;
+	scrollbar-width: none;
 }
 .list::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 .scrollbar {
-  width: clamp(148px, 26vw, 384px);
-  height: 8px;
-  background: #1a4b38;
-  border-radius: 4px;
-  margin-top: 24;
+	width: clamp(148px, 26vw, 384px);
+	height: 8px;
+	background: #1a4b38;
+	border-radius: 4px;
+	margin-top: 24;
 }
 
 .thumb {
-  height: 100%;
-  width: 6%;
-  background: #f4a600;
-  border-radius: 4px;
-  transform: translateX(0);
-  touch-action: none;
-  cursor: grab;
+	height: 100%;
+	width: 6%;
+	background: #f4a600;
+	border-radius: 4px;
+	transform: translateX(0);
+	touch-action: none;
+	cursor: grab;
 }
 
 .thumb:active {
-  cursor: grabbing;
+	cursor: grabbing;
 }
 
 .sliderControls {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-top: 24px;
+	display: flex;
+	justify-content: flex-start;
+	gap: 10px;
+	margin-top: 24px;
 }
 
 .navButton {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  transition: transform 0.15s ease;
-  border: 2px solid #1a4b38;
-  border-radius: 50px;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-weight: bold;
+	transition: transform 0.15s ease;
+	border: 2px solid #1a4b38;
+	border-radius: 50px;
 }
 .arrLeft,
 .arrRight {
-  width: 24px;
-  height: 24px;
-  fill: var(--accent-2);
+	width: 24px;
+	height: 24px;
+	fill: var(--accent-2);
 }
 .arrRight {
-  transform: translateX(3px) rotate(180deg);
+	transform: translateX(3px) rotate(180deg);
 }
 .navButton:active {
-  transform: scale(0.8);
+	transform: scale(0.8);
 }
 .navButton:hover,
 .navButton:active {
-  border: 2px solid #7aaa8d;
+	border: 2px solid #7aaa8d;
 }
 .arrLeft:hover,
 .arrRight:hover,
 .arrLeft:active,
 .arrRight:active {
-  fill: var(--color-add-2);
+	fill: var(--color-add-2);
+}
+.animateTitle {
+	opacity: 0;
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animateTitle {
+	transform: translateX(-50px);
+}
+.animateTitle.visible {
+	opacity: 1;
+	transform: translateX(0);
 }
 @media screen and (min-width: 980px) {
-  .bestsCont {
-    padding-bottom: 80px;
-  }
-  .title {
-    padding-bottom: 16px;
-  }
-  .text {
-    padding-bottom: 24px;
-  }
-  .scrollbar {
-    margin-top: 31;
-  }
-  .thumb {
-    height: 100%;
-    width: 50%;
-    background: #f4a600;
-    border-radius: 4px;
-    transform: translateX(0);
-    touch-action: none;
-    cursor: grab;
-  }
-  .navButton:active {
-    border: 2px solid #83bd16;
-  }
-  .arrLeft:active,
-  .arrRight:active {
-    fill: var(--accent-3);
-  }
+	.bestsCont {
+		padding-bottom: 80px;
+	}
+	.title {
+		padding-bottom: 16px;
+	}
+	.text {
+		padding-bottom: 24px;
+	}
+	.scrollbar {
+		margin-top: 31;
+	}
+	.thumb {
+		height: 100%;
+		width: 50%;
+		background: #f4a600;
+		border-radius: 4px;
+		transform: translateX(0);
+		touch-action: none;
+		cursor: grab;
+	}
+	.navButton:active {
+		border: 2px solid #83bd16;
+	}
+	.arrLeft:active,
+	.arrRight:active {
+		fill: var(--accent-3);
+	}
 }

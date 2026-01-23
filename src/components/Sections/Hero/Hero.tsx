@@ -29,7 +29,7 @@ const Hero = () => {
 				modules={[Navigation, Autoplay]}
 				loop={true}
 				autoplay={{
-					delay: 2000, // час між автоперегортаннями у мс
+					delay: 4000, // час між автоперегортаннями у мс
 					disableOnInteraction: false, // щоб автоперегортання не зупинялось після ручного свайпу
 					pauseOnMouseEnter: true, // пауза при наведені миші
 				}}
