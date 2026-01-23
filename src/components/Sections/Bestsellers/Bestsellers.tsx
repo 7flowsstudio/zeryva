@@ -8,88 +8,100 @@ import { useCustomScrollbar } from "../../../../utils/useCustomScrollbar";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../../firebaseConfig";
 import { ProductWithId } from "../../../../utils/types";
+import useScrollAnimation from "../../../../utils/UseScrollAnimation/useScrollAnimation";
 
 const Bestsellers = () => {
-  //   const containerRef = useRef<HTMLUListElement | null>(null);
-  const listRef = useRef<HTMLUListElement>(null);
-  const thumbRef = useRef<HTMLDivElement>(null);
+	const [aboutTitleRef, aboutTitleVisible] = useScrollAnimation() as [
+		React.RefObject<HTMLDivElement>,
+		boolean
+	];
+	//   const containerRef = useRef<HTMLUListElement | null>(null);
+	const listRef = useRef<HTMLUListElement>(null);
+	const thumbRef = useRef<HTMLDivElement>(null);
 
-  const [products, setProducts] = useState<ProductWithId[]>([]);
+	const [products, setProducts] = useState<ProductWithId[]>([]);
 
-  useEffect(() => {
-    const fetchBestsellers = async () => {
-      const q = query(
-        collection(db, "products"),
-        orderBy("createdAt", "asc"),
-        where("isBestseller", "==", true),
-      );
+	useEffect(() => {
+		const fetchBestsellers = async () => {
+			const q = query(
+				collection(db, "products"),
+				orderBy("createdAt", "asc"),
+				where("isBestseller", "==", true)
+			);
 
-      const snapshot = await getDocs(q);
-      const data = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...(doc.data() as Omit<ProductWithId, "id">),
-      }));
+			const snapshot = await getDocs(q);
+			const data = snapshot.docs.map((doc) => ({
+				id: doc.id,
+				...(doc.data() as Omit<ProductWithId, "id">),
+			}));
 
-      setProducts(data);
-    };
+			setProducts(data);
+		};
 
-    fetchBestsellers();
-  }, []);
+		fetchBestsellers();
+	}, []);
 
-  useCustomScrollbar(listRef, thumbRef);
+	useCustomScrollbar(listRef, thumbRef);
 
-  const { scrollSmooth } = useSmoothScroll(listRef, {
-    slidesToScroll: 1,
-    gap: 20,
-    duration: 500,
-  });
-  return (
-    <div className={`container ${s.bestsCont}`}>
-      <div>
-        <h2 className={s.title}>Хіти продажу</h2>
-        <p className={s.text}>
-          Препарати, що стабільно підвищують врожайність і економлять час та
-          ресурси
-        </p>
+	const { scrollSmooth } = useSmoothScroll(listRef, {
+		slidesToScroll: 1,
+		gap: 20,
+		duration: 500,
+	});
+	return (
+		<div className={`container ${s.bestsCont}`}>
+			<div>
+				<h2
+					ref={aboutTitleRef}
+					className={`${s.title} ${s.animateTitle} ${
+						aboutTitleVisible ? s.visible : ""
+					}`}
+				>
+					Хіти продажу
+				</h2>
+				<p className={s.text}>
+					Препарати, що стабільно підвищують врожайність і економлять час та
+					ресурси
+				</p>
 
-        <ul className={s.list} ref={listRef}>
-          {products.map((product) => (
-            <BestsellerItem key={product.id} product={product} />
-          ))}
-        </ul>
+				<ul className={s.list} ref={listRef}>
+					{products.map((product) => (
+						<BestsellerItem key={product.id} product={product} />
+					))}
+				</ul>
 
-        <div className={s.sliderControls}>
-          <button onClick={() => scrollSmooth("left")} className={s.navButton}>
-            {/* <Image
+				<div className={s.sliderControls}>
+					<button onClick={() => scrollSmooth("left")} className={s.navButton}>
+						{/* <Image
               className={s.arrLeft}
               src="/bestsellers/left.svg"
               alt="Left"
               width={48}
               height={48}
             /> */}
-            <svg className={s.arrLeft}>
-              <use href="/sprite.svg#icon-hero-arrow-left"></use>
-            </svg>
-          </button>
-          <button onClick={() => scrollSmooth("right")} className={s.navButton}>
-            {/* <Image
+						<svg className={s.arrLeft}>
+							<use href="/sprite.svg#icon-hero-arrow-left"></use>
+						</svg>
+					</button>
+					<button onClick={() => scrollSmooth("right")} className={s.navButton}>
+						{/* <Image
               className={s.arrRight}
               src="/bestsellers/right.svg"
               alt="Right"
               width={48}
               height={48}
             /> */}
-            <svg className={s.arrRight}>
-              <use href="/sprite.svg#icon-hero-arrow-left"></use>
-            </svg>
-          </button>
-        </div>
-        <div className={s.scrollbar}>
-          <div ref={thumbRef} className={s.thumb} />
-        </div>
-      </div>
-    </div>
-  );
+						<svg className={s.arrRight}>
+							<use href="/sprite.svg#icon-hero-arrow-left"></use>
+						</svg>
+					</button>
+				</div>
+				<div className={s.scrollbar}>
+					<div ref={thumbRef} className={s.thumb} />
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Bestsellers;
