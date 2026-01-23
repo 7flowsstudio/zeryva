@@ -4,10 +4,31 @@ import "./variables.css";
 import { ClientLayout } from "./ClientLayout";
 
 export const metadata: Metadata = {
-	title: "Zeryva.com",
-	description: "Інноваційні підходи до природного та стійкого розвитку культур",
+	title: `ТОВ "Zeryva" - офіційний сайт`,
+	description:
+		"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
+	metadataBase: new URL("http://zeryva.com.ua"),
+	alternates: {
+		canonical: "http://zeryva.com.ua",
+	},
+	openGraph: {
+		title: 'ТОВ "Zeryva" - офіційний сайт',
+		description:
+			"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
+		url: "http://zeryva.com.ua",
+		siteName: "Zeryva",
+		type: "website",
+		images: [
+			{
+				url: "/logo.svg",
+				width: 504,
+				height: 504,
+				alt: "Zeryva",
+			},
+		],
+	},
 	icons: {
-		icon: "/icon.svg",
+		icon: "/logo.svg",
 	},
 };
 
@@ -17,7 +38,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="uk">
 			<body id="app-scroll">
 				<ClientLayout>{children}</ClientLayout>
 				<div id="modal-root" />
