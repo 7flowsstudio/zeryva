@@ -80,6 +80,28 @@
 .imageWrapper {
 	width: 100%;
 }
+
+.animateBlock,
+.animateTitle {
+	opacity: 0;
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animateTitle {
+	transform: translateX(-50px);
+}
+.animateBlock {
+	transform: translateY(50px);
+}
+.animateTitle.visible,
+.animateBlock.visible {
+	opacity: 1;
+}
+.animateTitle.visible {
+	transform: translateX(0);
+}
+.animateBlock.visible {
+	transform: translateY(0);
+}
 @media screen and (max-width: 768px) {
 	.imageWrapper {
 		aspect-ratio: 311 / 99;

@@ -76,6 +76,17 @@
 	height: 20px;
 	color: var(--accent-2);
 }
+.animateTitle {
+	opacity: 0;
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animateTitle {
+	transform: translateX(-50px);
+}
+.animateTitle.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
 
 @media screen and (min-width: 420px) {
 	.messegeList {

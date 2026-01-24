@@ -3,14 +3,18 @@ import ItemPage from "@/components/Pages/ItemPage/ItemPage";
 import { getProductForMetadata } from "@/lib/getProductForMetadata";
 
 type Props = {
-	params: { id: string };
+	params: Promise<{ id: string }>;
 };
 
 /**
  * SEO + OpenGraph для конкретного продукту
  */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-	const product = await getProductForMetadata(params.id);
+	const { id } = await params;
+	// console.log("SERVER PARAMS ID:", id);
+	const product = getProductForMetadata(id);
+
+	// console.log("SERVER PRODUCT:", product);
 
 	if (!product) {
 		return {
@@ -26,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		openGraph: {
 			title: product.title,
 			description: product.shortDescription,
-			url: `https://zeryva.com/products/${params.id}`,
+			url: `https://zeryva.com/products/${id}`,
 			type: "website",
 			images: product.image
 				? [

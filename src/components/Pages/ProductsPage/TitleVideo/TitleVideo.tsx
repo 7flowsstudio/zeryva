@@ -1,13 +1,21 @@
 import React from "react";
 import s from "./TitleVideo.module.css";
 import Link from "next/link";
+import useScrollAnimation from "../../../../../utils/UseScrollAnimation/useScrollAnimation";
 
 const TitleVideo = () => {
+	const [productsDescriptionRef, productsDescriptionVisible] =
+		useScrollAnimation() as [React.RefObject<HTMLDivElement>, boolean];
 	return (
 		<section className={s.sectionTitleVideo}>
 			<div className="container">
 				<div className={s.titleVideoWrapper}>
-					<div className={s.description}>
+					<div
+						ref={productsDescriptionRef}
+						className={`${s.description} ${s.animateDescription} ${
+							productsDescriptionVisible ? s.visible : ""
+						}`}
+					>
 						<h2 className={s.title}>Продукти «Зерива»</h2>
 						<p className={s.text}>
 							Компанія пропонує лінійку препаратів у сухій та рідкій формах для
