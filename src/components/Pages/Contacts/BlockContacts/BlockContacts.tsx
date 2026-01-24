@@ -1,14 +1,27 @@
+"use client";
 import React from "react";
 import s from "./BlockContacts.module.css";
 import Link from "next/link";
+import useScrollAnimation from "../../../../../utils/UseScrollAnimation/useScrollAnimation";
 
 const BlockContacts = () => {
+	const [aboutTitleRef, aboutTitleVisible] = useScrollAnimation() as [
+		React.RefObject<HTMLDivElement>,
+		boolean
+	];
 	return (
 		<section className={s.contactSection}>
 			<div className="container">
 				<div className={s.contactsWrapper}>
 					<div className={s.topBlock}>
-						<h2 className={s.title}>Контакти</h2>
+						<h2
+							ref={aboutTitleRef}
+							className={`${s.title} ${s.animateTitle} ${
+								aboutTitleVisible ? s.visible : ""
+							}`}
+						>
+							Контакти
+						</h2>
 						<p className={s.description}>
 							Ми завжди на зв’язку для консультацій та співпраці
 						</p>

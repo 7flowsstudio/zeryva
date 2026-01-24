@@ -41,6 +41,17 @@
 	line-height: 150%;
 	color: var(--accent-2);
 }
+.animateTitle {
+	opacity: 0;
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animateTitle {
+	transform: translateX(-50px);
+}
+.animateTitle.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
 @media screen and (min-width: 768px) {
 	.title {
 		font-size: clamp(36px, calc((36 / 768) * 100vw), 40px);
@@ -64,6 +75,9 @@
 	}
 	.title {
 		font-size: clamp(40px, calc((40 / 1280) * 100vw), 46px);
+	}
+	.animateTitle {
+		transform: translateX(50px);
 	}
 }
 @media screen and (min-width: 1440px) {
