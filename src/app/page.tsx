@@ -12,6 +12,7 @@ import Hero from "@/components/Sections/Hero/Hero";
 // const Hero = dynamic(() => import("@/components/Sections/Hero/Hero"), {
 //   ssr: false,
 // });
+
 const Bestsellers = dynamic(
   () => import("@/components/Sections/Bestsellers/Bestsellers"),
   {
