@@ -133,21 +133,28 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 				</nav> */}
 
 				<nav className={s.navigation}>
-					{navList.map((item) => (
-						<Link
-							key={item.id}
-							href={item.src}
-							className={`${s.link} ${isAther ? s.colorGreen : ""} ${
-								item.src === "/dilers" ? s.disabled : ""
-							}`}
-							onClick={(e) => {
-								if (item.src === "/dilers") e.preventDefault();
-							}}
-						>
-							{item.text}
-						</Link>
-					))}
+					{navList.map((item) =>
+						item.src === "/dilers" ? (
+							<div
+								key={item.id}
+								className={`${s.link} ${isAther ? s.colorGreen : ""} ${
+									s.disabled
+								}`}
+							>
+								{item.text}
+							</div>
+						) : (
+							<Link
+								key={item.id}
+								href={item.src}
+								className={`${s.link} ${isAther ? s.colorGreen : ""}`}
+							>
+								{item.text}
+							</Link>
+						)
+					)}
 				</nav>
+
 				<div className={s.searchBlock} ref={searchRef}>
 					<div className={s.blockSearch}>
 						<svg className={s.iconSearch}>

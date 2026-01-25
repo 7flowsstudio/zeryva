@@ -58,16 +58,19 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 						className={`${s.menuItem} ${
 							item.src === "/dilers" ? s.disabled : ""
 						}`}
-						onClick={(e) => {
-							if (item.src === "/dilers") {
-								e.preventDefault();
-							} else handleClose();
+						onClick={() => {
+							if (item.src !== "/dilers") handleClose();
 						}}
 					>
-						<Link href={item.src}>{item.text}</Link>
+						{item.src === "/dilers" ? (
+							<span>{item.text}</span>
+						) : (
+							<Link href={item.src}>{item.text}</Link>
+						)}
 					</li>
 				))}
 			</ul>
+
 			<div className={s.line}></div>
 			<div className={s.contactWrapper}>
 				<div className={s.messengers}>
