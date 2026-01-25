@@ -28,6 +28,7 @@ const Hero = () => {
 				}}
 				modules={[Navigation, Autoplay]}
 				loop={true}
+				autoplay={false}
 				breakpoints={{
 					0: {
 						slidesPerView: 1,
