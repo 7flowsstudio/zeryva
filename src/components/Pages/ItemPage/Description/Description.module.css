@@ -3,6 +3,16 @@
   border-radius: 20px;
   margin-bottom: 16px;
   background-color: var(--color-add-search);
+  animation: ani 2s forwards;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .title {
   font-family: var(--font-family);

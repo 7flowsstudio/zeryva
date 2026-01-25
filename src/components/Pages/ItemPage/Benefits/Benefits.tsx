@@ -9,7 +9,7 @@ interface BenefitsProps {
 
 const Benefits: React.FC<BenefitsProps> = ({ product }) => {
   return (
-    <div>
+    <div className={s.benefitCont}>
       <ul className={s.list}>
         {product.benefits.map((benefit, index) => (
           <li className={s.benefit} key={index}>

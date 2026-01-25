@@ -27,7 +27,7 @@ const Description: React.FC<DescriptionProps> = ({ product }) => {
   const d = product.description;
 
   return (
-    <div>
+    <div className={s.descrCont}>
       <Field label="Склад" value={d.composition} />
       <Field label="Мета застосування" value={d.purpose} />
       <Field label="Характеристика" value={d.characteristics} />
