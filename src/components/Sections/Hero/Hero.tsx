@@ -28,13 +28,21 @@ const Hero = () => {
 				}}
 				modules={[Navigation, Autoplay]}
 				loop={true}
-				autoplay={{
-					delay: 4000, // час між автоперегортаннями у мс
-					disableOnInteraction: false, // щоб автоперегортання не зупинялось після ручного свайпу
-					pauseOnMouseEnter: true, // пауза при наведені миші
-				}}
 				breakpoints={{
-					320: { slidesPerView: 1, spaceBetween: 0 },
+					0: {
+						slidesPerView: 1,
+						spaceBetween: 0,
+						autoplay: false,
+					},
+					1280: {
+						slidesPerView: 1,
+						spaceBetween: 0,
+						autoplay: {
+							delay: 4000,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
+						},
+					},
 				}}
 			>
 				{HeroImg?.map((item, index) => (
