@@ -12,8 +12,8 @@ import HeroImg from "./HeroInfo.json";
 // import BtnConsultation from "./BtnConsultation/BtnConsultation";
 
 const Hero = () => {
-	const [activeIndex, setActiveIndex] = React.useState(0);
-	const slidesCount = HeroImg.length;
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const slidesCount = HeroImg.length;
 
 	return (
 		<div id="hero" className={s.sliderContainer}>
@@ -81,7 +81,7 @@ const Hero = () => {
 export default Hero;
 
 {
-	/* <picture>
+  /* <picture>
 	<source media="(max-width: 767px)" srcSet="/hero/first_mob.webp" />
 	<source media="(min-width: 768px)" srcSet="/hero/first.webp" />
 	<Image src="/hero/first.webp" alt="hero_img" fill className={s.image} />
