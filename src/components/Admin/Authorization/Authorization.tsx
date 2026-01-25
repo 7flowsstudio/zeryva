@@ -3,10 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import s from "./Authorization.module.css";
-import {
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { validationSchemaRegister } from "../../../../utils/validationSchema";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import ResetPasswordModal from "./ResetPasswordModal/ResetPasswordModal";
@@ -39,20 +36,6 @@ const Authorization = () => {
       router.push("/admin");
     } catch (error: unknown) {
       alert("Невірний логін або пароль");
-      console.error(error);
-    }
-  };
-  const handleResetPassword = async (email: string) => {
-    if (!email) {
-      alert("Введи email для відновлення пароля");
-      return;
-    }
-
-    try {
-      await sendPasswordResetEmail(auth, email);
-      alert("Лист для відновлення пароля надіслано");
-    } catch (error) {
-      alert("Помилка відновлення пароля");
       console.error(error);
     }
   };

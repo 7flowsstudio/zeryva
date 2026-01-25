@@ -1,5 +1,4 @@
 .menuSideWrapper {
-  /* min-width: 264px; */
   height: calc(100dvh - 48px);
   display: flex;
   flex-direction: column;
@@ -62,13 +61,7 @@
 .iconMenu {
   width: 18px;
   height: 18px;
-  /* stroke: var(--brand);
-  fill: none; */
 }
-/* .icon {
-  fill: var(--brand);
-  stroke: none;
-} */
 
 .active .iconMenu {
   width: 40px;

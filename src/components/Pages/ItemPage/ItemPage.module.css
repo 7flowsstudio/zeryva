@@ -64,7 +64,6 @@
   margin: 0 auto;
   width: clamp(343px, calc((588 / 1440) * 100vw), 588px);
   overflow: hidden;
-  /* margin-bottom: 12px; */
 }
 .img {
   width: 100%;
@@ -137,7 +136,6 @@
 .tabs {
   display: flex;
   justify-content: space-between;
-  /* padding-bottom: clamp(16px, calc((24 / 1440) * 100vw), 24px); */
 }
 
 .tabBtn {
@@ -202,8 +200,6 @@
 }
 
 .modal {
-  /* background: #fff;
-  padding: 16px; */
   max-height: 90vh;
   overflow: auto;
   scrollbar-width: none;

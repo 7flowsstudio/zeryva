@@ -24,7 +24,7 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
           `Колонка ${instructionTable.columns.length + 1}`,
         ],
         rows: instructionTable.rows.map((row) =>
-          row.type === "normal" ? { ...row, cells: [...row.cells, ""] } : row
+          row.type === "normal" ? { ...row, cells: [...row.cells, ""] } : row,
         ),
       },
     });
@@ -75,7 +75,7 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
             ...row,
             cells: row.cells.map((cell, c) => (c === colIndex ? value : cell)),
           }
-        : row
+        : row,
     );
 
     setProduct({
@@ -86,7 +86,7 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
 
   const updateFullRow = (rowIndex: number, value: string) => {
     const newRows = instructionTable.rows.map((row, r) =>
-      r === rowIndex && row.type === "full" ? { ...row, value } : row
+      r === rowIndex && row.type === "full" ? { ...row, value } : row,
     );
 
     setProduct({
@@ -105,7 +105,7 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
                 ...row,
                 cells: row.cells.filter((_, i) => i !== colIndex),
               }
-            : row
+            : row,
         ),
       },
     });
@@ -161,9 +161,6 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
                   }}
                   onInput={(e) => autoResize(e.currentTarget)}
                 />
-                {/* <button type="button" onClick={() => removeColumn(i)}>
-                  Видалити стовпець
-                </button> */}
               </th>
             ))}
           </tr>
@@ -212,7 +209,7 @@ const InstructionTab: React.FC<InstructionTabProps> = ({
                   </button>
                 </td>
               </tr>
-            )
+            ),
           )}
         </tbody>
       </table>
