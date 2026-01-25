@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Product } from "../../../../../../../utils/types";
 import axios from "axios";
 import s from "./MainTab.module.css";

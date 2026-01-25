@@ -6,13 +6,7 @@
 .imgFirst,
 .imgSec {
   position: relative;
-  /* width: 588px;
-  height: 363px; */
   display: block;
-  /* width: clamp(343px, calc((343 / 588) * 100vw), 588px);
-  min-height: 212px;
-  height: 100%; */
-  /* width: clamp(343px, 58vw, 588px); */
   width: clamp(343px, calc((588 / 1440) * 100vw), 588px);
   aspect-ratio: 588 / 363;
   margin: 0 auto;
@@ -38,9 +32,7 @@
   border-radius: 30px;
   border: 2px solid var(--accent-2);
   box-shadow: 1px 2px 4px 0px #1a4b3882;
-  /* padding: 8px 32px; */
   font-family: var(--font-family);
-  /* margin-top: 24px; */
   width: 179px;
   height: 37px;
   z-index: 1000;
@@ -51,11 +43,6 @@
   border: 2px solid var(--color-add-2);
   box-shadow: 1px 2px 4px 0px #1a4b3882;
 }
-/* .btnAbout:hover {
-   color: var(--color-add-2);
-  border: 2px solid var(--color-add-2);
-  box-shadow: 1px 2px 4px 0px #1a4b3882;
-} */
 
 .animateTitle {
   opacity: 0;
@@ -103,10 +90,6 @@
   }
 }
 @media screen and (min-width: 980px) {
-  /* .heroCont {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  } */
   .textFirst {
     grid-area: textFirst;
   }
@@ -137,7 +120,6 @@
   }
   .btnAbout {
     font-size: 15px;
-    /* padding: 12px 80px; */
     width: 283px;
     height: 49px;
   }

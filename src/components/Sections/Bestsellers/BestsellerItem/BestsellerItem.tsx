@@ -3,24 +3,13 @@ import Link from "next/link";
 import s from "./BestsellerItem.module.css";
 import { ProductWithId } from "../../../../../utils/types";
 
-// interface Product {
-//   id: string;
-//   title: string;
-//   description: string;
-//   price: string | number;
-//   image: string;
-// }
-
-// interface ItemProps {
-//   product: Product;
-// }
 interface ProductCardProps {
   product: ProductWithId;
 }
 
 export const BestsellerItem: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div className={s.card}>
+    <li className={s.card}>
       {product.images?.[0] && (
         <Link href={`/products/${product.id}`}>
           <Image
@@ -43,6 +32,6 @@ export const BestsellerItem: React.FC<ProductCardProps> = ({ product }) => {
           Дізнатись більше
         </Link>
       </div>
-    </div>
+    </li>
   );
 };

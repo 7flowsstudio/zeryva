@@ -17,8 +17,6 @@
   font-family: var(--font-family);
   padding: 4px;
   max-width: 164px;
-  /* margin-top: 8px;
-  margin-bottom: 8px; */
 }
 .checkboxSell {
   display: flex;
@@ -26,9 +24,7 @@
   gap: 4px;
   font-family: var(--font-family);
 }
-/* .inpCheck {
-  width: 24px;
-} */
+
 .btnDelete {
   display: flex;
   align-items: center;

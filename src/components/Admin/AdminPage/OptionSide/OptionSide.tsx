@@ -4,7 +4,7 @@ import s from "./OptionSide.module.css";
 import Add from "./Add/Add";
 import Products from "./Products/Products";
 import { AdminSection } from "../MenuSide/MenuSide";
-import { Product, ProductWithId } from "../../../../../utils/types";
+import { ProductWithId } from "../../../../../utils/types";
 
 type OptionSideProps = {
   active: AdminSection;
