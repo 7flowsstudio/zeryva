@@ -14,6 +14,9 @@ import HeroImg from "./HeroInfo.json";
 const Hero = () => {
 	const [activeIndex, setActiveIndex] = React.useState(0);
 	const slidesCount = HeroImg.length;
+	const isDesktop =
+		typeof window !== "undefined" &&
+		window.matchMedia("(min-width: 1280px)").matches;
 
 	return (
 		<div id="hero" className={s.sliderContainer}>
@@ -28,22 +31,17 @@ const Hero = () => {
 				}}
 				modules={[Navigation, Autoplay]}
 				loop={true}
-				autoplay={false}
+				autoplay={
+					isDesktop
+						? {
+								delay: 4000,
+								disableOnInteraction: false,
+								pauseOnMouseEnter: true,
+						  }
+						: false
+				}
 				breakpoints={{
-					0: {
-						slidesPerView: 1,
-						spaceBetween: 0,
-						autoplay: false,
-					},
-					1280: {
-						slidesPerView: 1,
-						spaceBetween: 0,
-						autoplay: {
-							delay: 4000,
-							disableOnInteraction: false,
-							pauseOnMouseEnter: true,
-						},
-					},
+					320: { slidesPerView: 1, spaceBetween: 0 },
 				}}
 			>
 				{HeroImg?.map((item, index) => (
