@@ -9,7 +9,7 @@ const Instruction: React.FC<InstructionProps> = ({ product }) => {
   const { instructionTable } = product;
 
   return (
-    <div>
+    <div className={s.instrCont}>
       <table className={s.table}>
         <thead>
           <tr>
