@@ -43,6 +43,7 @@
   /* margin-top: 24px; */
   width: 179px;
   height: 37px;
+  z-index: 1000;
 }
 .btnAbout:active,
 .btnAbout:hover {
