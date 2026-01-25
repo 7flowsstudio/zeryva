@@ -12,8 +12,8 @@ import HeroImg from "./HeroInfo.json";
 // import BtnConsultation from "./BtnConsultation/BtnConsultation";
 
 const Hero = () => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const slidesCount = HeroImg.length;
+	const [activeIndex, setActiveIndex] = React.useState(0);
+	const slidesCount = HeroImg.length;
 
 	return (
 		<div id="hero" className={s.sliderContainer}>
@@ -28,11 +28,11 @@ const Hero = () => {
 				}}
 				modules={[Navigation, Autoplay]}
 				loop={true}
-				// autoplay={{
-				// 	delay: 4000, // час між автоперегортаннями у мс
-				// 	disableOnInteraction: false, // щоб автоперегортання не зупинялось після ручного свайпу
-				// 	pauseOnMouseEnter: true, // пауза при наведені миші
-				// }}
+				autoplay={{
+					delay: 4000, // час між автоперегортаннями у мс
+					disableOnInteraction: false, // щоб автоперегортання не зупинялось після ручного свайпу
+					pauseOnMouseEnter: true, // пауза при наведені миші
+				}}
 				breakpoints={{
 					320: { slidesPerView: 1, spaceBetween: 0 },
 				}}
@@ -81,7 +81,7 @@ const Hero = () => {
 export default Hero;
 
 {
-  /* <picture>
+	/* <picture>
 	<source media="(max-width: 767px)" srcSet="/hero/first_mob.webp" />
 	<source media="(min-width: 768px)" srcSet="/hero/first.webp" />
 	<Image src="/hero/first.webp" alt="hero_img" fill className={s.image} />
