@@ -147,12 +147,12 @@ export const keyValues = [
 export const sertificationList = [
 	{
 		id: 0,
-		link: "/Page/About/Серт_ТОВ ЗЕРИВА_9001-2015_СУЯ.235-25 2.webp",
+		link: "/Page/About/Sert_TOV_Zeryva.webp",
 		text: "Сертифікат ISO",
 	},
 	{
 		id: 1,
-		link: "/Page/About/Серт_НААУ_ТОВ_ЗЕРИВА_9001_2015_8О108_CУЯ_507_25 1.webp",
+		link: "/Page/About/Sert_NAY_Tov_Zeryva.webp",
 		text: "Сертифікат ISO-2",
 	},
 ];
