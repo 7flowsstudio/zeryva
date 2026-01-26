@@ -75,22 +75,24 @@
 .arrRight {
   width: 24px;
   height: 24px;
+
   fill: var(--accent-2);
 }
 .arrRight {
   transform: translateX(3px) rotate(180deg);
 }
 .navButton:active {
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
 .navButton:hover,
 .navButton:active {
   border: 2px solid #7aaa8d;
 }
-.arrLeft:hover,
-.arrRight:hover,
-.arrLeft:active,
-.arrRight:active {
+
+.navButton:hover .arrLeft,
+.navButton:hover .arrRight,
+.navButton:active .arrLeft,
+.navButton:active .arrRight {
   fill: var(--color-add-2);
 }
 .animateTitle {
@@ -131,8 +133,9 @@
   .navButton:active {
     border: 2px solid #83bd16;
   }
-  .arrLeft:active,
-  .arrRight:active {
+
+  .navButton:active .arrLeft,
+  .navButton:active .arrRight {
     fill: var(--accent-3);
   }
 }
