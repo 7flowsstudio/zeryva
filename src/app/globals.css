@@ -32,18 +32,8 @@ body {
 
 body {
 	color: var(--text);
-	background: var(--collor-white);
+	background: var(--color-white);
 	position: relative;
-	animation: ani 2s forwards;
-}
-
-@keyframes ani {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
 }
 
 * {
@@ -154,8 +144,18 @@ a {
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
-
 @media screen and (min-width: 768px) {
+	body {
+		animation: ani 2s forwards;
+	}
+	@keyframes ani {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 	.container {
 		max-width: 1279px;
 		padding: 0 64px;
