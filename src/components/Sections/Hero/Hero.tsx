@@ -1,81 +1,125 @@
 "use client";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import s from "./Hero.module.css";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import s from "./Hero.module.css";
 import InfoBlock from "./InfoBlock/InfoBlock";
 import HeroImg from "./HeroInfo.json";
-// import BtnConsultation from "./BtnConsultation/BtnConsultation";
+
+const AUTOPLAY_DELAY = 5000;
 
 const Hero = () => {
-	const [activeIndex, setActiveIndex] = React.useState(0);
-	const slidesCount = HeroImg.length;
+	const slides = HeroImg;
+	const slidesCount = slides.length;
+
+	// +2 через clone
+	const extendedSlides = [slides[slidesCount - 1], ...slides, slides[0]];
+
+	const [index, setIndex] = useState(1); // ⬅ старт НЕ з 0
+	const [withTransition, setWithTransition] = useState(true);
+	const timerRef = useRef<number | null>(null);
+
 	const isDesktop =
 		typeof window !== "undefined" &&
 		window.matchMedia("(min-width: 1280px)").matches;
 
+	const nextSlide = () => {
+		setIndex((prev) => prev + 1);
+	};
+
+	const prevSlide = () => {
+		setIndex((prev) => prev - 1);
+	};
+
+	// autoplay
+	useEffect(() => {
+		if (!isDesktop) return;
+		timerRef.current = window.setInterval(nextSlide, AUTOPLAY_DELAY);
+		return () => {
+			if (timerRef.current !== null) {
+				clearInterval(timerRef.current);
+			}
+		};
+	}, [isDesktop]);
+
+	// 🧠 ключова магія infinite loop
+	useEffect(() => {
+		if (index === slidesCount + 1) {
+			// дійшли до клону першого
+			setTimeout(() => {
+				setWithTransition(false);
+				setIndex(1);
+			}, 600); // = transition duration
+		}
+
+		if (index === 0) {
+			// дійшли до клону останнього
+			setTimeout(() => {
+				setWithTransition(false);
+				setIndex(slidesCount);
+			}, 600);
+		}
+	}, [index, slidesCount]);
+
+	// повертаємо transition назад
+	useEffect(() => {
+		if (!withTransition) {
+			requestAnimationFrame(() => {
+				setWithTransition(true);
+			});
+		}
+	}, [withTransition]);
+
+	// реальний активний індекс для progress
+	const realIndex =
+		index === 0 ? slidesCount - 1 : index === slidesCount + 1 ? 0 : index - 1;
+
 	return (
 		<div id="hero" className={s.sliderContainer}>
-			<Swiper
-				className={s.swiper}
-				navigation={{
-					nextEl: ".hero-next",
-					prevEl: ".hero-prev",
-				}}
-				onSlideChange={(swiper) => {
-					setActiveIndex(swiper.realIndex);
-				}}
-				modules={[Navigation, Autoplay]}
-				loop={true}
-				autoplay={
-					isDesktop
-						? {
-								delay: 4000,
-								disableOnInteraction: false,
-								pauseOnMouseEnter: true,
-						  }
-						: false
-				}
-				breakpoints={{
-					320: { slidesPerView: 1, spaceBetween: 0 },
+			<div
+				className={s.track}
+				style={{
+					transform: `translateX(-${index * 100}%)`,
+					transition: withTransition ? "transform 0.6s ease" : "none",
 				}}
 			>
-				{HeroImg?.map((item, index) => (
-					<SwiperSlide key={index} className={s.slide}>
+				{extendedSlides.map((item, i) => (
+					<div key={i} className={s.slide}>
 						<div className={s.imageWrapper}>
-							<picture>
-								<source media="(max-width: 767px)" srcSet={item.imgMob} />
-								<source media="(min-width: 768px)" srcSet={item.img} />
-								<Image src={item.img} alt="hero_img" fill className={s.image} />
-							</picture>
+							<Image
+								src={item.img}
+								alt="hero_img"
+								fill
+								priority={i === 1}
+								className={s.image}
+							/>
 						</div>
 						<InfoBlock item={item} />
-						{/* <BtnConsultation /> */}
-					</SwiperSlide>
+					</div>
 				))}
-			</Swiper>
+			</div>
+
+			{/* CONTROLS */}
 			<div className={s.paginationBlock}>
 				<div className={s.blockBtn}>
-					<button className={`hero-prev ${s.navButton}`}>
+					<button onClick={prevSlide} className={s.navButton}>
 						<svg className={s.navButton_icon}>
 							<use href="/sprite.svg#icon-hero-arrow-left"></use>
 						</svg>
 					</button>
-					<button className={`hero-next ${s.navButton}`}>
+
+					<button onClick={nextSlide} className={s.navButton}>
 						<svg className={`${s.navButton_icon} ${s.right}`}>
 							<use href="/sprite.svg#icon-hero-arrow-left"></use>
 						</svg>
 					</button>
 				</div>
+
 				<div className={s.progressBar}>
 					<div
 						className={s.progressFill}
 						style={{
-							left: `${activeIndex * (100 / slidesCount)}%`,
+							left: `${realIndex * (100 / slidesCount)}%`,
 							width: `${100 / slidesCount}%`,
 						}}
 					/>
@@ -86,11 +130,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-{
-	/* <picture>
-	<source media="(max-width: 767px)" srcSet="/hero/first_mob.webp" />
-	<source media="(min-width: 768px)" srcSet="/hero/first.webp" />
-	<Image src="/hero/first.webp" alt="hero_img" fill className={s.image} />
-</picture>; */
-}
