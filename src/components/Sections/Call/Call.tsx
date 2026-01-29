@@ -44,6 +44,8 @@ const Call = () => {
             alt="Field"
             fill
             style={{ objectFit: "contain" }}
+            priority={false}
+            loading="lazy"
             sizes="(max-width: 767px) 138px, 238px"
           />
         </div>
