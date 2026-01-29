@@ -90,10 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="uk"
-      className={`${ptSans.variable} ${workSans.variable} ${sfPro.variable}`}
-    >
+    <html lang="uk" className={`${ptSans.variable} ${sfPro.variable}`}>
       <body id="app-scroll">
         <ClientLayout>{children}</ClientLayout>
         <div id="modal-root" />
