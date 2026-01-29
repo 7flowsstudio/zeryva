@@ -21,37 +21,31 @@ const ptSans = localFont({
   display: "swap",
 });
 
-const workSans = localFont({
-  src: [
-    {
-      path: "../../public/fonts/WorkSans/WorkSans-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/WorkSans/WorkSans-ExtraBold.ttf",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/WorkSans/WorkSans-Black.ttf",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--third-family",
-  display: "swap",
-});
+// const workSans = localFont({
+//   src: [
+//     {
+//       path: "../../public/fonts/WorkSans/WorkSansSemiBold.woff",
+//       weight: "600",
+//       style: "normal",
+//     },
+//     {
+//       path: "../../public/fonts/WorkSans/WorkSans-ExtraBold.ttf",
+//       weight: "800",
+//       style: "normal",
+//     },
+//     {
+//       path: "../../public/fonts/WorkSans/WorkSansBlack.woff",
+//       weight: "900",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--third-family",
+//   display: "swap",
+// });
 
-const sfPro = localFont({
-  src: [
-    {
-      path: "../../public/fonts/SFProText/SFProText-Semibold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-  ],
-  variable: "--font3",
+const workSans = localFont({
+  src: "../../public/fonts/WorkSans/WorkSans-VariableFont_wght.ttf",
+  variable: "--third-family",
   display: "swap",
 });
 
@@ -90,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uk" className={`${ptSans.variable} ${sfPro.variable}`}>
+    <html lang="uk" className={`${workSans.variable} ${ptSans.variable}`}>
       <body id="app-scroll">
         <ClientLayout>{children}</ClientLayout>
         <div id="modal-root" />

@@ -38,6 +38,9 @@
   font-family: var(--third-family);
   overflow-wrap: break-word;
   word-break: break-word;
+  font-size: 16px;
+
+  letter-spacing: 0.06em;
 }
 .description {
   min-height: 63px;
