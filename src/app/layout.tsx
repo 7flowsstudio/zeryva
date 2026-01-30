@@ -21,28 +21,6 @@ const ptSans = localFont({
   display: "swap",
 });
 
-// const workSans = localFont({
-//   src: [
-//     {
-//       path: "../../public/fonts/WorkSans/WorkSansSemiBold.woff2",
-//       weight: "600",
-//       style: "normal",
-//     },
-//     {
-//       path: "../../public/fonts/WorkSans/WorkSansExtraBold.woff2",
-//       weight: "800",
-//       style: "normal",
-//     },
-//     {
-//       path: "../../public/fonts/WorkSans/WorkSansBlack.woff2",
-//       weight: "900",
-//       style: "normal",
-//     },
-//   ],
-//   variable: "--third-family",
-//   display: "swap",
-// });
-
 const workSans = localFont({
   src: "../../public/fonts/WorkSans/Inter-VariableFont_opsz,wght.ttf",
   variable: "--third-family",

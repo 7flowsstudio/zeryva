@@ -24,9 +24,9 @@
 
   font-family: var(--third-family);
   /* font-size: clamp(46px, calc((46 / 375) * 100vw), 64px); */
-  font-size: clamp(46px, calc((72 / 1440) * 100vw), 72px);
+  font-size: clamp(46px, calc((100 / 1440) * 100vw), 100px);
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   font-weight: 900;
   line-height: clamp(46px, calc((46 / 375) * 100vw), 64px);
   letter-spacing: 0%;

@@ -13,7 +13,7 @@
 
   font-family: var(--third-family);
   font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   font-weight: 900;
   line-height: 48px;
   /* letter-spacing: 0%; */
