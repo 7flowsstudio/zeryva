@@ -26,8 +26,8 @@
   /* font-size: clamp(46px, calc((46 / 375) * 100vw), 64px); */
   font-size: clamp(46px, calc((100 / 1440) * 100vw), 100px);
 
-  letter-spacing: 0.06em;
-  font-weight: 900;
+  /* letter-spacing: 0.06em; */
+  font-weight: 800;
   line-height: clamp(46px, calc((46 / 375) * 100vw), 64px);
   letter-spacing: 0%;
   text-align: left;
@@ -43,7 +43,7 @@
 
   font-weight: 600;
   line-height: clamp(40px, calc((40 / 375) * 100vw), 46px);
-  letter-spacing: -0.07em;
+  /* letter-spacing: -0.07em; */
   text-align: left;
 }
 
@@ -84,7 +84,7 @@
   }
   .description {
     height: auto;
-    /* font-size: 32px; */
+    font-size: 32px;
     line-height: 32px;
   }
   .downloadBtn {
