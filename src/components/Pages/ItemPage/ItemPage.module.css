@@ -17,12 +17,16 @@
   color: var(--accent-2);
   padding-bottom: 16px;
   font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
+
+  /* letter-spacing: 0.06em; */
+  /* font-synthesis: none; */
 }
 
 .price {
   font-family: var(--third-family);
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
   line-height: 42px;
   padding-top: 16px;
   padding-bottom: 24px;

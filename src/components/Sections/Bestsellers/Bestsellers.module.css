@@ -7,6 +7,7 @@
   color: var(--accent-2);
   padding-bottom: 8px;
   font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
+  /* letter-spacing: 0.06em; */
 }
 .text {
   text-align: start;
