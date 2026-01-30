@@ -9,7 +9,13 @@ const Header = dynamic(() => import("@/components/Header/Header"), {
 const Footer = dynamic(() => import("@/components/Footer/Footer"), {
   ssr: false,
 });
-import BtnConsultation from "@/components/Sections/Hero/BtnConsultation/BtnConsultation";
+// import BtnConsultation from "@/components/Sections/Hero/BtnConsultation/BtnConsultation";
+const BtnConsultation = dynamic(
+  () => import("@/components/Sections/Hero/BtnConsultation/BtnConsultation"),
+  {
+    ssr: false,
+  },
+);
 import { useEffect, useState } from "react";
 
 export const ClientLayout = ({ children }: { children: React.ReactNode }) => {
