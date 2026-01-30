@@ -24,17 +24,17 @@ const ptSans = localFont({
 // const workSans = localFont({
 //   src: [
 //     {
-//       path: "../../public/fonts/WorkSans/WorkSansSemiBold.woff",
+//       path: "../../public/fonts/WorkSans/WorkSansSemiBold.woff2",
 //       weight: "600",
 //       style: "normal",
 //     },
 //     {
-//       path: "../../public/fonts/WorkSans/WorkSans-ExtraBold.ttf",
+//       path: "../../public/fonts/WorkSans/WorkSansExtraBold.woff2",
 //       weight: "800",
 //       style: "normal",
 //     },
 //     {
-//       path: "../../public/fonts/WorkSans/WorkSansBlack.woff",
+//       path: "../../public/fonts/WorkSans/WorkSansBlack.woff2",
 //       weight: "900",
 //       style: "normal",
 //     },
@@ -44,7 +44,7 @@ const ptSans = localFont({
 // });
 
 const workSans = localFont({
-  src: "../../public/fonts/WorkSans/WorkSans-VariableFont_wght.ttf",
+  src: "../../public/fonts/WorkSans/Inter-VariableFont_opsz,wght.ttf",
   variable: "--third-family",
   display: "swap",
 });
