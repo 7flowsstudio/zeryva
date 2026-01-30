@@ -21,11 +21,11 @@ const ptSans = localFont({
   display: "swap",
 });
 
-const workSans = localFont({
-  src: "../../public/fonts/WorkSans/Inter-VariableFont_opsz,wght.ttf",
-  variable: "--third-family",
-  display: "swap",
-});
+// const workSans = localFont({
+//   src: "../../public/fonts/WorkSans/Inter-VariableFont_opsz,wght.ttf",
+//   variable: "--third-family",
+//   display: "swap",
+// });
 
 export const metadata: Metadata = {
   title: `ТОВ "Zeryva" - офіційний сайт`,
@@ -62,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uk" className={`${workSans.variable} ${ptSans.variable}`}>
+    <html lang="uk" className={`${ptSans.variable}`}>
       <body id="app-scroll">
         <ClientLayout>{children}</ClientLayout>
         <div id="modal-root" />
