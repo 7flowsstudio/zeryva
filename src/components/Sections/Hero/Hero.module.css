@@ -1,9 +1,8 @@
-/* ⬇⬇⬇ ТВОЇ СТИЛІ — БЕЗ ЗМІН ⬇⬇⬇ */
-
 .sliderContainer {
   position: relative;
   min-height: 550px;
-  height: 100dvh;
+  /* height: 100dvh; */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -30,13 +29,12 @@
   object-fit: cover;
 }
 
-/* ⬇⬇⬇ НОВЕ, АЛЕ НЕ ЛАМАЄ ВЕРСТКУ ⬇⬇⬇ */
-
 .track {
   display: flex;
   height: 100%;
   transition: transform 0.6s ease;
   will-change: transform;
+  touch-action: pan-y;
 }
 
 .slide {
@@ -45,7 +43,6 @@
   height: 100%;
 }
 
-/* ❗ заміна swiper-slide-active */
 .slide:not(.slideActive) {
   animation: ani 1s forwards;
 }
@@ -59,8 +56,6 @@
   }
 }
 
-/* Pagination Block — ТВОЄ БЕЗ ЗМІН */
-
 .paginationBlock {
   position: absolute;
   bottom: 16px;
@@ -73,6 +68,8 @@
   width: 148px;
   height: 72px;
   z-index: 970;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .blockBtn {
@@ -130,8 +127,6 @@
   transition: left 0.4s ease;
   will-change: left;
 }
-
-/* media — без змін */
 
 @media screen and (min-width: 768px) {
   .paginationBlock {
