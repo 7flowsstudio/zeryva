@@ -79,7 +79,7 @@
   .title {
     width: 654px;
     /* height: 208px; */
-    /* font-size: clamp(64px, calc((64 / 768) * 100vw), 72px); */
+    font-size: clamp(64px, calc((64 / 768) * 100vw), 72px);
     line-height: clamp(64px, calc((64 / 768) * 100vw), 72px);
   }
   .description {
@@ -101,11 +101,18 @@
   }
   .title {
     /* height: 208px; */
-    /* font-size: clamp(72px, calc((72 / 1280) * 100vw), 80px); */
+    font-size: clamp(72px, calc((72 / 1280) * 100vw), 80px);
     line-height: clamp(72px, calc((72 / 1280) * 100vw), 84px);
   }
   .downloadBtn:hover:not(:active) {
     box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
     background: #83bd16;
+  }
+}
+@media screen and (min-width: 1440px) {
+  @supports (-webkit-appearance: none) and (not (-moz-appearance: none)) {
+    .title {
+      width: 100%;
+    }
   }
 }

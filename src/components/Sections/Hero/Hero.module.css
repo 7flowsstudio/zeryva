@@ -58,7 +58,7 @@
 
 .paginationBlock {
   position: absolute;
-  bottom: 16px;
+  bottom: 28px;
   left: 16px;
   display: flex;
   flex-direction: column;
