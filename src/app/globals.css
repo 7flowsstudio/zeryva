@@ -28,6 +28,10 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
 body {
   color: var(--text);
