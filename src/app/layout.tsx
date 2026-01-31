@@ -24,18 +24,13 @@ const ptSans = localFont({
 const workSans = localFont({
   src: [
     {
-      path: "../../public/fonts/WorkSans/WorkSans-SemiBold.ttf",
+      path: "../../public/fonts/WorkSans/WorkSansSemiBold.woff",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/fonts/WorkSans/WorkSans-ExtraBold.ttf",
+      path: "../../public/fonts/WorkSans/WorkSansExtraBold.woff",
       weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/WorkSans/WorkSans-Black.ttf",
-      weight: "900",
       style: "normal",
     },
   ],
