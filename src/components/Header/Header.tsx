@@ -5,6 +5,7 @@ import DescHeader from "./DescHeader/DescHeader";
 import MobHeader from "./MobHeader/MobHeader";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
+import { productsMetadata } from "@/data/products-metadata";
 
 type IsScroledProp = {
 	isScrolled?: boolean;
@@ -12,6 +13,7 @@ type IsScroledProp = {
 
 export type SearchItem = {
 	id: string;
+	slug: string;
 	title: string;
 	shortDescription: string;
 };
@@ -21,9 +23,13 @@ const Header = ({ isScrolled }: IsScroledProp) => {
 
 	useEffect(() => {
 		const fetchProducts = async () => {
+			const slugById = new Map(
+				productsMetadata.map((item) => [item.id, item.slug]),
+			);
 			const snap = await getDocs(collection(db, "products"));
 			const data = snap.docs.map((doc) => ({
 				id: doc.id,
+				slug: slugById.get(doc.id) ?? doc.id,
 				title: doc.data().title,
 				shortDescription: doc.data().shortDescription,
 			}));

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 import ItemPage from "@/components/Pages/ItemPage/ItemPage";
 import { getProductForMetadata } from "@/lib/getProductForMetadata";
 
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		openGraph: {
 			title: product.title,
 			description: product.shortDescription,
-			url: `https://zeryva.com/products/${id}`,
+			url: `https://zeryva.com/products/${product.slug}`,
 			type: "website",
 			images: product.image
 				? [
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 							height: 630,
 							alt: product.title,
 						},
-				  ]
+					]
 				: [],
 		},
 
@@ -56,6 +57,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /**
  * Server page
  */
-export default function Page() {
+export default async function Page({ params }: Props) {
+	const { id } = await params;
+	const product = getProductForMetadata(id);
+
+	if (product && product.slug !== id) {
+		redirect(`/products/${product.slug}`);
+	}
+
 	return <ItemPage />;
 }

@@ -7,6 +7,7 @@ import s from "./ModalSearch.module.css";
 
 export type SearchItem = {
 	id: string;
+	slug: string;
 	title: string;
 	shortDescription: string;
 };
@@ -34,7 +35,7 @@ const ModalSearch: React.FC<ModalSearchProps> = ({ onClose, searchItems }) => {
 		return searchItems.filter(
 			(item) =>
 				item.title.toLowerCase().includes(q) ||
-				item.shortDescription.toLowerCase().includes(q)
+				item.shortDescription.toLowerCase().includes(q),
 		);
 	}, [query, searchItems]);
 
@@ -123,7 +124,7 @@ const ModalSearch: React.FC<ModalSearchProps> = ({ onClose, searchItems }) => {
 								onMouseDown={(e) => e.stopPropagation()}
 							>
 								<Link
-									href={`/products/${item.id}`}
+									href={`/products/${item.slug}`}
 									onClick={() => {
 										setIsDropdownOpen(false);
 										setQuery("");

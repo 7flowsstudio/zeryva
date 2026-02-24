@@ -36,7 +36,7 @@ const CallbackForm = ({ setOpenModal }: Props) => {
 
 	const hundlerSubmit = async (
 		values: InitialValuesType,
-		{ resetForm }: FormikHelpers<InitialValuesType>
+		{ resetForm }: FormikHelpers<InitialValuesType>,
 	) => {
 		const data = {
 			name: values.name,

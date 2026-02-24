@@ -1,0 +1,12 @@
+# Block all search engines for now
+User-Agent: *
+Disallow: /
+
+# Block admin and dev areas as extra safety
+Disallow: /admin
+Disallow: /api/
+Disallow: /_next/
+Disallow: /*.json$
+
+# Sitemap (можеш залишити, щоб тестувати)
+Sitemap: https://zeryva.com.ua/sitemap.xml

@@ -11,6 +11,7 @@ import {
 
 type SearchItem = {
 	id: string;
+	slug: string;
 	title: string;
 	shortDescription: string;
 };
@@ -52,7 +53,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 		return searchItems.filter(
 			(item) =>
 				item.title.toLowerCase().includes(q) ||
-				item.shortDescription.toLowerCase().includes(q)
+				item.shortDescription.toLowerCase().includes(q),
 		);
 	}, [query, searchItems]);
 
@@ -151,7 +152,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 							>
 								{item.text}
 							</Link>
-						)
+						),
 					)}
 				</nav>
 
@@ -192,7 +193,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 							{filtered.map((item) => (
 								<li key={item.id} className={s.searchItem}>
 									<Link
-										href={`/products/${item.id}`}
+										href={`/products/${item.slug}`}
 										onClick={() => {
 											setIsDropdownOpen(false);
 											setQuery("");

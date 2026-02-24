@@ -5,79 +5,82 @@ import { ClientLayout } from "./ClientLayout";
 import localFont from "next/font/local";
 
 const ptSans = localFont({
-  src: [
-    {
-      path: "../../public/fonts/PTSansCaptions/PTSansCaptionRegular.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/PTSansCaptions/PTSansCaptionBold.woff",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-family",
-  display: "swap",
+	src: [
+		{
+			path: "../../public/fonts/PTSansCaptions/PTSansCaptionRegular.woff",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "../../public/fonts/PTSansCaptions/PTSansCaptionBold.woff",
+			weight: "700",
+			style: "normal",
+		},
+	],
+	variable: "--font-family",
+	display: "swap",
 });
 
 const workSans = localFont({
-  src: [
-    {
-      path: "../../public/fonts/WorkSans/WorkSansSemiBold.woff",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/WorkSans/WorkSansExtraBold.woff",
-      weight: "800",
-      style: "normal",
-    },
-  ],
-  variable: "--third-family",
-  display: "swap",
+	src: [
+		{
+			path: "../../public/fonts/WorkSans/WorkSansSemiBold.woff",
+			weight: "600",
+			style: "normal",
+		},
+		{
+			path: "../../public/fonts/WorkSans/WorkSansExtraBold.woff",
+			weight: "800",
+			style: "normal",
+		},
+	],
+	variable: "--third-family",
+	display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: `ТОВ "Zeryva" - офіційний сайт`,
-  description:
-    "Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
-  metadataBase: new URL("http://zeryva.com.ua"),
-  alternates: {
-    canonical: "http://zeryva.com.ua",
-  },
-  openGraph: {
-    title: 'ТОВ "Zeryva" - офіційний сайт',
-    description:
-      "Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
-    url: "http://zeryva.com.ua",
-    siteName: "Zeryva",
-    type: "website",
-    images: [
-      {
-        url: "/logo.svg",
-        width: 504,
-        height: 504,
-        alt: "Zeryva",
-      },
-    ],
-  },
-  icons: {
-    icon: "/logo.svg",
-  },
+	title: `ТОВ "Zeryva" - офіційний сайт`,
+	description:
+		"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
+	metadataBase: new URL("http://zeryva.com.ua"),
+	verification: {
+		google: "uFWpgT6WUx1lCoat34AJ48d9qzi59RWk0A1RsdaiW_Y",
+	},
+	alternates: {
+		canonical: "http://zeryva.com.ua",
+	},
+	openGraph: {
+		title: 'ТОВ "Zeryva" - офіційний сайт',
+		description:
+			"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
+		url: "http://zeryva.com.ua",
+		siteName: "Zeryva",
+		type: "website",
+		images: [
+			{
+				url: "/logo.svg",
+				width: 504,
+				height: 504,
+				alt: "Zeryva",
+			},
+		],
+	},
+	icons: {
+		icon: "/logo.svg",
+	},
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="uk" className={`${workSans.variable} ${ptSans.variable}`}>
-      <body id="app-scroll">
-        <ClientLayout>{children}</ClientLayout>
-        <div id="modal-root" />
-      </body>
-    </html>
-  );
+	return (
+		<html lang="uk" className={`${workSans.variable} ${ptSans.variable}`}>
+			<body id="app-scroll">
+				<ClientLayout>{children}</ClientLayout>
+				<div id="modal-root" />
+			</body>
+		</html>
+	);
 }
