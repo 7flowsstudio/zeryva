@@ -17,7 +17,7 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
 	return (
 		<div className={s.card}>
 			{product.images?.[0] && (
-				<Link href={`/products/${slug}`}>
+				<Link href={`/produkty/${slug}`}>
 					<Image
 						src={product.images[0]}
 						alt={product.title}
@@ -28,7 +28,7 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
 			)}
 
 			<div className={s.blockDescr}>
-				<Link href={`/products/${slug}`}>
+				<Link href={`/produkty/${slug}`}>
 					<h3 className={s.title}>{product.title}</h3>
 				</Link>
 
@@ -37,7 +37,7 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
 
 			<p className={s.price}>{product.price}</p>
 			<div className={s.linkWrapp}>
-				<Link href={`/products/${slug}`} className={s.link}>
+				<Link href={`/produkty/${slug}`} className={s.link}>
 					Дізнатись більше
 				</Link>
 			</div>

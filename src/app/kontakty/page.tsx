@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 		"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
 
 	alternates: {
-		canonical: "https://zeryva.com.ua/contacts",
+		canonical: "https://zeryva.com.ua/kontakty",
 	},
 
 	openGraph: {
 		title: "Контакти",
 		description:
 			"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
-		url: "https://zeryva.com.ua/contacts",
+		url: "https://zeryva.com.ua/kontakty",
 		type: "website",
 		images: [
 			{

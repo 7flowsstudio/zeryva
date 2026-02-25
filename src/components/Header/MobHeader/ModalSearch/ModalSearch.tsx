@@ -44,7 +44,7 @@ const ModalSearch: React.FC<ModalSearchProps> = ({ onClose, searchItems }) => {
 		if (!query.trim()) return;
 
 		setIsDropdownOpen(false);
-		router.push(`/products?search=${encodeURIComponent(query)}`);
+		router.push(`/produkty?search=${encodeURIComponent(query)}`);
 		setQuery("");
 		onClose();
 	};
@@ -124,7 +124,7 @@ const ModalSearch: React.FC<ModalSearchProps> = ({ onClose, searchItems }) => {
 								onMouseDown={(e) => e.stopPropagation()}
 							>
 								<Link
-									href={`/products/${item.slug}`}
+									href={`/produkty/${item.slug}`}
 									onClick={() => {
 										setIsDropdownOpen(false);
 										setQuery("");

@@ -61,7 +61,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 		if (!query.trim()) return;
 
 		setIsDropdownOpen(false);
-		router.push(`/products?search=${encodeURIComponent(query)}`);
+		router.push(`/produkty?search=${encodeURIComponent(query)}`);
 
 		// Очищуємо поле пошуку
 		setQuery("");
@@ -193,7 +193,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 							{filtered.map((item) => (
 								<li key={item.id} className={s.searchItem}>
 									<Link
-										href={`/products/${item.slug}`}
+										href={`/produkty/${item.slug}`}
 										onClick={() => {
 											setIsDropdownOpen(false);
 											setQuery("");

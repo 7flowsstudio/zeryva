@@ -8,17 +8,17 @@ const siteUrl =
 		: "https://zeryva.com.ua");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const staticPages = ["/", "/about", "/products", "/services", "/contacts"];
+	const staticPages = ["/", "/pro-nas", "/produkty", "/posluhy", "/kontakty"];
 
 	const staticEntries = staticPages.map((path) =>
 		buildEntry(path, {
 			priority: path === "/" ? 1.0 : 0.8,
-			changeFrequency: path === "/products" ? "weekly" : "monthly",
+			changeFrequency: path === "/produkty" ? "weekly" : "monthly",
 		}),
 	);
 
 	const productEntries = productsMetadata.map((product) =>
-		buildEntry(`/products/${product.slug}`, {
+		buildEntry(`/produkty/${product.slug}`, {
 			priority: 0.6,
 			changeFrequency: "monthly",
 		}),
