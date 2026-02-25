@@ -42,18 +42,18 @@ export const metadata: Metadata = {
 	title: `ТОВ "Zeryva" - офіційний сайт`,
 	description:
 		"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
-	metadataBase: new URL("http://zeryva.com.ua"),
+	metadataBase: new URL("https://zeryva.com.ua"),
 	verification: {
 		google: "uFWpgT6WUx1lCoat34AJ48d9qzi59RWk0A1RsdaiW_Y",
 	},
 	alternates: {
-		canonical: "http://zeryva.com.ua",
+		canonical: "https://zeryva.com.ua",
 	},
 	openGraph: {
 		title: 'ТОВ "Zeryva" - офіційний сайт',
 		description:
 			"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
-		url: "http://zeryva.com.ua",
+		url: "https://zeryva.com.ua",
 		siteName: "Zeryva",
 		type: "website",
 		images: [

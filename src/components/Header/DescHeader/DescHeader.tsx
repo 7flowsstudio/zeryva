@@ -40,10 +40,10 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 	}, []);
 
 	const isAther =
-		pathname.startsWith("/about") ||
-		pathname.startsWith("/services") ||
-		pathname.startsWith("/products") ||
-		pathname.startsWith("/contacts");
+		pathname.startsWith("/pro-nas") ||
+		pathname.startsWith("/posluhy") ||
+		pathname.startsWith("/produkty") ||
+		pathname.startsWith("/kontakty");
 
 	const filtered = useMemo(() => {
 		if (!query) return [];
@@ -135,7 +135,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 
 				<nav className={s.navigation}>
 					{navList.map((item) =>
-						item.src === "/dilers" ? (
+						item.src === "/dylery" ? (
 							<div
 								key={item.id}
 								className={`${s.link} ${isAther ? s.colorGreen : ""} ${

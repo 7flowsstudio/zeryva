@@ -27,11 +27,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	return {
 		title: `${product.title} | Zeryva`,
 		description: product.shortDescription,
+		alternates: {
+			canonical: `https://zeryva.com.ua/products/${product.slug}`,
+		},
 
 		openGraph: {
 			title: product.title,
 			description: product.shortDescription,
-			url: `https://zeryva.com/products/${product.slug}`,
+			url: `https://zeryva.com.ua/products/${product.slug}`,
 			type: "website",
 			images: product.image
 				? [

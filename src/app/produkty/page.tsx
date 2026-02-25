@@ -1,28 +1,27 @@
-import Services from "@/components/Pages/Services/Services";
-import { Metadata } from "next";
-import React from "react";
+import type { Metadata } from "next";
+import ProductsPage from "@/components/Pages/ProductsPage/ProductsPage";
 
 export const metadata: Metadata = {
-	title: "Послуги",
+	title: "Продукти",
 	description:
 		"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
 
 	alternates: {
-		canonical: "http://zeryva.com.ua/services",
+		canonical: "https://zeryva.com.ua/products",
 	},
 
 	openGraph: {
-		title: "Послуги",
+		title: "Продукти",
 		description:
 			"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
-		url: "http://zeryva.com.ua/services",
+		url: "https://zeryva.com.ua/products",
 		type: "website",
 		images: [
 			{
 				url: "/logo.svg",
 				width: 504,
 				height: 504,
-				alt: "Послуги",
+				alt: "Продукти Zeryva",
 			},
 		],
 	},
@@ -32,8 +31,6 @@ export const metadata: Metadata = {
 	},
 };
 
-const page = () => {
-	return <Services />;
-};
-
-export default page;
+export default function Page() {
+	return <ProductsPage />;
+}
