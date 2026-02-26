@@ -10,8 +10,8 @@ type ModalProps = {
 
 const Modal = ({ children, setImage, closeModal }: ModalProps) => {
 	const pathname = usePathname();
-	const isAbout = pathname.startsWith("/about");
-	const isContacts = pathname.startsWith("/contacts");
+	const isAbout = pathname.startsWith("/pro-nas");
+	const isContacts = pathname.startsWith("/kontakty");
 	console.log("ISAbout", isAbout);
 
 	const hundlerClose = () => {

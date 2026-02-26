@@ -24,6 +24,11 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 	const [query, setQuery] = useState("");
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+	const isProductDetail = useMemo(
+		() => searchItems.some((item) => pathname === `/${item.slug}`),
+		[pathname, searchItems],
+	);
+
 	useEffect(() => {
 		const handleClickOutside = (e: MouseEvent) => {
 			if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
@@ -43,7 +48,14 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 		pathname.startsWith("/pro-nas") ||
 		pathname.startsWith("/posluhy") ||
 		pathname.startsWith("/produkty") ||
-		pathname.startsWith("/kontakty");
+		pathname.startsWith("/kontakty") ||
+		pathname.startsWith("/inokulianty") ||
+		pathname.startsWith("/kontrol-patoheniv") ||
+		pathname.startsWith("/destruktory") ||
+		pathname.startsWith("/stymuliatory-rostu") ||
+		pathname.startsWith("/mikro-monodobryva") ||
+		pathname.startsWith("/prylypachi-par") ||
+		isProductDetail;
 
 	const filtered = useMemo(() => {
 		if (!query) return [];
@@ -61,7 +73,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 		if (!query.trim()) return;
 
 		setIsDropdownOpen(false);
-		router.push(`/products?search=${encodeURIComponent(query)}`);
+		router.push(`/produkty?search=${encodeURIComponent(query)}`);
 
 		// Очищуємо поле пошуку
 		setQuery("");
@@ -193,7 +205,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 							{filtered.map((item) => (
 								<li key={item.id} className={s.searchItem}>
 									<Link
-										href={`/products/${item.slug}`}
+										href={`/${item.slug}`}
 										onClick={() => {
 											setIsDropdownOpen(false);
 											setQuery("");

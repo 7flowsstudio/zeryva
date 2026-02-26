@@ -6,6 +6,55 @@ export type ProductMetadataItem = {
 	image?: string;
 };
 
+export type ProductTypeFilter = {
+	label: string;
+	slug: string;
+	title: string;
+	shortDescription: string;
+};
+
+export const productTypeFilters: ProductTypeFilter[] = [
+	{
+		label: "Інокулянти",
+		slug: "inokulianty",
+		title: "Інокулянти",
+		shortDescription:
+			"Бактеріальні інокулянти для бобових і зернобобових культур.",
+	},
+	{
+		label: "Контроль патогенів",
+		slug: "kontrol-patoheniv",
+		title: "Контроль патогенів",
+		shortDescription: "Біологічні рішення для фітосанітарного захисту посівів.",
+	},
+	{
+		label: "Деструктори",
+		slug: "destruktory",
+		title: "Деструктори",
+		shortDescription: "Препарати для швидкого розкладу рослинних решток.",
+	},
+	{
+		label: "Стимулятори росту",
+		slug: "stymuliatory-rostu",
+		title: "Стимулятори росту",
+		shortDescription:
+			"Антистресанти та стимулятори росту для підвищення врожайності.",
+	},
+	{
+		label: "Мікро-монодобрива",
+		slug: "mikro-monodobryva",
+		title: "Мікро-монодобрива",
+		shortDescription: "Моно- та мікродобрива для корекції живлення рослин.",
+	},
+	{
+		label: "Прилипачі (ПАР)",
+		slug: "prylypachi-par",
+		title: "Прилипачі (ПАР)",
+		shortDescription:
+			"Поверхнево-активні речовини для кращого змочування й прилипання.",
+	},
+];
+
 export const productsMetadata: ProductMetadataItem[] = [
 	{
 		id: "xhHVkBFPvkLa1PSJVZdA",
