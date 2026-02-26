@@ -81,7 +81,7 @@ const ItemPage = () => {
 			<BreadCrumbs
 				crumbs={[
 					{ label: "Головна", href: "/" },
-					{ label: "Продукти", href: "/produkty" },
+					{ label: "Продукти", href: "/products" },
 					{ label: product.title },
 				]}
 			/>

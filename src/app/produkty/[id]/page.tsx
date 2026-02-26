@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		title: `${product.title} | Zeryva`,
 		description: product.shortDescription,
 		alternates: {
-			canonical: `https://zeryva.com.ua/produkty/${product.slug}`,
+			canonical: `https://zeryva.com.ua/products/${product.slug}`,
 		},
 
 		openGraph: {
 			title: product.title,
 			description: product.shortDescription,
-			url: `https://zeryva.com.ua/produkty/${product.slug}`,
+			url: `https://zeryva.com.ua/products/${product.slug}`,
 			type: "website",
 			images: product.image
 				? [
@@ -65,7 +65,7 @@ export default async function Page({ params }: Props) {
 	const product = getProductForMetadata(id);
 
 	if (product && product.slug !== id) {
-		redirect(`/produkty/${product.slug}`);
+		redirect(`/products/${product.slug}`);
 	}
 
 	return <ItemPage />;
