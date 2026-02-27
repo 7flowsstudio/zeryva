@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { productsMetadata } from "@/data/products-metadata";
+import { productsMetadata, productTypeFilters } from "@/data/products-metadata";
 
 const siteUrl =
 	process.env.NEXT_PUBLIC_SITE_URL ||
@@ -24,7 +24,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		}),
 	);
 
-	return [...staticEntries, ...productEntries];
+	const productTypeEntries = productTypeFilters.map((filter) =>
+		buildEntry(`/${filter.slug}`, {
+			priority: 0.4,
+			changeFrequency: "monthly",
+		}),
+	);
+
+	return [...staticEntries, ...productEntries, ...productTypeEntries];
 }
 
 type ChangeFreq =
