@@ -93,7 +93,8 @@ export default function RootLayout({
 								window.dataLayer = window.dataLayer || [];
 								function gtag(){dataLayer.push(arguments);}
 								gtag('js', new Date());
-								gtag('config', '${GA_ID}');
+								gtag('set', 'cookie_domain', 'auto');
+								gtag('config', '${GA_ID}', { cookie_domain: 'auto' });
 							`}
 						</Script>
 					</>
@@ -101,6 +102,8 @@ export default function RootLayout({
 				{GTM_ID && (
 					<Script id="google-tag-manager" strategy="beforeInteractive">
 						{`
+							window.dataLayer = window.dataLayer || [];
+							window.dataLayer.push({ cookie_domain: 'auto' });
 							(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 							new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 							j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
