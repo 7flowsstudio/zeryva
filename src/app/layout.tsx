@@ -93,7 +93,7 @@ export default function RootLayout({
 								window.dataLayer = window.dataLayer || [];
 								function gtag(){dataLayer.push(arguments);}
 								gtag('js', new Date());
-								gtag('config', '${GA_ID}', { cookie_domain: 'zeryva.com.ua' });
+								gtag('config', '${GA_ID}', { cookie_domain: 'auto', send_page_view: false });
 							`}
 						</Script>
 					</>
