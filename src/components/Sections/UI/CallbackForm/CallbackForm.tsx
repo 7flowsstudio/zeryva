@@ -12,6 +12,7 @@ import {
 import SuccessModdal from "./SuccessModdal/SuccessModdal";
 import { ValidationSchemaCallbackWithMessage } from "../../../../../utils/validationSchema";
 import formatPhoneUA from "./formatPhoneUA/formatPhoneUA";
+import { trackFormSubmit } from "../../../../../utils/analytics/trackFormSubmit";
 
 type Props = {
 	setOpenModal?: React.Dispatch<SetStateAction<boolean>>;
@@ -53,6 +54,7 @@ const CallbackForm = ({ setOpenModal }: Props) => {
 			});
 
 			if (response.ok) {
+				trackFormSubmit("consultation_form");
 				setSuccessMessage(true);
 				resetForm();
 			}

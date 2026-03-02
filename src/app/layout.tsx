@@ -93,8 +93,7 @@ export default function RootLayout({
 								window.dataLayer = window.dataLayer || [];
 								function gtag(){dataLayer.push(arguments);}
 								gtag('js', new Date());
-								gtag('set', 'cookie_domain', 'auto');
-								gtag('config', '${GA_ID}', { cookie_domain: 'auto' });
+								gtag('config', '${GA_ID}', { cookie_domain: 'none' });
 							`}
 						</Script>
 					</>
