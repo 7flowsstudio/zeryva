@@ -42,7 +42,7 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 						/>
 					</Link>
 
-					<h4 className={s.logoText}>Природа, що працює на урожай</h4>
+					<p className={s.logoText}>Природа, що працює на урожай</p>
 				</div>
 				<button type="button" className={s.closeBtn} onClick={handleClose}>
 					<svg className={s.iconClose}>
