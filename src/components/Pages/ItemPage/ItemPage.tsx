@@ -72,7 +72,7 @@ const ItemPage = () => {
 			? url.split("youtu.be/")[1]?.split("?")[0]
 			: url.split("v=")[1]?.split("&")[0];
 
-		return id ? `https://www.youtube.com/embed/${id}` : "";
+		return id ? `https://www.youtube-nocookie.com/embed/${id}` : "";
 	};
 	const youtubeSrc = getYoutubeEmbedUrl(product.youtubeUrl);
 

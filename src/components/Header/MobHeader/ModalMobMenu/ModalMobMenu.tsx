@@ -115,14 +115,15 @@ const ModalMobMenu: React.FC<ModalMobMenuProps> = ({ onClose }) => {
 							))}
 						</ul>
 					</div>
-					<Link
+					<a
 						href="/doc/katalog.pdf"
 						className={s.btnUpload}
 						target="_blank"
+						rel="noopener noreferrer"
 						onClick={handleClose}
 					>
 						Завантажити каталог
-					</Link>
+					</a>
 				</div>
 			</div>
 		</div>
