@@ -88,7 +88,7 @@ const ItemPage = () => {
 			<div className={`container ${s.cont}`}>
 				<div className={s.wrapper}>
 					<div className={s.title}>
-						<h2 className={s.titleProd}>{product.title}</h2>
+						<h1 className={s.titleProd}>{product.title}</h1>
 						<p>{product.descriptionText}</p>
 						<p className={s.price}>{product.price}</p>
 						<ul className={s.propertiesList}>

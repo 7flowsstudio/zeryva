@@ -1,6 +1,33 @@
-# Block all search engines for now
+# Indexing rules
 User-Agent: *
-Disallow: /
+
+# Allow selected product slug pages for indexing
+Allow: /inokuliant-dlia-bobovykh-kultur-ryzostart-sukhyi
+Allow: /inokuliant-dlia-bobovykh-kultur-ryzostart-ridkyi
+Allow: /fitosanitarnyi-kontrol-posiviv-ariia
+Allow: /antystresant-ta-stymuliator-rostu-roslyn-ryzohumat
+Allow: /antystresant-ta-stymuliator-rostu-roslyn-violon
+Allow: /fosfatmobilizuiuchyi-inokuliant-ryzofos
+Allow: /fitosanitarnyi-kontrol-posiviv-funhiblok
+Allow: /destruktor-dlia-rozkladu-roslynnykh-reshtok-destrumag
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-bor-molibden
+Allow: /kompleksne-mikrodobryvo-zeryva-multymiks
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-tsynk
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-kaltsii
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-molibden-kobalt
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-marhanets
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-zernovi
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-zernobobovi
+Allow: /poverkhnevo-aktyvna-rechovyna-par-liprotens
+Allow: /preparat-dlia-pidvyshchennia-rodiuchosti-gruntu-hleon
+
+# Allow product type filter pages for indexing
+Allow: /inokulianty
+Allow: /kontrol-patoheniv
+Allow: /destruktory
+Allow: /stymuliatory-rostu
+Allow: /mikro-monodobryva
+Allow: /prylypachi-par
 
 # Block admin and dev areas as extra safety
 Disallow: /admin
@@ -8,5 +35,5 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /*.json$
 
-# Sitemap (можеш залишити, щоб тестувати)
+# Sitemap
 Sitemap: https://zeryva.com.ua/sitemap.xml
