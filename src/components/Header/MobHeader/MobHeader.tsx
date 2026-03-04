@@ -32,13 +32,13 @@ const MobHeader = ({ isScrolled, searchItems }: MobMenuProp) => {
 							/>
 						</Link>
 
-						<h4
+						<p
 							className={`${s.titleMob} ${
 								isMain ? s.mainTitle : s.notMainTitle
 							} ${isScrolled ? s.titleScroll : ""}`}
 						>
 							Природа, що працює на урожай
-						</h4>
+						</p>
 					</div>
 					<div className={s.mobInfoAndBurger}>
 						<div className={s.socialInfo}>

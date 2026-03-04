@@ -20,6 +20,25 @@ export type SearchItem = {
 
 const Header = ({ isScrolled }: IsScroledProp) => {
 	const [searchItems, setSearchItems] = useState<SearchItem[]>([]);
+	const [isMobileViewport, setIsMobileViewport] = useState(() =>
+		typeof window !== "undefined"
+			? window.matchMedia("(max-width: 767px)").matches
+			: false,
+	);
+
+	useEffect(() => {
+		const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+		const handleViewportChange = (event: MediaQueryListEvent) => {
+			setIsMobileViewport(event.matches);
+		};
+
+		mediaQuery.addEventListener("change", handleViewportChange);
+
+		return () => {
+			mediaQuery.removeEventListener("change", handleViewportChange);
+		};
+	}, []);
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -43,8 +62,11 @@ const Header = ({ isScrolled }: IsScroledProp) => {
 		<div className={`${s.header} ${isScrolled ? s.scrolled : ""}`}>
 			<div className="container">
 				<div className={s.headerBlock}>
-					<DescHeader searchItems={searchItems} />
-					<MobHeader isScrolled={isScrolled} searchItems={searchItems} />
+					{isMobileViewport ? (
+						<MobHeader isScrolled={isScrolled} searchItems={searchItems} />
+					) : (
+						<DescHeader searchItems={searchItems} />
+					)}
 				</div>
 			</div>
 		</div>

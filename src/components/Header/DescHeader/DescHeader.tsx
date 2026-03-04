@@ -93,9 +93,9 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 						/>
 					</Link>
 
-					<h4 className={`${s.logoText} ${isAther ? s.colorGreen : ""}`}>
+					<p className={`${s.logoText} ${isAther ? s.colorGreen : ""}`}>
 						Природа, що працює на урожай
-					</h4>
+					</p>
 				</div>
 				<ul className={s.socialList}>
 					<li className={s.socialItem}>
