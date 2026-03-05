@@ -47,10 +47,12 @@ function buildEntry(
 	path: string,
 	options: { priority: number; changeFrequency: ChangeFreq },
 ): MetadataRoute.Sitemap[number] {
+	const normalizedPriority = Math.min(1, Math.max(0, options.priority));
+
 	return {
 		url: `${siteUrl}${path}`,
 		lastModified: new Date(),
 		changeFrequency: options.changeFrequency,
-		priority: options.priority,
+		priority: normalizedPriority,
 	};
 }

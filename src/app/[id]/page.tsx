@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	}
 
 	return {
-		title: `${product.title} | Zeryva`,
+		title: product.title,
 		description: product.shortDescription,
 		alternates: {
 			canonical: `https://zeryva.com.ua/${product.slug}`,
