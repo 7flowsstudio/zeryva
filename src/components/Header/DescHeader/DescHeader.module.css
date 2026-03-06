@@ -309,7 +309,8 @@
 	}
 
 	.searchBlock {
-		max-width: 588px;
+		max-width: 480px;
+		/* max-width: 588px; */
 		height: 48px;
 	}
 	.searchBtn {

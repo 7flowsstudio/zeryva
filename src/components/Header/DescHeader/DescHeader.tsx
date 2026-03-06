@@ -146,17 +146,8 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 				</nav> */}
 
 				<nav className={s.navigation}>
-					{navList.map((item) =>
-						item.src === "/dylery" ? (
-							<div
-								key={item.id}
-								className={`${s.link} ${isAther ? s.colorGreen : ""} ${
-									s.disabled
-								}`}
-							>
-								{item.text}
-							</div>
-						) : (
+					{navList.map(
+						(item) => (
 							<Link
 								key={item.id}
 								href={item.src}
@@ -165,6 +156,24 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 								{item.text}
 							</Link>
 						),
+						// item.src === "/dylery" ? (
+						// 	<div
+						// 		key={item.id}
+						// 		className={`${s.link} ${isAther ? s.colorGreen : ""} ${
+						// 			s.disabled
+						// 		}`}
+						// 	>
+						// 		{item.text}
+						// 	</div>
+						// ) : (
+						// 	<Link
+						// 		key={item.id}
+						// 		href={item.src}
+						// 		className={`${s.link} ${isAther ? s.colorGreen : ""}`}
+						// 	>
+						// 		{item.text}
+						// 	</Link>
+						// ),
 					)}
 				</nav>
 

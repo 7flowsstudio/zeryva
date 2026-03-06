@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	const staticEntries = staticPages.map((path) =>
 		buildEntry(path, {
-			priority: path === "/" ? 1.0 : 0.8,
+			priority: path === "/" ? 0.9 : 0.8,
 			changeFrequency: path === "/produkty" ? "weekly" : "monthly",
 		}),
 	);
