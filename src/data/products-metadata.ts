@@ -57,15 +57,6 @@ export const productTypeFilters: ProductTypeFilter[] = [
 
 export const productsMetadata: ProductMetadataItem[] = [
 	{
-		id: "xhHVkBFPvkLa1PSJVZdA",
-		slug: "inokuliant-dlia-bobovykh-kultur-ryzostart-sukhyi",
-		title:
-			"Купити інокулянт для сої | Ризостарт сухий, ціна в Україні | Zeryva",
-		shortDescription:
-			"Інокулянт для сої Ризостарт сухий Zeryva — бактерії для інокуляції насіння бобових культур. Купити, ціна, доставка по всій Україні.",
-		image: "/products/g99gvnd85rcdpfrji7hy.webp",
-	},
-	{
 		id: "gjjUzqb44JEgeAzMYE6J",
 		slug: "inokuliant-dlia-bobovykh-kultur-ryzostart-ridkyi",
 		title:
@@ -73,6 +64,15 @@ export const productsMetadata: ProductMetadataItem[] = [
 		shortDescription:
 			"Інокулянт для сої Ризостарт рідкий Zeryva — бактерії для інокуляції насіння бобових культур. Купити, ціна, доставка по всій Україні.",
 		image: "/products/w1ph8dfgzvlingyy7laj.webp",
+	},
+	{
+		id: "xhHVkBFPvkLa1PSJVZdA",
+		slug: "inokuliant-dlia-bobovykh-kultur-ryzostart-sukhyi",
+		title:
+			"Купити інокулянт для сої | Ризостарт сухий, ціна в Україні | Zeryva",
+		shortDescription:
+			"Інокулянт для сої Ризостарт сухий Zeryva — бактерії для інокуляції насіння бобових культур. Купити, ціна, доставка по всій Україні.",
+		image: "/products/g99gvnd85rcdpfrji7hy.webp",
 	},
 	{
 		id: "vJPPh9AvsVvCRnWh0Rnh",
