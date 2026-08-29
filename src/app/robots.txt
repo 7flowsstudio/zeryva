@@ -23,8 +23,8 @@ Allow: /preparat-dlia-pidvyshchennia-rodiuchosti-gruntu-hleon
 
 # Allow product type filter pages for indexing
 Allow: /inokulianty
-Allow: /kontrol-patoheniv
-Allow: /destruktory
+Allow: /fitoprotektory
+Allow: /bakterialni-kompleksy
 Allow: /stymuliatory-rostu
 Allow: /mikro-monodobryva
 Allow: /prylypachi-par
