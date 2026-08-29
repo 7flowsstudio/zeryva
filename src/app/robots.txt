@@ -20,6 +20,13 @@ Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-zernovi
 Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-zernobobovi
 Allow: /poverkhnevo-aktyvna-rechovyna-par-liprotens
 Allow: /preparat-dlia-pidvyshchennia-rodiuchosti-gruntu-hleon
+Allow: /ridkyi-humat-kaliiu-zeryva-ryzohumat
+Allow: /kompleksne-mikrodobryvo-zeryva-tekhnichni
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-mid
+Allow: /antystresant-ta-stymuliator-rostu-roslyn-zeryva-kserula
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-zalizo
+Allow: /ridke-azotne-dobryvo-zeryva-viasyl
+Allow: /mikrodobryvo-ta-stymuliator-rostu-zeryva-bor-150
 
 # Allow product type filter pages for indexing
 Allow: /inokulianty

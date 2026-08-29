@@ -285,13 +285,4 @@ export const productsMetadata: ProductMetadataItem[] = [
 			"Рідкий гумат калію Ризогумат Zeryva. Стимулятор росту та укорінювач для рослин, розсади, малини й полуниці. Купити, ціна, доставка по всій Україні.",
 		image: "/products/MeTNugB3Vwdt35wtUlOi.webp",
 	},
-	{
-		id: "MeTNugB3Vwdt35wtUlOi",
-		slug: "ridkyi-humat-kaliiu-zeryva-ryzohumat",
-		title:
-			"Купити гумат калію, укорінювач для рослин | Ризогумат, ціна в Україні | Zeryva",
-		shortDescription:
-			"Рідкий гумат калію Ризогумат Zeryva. Стимулятор росту та укорінювач для рослин, розсади, малини й полуниці. Купити, ціна, доставка по всій Україні.",
-		image: "/products/MeTNugB3Vwdt35wtUlOi.webp",
-	},
 ];
