@@ -50,8 +50,8 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 		pathname.startsWith("/produkty") ||
 		pathname.startsWith("/kontakty") ||
 		pathname.startsWith("/inokulianty") ||
-		pathname.startsWith("/kontrol-patoheniv") ||
-		pathname.startsWith("/destruktory") ||
+		pathname.startsWith("/fitoprotektory") ||
+		pathname.startsWith("/bakterialni-kompleksy") ||
 		pathname.startsWith("/stymuliatory-rostu") ||
 		pathname.startsWith("/mikro-monodobryva") ||
 		pathname.startsWith("/prylypachi-par") ||
