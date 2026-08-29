@@ -22,16 +22,20 @@ export const productTypeFilters: ProductTypeFilter[] = [
 			"Бактеріальні інокулянти для бобових і зернобобових культур.",
 	},
 	{
-		label: "Контроль патогенів",
-		slug: "kontrol-patoheniv",
-		title: "Контроль патогенів",
-		shortDescription: "Біологічні рішення для фітосанітарного захисту посівів.",
+		label: "Фітопротектори",
+		slug: "fitoprotektory",
+		title:
+			"Купити біопрепарати для захисту рослин | Біофунгіциди, ціна в Україні | Zeryva",
+		shortDescription:
+			"Біопрепарати для захисту рослин Фітопротектори Zeryva. Біологічні фунгіциди та біофунгіциди проти хвороб культур. Купити, ціна, доставка по всій Україні.",
 	},
 	{
-		label: "Деструктори",
-		slug: "destruktory",
-		title: "Деструктори",
-		shortDescription: "Препарати для швидкого розкладу рослинних решток.",
+		label: "Бактеріальні комплекси",
+		slug: "bakterialni-kompleksy",
+		title:
+			"Купити бактеріальні комплекси | Біодеструктори, ціна в Україні | Zeryva",
+		shortDescription:
+			"Бактеріальі комплекси Zeryva для розкладання соломи й рослинних решток у ґрунті. Купити, ціна, доставка по Україні.",
 	},
 	{
 		label: "Стимулятори росту",
@@ -57,15 +61,6 @@ export const productTypeFilters: ProductTypeFilter[] = [
 
 export const productsMetadata: ProductMetadataItem[] = [
 	{
-		id: "gjjUzqb44JEgeAzMYE6J",
-		slug: "inokuliant-dlia-bobovykh-kultur-ryzostart-ridkyi",
-		title:
-			"Купити інокулянт для сої | Ризостарт рідкий, ціна в Україні | Zeryva",
-		shortDescription:
-			"Інокулянт для сої Ризостарт рідкий Zeryva — бактерії для інокуляції насіння бобових культур. Купити, ціна, доставка по всій Україні.",
-		image: "/products/w1ph8dfgzvlingyy7laj.webp",
-	},
-	{
 		id: "xhHVkBFPvkLa1PSJVZdA",
 		slug: "inokuliant-dlia-bobovykh-kultur-ryzostart-sukhyi",
 		title:
@@ -73,6 +68,15 @@ export const productsMetadata: ProductMetadataItem[] = [
 		shortDescription:
 			"Інокулянт для сої Ризостарт сухий Zeryva — бактерії для інокуляції насіння бобових культур. Купити, ціна, доставка по всій Україні.",
 		image: "/products/g99gvnd85rcdpfrji7hy.webp",
+	},
+	{
+		id: "gjjUzqb44JEgeAzMYE6J",
+		slug: "inokuliant-dlia-bobovykh-kultur-ryzostart-ridkyi",
+		title:
+			"Купити інокулянт для сої | Ризостарт рідкий, ціна в Україні | Zeryva",
+		shortDescription:
+			"Інокулянт для сої Ризостарт рідкий Zeryva — бактерії для інокуляції насіння бобових культур. Купити, ціна, доставка по всій Україні.",
+		image: "/products/w1ph8dfgzvlingyy7laj.webp",
 	},
 	{
 		id: "vJPPh9AvsVvCRnWh0Rnh",
@@ -217,5 +221,77 @@ export const productsMetadata: ProductMetadataItem[] = [
 		shortDescription:
 			"Глеон Zeryva — препарат для підвищення родючості ґрунту та активності мікрофлори. Купити, ціна, доставка по всій Україні.",
 		image: "/products/hq8naix57jb9jms5rhsp.webp",
+	},
+	{
+		id: "BAL5LOqiFEVdqkzqre03",
+		slug: "mikrodobryvo-ta-stymuliator-rostu-zeryva-bor-150",
+		title:
+			"Купити добриво Бор 150 для сої та картоплі | Ціна в Україні | Zeryva",
+		shortDescription:
+			"Добриво Бор 150 Zeryva для сої, картоплі та полуниці. Позакореневе підживлення рослин для усунення дефіциту бору. Купити, ціна, доставка по всій Україні.",
+		image: "/products/BAL5LOqiFEVdqkzqre03.webp",
+	},
+	{
+		id: "WjEq2L6oxKViZxqXMPfy",
+		slug: "ridke-azotne-dobryvo-zeryva-viasyl",
+		title:
+			"Купити рідке азотне добриво для рослин | Аміачна селітра Віасил, ціна в Україні | Zeryva",
+		shortDescription:
+			"Рідке азотне добриво Віасил Zeryva для рослин. Швидке азотне живлення з антистресовою дією для культур та розсади. Купити, ціна, доставка по всій Україні.",
+		image: "/products/WjEq2L6oxKViZxqXMPfy.webp",
+	},
+	{
+		id: "F2jcN4o3meWhcEozuFZ6",
+		slug: "mikrodobryvo-ta-stymuliator-rostu-zeryva-zalizo",
+		title:
+			"Купити хелат заліза для рослин | Добриво Залізо, ціна в Україні | Zeryva",
+		shortDescription:
+			"Хелат заліза Zeryva для рослин, малини та огірків. Ефективне мікродобриво для профілактики хлорозу й фотосинтезу. Купити, ціна, доставка по всій Україні.",
+		image: "/products/F2jcN4o3meWhcEozuFZ6.webp",
+	},
+	{
+		id: "d1WXXawMnpPTH1X8hB3s",
+		slug: "antystresant-ta-stymuliator-rostu-roslyn-zeryva-kserula",
+		title:
+			"Купити антистрес для рослин | Антистресант Ксерула, ціна в Україні | Zeryva",
+		shortDescription:
+			"Антистресант для рослин Ксерула Zeryva. Препарат антистрес для захисту посівів від посухи, спеки та стресу. Купити, ціна, доставка по всій Україні.",
+		image: "/products/d1WXXawMnpPTH1X8hB3s.webp",
+	},
+	{
+		id: "B4y5lwxtf1UXNKJziDx2",
+		slug: "mikrodobryvo-ta-stymuliator-rostu-zeryva-mid",
+		title:
+			"Купити хелат міді для рослин | Мікродобриво Мідь, ціна в Україні | Zeryva",
+		shortDescription:
+			"Мікродобриво Мідь Zeryva та хелат міді для рослин. Профілактика дефіциту міді, підтримка фотосинтезу й живлення. Купити, ціна, доставка по всій Україні.",
+		image: "/products/B4y5lwxtf1UXNKJziDx2.webp",
+	},
+	{
+		id: "FMH3BkQfPwRNESU5N7t1",
+		slug: "kompleksne-mikrodobryvo-zeryva-tekhnichni",
+		title:
+			"Купити комплексні мінеральні добрива NPK | Технічні, ціна в Україні | Zeryva",
+		shortDescription:
+			"Комплексні мінеральні добрива NPK Zeryva Технічні. Рідке комплексне добриво для соняшнику, ріпаку та картоплі. Купити, ціна, доставка по всій Україні.",
+		image: "/products/FMH3BkQfPwRNESU5N7t1.webp",
+	},
+	{
+		id: "MeTNugB3Vwdt35wtUlOi",
+		slug: "ridkyi-humat-kaliiu-zeryva-ryzohumat",
+		title:
+			"Купити гумат калію, укорінювач для рослин | Ризогумат, ціна в Україні | Zeryva",
+		shortDescription:
+			"Рідкий гумат калію Ризогумат Zeryva. Стимулятор росту та укорінювач для рослин, розсади, малини й полуниці. Купити, ціна, доставка по всій Україні.",
+		image: "/products/MeTNugB3Vwdt35wtUlOi.webp",
+	},
+	{
+		id: "MeTNugB3Vwdt35wtUlOi",
+		slug: "ridkyi-humat-kaliiu-zeryva-ryzohumat",
+		title:
+			"Купити гумат калію, укорінювач для рослин | Ризогумат, ціна в Україні | Zeryva",
+		shortDescription:
+			"Рідкий гумат калію Ризогумат Zeryva. Стимулятор росту та укорінювач для рослин, розсади, малини й полуниці. Купити, ціна, доставка по всій Україні.",
+		image: "/products/MeTNugB3Vwdt35wtUlOi.webp",
 	},
 ];
