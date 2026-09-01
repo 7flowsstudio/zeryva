@@ -16,8 +16,8 @@ export type ProductTypeFilter = {
 export const productTypeFilters: ProductTypeFilter[] = [
 	{
 		label: "Інокулянти",
-		slug: "inokulianty | Продукти | Zeryva",
-		title: "Інокулянти",
+		slug: "inokulianty",
+		title: "Інокулянти | Продукти | Zeryva",
 		shortDescription:
 			"Бактеріальні інокулянти для бобових і зернобобових культур.",
 	},
