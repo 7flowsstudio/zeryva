@@ -16,7 +16,7 @@ export type ProductTypeFilter = {
 export const productTypeFilters: ProductTypeFilter[] = [
 	{
 		label: "Інокулянти",
-		slug: "inokulianty",
+		slug: "inokulianty | Продукти | Zeryva",
 		title: "Інокулянти",
 		shortDescription:
 			"Бактеріальні інокулянти для бобових і зернобобових культур.",
@@ -40,20 +40,20 @@ export const productTypeFilters: ProductTypeFilter[] = [
 	{
 		label: "Стимулятори росту",
 		slug: "stymuliatory-rostu",
-		title: "Стимулятори росту",
+		title: "Стимулятори росту | Продукти | Zeryva",
 		shortDescription:
 			"Антистресанти та стимулятори росту для підвищення врожайності.",
 	},
 	{
 		label: "Мікро-монодобрива",
 		slug: "mikro-monodobryva",
-		title: "Мікро-монодобрива",
+		title: "Мікро-монодобрива | Продукти | Zeryva",
 		shortDescription: "Моно- та мікродобрива для корекції живлення рослин.",
 	},
 	{
 		label: "Прилипачі (ПАР)",
 		slug: "prylypachi-par",
-		title: "Прилипачі (ПАР)",
+		title: "Прилипачі (ПАР) | Продукти | Zeryva",
 		shortDescription:
 			"Поверхнево-активні речовини для кращого змочування й прилипання.",
 	},

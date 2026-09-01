@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			filter.shortDescription ??
 			"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв";
 		return {
-			title: `${metaTitle} | Продукти | Zeryva`,
+			title: `${metaTitle}`,
 			description: metaDescription,
 			alternates: {
 				canonical: `https://zeryva.com.ua/${filter.slug}`,
