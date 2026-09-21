@@ -1,0 +1,38 @@
+.wrapper {
+	padding: 50px 20px;
+	background-color: var(--color-add-4);
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.inputD {
+	padding: 8px;
+	width: 100%;
+	border-radius: 8px;
+	font-family: var(--font-family);
+	font-size: 14px;
+}
+.label {
+	font-family: var(--third-family);
+	font-size: 18px;
+	font-weight: 500;
+}
+.saveBtn {
+	color: var(--accent-2);
+	border: 2px solid var(--accent-2);
+	font-size: 14px;
+	font-family: var(--font-family);
+	border-radius: 30px;
+	margin-top: 24px;
+	padding: 8px;
+	display: flex;
+	box-shadow: 1px 2px 4px #1a4b3882;
+}

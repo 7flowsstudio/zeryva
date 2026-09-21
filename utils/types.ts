@@ -74,3 +74,11 @@ export interface ProductMetadata {
 		| "Прилипачі (ПАР)"
 	)[];
 }
+export interface Dealer {
+	name: string;
+	phone: string;
+	address: string;
+}
+export type DealerWithId = Dealer & {
+	id: string;
+};
