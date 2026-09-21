@@ -49,6 +49,7 @@ const DescHeader = ({ searchItems }: { searchItems: SearchItem[] }) => {
 		pathname.startsWith("/posluhy") ||
 		pathname.startsWith("/produkty") ||
 		pathname.startsWith("/kontakty") ||
+		pathname.startsWith("/dylery") ||
 		pathname.startsWith("/inokulianty") ||
 		pathname.startsWith("/fitoprotektory") ||
 		pathname.startsWith("/bakterialni-kompleksy") ||

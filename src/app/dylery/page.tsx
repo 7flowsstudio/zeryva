@@ -1,4 +1,4 @@
-import Services from "@/components/Pages/Services/Services";
+import Dylery from "@/components/Pages/Dylery/Dylery";
 import { Metadata } from "next";
 import React from "react";
 
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
-	return <Services />;
+	return <Dylery />;
 };
 
 export default page;
