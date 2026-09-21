@@ -61,7 +61,7 @@ export const navList = [
 	{ id: 1, src: "/produkty", text: "Продукти" },
 	{ id: 2, src: "/posluhy", text: "Послуги" },
 	{ id: 3, src: "/dylery", text: "Дилери" },
-	{ id: 3, src: "/kontakty", text: "Контакти" },
+	{ id: 4, src: "/kontakty", text: "Контакти" },
 ];
 
 export const advantagesList = [
