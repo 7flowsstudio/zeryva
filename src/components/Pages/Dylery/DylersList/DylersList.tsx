@@ -1,14 +1,50 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
+
 import s from "./DylersList.module.css";
+
 import useScrollAnimation from "../../../../../utils/UseScrollAnimation/useScrollAnimation";
-import dilersList from "@/lib/dilers.json";
+
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+
+import { db } from "../../../../../firebaseConfig";
+
+import { Dealer } from "../../../../../utils/types";
+
+type DealerWithId = Dealer & {
+	id: string;
+};
 
 const DylersList = () => {
 	const [servicesBlockRef, servicesBlockVisible] = useScrollAnimation() as [
 		React.RefObject<HTMLDivElement>,
 		boolean,
 	];
+
+	const [dealers, setDealers] = useState<DealerWithId[]>([]);
+
+	useEffect(() => {
+		const fetchDealers = async () => {
+			try {
+				const q = query(collection(db, "dealers"), orderBy("createdAt", "asc"));
+
+				const snapshot = await getDocs(q);
+
+				const data: DealerWithId[] = snapshot.docs.map((doc) => ({
+					id: doc.id,
+					...(doc.data() as Dealer),
+				}));
+
+				setDealers(data);
+			} catch (error) {
+				console.error("Помилка при отриманні дилерів:", error);
+			}
+		};
+
+		fetchDealers();
+	}, []);
+
 	return (
 		<section className={s.servicesSection}>
 			<div className="container">
@@ -19,35 +55,45 @@ const DylersList = () => {
 					}`}
 				>
 					<ul className={s.servicesList}>
-						{dilersList.map((item) => (
+						{dealers.map((item) => (
 							<li key={item.id} className={s.servicesItem}>
-								<h3 className={s.title}>{item.title}</h3>
+								<h3 className={s.title}>{item.name}</h3>
+
 								<ul className={s.infoList}>
-									{item["web-site"] && (
+									{item.website && (
 										<li className={s.infoItem}>
 											<span className={s.boldText}>Веб-сайт:</span>
+
 											<a
 												href={
-													item["web-site"].startsWith("https://")
-														? `https://${item["web-site"]}`
-														: `http://${item["web-site"]}`
+													item.website.startsWith("https://")
+														? item.website
+														: `http://${item.website}`
 												}
 												className={s.text}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
-												{item["web-site"]}
+												{item.website}
 											</a>
 										</li>
 									)}
-									<li className={s.infoItem}>
-										<span className={s.boldText}>Телефон:</span>
-										<p className={s.text}>{item.phone}</p>
-									</li>
-									<li className={s.infoItem}>
-										<span className={s.boldText}>Адреса:</span>
-										<p className={s.text}>{item.address}</p>
-									</li>
+
+									{item.phone && (
+										<li className={s.infoItem}>
+											<span className={s.boldText}>Телефон:</span>
+
+											<p className={s.text}>{item.phone}</p>
+										</li>
+									)}
+
+									{item.address && (
+										<li className={s.infoItem}>
+											<span className={s.boldText}>Адреса:</span>
+
+											<p className={s.text}>{item.address}</p>
+										</li>
+									)}
 								</ul>
 							</li>
 						))}
