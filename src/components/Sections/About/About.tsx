@@ -34,69 +34,77 @@ const About = () => {
 	];
 	return (
 		<div className={`container ${s.heroCont}`}>
-			<h2
-				ref={aboutTitleRef}
-				className={`${s.title} ${s.animateTitle} ${
-					aboutTitleVisible ? s.visible : ""
-				}`}
-			>
-				Технології, що працюють у полі
-			</h2>
 			<div className={s.mainCont}>
-				<p
-					ref={t1Ref}
-					className={`${s.textFirst} ${s.fromLeft} ${t1Vis ? s.visible : ""}`}
-				>
-					Історія бренду «Зерива» розпочалася у 2013 році. Компанія з’явилася як
-					відповідь на зростаючий запит українських аграріїв на якісні,
-					ефективні та доступні біологічні рішення для рослинництва. З перших
-					днів «Зерива» робить ставку на науковий підхід, власні розробки та
-					практичні польові дослідження. Це допомогло швидко здобути довіру
-					фермерів і агропідприємств по всій Україні.
-				</p>
-				<picture
-					ref={i1Ref}
-					className={`${s.imgFirst} ${s.fromRight} ${i1Vis ? s.visible : ""}`}
-				>
-					<source media="(max-width: 767px)" srcSet="/about/mob_first.webp" />
-					<source media="(min-width: 768px)" srcSet="/about/desc_first.webp" />
-					<Image src="/about/desc_first.webp" alt="Agronomists" fill />
-				</picture>
-				<p
-					ref={t2Ref}
-					className={`${s.textSec} ${s.fromLeft} ${t2Vis ? s.visible : ""}`}
-				>
-					«Зерива» — український виробник мікробних і біологічних препаратів для
-					живлення та захисту рослин. Продукція створюється за сучасними
-					технологіями та спрямована на покращення стану ґрунту, стимуляцію
-					розвитку агрокультур і стабільне збільшення врожайності. Компанія
-					поєднує інновації, науковий підхід та практичний досвід, щоб
-					забезпечити аграріїв дієвими, безпечними та економічно вигідними
-					рішеннями для оптимізації врожайності та збереження родючості ґрунтів.
-				</p>
-				<picture
-					ref={i2Ref}
-					className={`${s.imgSec} ${s.fromLeft} ${i2Vis ? s.visible : ""}`}
-				>
-					<source media="(max-width: 767px)" srcSet="/about/mob_sec.webp" />
-					<source media="(min-width: 768px)" srcSet="/about/desc_sec.webp" />
-					<Image src="/about/desc_sec.webp" alt="Field" fill />
-				</picture>
-				<p
-					ref={t3Ref}
-					className={`${s.textTh} ${s.fromRight} ${t3Vis ? s.visible : ""}`}
-				>
-					Команда спеціалістів бренду — агрономи, агрохіміки та біотехнологи —
-					розробила лінійку біопрепаратів на основі результатів тривалих
-					досліджень і спостережень у різних ґрунтово-кліматичних зонах. Кожен
-					продукт «Зерива» створений з урахуванням потреб конкретної культури,
-					її фази розвитку та можливих стресових факторів. Завдяки цьому аграрії
-					отримують стабільно високі результати та покращують ефективність
-					вирощування навіть у складних погодних умовах.
-				</p>
-				<Link href="/produkty" className={s.btnAbout}>
-					Наша продукція
-				</Link>
+				<div>
+					<h2
+						ref={aboutTitleRef}
+						className={`${s.title} ${s.animateTitle} ${
+							aboutTitleVisible ? s.visible : ""
+						}`}
+					>
+						Zeryva — партнер, який працює поруч з аграріями
+					</h2>
+					<p
+						ref={t1Ref}
+						className={`${s.textFirst} ${s.fromLeft} ${t1Vis ? s.visible : ""}`}
+					>
+						Zeryva — український виробник біологічних препаратів для живлення та
+						захисту рослин. Ми не обмежуємося лише виробництвом препаратів.
+						Команда Zeryva супроводжує фермерів у реальних умовах господарства —
+						від підбору рішення та розробки схеми застосування до виїзду на поле
+						й оцінки результатів.
+					</p>
+					<p
+						ref={t3Ref}
+						className={`${s.textSec} ${s.fromRight} ${t3Vis ? s.visible : ""}`}
+					>
+						Ми відкрито показуємо практичний досвід, ділимося результатами
+						застосування та постійно вдосконалюємо рішення разом із тими, хто
+						працює із землею щодня.
+					</p>
+					<Link href="/produkty" className={s.btnAbout}>
+						Наша продукція
+					</Link>
+				</div>
+
+				<div>
+					<picture
+						ref={i1Ref}
+						className={`${s.imgFirst} ${s.fromRight} ${i1Vis ? s.visible : ""}`}
+					>
+						<source
+							media="(max-width: 767px)"
+							srcSet="/about/about_ceo_mob.webp"
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcSet="/about/about_ceo_desc.webp"
+						/>
+						<Image src="/about/about_ceo_desc.webp" alt="CEO" fill />
+					</picture>
+					<div
+						ref={i2Ref}
+						className={`${s.contText} ${s.fromRight} ${i2Vis ? s.visible : ""}`}
+					>
+						<div>
+							<Image
+								src="/about/svg.png"
+								alt=""
+								width={44}
+								height={33}
+								className={s.elem}
+							/>
+						</div>
+						<div>
+							<p className={s.textImg}>
+								Zeryva — це синергія живої науки та агротехнологій для захисту,
+								живлення й максимальної прибутковості кожного гектара
+							</p>
+							<p className={s.textName}>Крук Василь</p>
+							<span className={s.textC}>СЕО «Зерива»</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

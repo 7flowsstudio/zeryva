@@ -78,6 +78,7 @@ export interface Dealer {
 	name: string;
 	phone: string;
 	address: string;
+	website: string;
 }
 export type DealerWithId = Dealer & {
 	id: string;

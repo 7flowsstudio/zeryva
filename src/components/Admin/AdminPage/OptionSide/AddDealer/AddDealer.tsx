@@ -23,6 +23,7 @@ const AddDealer: React.FC<AddProps> = ({ editDealer, onSaved }) => {
 		name: "",
 		phone: "",
 		address: "",
+		website: "",
 	});
 
 	useEffect(() => {
@@ -56,6 +57,7 @@ const AddDealer: React.FC<AddProps> = ({ editDealer, onSaved }) => {
 					name: "",
 					phone: "",
 					address: "",
+					website: "",
 				});
 			}
 
@@ -82,6 +84,21 @@ const AddDealer: React.FC<AddProps> = ({ editDealer, onSaved }) => {
 							setDealer({
 								...dealer,
 								name: e.target.value,
+							})
+						}
+					/>
+				</div>
+
+				<div className={s.field}>
+					<label className={s.label}>Вебсайт</label>
+					<input
+						className={s.inputD}
+						placeholder="вебсайт"
+						value={dealer.website}
+						onChange={(e) =>
+							setDealer({
+								...dealer,
+								website: e.target.value,
 							})
 						}
 					/>
