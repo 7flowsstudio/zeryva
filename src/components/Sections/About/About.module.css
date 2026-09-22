@@ -3,48 +3,96 @@
 	padding-bottom: 48px;
 }
 
-.imgFirst,
-.imgSec {
-	position: relative;
+.imgFirst {
 	display: block;
-	width: clamp(343px, calc((588 / 1440) * 100vw), 588px);
-	aspect-ratio: 588 / 363;
-	margin: 0 auto;
+	width: clamp(343px, calc((588 / 1440) * 100vw), 588px) !important;
+	height: clamp(254px, calc((435 / 1440) * 100vw), 435px) !important;
+	aspect-ratio: 588 / 363 !important;
+	/* margin: 0 auto; */
 }
+/* .imgFirst img {
+	position: relative !important;
+	width: clamp(343px, calc((588 / 1440) * 100vw), 588px) !important;
+	aspect-ratio: 588 / 363 !important;
+} */
 .title {
 	font-family: var(--third-family);
 	color: var(--accent-2);
 	padding-bottom: 32px;
 	font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
-	/* letter-spacing: 0.06em; */
+	text-align: left;
+	font-weight: 800;
+	font-style: ExtraBold;
+	line-height: 52px;
+	letter-spacing: 0%;
 }
+
 .mainCont {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 16px;
+}
+.textFirst,
+.textSec {
+	font-size: 14px;
+}
+.textFirst {
+	padding-bottom: 24px;
 }
 .btnAbout {
+	width: 214px;
+	height: 37px;
 	display: flex;
-	color: var(--accent-2);
-	align-items: center;
+	flex-direction: row;
 	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 32px;
+
+	border-radius: 30px;
+	box-shadow: 1px 2px 4px 0px rgba(244, 166, 0, 0.48);
+	background: rgba(244, 166, 0, 1);
+
+	color: rgba(26, 75, 56, 1);
+
+	font-family: var(--font-family);
 	font-size: 14px;
 	font-weight: 700;
-	border-radius: 30px;
-	border: 2px solid var(--accent-2);
-	box-shadow: 1px 2px 4px 0px #1a4b3882;
-	font-family: var(--font-family);
-	width: 179px;
-	height: 37px;
-	z-index: 10;
+	line-height: 21px;
+	letter-spacing: 0%;
+	text-align: left;
+	margin-top: 16px;
 }
-.btnAbout:active,
-.btnAbout:hover {
-	color: var(--color-add-2);
-	border: 2px solid var(--color-add-2);
-	box-shadow: 1px 2px 4px 0px #1a4b3882;
+.btnAbout:active {
+	box-shadow: 1px 2px 4px 0 rgba(26, 75, 56, 0.51);
+	background: #7aaa8d;
 }
-
+.btnAbout:hover:not(:active) {
+	box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
+	background: #83bd16;
+}
+.textName {
+	color: #1a4b38;
+	font-size: 20px;
+	font-weight: 700;
+	font-style: Bold;
+	line-height: 100%;
+	letter-spacing: 0%;
+	padding-top: 8px;
+	padding-bottom: 4px;
+}
+.contText {
+	display: flex;
+	gap: 10px;
+	padding-top: 16px;
+	text-align: right;
+}
+.textC {
+	color: #929292;
+}
+.elem img {
+	width: 44px;
+}
 .animateTitle {
 	opacity: 0;
 	transition:
@@ -78,24 +126,35 @@
 	opacity: 1;
 	transform: translateX(0);
 }
-@media screen and (max-width: 374px) {
+/* @media screen and (max-width: 374px) {
 	.imgFirst,
 	.imgSec {
-		width: 310px;
+		max-width: 310px;
 	}
-}
+} */
 @media screen and (min-width: 768px) {
 	.heroCont {
 		padding-top: 80px;
 		padding-bottom: 80px;
 	}
+
 	.textFirst,
 	.textSec,
-	.textTh {
+	.textImg,
+	.textC {
 		font-size: 16px;
 	}
 }
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 900px) {
+	.mainCont {
+		flex-direction: row;
+		gap: 24px;
+	}
+	.btnAbout {
+		margin-top: 32px;
+	}
+}
+/* @media screen and (min-width: 980px) {
 	.textFirst {
 		grid-area: textFirst;
 	}
@@ -110,11 +169,11 @@
 	}
 	.textTh {
 		grid-area: textTh;
-	}
-	.btnAbout {
+	} */
+/* .btnAbout {
 		grid-area: btnAbout;
-	}
-	.mainCont {
+	} */
+/* .mainCont {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas:
@@ -123,8 +182,8 @@
 			"imgSec textTh"
 			"imgSec btnAbout";
 		gap: 24px;
-	}
-	.btnAbout {
+	} */
+/* .btnAbout {
 		font-size: 15px;
 		width: 283px;
 		height: 49px;
@@ -134,9 +193,4 @@
 		border: 2px solid var(--accent-3);
 		box-shadow: 1px 2px 4px 0px #1a4b3882;
 	}
-}
-@media screen and (min-width: 1230px) {
-	.btnAbout {
-		margin-top: -84px;
-	}
-}
+} */
