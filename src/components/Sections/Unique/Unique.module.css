@@ -1,0 +1,31 @@
+.wrappUnique {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 40px;
+}
+
+.imgFirst {
+	width: 100%;
+	max-width: 500px;
+	background-image:
+		linear-gradient(#1a1a1a99, #1a1a1a99), url("/unique/corn_mob.webp");
+	aspect-ratio: 343 / 875;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 26px;
+}
+
+@media screen and (min-width: 768px) {
+	.wrappUnique {
+		padding-bottom: 80px;
+	}
+	.imgFirst {
+		max-width: 1440px;
+		background-image:
+			linear-gradient(#1a1a1a99, #1a1a1a99), url("/unique/corn_desc.webp");
+		aspect-ratio: 1200 / 382;
+		border-radius: 20px;
+	}
+}
