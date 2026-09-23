@@ -35,6 +35,9 @@
 	flex-direction: column;
 	gap: 16px;
 }
+.child {
+	flex: 1;
+}
 .textFirst,
 .textSec {
 	font-size: 14px;

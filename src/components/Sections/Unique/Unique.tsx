@@ -29,8 +29,10 @@ const Unique = () => {
 					</h2>
 					<ul className={s.list}>
 						<li className={s.item}>
-							<Image src="/unique/icon1.svg" alt="" width={32} height={32} />
-							<h4>Виїзд агронома в господарство</h4>
+							<div className={s.wrapp}>
+								<Image src="/unique/icon1.svg" alt="" width={32} height={32} />
+								<h4>Виїзд агронома в господарство</h4>
+							</div>
 							<p className={s.text}>
 								Агроном оцінює умови безпосередньо в господарстві та надає
 								практичні рекомендації щодо застосування продукції
@@ -38,8 +40,10 @@ const Unique = () => {
 							<span>Безкоштовно</span>
 						</li>
 						<li className={s.item}>
-							<Image src="/unique/icon2.svg" alt="" width={32} height={32} />
-							<h4>Агрономічна консультація</h4>
+							<div className={s.wrapp}>
+								<Image src="/unique/icon2.svg" alt="" width={32} height={32} />
+								<h4>Агрономічна консультація</h4>
+							</div>
 							<p className={s.text}>
 								Допомагаємо визначити потребу господарства, підібрати рішення
 								Zeryva та пояснюємо порядок застосування
@@ -47,8 +51,10 @@ const Unique = () => {
 							<span>Безкоштовно</span>
 						</li>
 						<li className={s.item}>
-							<Image src="/unique/icon3.svg" alt="" width={32} height={32} />
-							<h4>Розробка технологічної карти вирощування</h4>
+							<div className={s.wrapp}>
+								<Image src="/unique/icon3.svg" alt="" width={32} height={32} />
+								<h4>Розробка технологічної карти вирощування</h4>
+							</div>
 							<p className={s.text}>
 								Готуємо технологічну карту під культуру, поле, кліматичні умови,
 								цілі та ресурси господарства
@@ -56,13 +62,14 @@ const Unique = () => {
 							<span>Безкоштовно</span>
 						</li>
 						<li className={s.item}>
-							<Image src="/unique/icon4.svg" alt="" width={32} height={32} />
-							<h4>Прозорість результатів</h4>
+							<div className={s.wrapp}>
+								<Image src="/unique/icon4.svg" alt="" width={32} height={32} />
+								<h4>Прозорість результатів</h4>
+							</div>
 							<p className={s.text}>
 								Відкрита публікація результатів застосування препаратів у
 								соцмережах
 							</p>
-							<span>Безкоштовно</span>
 						</li>
 					</ul>
 				</div>

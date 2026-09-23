@@ -12,6 +12,7 @@
 	background-image:
 		linear-gradient(#1a1a1a99, #1a1a1a99), url("/unique/corn_mob.webp");
 	aspect-ratio: 343 / 875;
+	max-height: 875px;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -19,15 +20,42 @@
 }
 .contText {
 	padding: 16px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .title {
 	text-align: left;
+	max-width: 380px;
 }
 .list {
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
+	padding-top: 16px;
+	height: 100%;
+	justify-content: space-between;
+	width: 100%;
+}
+.item {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	max-width: 380px;
+}
+.wrapp {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+.item h4 {
+	font-family: var(--third-family);
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
 }
 .item span {
 	color: var(--accent-1);
@@ -80,13 +108,23 @@
 		aspect-ratio: 1200 / 382;
 		border-radius: 20px;
 	}
+	.title {
+		min-width: 100%;
+	}
 	.list {
 		flex-direction: row;
 		gap: 16px;
 		justify-content: space-between;
+		padding-top: 24px;
 	}
 	.item {
 		max-width: 239px;
+	}
+	.wrapp {
+		align-items: start;
+	}
+	.item h4 {
+		padding-bottom: 8px;
 	}
 }
 @media screen and (min-width: 1000px) {
