@@ -18,11 +18,6 @@ const About = () => {
 		React.RefObject<HTMLDivElement>,
 		boolean,
 	];
-
-	const [t2Ref, t2Vis] = useScrollAnimation() as [
-		React.RefObject<HTMLDivElement>,
-		boolean,
-	];
 	const [i2Ref, i2Vis] = useScrollAnimation() as [
 		React.RefObject<HTMLDivElement>,
 		boolean,
@@ -35,7 +30,7 @@ const About = () => {
 	return (
 		<div className={`container ${s.heroCont}`}>
 			<div className={s.mainCont}>
-				<div>
+				<div className={s.child}>
 					<h2
 						ref={aboutTitleRef}
 						className={`${s.title} ${s.animateTitle} ${
@@ -67,17 +62,17 @@ const About = () => {
 					</Link>
 				</div>
 
-				<div>
+				<div className={s.child}>
 					<picture
 						ref={i1Ref}
 						className={`${s.imgFirst} ${s.fromRight} ${i1Vis ? s.visible : ""}`}
 					>
 						<source
-							media="(max-width: 767px)"
+							media="(max-width: 360px)"
 							srcSet="/about/about_ceo_mob.webp"
 						/>
 						<source
-							media="(min-width: 768px)"
+							media="(min-width: 361px)"
 							srcSet="/about/about_ceo_desc.webp"
 						/>
 						<Image src="/about/about_ceo_desc.webp" alt="CEO" fill />
