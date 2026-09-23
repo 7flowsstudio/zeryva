@@ -5,10 +5,13 @@
 
 .imgFirst {
 	display: block;
-	width: clamp(343px, calc((588 / 1440) * 100vw), 588px) !important;
-	height: clamp(254px, calc((435 / 1440) * 100vw), 435px) !important;
-	aspect-ratio: 588 / 363 !important;
+	aspect-ratio: 434 / 254 !important;
 	/* margin: 0 auto; */
+}
+
+.imgFirst img {
+	position: relative !important;
+	height: auto !important;
 }
 /* .imgFirst img {
 	position: relative !important;
@@ -146,6 +149,9 @@
 	}
 }
 @media screen and (min-width: 900px) {
+	.imgFirst {
+		aspect-ratio: 588 / 363 !important;
+	}
 	.mainCont {
 		flex-direction: row;
 		gap: 24px;

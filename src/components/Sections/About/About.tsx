@@ -73,11 +73,11 @@ const About = () => {
 						className={`${s.imgFirst} ${s.fromRight} ${i1Vis ? s.visible : ""}`}
 					>
 						<source
-							media="(max-width: 767px)"
+							media="(max-width: 360px)"
 							srcSet="/about/about_ceo_mob.webp"
 						/>
 						<source
-							media="(min-width: 768px)"
+							media="(min-width: 361px)"
 							srcSet="/about/about_ceo_desc.webp"
 						/>
 						<Image src="/about/about_ceo_desc.webp" alt="CEO" fill />
