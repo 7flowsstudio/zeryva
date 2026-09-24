@@ -1,4 +1,6 @@
 "use client";
+import Categories from "@/components/Sections/Categories/Categories";
+import Delivery from "@/components/Sections/Delivery/Delivery";
 // import dynamic from "next/dynamic";
 
 import Hero from "@/components/Sections/Hero/Hero";
@@ -29,6 +31,8 @@ export default function Home() {
 			<Hero />
 			<About />
 			<Unique />
+			<Categories />
+			<Delivery />
 			<Bestsellers />
 			<Call />
 		</>

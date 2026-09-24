@@ -40,7 +40,8 @@
 }
 .textFirst,
 .textSec {
-	font-size: 14px;
+	font-size: 16px;
+	font-family: PT Sans Caption;
 }
 .textFirst {
 	padding-bottom: 24px;
@@ -149,6 +150,7 @@
 	.textImg,
 	.textC {
 		font-size: 16px;
+		font-family: PT Sans Caption;
 	}
 }
 @media screen and (min-width: 900px) {
