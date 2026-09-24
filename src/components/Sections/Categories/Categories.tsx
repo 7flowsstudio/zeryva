@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import s from "./Categories.module.css";
 import { items } from "@/data/сategories/categories";
 import Link from "next/link";

@@ -24,7 +24,7 @@
 	font-family: var(--third-family);
 	font-weight: 600;
 	font-size: 32px;
-	line-height: 48px;
+	line-height: 38px;
 	letter-spacing: 0;
 	display: flex;
 	flex-direction: column;
@@ -107,7 +107,7 @@
 
 @media screen and (min-width: 880px) {
 	.title {
-		line-height: 69px;
+		line-height: 52px;
 	}
 	.wrappCall {
 		margin-bottom: 80px;

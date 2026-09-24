@@ -66,10 +66,11 @@ h2 {
 	text-align: center;
 }
 p {
-	font-family: var(--font-family);
+	/* font-family: var(--font-family); */
 	font-weight: 400;
 	font-size: 14px;
 	color: var(--text);
+	font-family: PT Sans Caption;
 }
 
 p:last-child {
