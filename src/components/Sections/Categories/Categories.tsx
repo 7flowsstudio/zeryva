@@ -8,7 +8,7 @@ import Image from "next/image";
 const Categories = () => {
 	return (
 		<div className={`container ${s.categorCont}`}>
-			<h2>Категорії</h2>
+			<h2 className={s.titleCat}>Категорії</h2>
 			<div className={s.gallery}>
 				{items.map((item) => (
 					<Link href={item.href} className={s.item} key={item.title}>

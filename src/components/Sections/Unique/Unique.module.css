@@ -63,6 +63,12 @@
 }
 .text {
 	color: var(--fone-1);
+	font-weight: 400;
+	font-style: Regular;
+	font-size: 16px;
+	leading-trim: NONE;
+	line-height: 25px;
+	letter-spacing: 0%;
 }
 .animateTitle {
 	opacity: 0;
