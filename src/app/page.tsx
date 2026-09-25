@@ -1,10 +1,11 @@
 "use client";
 import Categories from "@/components/Sections/Categories/Categories";
 import Delivery from "@/components/Sections/Delivery/Delivery";
-import Gallery from "@/components/Sections/Gallery/Gallery";
+// import Gallery from "@/components/Sections/Gallery/Gallery";
 // import dynamic from "next/dynamic";
 
 import Hero from "@/components/Sections/Hero/Hero";
+import Reviews from "@/components/Sections/Reviews/Reviews";
 import Unique from "@/components/Sections/Unique/Unique";
 import dynamic from "next/dynamic";
 // import Call from "@/components/Sections/Call/Call";
@@ -26,6 +27,10 @@ const Call = dynamic(() => import("@/components/Sections/Call/Call"), {
 	ssr: false,
 });
 
+const Gallery = dynamic(() => import("@/components/Sections/Gallery/Gallery"), {
+	ssr: false,
+});
+
 export default function Home() {
 	return (
 		<>
@@ -33,6 +38,7 @@ export default function Home() {
 			<About />
 			<Unique />
 			<Categories />
+			<Reviews />
 			<Delivery />
 			<Bestsellers />
 			<Gallery />

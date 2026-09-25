@@ -1,19 +1,19 @@
 "use client";
-import s from "./Gallery.module.css";
+import s from "./Reviews.module.css";
 import { galleryImages } from "@/data/gallery/gallery";
 import Image from "next/image";
 import useSlider from "../../../../utils/useSlider";
 
-const Gallery = () => {
+const Reviews = () => {
 	const { listRef, thumbRef, scrollSmooth } = useSlider();
 
 	return (
-		<div className={`container ${s.gallCont}`}>
-			<h2 className={s.titleGal}>Zeryva в реальних господарствах</h2>
-			<p className={s.textGal}>
-				Працюємо разом із фермерами — від консультації до результату
+		<div className={`container ${s.revCont}`}>
+			<h2 className={s.titleRev}>Що говорять наші клієнти</h2>
+			<p className={s.textRev}>
+				Підтверджені результати аграріїв, які використовували препарати Zeryva
 			</p>
-			<ul className={s.gallery} ref={listRef}>
+			{/* <ul className={s.reviews} ref={listRef}>
 				{galleryImages.map((image) => (
 					<li className={s.item} key={image.src}>
 						<button type="button">
@@ -21,7 +21,7 @@ const Gallery = () => {
 						</button>
 					</li>
 				))}
-			</ul>
+			</ul> */}
 			<div className={s.sliderControls}>
 				<button onClick={() => scrollSmooth("left")} className={s.navButton}>
 					<svg className={s.arrLeft}>
@@ -41,4 +41,4 @@ const Gallery = () => {
 	);
 };
 
-export default Gallery;
+export default Reviews;

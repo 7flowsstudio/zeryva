@@ -1,0 +1,139 @@
+.revCont {
+	padding-bottom: 40px;
+}
+.titleRev {
+	text-align: start;
+	font-family: var(--third-family);
+	color: var(--accent-2);
+}
+.textRev {
+	font-family: PT Sans Caption;
+	font-weight: 400;
+	font-style: Regular;
+	font-size: 16px;
+	line-height: 25px;
+	letter-spacing: 0%;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+.image {
+	position: relative !important;
+	display: block;
+	aspect-ratio: 384 / 497;
+	overflow: hidden;
+	border-radius: 20px;
+	min-width: 317px;
+	max-width: 384px;
+	object-fit: cover;
+	max-height: 497px;
+}
+.reviews {
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	padding-bottom: 16px;
+
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+.gallery::-webkit-scrollbar {
+	display: none;
+}
+
+.scrollbar {
+	width: clamp(148px, 26vw, 384px);
+	height: 8px;
+	background: #1a4b38;
+	border-radius: 4px;
+	margin-top: 24;
+}
+
+.thumb {
+	height: 100%;
+	width: 6%;
+	background: #f4a600;
+	border-radius: 4px;
+	transform: translateX(0);
+	touch-action: none;
+	cursor: grab;
+}
+
+.thumb:active {
+	cursor: grabbing;
+}
+
+.sliderControls {
+	display: flex;
+	justify-content: flex-start;
+	gap: 10px;
+	margin-top: 24px;
+}
+
+.navButton {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-weight: bold;
+	transition: transform 0.15s ease;
+	border: 2px solid #1a4b38;
+	border-radius: 50px;
+}
+.arrLeft,
+.arrRight {
+	width: 24px;
+	height: 24px;
+
+	fill: var(--accent-2);
+}
+.arrRight {
+	transform: translateX(3px) rotate(180deg);
+}
+.navButton:active {
+	transform: scale(0.9);
+}
+.navButton:hover,
+.navButton:active {
+	border: 2px solid #7aaa8d;
+}
+
+.navButton:hover .arrLeft,
+.navButton:hover .arrRight,
+.navButton:active .arrLeft,
+.navButton:active .arrRight {
+	fill: var(--color-add-2);
+}
+@media screen and (min-width: 768px) {
+	.revCont {
+		padding-bottom: 80px;
+	}
+	.textGal {
+		padding-bottom: 32px;
+	}
+}
+@media screen and (min-width: 980px) {
+	.scrollbar {
+		margin-top: 31;
+	}
+	.thumb {
+		height: 100%;
+		width: 50%;
+		background: #f4a600;
+		border-radius: 4px;
+		transform: translateX(0);
+		touch-action: none;
+		cursor: grab;
+	}
+	.navButton:active {
+		border: 2px solid #83bd16;
+	}
+
+	.navButton:active .arrLeft,
+	.navButton:active .arrRight {
+		fill: var(--accent-3);
+	}
+}
