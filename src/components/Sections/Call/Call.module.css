@@ -41,6 +41,7 @@
 	color: rgba(26, 75, 56, 1);
 	max-width: 183px;
 	margin-top: 24;
+	margin-right: 4px;
 	font-size: 14px;
 }
 
@@ -74,7 +75,7 @@
 	transform: translateX(0);
 }
 
-@media screen and (min-width: 375px) and (max-width: 460px) {
+@media screen and (min-width: 390px) and (max-width: 460px) {
 	.title {
 		width: 326px;
 	}
