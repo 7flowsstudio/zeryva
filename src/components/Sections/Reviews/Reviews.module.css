@@ -1,22 +1,33 @@
-.bestsCont {
-	padding-bottom: 48px;
+.revCont {
+	padding-bottom: 40px;
 }
-.title {
+.titleRev {
 	text-align: start;
 	font-family: var(--third-family);
 	color: var(--accent-2);
-	padding-bottom: 8px;
-	font-size: clamp(32px, calc((46 / 1440) * 100vw), 46px);
-	/* letter-spacing: 0.06em; */
 }
-.text {
-	text-align: start;
-	color: var(--accent-2);
-	/* font-family: var(--font-family); */
+.textRev {
+	font-family: PT Sans Caption;
+	font-weight: 400;
+	font-style: Regular;
 	font-size: 16px;
+	line-height: 25px;
+	letter-spacing: 0%;
+	padding-top: 16px;
 	padding-bottom: 16px;
 }
-.list {
+.image {
+	position: relative !important;
+	display: block;
+	aspect-ratio: 384 / 497;
+	overflow: hidden;
+	border-radius: 20px;
+	min-width: 317px;
+	max-width: 384px;
+	object-fit: cover;
+	max-height: 497px;
+}
+.reviews {
 	display: flex;
 	gap: 20px;
 	overflow-x: auto;
@@ -26,7 +37,7 @@
 	overflow-x: auto;
 	scrollbar-width: none;
 }
-.list::-webkit-scrollbar {
+.gallery::-webkit-scrollbar {
 	display: none;
 }
 
@@ -96,31 +107,17 @@
 .navButton:active .arrRight {
 	fill: var(--color-add-2);
 }
-.animateTitle {
-	opacity: 0;
-	transition:
-		opacity 0.8s ease-out,
-		transform 0.8s ease-out;
-}
-.animateTitle {
-	transform: translateX(-50px);
-}
-.animateTitle.visible {
-	opacity: 1;
-	transform: translateX(0);
-}
-@media screen and (min-width: 980px) {
-	.bestsCont {
+@media screen and (min-width: 768px) {
+	.revCont {
 		padding-bottom: 80px;
 	}
-	.title {
-		padding-bottom: 16px;
+	.textGal {
+		padding-bottom: 32px;
 	}
-	.text {
-		padding-bottom: 24px;
-	}
+}
+@media screen and (min-width: 980px) {
 	.scrollbar {
-		margin-top: 31px;
+		margin-top: 31;
 	}
 	.thumb {
 		height: 100%;
