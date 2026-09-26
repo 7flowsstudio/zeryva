@@ -71,7 +71,9 @@
 		transform: translateY(20px);
 		pointer-events: none;
 
-		transition: opacity 300ms ease, transform 300ms ease;
+		transition:
+			opacity 300ms ease,
+			transform 300ms ease;
 	}
 
 	.socialListVisible {

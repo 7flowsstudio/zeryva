@@ -22,13 +22,22 @@ const InfoBlock: React.FC<InfoBlockProps> = ({ item }) => {
 			<div className={s.infoContainer}>
 				<h1 className={s.title}>{item.title}</h1>
 				<h2 className={s.description}>{item.description}</h2>
-				<button
-					type="button"
-					className={s.downloadBtn}
-					onClick={handleDownload}
-				>
-					Завантажити каталог
-				</button>
+				<div className={s.wrappBtns}>
+					<button
+						type="button"
+						className={s.downloadBtn}
+						onClick={handleDownload}
+					>
+						Завантажити каталог
+					</button>
+					<button
+						type="button"
+						className={s.downloadBtnCons}
+						onClick={handleDownload}
+					>
+						Замовити консультацію
+					</button>
+				</div>
 			</div>
 		</div>
 	);

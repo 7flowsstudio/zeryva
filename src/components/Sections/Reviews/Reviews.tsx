@@ -1,8 +1,8 @@
 "use client";
 import s from "./Reviews.module.css";
-import { galleryImages } from "@/data/gallery/gallery";
-import Image from "next/image";
 import useSlider from "../../../../utils/useSlider";
+import Card from "./Card/Card";
+import { cards } from "@/data/reviews/reviews";
 
 const Reviews = () => {
 	const { listRef, thumbRef, scrollSmooth } = useSlider();
@@ -13,15 +13,11 @@ const Reviews = () => {
 			<p className={s.textRev}>
 				Підтверджені результати аграріїв, які використовували препарати Zeryva
 			</p>
-			{/* <ul className={s.reviews} ref={listRef}>
-				{galleryImages.map((image) => (
-					<li className={s.item} key={image.src}>
-						<button type="button">
-							<Image src={image.src} alt={image.alt} fill className={s.image} />
-						</button>
-					</li>
+			<ul className={s.reviews} ref={listRef}>
+				{cards.map((review) => (
+					<Card key={review.name} review={review} />
 				))}
-			</ul> */}
+			</ul>
 			<div className={s.sliderControls}>
 				<button onClick={() => scrollSmooth("left")} className={s.navButton}>
 					<svg className={s.arrLeft}>
