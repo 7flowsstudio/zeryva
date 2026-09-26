@@ -15,14 +15,16 @@ type CardProps = {
 
 const Card = ({ review }: CardProps) => {
 	return (
-		<div className={s.cardWrapp}>
-			<li className={s.card}>
+		<li className={s.card}>
+			<div className={s.wrapp}>
 				<Image src={review.image} alt={review.name} width={78} height={78} />
-				<h3 className={s.title}>{review.name}</h3>
-				<p className={s.description}>{review.location}</p>
-				<p className={s.price}>{review.text}</p>
-			</li>
-		</div>
+				<div className={s.textCont}>
+					<h3 className={s.name}>{review.name}</h3>
+					<p className={s.location}>{review.location}</p>
+				</div>
+			</div>
+			<p className={s.text}>{review.text}</p>
+		</li>
 	);
 };
 

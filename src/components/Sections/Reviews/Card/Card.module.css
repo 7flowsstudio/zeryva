@@ -1,0 +1,47 @@
+.card {
+	min-width: 310px;
+	padding: 16px;
+	border: 1px solid #1a4b38;
+	border-radius: 20px;
+	height: fit-content;
+}
+.wrapp {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+.wrapp img {
+	border-radius: 50%;
+}
+.textCont {
+	display: flex;
+	gap: 8px;
+	flex-direction: column;
+}
+.name {
+	font-family: var(--third-family);
+	color: var(--accent-2);
+	font-weight: 700;
+	font-style: Bold;
+	font-size: 16px;
+	line-height: 25px;
+	letter-spacing: 0%;
+}
+.location {
+	color: #929292;
+	font-family: PT Sans Caption;
+	font-weight: 400;
+	font-style: Regular;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
+}
+.text {
+	font-weight: 400;
+	font-style: Regular;
+	font-size: 16px;
+	leading-trim: NONE;
+	line-height: 25px;
+	letter-spacing: 0%;
+	padding-top: 16px;
+}
