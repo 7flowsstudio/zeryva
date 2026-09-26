@@ -1,4 +1,4 @@
-export const card = [
+export const cards = [
 	{
 		image: "/reviews/rev_1.webp",
 		name: "ФГ Кравчука Ю.В.",

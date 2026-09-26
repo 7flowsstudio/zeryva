@@ -3,6 +3,8 @@ import s from "./Reviews.module.css";
 import { galleryImages } from "@/data/gallery/gallery";
 import Image from "next/image";
 import useSlider from "../../../../utils/useSlider";
+import Card from "./Card/Card";
+import { cards } from "@/data/reviews/reviews";
 
 const Reviews = () => {
 	const { listRef, thumbRef, scrollSmooth } = useSlider();
@@ -13,6 +15,11 @@ const Reviews = () => {
 			<p className={s.textRev}>
 				Підтверджені результати аграріїв, які використовували препарати Zeryva
 			</p>
+			<ul className={s.list} ref={listRef}>
+				{cards.map((review) => (
+					<Card key={review.name} review={review} />
+				))}
+			</ul>
 			{/* <ul className={s.reviews} ref={listRef}>
 				{galleryImages.map((image) => (
 					<li className={s.item} key={image.src}>
