@@ -7,7 +7,6 @@
 	font-weight: 800;
 	font-style: ExtraBold;
 	line-height: 38px;
-	letter-spacing: 0%;
 	color: var(--accent-2);
 	padding-bottom: 16px;
 	text-align: left;
@@ -21,6 +20,7 @@
 }
 .imgMap {
 	position: relative !important;
+	height: auto !important;
 	display: block;
 	aspect-ratio: 690 / 459;
 	overflow: hidden;
@@ -57,6 +57,27 @@
 	box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
 	background: #83bd16;
 }
+
+.fromLeft,
+.fromRight {
+	opacity: 0;
+	transition:
+		opacity 0.8s ease,
+		transform 0.8s ease;
+}
+
+.fromLeft {
+	transform: translateX(-50px);
+}
+
+.fromRight {
+	transform: translateX(50px);
+}
+
+.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
 @media screen and (max-width: 767px) {
 	.imgMap {
 		margin-top: 32px;
@@ -73,9 +94,12 @@
 	.wrapp {
 		max-width: 510px;
 	}
+	.imgMap {
+		width: clamp(223px, calc(91.21vw - 477.46px), 690px) !important;
+	}
 }
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
 	.imgMap {
 		width: 690px !important;
 	}
-}
+} */
