@@ -21,6 +21,7 @@
 }
 .imgMap {
 	position: relative !important;
+	height: auto !important;
 	display: block;
 	aspect-ratio: 690 / 459;
 	overflow: hidden;
@@ -94,9 +95,12 @@
 	.wrapp {
 		max-width: 510px;
 	}
+	.imgMap {
+		width: clamp(223px, calc(91.21vw - 477.46px), 690px) !important;
+	}
 }
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
 	.imgMap {
 		width: 690px !important;
 	}
-}
+} */

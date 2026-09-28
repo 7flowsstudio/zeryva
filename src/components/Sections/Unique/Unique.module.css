@@ -54,26 +54,23 @@
 .item h4 {
 	font-family: var(--third-family);
 	font-weight: 600;
-	letter-spacing: 0%;
-	font-family: Work Sans;
-	font-weight: 700;
-	font-style: Bold;
-	font-size: 16px;
+	letter-spacing: 8%;
+	font-size: 14px;
 	line-height: 20.3px;
 }
 .item span {
 	color: var(--accent-1);
-	font-family: PT Sans Caption;
+	font-family: var(--font-family);
+	font-size: 14px;
 }
 .text {
 	color: var(--fone-1);
 	font-weight: 400;
 	font-style: Regular;
-	font-size: 16px;
+	font-size: 14px;
 	leading-trim: NONE;
 	line-height: 25px;
 	letter-spacing: 0%;
-	font-family: PT Sans Caption;
 }
 .animateTitle {
 	opacity: 0;

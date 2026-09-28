@@ -33,7 +33,7 @@ const Delivery = () => {
 			</div>
 			<div
 				ref={i2Ref}
-				className={`${s.wrapp} ${s.fromRight} ${i2Vis ? s.visible : ""}`}
+				className={`${s.wrappImg} ${s.fromRight} ${i2Vis ? s.visible : ""}`}
 			>
 				<Image
 					className={s.imgMap}

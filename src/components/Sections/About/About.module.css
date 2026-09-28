@@ -40,11 +40,13 @@
 }
 .textFirst,
 .textSec {
-	font-size: 16px;
-	font-family: PT Sans Caption;
+	font-size: 14px;
+	line-height: 25px;
+	/* font-family: PT Sans Caption; */
 }
 .textFirst {
 	padding-bottom: 24px;
+	/* font-family: var(--font-family) !important; */
 }
 .btnAbout {
 	width: 214px;
@@ -93,6 +95,9 @@
 	gap: 10px;
 	padding-top: 16px;
 	text-align: right;
+}
+.textImg {
+	line-height: 25px;
 }
 .textC {
 	color: #929292;
@@ -144,14 +149,14 @@
 		padding-top: 80px;
 		padding-bottom: 80px;
 	}
-
+	/* 
 	.textFirst,
 	.textSec,
 	.textImg,
 	.textC {
 		font-size: 16px;
 		font-family: PT Sans Caption;
-	}
+	} */
 }
 @media screen and (min-width: 900px) {
 	.imgFirst {
