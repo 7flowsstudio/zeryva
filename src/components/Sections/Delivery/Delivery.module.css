@@ -57,6 +57,27 @@
 	box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
 	background: #83bd16;
 }
+
+.fromLeft,
+.fromRight {
+	opacity: 0;
+	transition:
+		opacity 0.8s ease,
+		transform 0.8s ease;
+}
+
+.fromLeft {
+	transform: translateX(-50px);
+}
+
+.fromRight {
+	transform: translateX(50px);
+}
+
+.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
 @media screen and (max-width: 767px) {
 	.imgMap {
 		margin-top: 32px;

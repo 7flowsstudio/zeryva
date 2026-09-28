@@ -47,6 +47,32 @@
 	letter-spacing: 0%;
 	text-align: center;
 }
+.animateTitle {
+	opacity: 0;
+	transition:
+		opacity 0.8s ease-out,
+		transform 0.8s ease-out;
+}
+.animateTitle {
+	transform: translateX(-50px);
+}
+.animateTitle.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.fromRight {
+	opacity: 0;
+	transition:
+		opacity 0.8s ease,
+		transform 0.8s ease;
+	transform: translateX(50px);
+}
+
+.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
 
 @media screen and (min-width: 768px) {
 	.categorCont {

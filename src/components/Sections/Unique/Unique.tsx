@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import s from "./Unique.module.css";
 import useScrollAnimation from "../../../../utils/UseScrollAnimation/useScrollAnimation";
 import Image from "next/image";
+
 const Unique = () => {
 	const [aboutTitleRef, aboutTitleVisible] = useScrollAnimation() as [
 		React.RefObject<HTMLDivElement>,

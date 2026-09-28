@@ -107,6 +107,19 @@
 .navButton:active .arrRight {
 	fill: var(--color-add-2);
 }
+
+.fromRight {
+	opacity: 0;
+	transition:
+		opacity 0.8s ease,
+		transform 0.8s ease;
+	transform: translateX(50px);
+}
+
+.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
 @media screen and (min-width: 768px) {
 	.gallCont {
 		padding-bottom: 80px;
