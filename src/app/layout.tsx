@@ -25,15 +25,20 @@ const ptSans = localFont({
 	display: "swap",
 });
 
-const workSans = localFont({
+const onest = localFont({
 	src: [
 		{
-			path: "../../public/fonts/WorkSans/WorkSansSemiBold.woff",
+			path: "../../public/fonts/Onest/Onest-SemiBold.ttf",
 			weight: "600",
 			style: "normal",
 		},
 		{
-			path: "../../public/fonts/WorkSans/WorkSansExtraBold.woff",
+			path: "../../public/fonts/Onest/Onest-Bold.ttf",
+			weight: "700",
+			style: "normal",
+		},
+		{
+			path: "../../public/fonts/Onest/Onest-ExtraBold.ttf",
 			weight: "800",
 			style: "normal",
 		},
@@ -80,7 +85,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="uk" className={`${workSans.variable} ${ptSans.variable}`}>
+		<html lang="uk" className={`${onest.variable} ${ptSans.variable}`}>
 			<head>
 				{GA_ID && (
 					<>
