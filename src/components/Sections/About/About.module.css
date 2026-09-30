@@ -26,7 +26,7 @@
 	text-align: left;
 	font-weight: 800;
 	font-style: ExtraBold;
-	line-height: 52px;
+	line-height: clamp(38px, calc((52 / 1440) * 100vw), 52px);
 	/* letter-spacing: 0%; */
 }
 

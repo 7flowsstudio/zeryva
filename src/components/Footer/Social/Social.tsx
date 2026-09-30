@@ -29,7 +29,7 @@ const Social = () => {
     window.open("/doc/katalog.pdf", "_blank", "noopener,noreferrer");
   };
   return (
-    <div>
+    <div className={s.socCont}>
       <h3 className={s.title}>Соціальні мережі</h3>
       <div className={s.socialItem}>
         {socialList.map((item) => (
