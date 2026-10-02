@@ -31,7 +31,15 @@ const Categories = () => {
 			>
 				{items.map((item) => (
 					<Link href={item.href} className={s.item} key={item.title}>
-						<Image src={item.image} alt={item.title} fill className={s.image} />
+						<div className={s.imageWrapper}>
+							<Image
+								src={item.image}
+								alt={item.title}
+								width={384}
+								height={384}
+								className={s.image}
+							/>
+						</div>
 
 						<div className={s.overlay} />
 

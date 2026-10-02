@@ -4,8 +4,12 @@ import { galleryImages } from "@/data/gallery/gallery";
 import Image from "next/image";
 import useSlider from "../../../../utils/useSlider";
 import useScrollAnimation from "../../../../utils/UseScrollAnimation/useScrollAnimation";
+import { useState } from "react";
+import Portal from "../UI/Portal/Portal";
+import Modal from "../UI/Modal/Modal";
 
 const Gallery = () => {
+	const [selectedImage, setSelectedImage] = useState<string | null>(null);
 	const { listRef, thumbRef, scrollSmooth } = useSlider();
 	const [i1Ref, i1Vis] = useScrollAnimation() as [
 		React.RefObject<HTMLDivElement>,
@@ -22,7 +26,7 @@ const Gallery = () => {
 				<ul className={s.gallery} ref={listRef}>
 					{galleryImages.map((image) => (
 						<li className={s.item} key={image.src}>
-							<button type="button">
+							<button type="button" onClick={() => setSelectedImage(image.src)}>
 								<Image
 									src={image.src}
 									alt={image.alt}
@@ -49,6 +53,21 @@ const Gallery = () => {
 			<div className={s.scrollbar}>
 				<div ref={thumbRef} className={s.thumb} />
 			</div>
+			{selectedImage && (
+				<Portal>
+					<Modal closeModal={() => setSelectedImage(null)}>
+						<div className={s.modalImageWrapper}>
+							<Image
+								src={selectedImage}
+								alt=""
+								fill
+								sizes="90vw"
+								className={s.modalImage}
+							/>
+						</div>
+					</Modal>
+				</Portal>
+			)}
 		</div>
 	);
 };

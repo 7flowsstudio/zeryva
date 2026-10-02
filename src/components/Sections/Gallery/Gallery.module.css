@@ -7,7 +7,7 @@
 	color: var(--accent-2);
 }
 .textGal {
-	font-family: PT Sans Caption;
+	/* font-family: PT Sans Caption; */
 	font-weight: 400;
 	font-style: Regular;
 	font-size: 16px;
@@ -119,6 +119,22 @@
 .visible {
 	opacity: 1;
 	transform: translateX(0);
+}
+.modalImageWrapper {
+	position: relative;
+
+	width: min(90vw, calc(90vh * 384 / 497), 792px);
+
+	aspect-ratio: 384 / 497;
+
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+.modalImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 @media screen and (min-width: 768px) {
 	.gallCont {
