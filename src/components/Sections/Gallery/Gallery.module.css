@@ -7,7 +7,7 @@
 	color: var(--accent-2);
 }
 .textGal {
-	font-family: PT Sans Caption;
+	/* font-family: PT Sans Caption; */
 	font-weight: 400;
 	font-style: Regular;
 	font-size: 16px;
@@ -120,6 +120,7 @@
 	opacity: 1;
 	transform: translateX(0);
 }
+
 @media screen and (min-width: 768px) {
 	.gallCont {
 		padding-bottom: 80px;
