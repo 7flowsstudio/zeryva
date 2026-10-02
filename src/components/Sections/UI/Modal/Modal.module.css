@@ -5,7 +5,7 @@
 	right: 0;
 	bottom: 0;
 	backdrop-filter: blur(2px);
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(52, 52, 52, 0.54);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -19,9 +19,9 @@
 	justify-content: center;
 	animation: slideIn 0.3s ease-out;
 	position: relative;
-	width: 90vw;
+	width: auto;
 	max-width: 90vw;
-	max-height: 100vh;
+	max-height: 90vh;
 }
 .width60 {
 	width: 90vw;
