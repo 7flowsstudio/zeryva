@@ -7,7 +7,7 @@ export const socialList = [
 	{
 		id: 1,
 		src: "/sprite.svg#icon-tiktokk",
-		href: "https://www.tiktok.com/@zeryva_?_t=ZM-90Z94XolicV&_r=1",
+		href: "https://www.tiktok.com/@zeryva.ua",
 	},
 	{
 		id: 2,
@@ -30,7 +30,7 @@ export const socListMob = [
 	{
 		id: 1,
 		src: "/sprite.svg#icon-tiktokk",
-		link: "https://www.tiktok.com/@zeryva_?_t=ZM-90Z94XolicV&_r=1",
+		link: "https://www.tiktok.com/@zeryva.ua",
 	},
 	{
 		id: 2,

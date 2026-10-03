@@ -13,9 +13,13 @@
 	justify-content: space-between;
 	animation: ani 2s forwards;
 }
+.wrapp a {
+	width: clamp(144px, calc((164 / 1440) * 100vw), 164px);
+	height: clamp(144px, calc((164 / 1440) * 100vw), 164px);
+}
 .card img {
-	width: 144px;
-	height: 144px;
+	width: clamp(144px, calc((164 / 1440) * 100vw), 164px);
+	height: clamp(144px, calc((164 / 1440) * 100vw), 164px);
 	object-fit: cover;
 	border-radius: 10px;
 }

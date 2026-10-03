@@ -54,20 +54,19 @@
 .item h4 {
 	font-family: var(--third-family);
 	font-weight: 600;
-	letter-spacing: 8%;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 20.3px;
 }
 .item span {
 	color: var(--accent-1);
 	font-family: var(--font-family);
-	font-size: 14px;
+	font-size: 16px;
 }
 .text {
 	color: var(--fone-1);
 	font-weight: 400;
 	font-style: Regular;
-	font-size: 14px;
+	font-size: 16px;
 	leading-trim: NONE;
 	line-height: 25px;
 	letter-spacing: 0%;
@@ -105,8 +104,12 @@
 	opacity: 1;
 	transform: translateX(0);
 }
-
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 360px) {
+	.text {
+		font-size: 14px;
+	}
+}
+@media screen and (min-width: 800px) {
 	.wrappUnique {
 		padding-bottom: 80px;
 	}

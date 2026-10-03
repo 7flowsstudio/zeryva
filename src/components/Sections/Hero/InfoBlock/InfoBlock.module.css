@@ -78,11 +78,7 @@
 	letter-spacing: 0%;
 	/* text-align: left; */
 }
-.downloadBtn:hover,
-.downloadBtn:active {
-	border: 2px solid #eff3e5;
-	color: var(--fone-1);
-}
+
 .downloadBtnCons {
 	/* width: 100%; */
 	max-width: 240px;
@@ -102,6 +98,21 @@
 	line-height: 21px;
 	display: flex;
 	box-shadow: 1px 2px 4px #f4a6007a;
+}
+
+.downloadBtnCons:active {
+	box-shadow: 1px 2px 4px 0 rgba(26, 75, 56, 0.51);
+	background: #7aaa8d;
+}
+.downloadBtnCons:hover:not(:active) {
+	box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
+	background: #83bd16;
+}
+.downloadBtn:hover:not(:active),
+.downloadBtn:active {
+	border: 2px solid #eff3e5;
+	color: var(--fone-1);
+	background: transparent;
 }
 @media screen and (min-width: 400px) {
 	.downloadBtn,
@@ -140,10 +151,10 @@
 		font-size: clamp(48px, calc((48 / 1280) * 100vw), 60px);
 		line-height: clamp(48px, calc((48 / 1280) * 100vw), 60px);
 	}
-	.downloadBtn:hover:not(:active) {
+	/* .downloadBtn:hover:not(:active) {
 		box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
 		background: #83bd16;
-	}
+	} */
 }
 @media screen and (min-width: 1365px) {
 	@supports (-webkit-appearance: none) and (not (-moz-appearance: none)) {

@@ -46,7 +46,7 @@ const Products: React.FC<Props> = ({ initialFilterSlug = null }) => {
 
 	useEffect(() => {
 		const fetchProducts = async () => {
-			const q = query(collection(db, "products"), orderBy("createdAt", "asc"));
+			const q = query(collection(db, "products"), orderBy("title", "asc"));
 			const snapshot = await getDocs(q);
 			const data = snapshot.docs.map((doc) => ({
 				id: doc.id,
