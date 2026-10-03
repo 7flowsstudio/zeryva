@@ -16,17 +16,18 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
 
 	return (
 		<div className={s.card}>
-			{product.images?.[0] && (
-				<Link href={`/${slug}`}>
-					<Image
-						src={product.images[0]}
-						alt={product.title}
-						width={200}
-						height={200}
-					/>
-				</Link>
-			)}
-
+			<div className={s.wrapp}>
+				{product.images?.[0] && (
+					<Link href={`/${slug}`}>
+						<Image
+							src={product.images[0]}
+							alt={product.title}
+							width={200}
+							height={200}
+						/>
+					</Link>
+				)}
+			</div>
 			<div className={s.blockDescr}>
 				<Link href={`/${slug}`}>
 					<h3 className={s.title}>{product.title}</h3>
