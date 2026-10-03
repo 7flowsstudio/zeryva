@@ -103,6 +103,15 @@
 	display: flex;
 	box-shadow: 1px 2px 4px #f4a6007a;
 }
+
+.downloadBtnCons:active {
+	box-shadow: 1px 2px 4px 0 rgba(26, 75, 56, 0.51);
+	background: #7aaa8d;
+}
+.downloadBtnCons:hover:not(:active) {
+	box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
+	background: #83bd16;
+}
 @media screen and (min-width: 400px) {
 	.downloadBtn,
 	.downloadBtnCons {
