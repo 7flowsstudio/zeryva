@@ -47,9 +47,9 @@
 	font-family: var(--third-family);
 	overflow-wrap: break-word;
 	word-break: break-word;
-	font-size: 16px;
+	font-size: 18px;
 
-	letter-spacing: 0.06em;
+	letter-spacing: 0;
 }
 .description {
 	min-height: 63px;

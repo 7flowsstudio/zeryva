@@ -46,12 +46,18 @@ const Products: React.FC<Props> = ({ initialFilterSlug = null }) => {
 
 	useEffect(() => {
 		const fetchProducts = async () => {
-			const q = query(collection(db, "products"), orderBy("title", "asc"));
+			const q = query(collection(db, "products"));
 			const snapshot = await getDocs(q);
 			const data = snapshot.docs.map((doc) => ({
 				id: doc.id,
 				...(doc.data() as Product),
 			}));
+
+			data.sort((a, b) =>
+				a.title.localeCompare(b.title, "uk", {
+					sensitivity: "base",
+				}),
+			);
 
 			setProducts(data);
 			setLoading(false);

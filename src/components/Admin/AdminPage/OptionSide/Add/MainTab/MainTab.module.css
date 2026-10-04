@@ -17,6 +17,7 @@
 	font-family: var(--font-family);
 	padding: 4px;
 	max-width: 164px;
+	cursor: pointer;
 }
 .checkboxSell {
 	display: flex;
