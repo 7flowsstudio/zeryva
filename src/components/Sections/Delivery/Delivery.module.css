@@ -24,7 +24,7 @@
 	overflow: hidden;
 }
 .btnDeliv {
-	width: 214px;
+	width: 100%;
 	height: 37px;
 	display: flex;
 	flex-direction: row;
@@ -76,6 +76,11 @@
 	opacity: 1;
 	transform: translateX(0);
 }
+@media screen and (min-width: 460px) {
+	.btnDeliv {
+		width: 214px;
+	}
+}
 @media screen and (max-width: 767px) {
 	.imgMap {
 		margin-top: 32px;
@@ -95,9 +100,8 @@
 	.imgMap {
 		width: clamp(223px, calc(91.21vw - 477.46px), 690px) !important;
 	}
-}
-/* @media screen and (min-width: 1200px) {
-	.imgMap {
-		width: 690px !important;
+	.btnDeliv {
+		height: 49px;
+		font-size: 15px;
 	}
-} */
+}

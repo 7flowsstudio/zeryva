@@ -37,7 +37,7 @@
 	border-radius: 30px;
 	min-height: 37px;
 	min-width: 158px;
-	padding: 8px 9px;
+	/* padding: 8px 9px; */
 }
 .btnSoc:hover,
 .btnSoc:active {

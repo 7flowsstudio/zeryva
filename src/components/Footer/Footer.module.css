@@ -2,17 +2,19 @@
 	background-color: var(--accent-footer);
 	color: var(--fone-1);
 }
-.contFooter {
+.wrappFooter {
 	padding: 24px 16px;
+}
+.contFooter {
 	display: grid;
 	grid-template-columns: auto 1fr auto auto;
 	align-items: start;
 	gap: 24px;
 	grid-template-columns: 1fr auto;
 	grid-template-areas:
+		"logo logo"
 		"nav socials"
-		"contacts contacts"
-		"logo logo";
+		"contacts contacts";
 }
 .logo {
 	grid-area: logo;
@@ -38,18 +40,29 @@
 	display: none;
 }
 
-@media screen and (min-width: 680px) {
+.rights {
+	color: #7aaa8dba;
+	font-size: clamp(12px, calc((16 / 1440) * 100vw), 16px);
+	padding-top: 16px;
+}
+@media screen and (max-width: 360px) {
 	.contFooter {
+		gap: 8px;
+	}
+}
+@media screen and (min-width: 680px) {
+	.wrappFooter {
 		padding: 24px 64px;
 	}
 }
 @media screen and (min-width: 880px) {
+	/* .wrappFooter {
+		max-width: 1140px;
+	} */
 	.contFooter {
 		display: flex;
 		justify-content: space-between;
-		padding: 24px;
 		margin: 0 auto;
-		max-width: 1140px;
 	}
 	.prodD,
 	.socD {
@@ -59,17 +72,20 @@
 	.socM {
 		display: none;
 	}
+	.rights {
+		padding-top: 24px;
+	}
 }
 @media screen and (min-width: 1440px) {
 	.contFooter {
-		justify-content: start;
+		/* justify-content: start; */
 		padding: 24px 0px;
 	}
-	.nav {
+	/* .nav {
 		padding-left: 123px;
 		padding-right: 212px;
-	}
-	.socials {
+	} */
+	/* .socials {
 		padding-left: 75px;
-	}
+	} */
 }

@@ -6,22 +6,28 @@
 	border-radius: 20px;
 	padding: 5px 8px 8px 8px;
 
-	width: clamp(160px, calc((180 / 1440) * 100vw), 180px);
+	/* width: clamp(160px, calc((180 / 1440) * 100vw), 180px); */
+	width: 160px;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	animation: ani 2s forwards;
 }
-.wrapp a {
+/* .wrapp a {
 	width: clamp(144px, calc((164 / 1440) * 100vw), 164px);
 	height: clamp(144px, calc((164 / 1440) * 100vw), 164px);
-}
+} */
 .card img {
-	width: clamp(144px, calc((164 / 1440) * 100vw), 164px);
-	height: clamp(144px, calc((164 / 1440) * 100vw), 164px);
+	/* width: clamp(144px, calc((164 / 1440) * 100vw), 164px);
+	height: clamp(144px, calc((164 / 1440) * 100vw), 164px); */
 	object-fit: cover;
 	border-radius: 10px;
+}
+.wrapp a,
+.card img {
+	width: 144px;
+	height: 144px;
 }
 @keyframes ani {
 	0% {
@@ -81,7 +87,8 @@
 	background-color: var(--accent-1);
 	box-shadow: 1px 2px 4px 0px #f4a60078;
 	border-radius: 30px;
-	padding: 4px 10.5px;
+	height: 25px;
+	/* padding: 4px 10.5px; */
 	text-align: center;
 	transition: background-color 0.25s ease;
 }
@@ -112,10 +119,22 @@
 		padding: 6px 10.5px;
 	}
 	.link {
-		font-size: 14px;
+		font-size: 15px;
+	}
+	.linkWrapp {
+		height: 37px;
 	}
 	.linkWrapp:active {
 		background-color: var(--color-add-2);
 		box-shadow: 1px 2px 4px 0px #1a4b3882;
+	}
+	.card {
+		width: 180px;
+	}
+
+	.wrapp a,
+	.card img {
+		width: 164px;
+		height: 164px;
 	}
 }
