@@ -19,16 +19,16 @@
 }
 .title {
 	height: auto;
-
+	max-width: 1010px;
 	color: rgba(239, 243, 229, 1);
 
 	font-family: var(--third-family);
 	/* font-size: clamp(46px, calc((46 / 375) * 100vw), 64px); */
-	font-size: clamp(46px, calc((100 / 1440) * 100vw), 100px);
+	font-size: clamp(46px, calc((60 / 1440) * 100vw), 60px);
 
 	/* letter-spacing: 0.06em; */
 	/* font-weight: 800; */
-	line-height: clamp(46px, calc((46 / 375) * 100vw), 64px);
+	line-height: clamp(46px, calc((54 / 1440) * 100vw), 54px);
 	letter-spacing: 0%;
 	text-align: left;
 }
@@ -36,7 +36,7 @@
 .description {
 	height: fit-content;
 	color: var(--fone-1);
-
+	max-width: 715px;
 	font-family: var(--third-family);
 	/* font-size: clamp(28px, calc((28 / 375) * 100vw), 32px); */
 	font-size: clamp(16px, calc((24 / 1440) * 100vw), 24px);
@@ -114,6 +114,13 @@
 	color: var(--fone-1);
 	background: transparent;
 }
+@media screen and (max-width: 370px) {
+	.downloadBtn,
+	.downloadBtnCons {
+		font-size: 12px;
+		width: 100%;
+	}
+}
 @media screen and (min-width: 400px) {
 	.downloadBtn,
 	.downloadBtnCons {
@@ -121,18 +128,6 @@
 	}
 }
 @media screen and (min-width: 768px) {
-	.title {
-		/* width: 977px; */
-		/* height: 208px; */
-		font-size: clamp(64px, calc((64 / 768) * 100vw), 72px);
-		line-height: clamp(64px, calc((64 / 768) * 100vw), 72px);
-	}
-	/* .description {
-		width: 715px;
-		height: auto;
-		font-size: clamp(20px, calc((20 / 768) * 100vw), 24px);
-		line-height: 108%;
-	} */
 	.downloadBtn,
 	.downloadBtnCons {
 		/* width: 100%; */
@@ -146,15 +141,6 @@
 	.infoWrapper {
 		margin-top: 204px;
 	}
-	.title {
-		/* height: 208px; */
-		font-size: clamp(48px, calc((48 / 1280) * 100vw), 60px);
-		line-height: clamp(48px, calc((48 / 1280) * 100vw), 60px);
-	}
-	/* .downloadBtn:hover:not(:active) {
-		box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
-		background: #83bd16;
-	} */
 }
 @media screen and (min-width: 1365px) {
 	@supports (-webkit-appearance: none) and (not (-moz-appearance: none)) {
