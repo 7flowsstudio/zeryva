@@ -79,9 +79,6 @@
 	transform: translateY(0);
 }
 @media screen and (min-width: 768px) {
-	/* .title {
-		font-size: clamp(24px, calc((24 / 768) * 100vw), 28px);
-	} */
 	.servicesItem {
 		width: calc((100% - 24px) / 2);
 	}
@@ -90,9 +87,7 @@
 	.servicesSection {
 		margin-bottom: 80px;
 	}
-	/* .title {
-		font-size: clamp(28px, calc((24 / 1280) * 100vw), 32px);
-	} */
+
 	.servicesList {
 		gap: 24px;
 	}

@@ -12,7 +12,7 @@
 	background-image:
 		linear-gradient(#1a1a1a99, #1a1a1a99), url("/unique/corn_mob.webp");
 	aspect-ratio: 343 / 875;
-	max-height: 875px;
+	max-height: 775px;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -107,6 +107,11 @@
 @media screen and (max-width: 360px) {
 	.text {
 		font-size: 14px;
+	}
+}
+@media screen and (min-width: 410px) {
+	.imgFirst {
+		max-height: 725px;
 	}
 }
 @media screen and (min-width: 800px) {

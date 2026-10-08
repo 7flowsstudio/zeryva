@@ -1,8 +1,6 @@
 .sliderContainer {
 	position: relative;
 	min-height: 550px;
-	/* height: 100dvh; */
-	/* height: 100vh; */
 	height: 100svh;
 	overflow: hidden;
 }

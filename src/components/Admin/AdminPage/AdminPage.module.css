@@ -1,9 +1,8 @@
 .adminWraper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  /* justify-content: space-between; */
-  gap: 24px;
-  height: 100%;
-  padding: 24px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 24px;
+	height: 100%;
+	padding: 24px;
 }
