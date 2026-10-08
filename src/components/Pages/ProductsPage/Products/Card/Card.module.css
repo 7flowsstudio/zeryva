@@ -5,8 +5,6 @@
 		-1px -1px 4px 0px #d2c9b530;
 	border-radius: 20px;
 	padding: 5px 8px 8px 8px;
-
-	/* width: clamp(160px, calc((180 / 1440) * 100vw), 180px); */
 	width: 160px;
 
 	display: flex;
@@ -14,13 +12,8 @@
 	justify-content: space-between;
 	animation: ani 2s forwards;
 }
-/* .wrapp a {
-	width: clamp(144px, calc((164 / 1440) * 100vw), 164px);
-	height: clamp(144px, calc((164 / 1440) * 100vw), 164px);
-} */
+
 .card img {
-	/* width: clamp(144px, calc((164 / 1440) * 100vw), 164px);
-	height: clamp(144px, calc((164 / 1440) * 100vw), 164px); */
 	object-fit: cover;
 	border-radius: 10px;
 }
@@ -88,7 +81,6 @@
 	box-shadow: 1px 2px 4px 0px #f4a60078;
 	border-radius: 30px;
 	height: 25px;
-	/* padding: 4px 10.5px; */
 	text-align: center;
 	transition: background-color 0.25s ease;
 }

@@ -1,10 +1,8 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./Bestsellers.module.css";
 import { BestsellerItem } from "./BestsellerItem/BestsellerItem";
-import { useSmoothScroll } from "../../../../utils/useSmoothScroll";
-import Image from "next/image";
-import { useCustomScrollbar } from "../../../../utils/useCustomScrollbar";
+
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../../firebaseConfig";
 import { ProductWithId } from "../../../../utils/types";
@@ -18,9 +16,6 @@ const Bestsellers = () => {
 	];
 
 	const { listRef, thumbRef, scrollSmooth } = useSlider();
-
-	// const listRef = useRef<HTMLUListElement>(null);
-	// const thumbRef = useRef<HTMLDivElement>(null);
 
 	const [products, setProducts] = useState<ProductWithId[]>([]);
 
@@ -44,13 +39,6 @@ const Bestsellers = () => {
 		fetchBestsellers();
 	}, []);
 
-	// useCustomScrollbar(listRef, thumbRef);
-
-	// const { scrollSmooth } = useSmoothScroll(listRef, {
-	//   slidesToScroll: 1,
-	//   gap: 20,
-	//   duration: 500,
-	// });
 	return (
 		<div className={`container ${s.bestsCont}`}>
 			<div>

@@ -5,7 +5,6 @@ import React from "react";
 import s from "./MenuSide.module.css";
 import { AdminSection } from "../AdminPage";
 
-// export type AdminSection = "add" | "products" | "addDealer" | "dealers";
 type MenuSideProps = {
 	onSelect: (section: AdminSection) => void;
 	active: AdminSection;

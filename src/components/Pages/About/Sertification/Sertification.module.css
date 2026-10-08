@@ -133,7 +133,6 @@
 
 @media screen and (min-width: 768px) {
   .title {
-    /* font-size: 36px; */
     line-height: 58px;
   }
 
@@ -153,7 +152,7 @@
 
 @media screen and (min-width: 1280px) {
   .title {
-    /* font-size: 46px; */
+  
     line-height: 69px;
   }
 

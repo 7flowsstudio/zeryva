@@ -84,12 +84,6 @@ const CallbackForm = ({ setOpenModal }: Props) => {
 						<div className={s.blockInputs}>
 							<label className={s.label}>
 								<span className={s.labelSpan}>ПІБ</span>
-								{/* <Field
-									type="text"
-									name="name"
-									className={s.input}
-									placeholder="Введіть своє ПІБ"
-								/> */}
 								<Field name="name">
 									{({ field, meta }: FieldProps) => (
 										<input
@@ -106,12 +100,6 @@ const CallbackForm = ({ setOpenModal }: Props) => {
 							</label>
 							<label className={s.label}>
 								<span className={s.labelSpan}>Телефон</span>
-								{/* <Field
-									type="text"
-									name="phone"
-									className={s.input}
-									placeholder="+380 (00) 000 00 00 "
-								/> */}
 								<Field name="phone">
 									{({ field, meta, form }: FieldProps) => {
 										const formattedValue =
@@ -147,12 +135,6 @@ const CallbackForm = ({ setOpenModal }: Props) => {
 
 							<label className={s.labelTexarea}>
 								<span className={s.labelSpan}>Коментар</span>
-								{/* <Field
-									type="text"
-									name="phone"
-									className={s.input}
-									placeholder="+380 (00) 000 00 00 "
-								/> */}
 								<Field name="message">
 									{({ field, meta }: FieldProps) => (
 										<textarea

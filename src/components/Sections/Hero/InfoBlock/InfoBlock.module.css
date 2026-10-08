@@ -8,9 +8,6 @@
 }
 
 .infoContainer {
-	/* height: calc(100dvh - 244px); */
-
-	/* width: 833px; */
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -21,14 +18,9 @@
 	height: auto;
 	max-width: 1010px;
 	color: rgba(239, 243, 229, 1);
-
 	font-family: var(--third-family);
-	/* font-size: clamp(46px, calc((46 / 375) * 100vw), 64px); */
 	font-size: clamp(46px, calc((60 / 1440) * 100vw), 60px);
-
-	/* letter-spacing: 0.06em; */
-	/* font-weight: 800; */
-	line-height: clamp(46px, calc((54 / 1440) * 100vw), 54px);
+	line-height: clamp(46px, calc((60 / 1440) * 100vw), 60px);
 	letter-spacing: 0%;
 	text-align: left;
 }
@@ -38,12 +30,9 @@
 	color: var(--fone-1);
 	max-width: 715px;
 	font-family: var(--third-family);
-	/* font-size: clamp(28px, calc((28 / 375) * 100vw), 32px); */
 	font-size: clamp(16px, calc((24 / 1440) * 100vw), 24px);
-
 	font-weight: 600;
 	line-height: clamp(22px, calc((26 / 1440) * 100vw), 26px);
-	/* letter-spacing: -0.07em; */
 	text-align: left;
 }
 .wrappBtns {
@@ -55,7 +44,6 @@
 }
 
 .downloadBtn {
-	/* width: 100%; */
 	max-width: 221px;
 	height: 37px;
 	display: flex;
@@ -63,7 +51,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-	padding: 2px;
+	padding: 4px;
 
 	border-radius: 30px;
 	border: 2px solid #f4a600;
@@ -76,18 +64,15 @@
 	font-weight: 700;
 	line-height: 21px;
 	letter-spacing: 0%;
-	/* text-align: left; */
 }
 
 .downloadBtnCons {
-	/* width: 100%; */
 	max-width: 240px;
 	color: #1a4b38;
 	height: 37px;
 	font-family: var(--font-family);
 	letter-spacing: 0%;
-	padding: 2px;
-	/* text-align: left; */
+	padding: 4px;
 	background: #f4a600;
 	border-radius: 30px;
 	flex-direction: row;
@@ -114,7 +99,7 @@
 	color: var(--fone-1);
 	background: transparent;
 }
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 378px) {
 	.downloadBtn,
 	.downloadBtnCons {
 		font-size: 12px;
@@ -130,7 +115,6 @@
 @media screen and (min-width: 768px) {
 	.downloadBtn,
 	.downloadBtnCons {
-		/* width: 100%; */
 		height: 49px;
 		padding: 12px;
 		font-size: 15px;
