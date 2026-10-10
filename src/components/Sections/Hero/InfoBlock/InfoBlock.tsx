@@ -21,7 +21,6 @@ const InfoBlock: React.FC<InfoBlockProps> = ({ item, isClone = false }) => {
 		window.open("/doc/katalog.pdf", "_blank", "noopener,noreferrer");
 	};
 	const [openModal, setOpenModal] = useState(false);
-	console.log("ItemID)", item.title);
 	return (
 		<div className={`container ${s.infoWrapper}`}>
 			<div className={s.infoContainer}>
