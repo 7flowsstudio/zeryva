@@ -48,9 +48,9 @@ const onest = localFont({
 });
 
 export const metadata: Metadata = {
-	title: `ТОВ "Zeryva" - офіційний сайт`,
+	title: `Купити мінеральні добрива від виробника | ТОВ Zeryva`,
 	description:
-		"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
+		"ТОВ Zeryva — український розробник та виробник мінеральних добрив нового покоління. Партнерство та вигідні ціни! Переходьте на наш сайт!",
 	metadataBase: new URL("https://zeryva.com.ua"),
 	verification: {
 		google: "uFWpgT6WUx1lCoat34AJ48d9qzi59RWk0A1RsdaiW_Y",
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
 		canonical: "https://zeryva.com.ua",
 	},
 	openGraph: {
-		title: 'ТОВ "Zeryva" - офіційний сайт',
+		title: "Купити мінеральні добрива від виробника | ТОВ Zeryva",
 		description:
-			"Інокулянти, фунгіциди, мікродобрива та засоби захисту рослин — агрохімія для високих урожаїв",
+			"ТОВ Zeryva — український розробник та виробник мінеральних добрив нового покоління. Партнерство та вигідні ціни! Переходьте на наш сайт!",
 		url: "https://zeryva.com.ua",
 		siteName: "Zeryva",
 		type: "website",
