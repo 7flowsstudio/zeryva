@@ -83,7 +83,13 @@ const DylersList = () => {
 										<li className={s.infoItem}>
 											<span className={s.boldText}>Телефон:</span>
 
-											<p className={s.text}>{item.phone}</p>
+											<p className={s.text}>
+												{item.phone.split(/[,\n]+/).map((phone, index) => (
+													<span key={index} className={s.phoneNumber}>
+														{phone.trim()}
+													</span>
+												))}
+											</p>
 										</li>
 									)}
 
