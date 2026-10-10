@@ -6,7 +6,7 @@ import s from "./Hero.module.css";
 import InfoBlock from "./InfoBlock/InfoBlock";
 import HeroImg from "./HeroInfo.json";
 
-const AUTOPLAY_DELAY = 5000000000;
+const AUTOPLAY_DELAY = 5000;
 const TRANSITION_DURATION = 600;
 const SWIPE_THRESHOLD = 50;
 
@@ -102,20 +102,24 @@ const Hero = () => {
 						: "none",
 				}}
 			>
-				{extendedSlides.map((item, i) => (
-					<div key={i} className={s.slide}>
-						<div className={s.imageWrapper}>
-							<Image
-								src={item.img}
-								alt="hero_img"
-								fill
-								priority={i === 1}
-								className={s.image}
-							/>
+				{extendedSlides.map((item, i) => {
+					const isClone = i === 0 || i === slidesCount + 1;
+
+					return (
+						<div key={i} className={s.slide}>
+							<div className={s.imageWrapper}>
+								<Image
+									src={item.img}
+									alt="hero_img"
+									fill
+									priority={i === 1}
+									className={s.image}
+								/>
+							</div>
+							<InfoBlock item={item} isClone={isClone} />
 						</div>
-						<InfoBlock item={item} />
-					</div>
-				))}
+					);
+				})}
 			</div>
 
 			{/* CONTROLS */}

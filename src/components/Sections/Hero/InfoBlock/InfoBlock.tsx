@@ -13,22 +13,29 @@ type HeroItem = {
 
 type InfoBlockProps = {
 	item: HeroItem;
+	isClone?: boolean;
 };
 
-const InfoBlock: React.FC<InfoBlockProps> = ({ item }) => {
+const InfoBlock: React.FC<InfoBlockProps> = ({ item, isClone = false }) => {
 	const handleDownload = () => {
 		window.open("/doc/katalog.pdf", "_blank", "noopener,noreferrer");
 	};
 	const [openModal, setOpenModal] = useState(false);
+	console.log("ItemID)", item.title);
 	return (
 		<div className={`container ${s.infoWrapper}`}>
 			<div className={s.infoContainer}>
-				{item.id === 0 ? (
-					<h1 className={s.title}>{item.title}</h1>
-				) : (
-					<h2 className={s.title}>{item.title}</h2>
+				{!isClone && (
+					<>
+						{item.id === 0 ? (
+							<h1 className={s.title}>{item.title}</h1>
+						) : (
+							<h2 className={s.title}>{item.title}</h2>
+						)}
+					</>
 				)}
-				<h2 className={s.description}>{item.description}</h2>
+				{!isClone && <h2 className={s.description}>{item.description}</h2>}
+
 				<div className={s.wrappBtns}>
 					<button
 						type="button"
