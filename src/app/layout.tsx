@@ -78,6 +78,41 @@ export const metadata: Metadata = {
 		icon: "/logo.svg",
 	},
 };
+const structuredData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Organization",
+			"@id": "https://zeryva.com.ua/#organization",
+			name: "Zeryva",
+			url: "https://zeryva.com.ua/",
+			logo: {
+				"@type": "ImageObject",
+				url: "https://zeryva.com.ua/logo.svg",
+			},
+			slogan: "Ефективність, перевірена природою",
+			description:
+				"Zeryva понад 12 років розробляє та впроваджує ефективні біологічні препарати для сільського господарства. Наші ключові переваги: сучасні технології з доведеною ефективністю, адаптація до конкретних умов господарства, зменшення хімічного навантаження, підвищення стійкості культур до стресових факторів, комплексний агрономічний супровід та оптимізація врожайного потенціалу.",
+			sameAs: [
+				"https://www.instagram.com/zeryva_/",
+				"https://www.tiktok.com/@zeryva_",
+				"https://www.facebook.com/Zeryvaa/",
+				"https://www.youtube.com/@zeryva",
+				"https://www.google.com/maps?cid=15900069791132893730",
+			],
+		},
+		{
+			"@type": "WebSite",
+			"@id": "https://zeryva.com.ua/#website",
+			url: "https://zeryva.com.ua/",
+			name: "Zeryva",
+			publisher: {
+				"@id": "https://zeryva.com.ua/#organization",
+			},
+			inLanguage: "uk-UA",
+		},
+	],
+};
 
 export default function RootLayout({
 	children,
@@ -87,6 +122,12 @@ export default function RootLayout({
 	return (
 		<html lang="uk" className={`${onest.variable} ${ptSans.variable}`}>
 			<head>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+					}}
+				/>
 				{GA_ID && (
 					<>
 						<Script
