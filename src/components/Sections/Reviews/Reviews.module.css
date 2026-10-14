@@ -79,7 +79,7 @@
 	font-size: 16px;
 	font-weight: bold;
 	transition: transform 0.15s ease;
-	border: 2px solid #1a4b38;
+	border: 2px solid var(--accent-2);
 	border-radius: 50px;
 }
 .arrLeft,
