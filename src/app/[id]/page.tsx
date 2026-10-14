@@ -167,10 +167,10 @@ export default async function Page({ params }: Props) {
 		: NaN;
 
 	const hasValidPrice = Number.isFinite(numericPrice) && numericPrice > 0;
-	console.log("Product:", product.title);
-	console.log("Price from Firebase:", JSON.stringify(product.price));
-	console.log("Parsed price:", numericPrice);
-	console.log("Has valid price:", hasValidPrice);
+	// console.log("Product:", product.title);
+	// console.log("Price from Firebase:", JSON.stringify(product.price));
+	// console.log("Parsed price:", numericPrice);
+	// console.log("Has valid price:", hasValidPrice);
 	const structuredData = {
 		"@context": "https://schema.org",
 		"@graph": [
