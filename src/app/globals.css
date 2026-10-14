@@ -17,10 +17,6 @@
 	--color-state-add: #edd196;
 	--color-add-line: rgba(17, 52, 26, 0.4);
 }
-:root {
-	/* --font-family: var(--font-family); */
-	/* --third-family: "Work Sans", sans-serif; */
-}
 
 html,
 body {
