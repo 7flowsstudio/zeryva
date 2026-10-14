@@ -159,7 +159,7 @@ export default async function Page({ params }: Props) {
 	const priceText = String(product.price ?? "").trim();
 
 	const priceMatch = priceText.match(
-		/^(\d+(?:[.,]\d{1,2})?)\s*(?:грн|₴|UAH)?(?:\s*\/\s*л)?$/i,
+		/^(\d+(?:[.,]\d{1,2})?)\s*(?:грн|₴|UAH)?(?:\s*\/\s*(?:л|літр|кг|кг\.|кілограм|кілограмів))?$/i,
 	);
 
 	const numericPrice = priceMatch
@@ -167,7 +167,10 @@ export default async function Page({ params }: Props) {
 		: NaN;
 
 	const hasValidPrice = Number.isFinite(numericPrice) && numericPrice > 0;
-
+	console.log("Product:", product.title);
+	console.log("Price from Firebase:", JSON.stringify(product.price));
+	console.log("Parsed price:", numericPrice);
+	console.log("Has valid price:", hasValidPrice);
 	const structuredData = {
 		"@context": "https://schema.org",
 		"@graph": [
