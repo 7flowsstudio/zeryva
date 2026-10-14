@@ -6,6 +6,7 @@ import { getProductForMetadata } from "@/lib/getProductForMetadata";
 import { productTypeFilters } from "@/data/products-metadata";
 import { Product } from "../../../utils/types";
 import { adminDb } from "@/lib/firebaseAdmin";
+import { getProductCollectionSchema } from "@/lib/productCollectionSchema";
 
 type Props = {
 	params: Promise<{ id: string }>;
@@ -115,7 +116,19 @@ export default async function Page({ params }: Props) {
 	const filter = productTypeFilters.find((item) => item.slug === id);
 
 	if (filter) {
-		return <ProductsPage initialFilterSlug={filter.slug} />;
+		const structuredData = await getProductCollectionSchema(filter.slug);
+
+		return (
+			<>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+					}}
+				/>
+				<ProductsPage initialFilterSlug={filter.slug} />
+			</>
+		);
 	}
 
 	const metadata = getProductForMetadata(id);
@@ -194,7 +207,11 @@ export default async function Page({ params }: Props) {
 				url: productUrl,
 				description: product.descriptionText || product.shortDescription,
 				image: images.length > 0 ? images : undefined,
-				category: product.productType?.join(", "),
+				category: Array.isArray(product.productType)
+					? product.productType.join(", ")
+					: typeof product.productType === "string"
+						? product.productType
+						: undefined,
 				brand: {
 					"@type": "Brand",
 					name: "Zeryva",

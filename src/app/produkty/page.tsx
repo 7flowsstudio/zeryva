@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductsPage from "@/components/Pages/ProductsPage/ProductsPage";
+import { getProductCollectionSchema } from "@/lib/productCollectionSchema";
 
 export const metadata: Metadata = {
 	title: "Продукти",
@@ -32,5 +33,16 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-	return <ProductsPage />;
+	const structuredData = getProductCollectionSchema();
+	return (
+		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+				}}
+			/>
+			<ProductsPage />
+		</>
+	);
 }
