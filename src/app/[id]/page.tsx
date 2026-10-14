@@ -157,11 +157,16 @@ export default async function Page({ params }: Props) {
 	);
 
 	const priceText = String(product.price ?? "").trim();
-	const normalizedPrice = priceText.replace(/\s/g, "").replace(",", ".");
-	const numericPrice = Number(normalizedPrice);
 
-	const hasValidPrice =
-		normalizedPrice !== "" && Number.isFinite(numericPrice) && numericPrice > 0;
+	const priceMatch = priceText.match(
+		/^(\d+(?:[.,]\d{1,2})?)\s*(?:грн|₴|UAH)?(?:\s*\/\s*л)?$/i,
+	);
+
+	const numericPrice = priceMatch
+		? Number(priceMatch[1].replace(",", "."))
+		: NaN;
+
+	const hasValidPrice = Number.isFinite(numericPrice) && numericPrice > 0;
 
 	const structuredData = {
 		"@context": "https://schema.org",
@@ -239,7 +244,11 @@ export default async function Page({ params }: Props) {
 								"@type": "Offer",
 								url: productUrl,
 								priceCurrency: "UAH",
-								price: numericPrice.toFixed(2),
+								price: numericPrice,
+								itemCondition: "https://schema.org/NewCondition",
+								seller: {
+									"@id": `${siteUrl}/#organization`,
+								},
 							},
 						}
 					: {}),
