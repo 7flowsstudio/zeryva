@@ -26,6 +26,7 @@
 .socialList {
 	display: none;
 }
+
 @media screen and (min-width: 768px) {
 	.elipse {
 		position: fixed;
@@ -80,6 +81,12 @@
 		opacity: 1;
 		transform: translateY(0);
 		pointer-events: auto;
+	}
+	.hiddenNearFooter {
+		opacity: 0;
+
+		pointer-events: none;
+		transform: translateY(20px);
 	}
 
 	.socialItem {
