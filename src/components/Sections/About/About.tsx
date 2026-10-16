@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React from "react";
 import s from "./About.module.css";
-import Link from "next/link";
 import useScrollAnimation from "../../../../utils/UseScrollAnimation/useScrollAnimation";
+import Button from "../UI/Btns/Button";
 
 const About = () => {
 	const [aboutTitleRef, aboutTitleVisible] = useScrollAnimation() as [
@@ -57,9 +57,10 @@ const About = () => {
 						застосування та постійно вдосконалюємо рішення разом із тими, хто
 						працює із землею щодня.
 					</p>
-					<Link href="/produkty" className={s.btnAbout}>
+
+					<Button variant="filled" href="/produkty" className={s.btnAbout}>
 						Наша продукція
-					</Link>
+					</Button>
 				</div>
 
 				<div className={s.child}>

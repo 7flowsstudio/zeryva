@@ -57,21 +57,7 @@
 	height: 100%;
 }
 .roadBtn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 30px;
-	padding: 8px 9px;
-	width: 160px;
-	height: 37px;
-	box-shadow: 1px 2px 4px 0 rgba(244, 166, 0, 0.48);
-	background: var(--accent-1);
-
-	font-family: var(--font-family);
-	font-weight: 700;
-	font-size: 14px;
-	line-height: 150%;
-	color: var(--accent-2);
+	width: 160px !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -84,11 +70,7 @@
 		right: 24px;
 	}
 	.roadBtn {
-		padding: 12px 12px;
-		width: 282px;
-		height: 49px;
-		font-size: 15px;
-		line-height: 167%;
+		width: 282px !important;
 	}
 }
 @media screen and (min-width: 1000px) {
@@ -104,14 +86,6 @@
 	}
 }
 @media screen and (min-width: 1280px) {
-	.roadBtn:hover {
-		box-shadow: 1px 2px 4px 0 rgba(122, 170, 141, 0.47);
-		background: var(--color-add-2);
-	}
-	.roadBtn:active {
-		box-shadow: 0 2px 4px 0 rgba(131, 189, 22, 0.48);
-		background: var(--accent-3);
-	}
 	.btnFullScreen:hover {
 		background: var(--color-add-2);
 	}

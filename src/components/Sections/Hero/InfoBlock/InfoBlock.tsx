@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./InfoBlock.module.css";
 import Portal from "../../UI/Portal/Portal";
 import Consultation from "../Consultation/Consultation";
+import Button from "../../UI/Btns/Button";
 
 type HeroItem = {
 	id: number;
@@ -36,20 +37,20 @@ const InfoBlock: React.FC<InfoBlockProps> = ({ item, isClone = false }) => {
 				{!isClone && <h2 className={s.description}>{item.description}</h2>}
 
 				<div className={s.wrappBtns}>
-					<button
-						type="button"
+					<Button
+						variant="outline"
 						className={s.downloadBtn}
 						onClick={handleDownload}
 					>
 						Завантажити каталог
-					</button>
-					<button
-						type="button"
+					</Button>
+					<Button
+						variant="filled"
 						className={s.downloadBtnCons}
 						onClick={() => setOpenModal(true)}
 					>
 						Замовити консультацію
-					</button>
+					</Button>
 				</div>
 			</div>
 			{openModal && (

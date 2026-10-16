@@ -9,7 +9,7 @@ import Products from "./Products/Products";
 
 const Footer = () => {
 	return (
-		<div className={s.footer}>
+		<div id="footer" className={s.footer}>
 			<div className={s.wrappFooter}>
 				<div className={s.contFooter}>
 					<div className={s.logo}>

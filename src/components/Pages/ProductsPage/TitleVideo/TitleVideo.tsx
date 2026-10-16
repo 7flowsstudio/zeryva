@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./TitleVideo.module.css";
 import useScrollAnimation from "../../../../../utils/UseScrollAnimation/useScrollAnimation";
+import Button from "@/components/Sections/UI/Btns/Button";
 
 const TitleVideo = () => {
 	const [productsDescriptionRef, productsDescriptionVisible] =
@@ -21,14 +22,15 @@ const TitleVideo = () => {
 							комплексного догляду за агрокультурами. Уся продукція відповідає
 							вимогам сертифікації та стандартам якості «ISO»
 						</p>
-						<a
+						<Button
+							variant="filled"
 							href="/doc/katalog.pdf"
 							className={s.downloadBtn}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							Завантажити каталог
-						</a>
+						</Button>
 					</div>
 
 					<div className={s.youtubePlayer}>

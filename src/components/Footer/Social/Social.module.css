@@ -29,29 +29,19 @@
 }
 
 .btnSoc {
-	color: var(--accent-1);
-	font-size: 13px;
-	font-family: var(--font-family);
-	border: 2px solid #f4a600;
-	box-shadow: 1px 2px 4px 0px #f4a60078;
-	border-radius: 30px;
-	min-height: 37px;
-	min-width: 158px;
-	/* padding: 8px 9px; */
+	width: 158px !important;
+	font-size: 13px !important;
+	padding: 0 !important;
 }
-.btnSoc:hover,
-.btnSoc:active {
-	border: 2px solid #eff3e5;
-	color: var(--fone-1);
-}
+
 @media screen and (min-width: 880px) {
 	.socCont {
 		padding-top: 0px;
 	}
 }
-@media screen and (min-width: 1200px) {
-	.btnSoc:active {
-		color: var(--accent-3);
-		border: 2px solid #83bd16;
+@media screen and (min-width: 1100px) {
+	.btnSoc {
+		width: 100% !important;
+		font-size: 15px !important;
 	}
 }

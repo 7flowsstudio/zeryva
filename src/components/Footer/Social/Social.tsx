@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import s from "./Social.module.css";
+import Button from "@/components/Sections/UI/Btns/Button";
 
 const Social = () => {
 	const socialList = [
@@ -46,9 +47,9 @@ const Social = () => {
 				))}
 			</div>
 
-			<button type="button" className={s.btnSoc} onClick={handleDownload}>
+			<Button variant="outline" className={s.btnSoc} onClick={handleDownload}>
 				Завантажити каталог
-			</button>
+			</Button>
 		</div>
 	);
 };
