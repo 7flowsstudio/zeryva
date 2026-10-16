@@ -42,83 +42,18 @@
 	gap: 4px;
 	max-width: 485px;
 }
-
 .downloadBtn {
-	max-width: 221px;
-	height: 37px;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	padding: 4px;
-
-	border-radius: 30px;
-	border: 2px solid #f4a600;
-	box-shadow: 1px 2px 4px 0px #f4a60078;
-
-	color: var(--accent-1);
-
-	font-family: var(--font-family);
-	font-size: 13px;
-	font-weight: 700;
-	line-height: 21px;
-	letter-spacing: 0%;
+	max-width: 221px !important;
 }
-
 .downloadBtnCons {
-	max-width: 240px;
-	color: #1a4b38;
-	height: 37px;
-	font-family: var(--font-family);
-	letter-spacing: 0%;
-	padding: 4px;
-	background: #f4a600;
-	border-radius: 30px;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	font-size: 14px;
-	font-weight: 700;
-	line-height: 21px;
-	display: flex;
-	box-shadow: 1px 2px 4px #f4a6007a;
+	max-width: 240px !important;
 }
 
-.downloadBtnCons:active {
-	box-shadow: 1px 2px 4px 0 rgba(26, 75, 56, 0.51);
-	background: #7aaa8d;
-}
-.downloadBtnCons:hover:not(:active) {
-	box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
-	background: #83bd16;
-}
-.downloadBtn:hover:not(:active),
-.downloadBtn:active {
-	border: 2px solid #eff3e5;
-	color: var(--fone-1);
-	background: transparent;
-}
-@media screen and (max-width: 378px) {
+@media screen and (max-width: 410px) {
 	.downloadBtn,
 	.downloadBtnCons {
-		font-size: 12px;
-		width: 100%;
-	}
-}
-@media screen and (min-width: 400px) {
-	.downloadBtn,
-	.downloadBtnCons {
-		width: 100%;
-	}
-}
-@media screen and (min-width: 768px) {
-	.downloadBtn,
-	.downloadBtnCons {
-		height: 49px;
-		padding: 12px;
-		font-size: 15px;
-		line-height: 25px;
+		width: 100% !important;
+		font-size: 12px !important;
 	}
 }
 @media screen and (min-width: 1280px) {

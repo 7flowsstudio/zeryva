@@ -28,27 +28,19 @@
 	flex-direction: column;
 }
 .btnCall {
-	font-family: var(--font-family);
-	height: 37px;
-	font-weight: 700;
-	border-radius: 30px;
-	box-shadow: 1px 2px 4px 0px rgba(244, 166, 0, 0.48);
-	background: rgba(244, 166, 0, 1);
-	color: rgba(26, 75, 56, 1);
-	max-width: 183px;
+	max-width: 200px;
 	margin-top: 24;
 	margin-right: 4px;
-	font-size: 14px;
 }
 
-.btnCall:active {
+/* .btnCall:active {
 	box-shadow: 1px 2px 4px 0 rgba(26, 75, 56, 0.51);
 	background: #7aaa8d;
 }
 .btnCall:hover:not(:active) {
 	box-shadow: 1px 2px 4px 0 rgba(131, 189, 22, 0.48);
 	background: #83bd16;
-}
+} */
 .img {
 	position: relative;
 	display: block;
@@ -117,7 +109,7 @@
 		font-size: 15px;
 		max-width: 239px;
 		padding: 12px 30px;
-		margin-top: 32;
+		margin-top: 32px;
 	}
 	.btnCall:active {
 		background-color: var(--fone-1);

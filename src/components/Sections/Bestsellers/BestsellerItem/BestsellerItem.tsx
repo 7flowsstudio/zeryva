@@ -3,6 +3,7 @@ import Link from "next/link";
 import s from "./BestsellerItem.module.css";
 import { ProductWithId } from "../../../../../utils/types";
 import { productsMetadata } from "@/data/products-metadata";
+import Button from "../../UI/Btns/Button";
 
 interface ProductCardProps {
 	product: ProductWithId;
@@ -32,9 +33,9 @@ export const BestsellerItem: React.FC<ProductCardProps> = ({ product }) => {
 			</div>
 			<p className={s.price}>{product.price}</p>
 			<div className={s.linkWrapp}>
-				<Link href={`/${slug}`} className={s.link}>
+				<Button href={`/${slug}`} variant="filled" className={s.link}>
 					Дізнатись більше
-				</Link>
+				</Button>
 			</div>
 		</li>
 	);

@@ -4,6 +4,7 @@ import s from "./Delivery.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import useScrollAnimation from "../../../../utils/UseScrollAnimation/useScrollAnimation";
+import Button from "../UI/Btns/Button";
 
 const Delivery = () => {
 	const [i1Ref, i1Vis] = useScrollAnimation() as [
@@ -30,6 +31,9 @@ const Delivery = () => {
 				<Link href="/dylery" className={s.btnDeliv}>
 					Наші дилери
 				</Link>
+				<Button variant="filled" href="/dylery" className={s.btnDeliv}>
+					Наші дилери
+				</Button>
 			</div>
 			<div
 				ref={i2Ref}
