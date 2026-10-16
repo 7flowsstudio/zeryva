@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import s from "./MapsCallback.module.css";
 import CallbackForm from "@/components/Sections/UI/CallbackForm/CallbackForm";
-import Link from "next/link";
+
 import Portal from "@/components/Sections/UI/Portal/Portal";
 import Modal from "@/components/Sections/UI/Modal/Modal";
 import BlockMaps from "./BlockMaps/BlockMaps";
@@ -35,13 +35,6 @@ const MapsCallback = () => {
 									className={s.maps}
 								></iframe>
 							</div>
-							<Link
-								href="https://www.google.com/maps/dir//Tov+Zeryva+-+Dobryva+Dlya+Roslyn,+%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%B0,+35,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%9E%D0%BC%D0%B5%D0%BB%D1%8F%D0%BD%D0%B0,+%D0%A0%D1%96%D0%B2%D0%BD%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+35360/@50.5791865,26.1260138,17z/data=!4m17!1m7!3m6!1s0xaf5c29b5189ba741:0xdca8653b9c654222!2sTov+Zeryva+-+Dobryva+Dlya+Roslyn!8m2!3d50.5791865!4d26.1260138!16s%2Fg%2F11yl0c4dfr!4m8!1m0!1m5!1m1!1s0xaf5c29b5189ba741:0xdca8653b9c654222!2m2!1d26.1260138!2d50.5791865!3e2?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
-								className={s.roadBtn}
-								target="_blank"
-							>
-								Прокласти маршрут
-							</Link>
 							<Button
 								variant="filled"
 								href="https://www.google.com/maps/dir//Tov+Zeryva+-+Dobryva+Dlya+Roslyn,+%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%B0,+35,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%9E%D0%BC%D0%B5%D0%BB%D1%8F%D0%BD%D0%B0,+%D0%A0%D1%96%D0%B2%D0%BD%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+35360/@50.5791865,26.1260138,17z/data=!4m17!1m7!3m6!1s0xaf5c29b5189ba741:0xdca8653b9c654222!2sTov+Zeryva+-+Dobryva+Dlya+Roslyn!8m2!3d50.5791865!4d26.1260138!16s%2Fg%2F11yl0c4dfr!4m8!1m0!1m5!1m1!1s0xaf5c29b5189ba741:0xdca8653b9c654222!2m2!1d26.1260138!2d50.5791865!3e2?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
