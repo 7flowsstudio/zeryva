@@ -14,6 +14,7 @@ import Benefits from "./Benefits/Benefits";
 import Instruction from "./Instruction/Instruction";
 import BreadCrumbs from "@/components/Sections/UI/BreadCrumbs/BreadCrumbs";
 import { productsMetadata } from "@/data/products-metadata";
+import Button from "@/components/Sections/UI/Btns/Button";
 
 type Tab = "description" | "benefits" | "instruction";
 
@@ -103,13 +104,15 @@ const ItemPage = () => {
 								</li>
 							))}
 						</ul>
-						<button
+
+						<Button
+							variant="filled"
 							className={s.btnCertf}
 							disabled={!product.certificates?.length}
 							onClick={() => setActiveCertificate(product.certificates[0])}
 						>
 							Проглянути сертифікат відповідності
-						</button>
+						</Button>
 					</div>
 					<div className={s.image}>
 						<div className={s.wrapperImg}>

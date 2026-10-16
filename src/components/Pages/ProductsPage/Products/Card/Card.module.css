@@ -77,28 +77,14 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--accent-1);
-	box-shadow: 1px 2px 4px 0px #f4a60078;
 	border-radius: 30px;
 	height: 25px;
 	text-align: center;
 	transition: background-color 0.25s ease;
 }
 .link {
-	font-family: var(--font-family);
-	font-weight: 700;
-	font-size: 14px;
-	white-space: nowrap;
-
-	color: var(--accent-2);
-
-	min-width: 100%;
-	display: block;
-}
-.linkWrapp:hover,
-.linkWrapp:active {
-	background-color: var(--accent-3);
-	box-shadow: 1px 2px 4px 0px #83bd1678;
+	height: 25px !important;
+	padding: 0 !important;
 }
 @media screen and (min-width: 768px) {
 	.blockDescr {
@@ -107,18 +93,12 @@
 	.price {
 		padding-bottom: 16px;
 	}
-	.linkWrapp {
-		padding: 6px 10.5px;
-	}
-	.link {
-		font-size: 15px;
-	}
+
 	.linkWrapp {
 		height: 37px;
 	}
-	.linkWrapp:active {
-		background-color: var(--color-add-2);
-		box-shadow: 1px 2px 4px 0px #1a4b3882;
+	.link {
+		height: 37px !important;
 	}
 	.card {
 		width: 180px;

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ProductWithId } from "../../../../../../utils/types";
 import s from "./Card.module.css";
 import { productsMetadata } from "@/data/products-metadata";
+import Button from "@/components/Sections/UI/Btns/Button";
 
 interface ProductCardProps {
 	product: ProductWithId;
@@ -38,9 +39,12 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
 
 			<p className={s.price}>{product.price}</p>
 			<div className={s.linkWrapp}>
-				<Link href={`/${slug}`} className={s.link}>
+				{/* <Link href={`/${slug}`} className={s.link}>
 					Дізнатись більше
-				</Link>
+				</Link> */}
+				<Button variant="filled" href={`/${slug}`} className={s.link}>
+					Дізнатись більше
+				</Button>
 			</div>
 		</div>
 	);

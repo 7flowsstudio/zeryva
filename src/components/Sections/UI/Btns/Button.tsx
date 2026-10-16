@@ -9,6 +9,8 @@ type BaseProps = {
 	variant?: ButtonVariant;
 	className?: string;
 	href?: string;
+	target?: string;
+	rel?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
@@ -16,13 +18,15 @@ export default function Button({
 	variant = "outline",
 	className,
 	href,
+	target,
+	rel,
 	...props
 }: BaseProps) {
 	const classes = `${s.button} ${s[variant]} ${className}`.trim();
 
 	if (href) {
 		return (
-			<Link href={href} className={classes}>
+			<Link href={href} className={classes} target={target} rel={rel}>
 				{children}
 			</Link>
 		);
