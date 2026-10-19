@@ -17,35 +17,30 @@ const Card: React.FC<ProductCardProps> = ({ product }) => {
 
 	return (
 		<div className={s.card}>
-			<div className={s.wrapp}>
-				{product.images?.[0] && (
-					<Link href={`/${slug}`}>
+			<Link href={`/${slug}`}>
+				<div className={s.wrapp}>
+					{product.images?.[0] && (
 						<Image
 							src={product.images[0]}
 							alt={product.title}
 							width={200}
 							height={200}
 						/>
-					</Link>
-				)}
-			</div>
-			<div className={s.blockDescr}>
-				<Link href={`/${slug}`}>
+					)}
+				</div>
+				<div className={s.blockDescr}>
 					<h3 className={s.title}>{product.title}</h3>
-				</Link>
 
-				<p className={s.description}>{product.shortDescription}</p>
-			</div>
+					<p className={s.description}>{product.shortDescription}</p>
+				</div>
 
-			<p className={s.price}>{product.price}</p>
-			<div className={s.linkWrapp}>
-				{/* <Link href={`/${slug}`} className={s.link}>
-					Дізнатись більше
-				</Link> */}
-				<Button variant="filled" href={`/${slug}`} className={s.link}>
-					Дізнатись більше
-				</Button>
-			</div>
+				<p className={s.price}>{product.price}</p>
+				<div className={s.linkWrapp}>
+					<Button variant="filled" className={s.link}>
+						Дізнатись більше
+					</Button>
+				</div>
+			</Link>
 		</div>
 	);
 };
