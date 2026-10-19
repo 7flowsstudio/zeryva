@@ -15,6 +15,7 @@ import Instruction from "./Instruction/Instruction";
 import BreadCrumbs from "@/components/Sections/UI/BreadCrumbs/BreadCrumbs";
 import { productsMetadata } from "@/data/products-metadata";
 import Button from "@/components/Sections/UI/Btns/Button";
+import Loader from "@/components/Sections/UI/Loader/Loader";
 
 type Tab = "description" | "benefits" | "instruction";
 
@@ -63,7 +64,7 @@ const ItemPage = () => {
 		fetchProduct();
 	}, [id]);
 
-	if (!product) return <p>Завантаження...</p>;
+	if (!product) return <Loader size="large" />;
 
 	const thumbnailImages =
 		product.images?.filter((_, i) => i !== mainImageIndex) || [];
