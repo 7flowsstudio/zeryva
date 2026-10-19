@@ -8,6 +8,7 @@ import Card from "./Card/Card";
 import s from "./Products.module.css";
 import { useRouter, useSearchParams } from "next/navigation";
 import { productTypeFilters } from "@/data/products-metadata";
+import Loader from "@/components/Sections/UI/Loader/Loader";
 
 type Props = {
 	initialFilterSlug?: string | null;
@@ -70,7 +71,7 @@ const Products: React.FC<Props> = ({ initialFilterSlug = null }) => {
 		setSelectedProductType(initialProductType);
 	}, [initialProductType]);
 
-	if (loading) return <p>Завантаження...</p>;
+	if (loading) return <Loader size="large" />;
 
 	const filteredProducts = products.filter((p) => {
 		const matchType =
