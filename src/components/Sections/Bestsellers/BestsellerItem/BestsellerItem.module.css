@@ -13,9 +13,7 @@
 	transform: scale(1);
 	transition: transform 0.5s ease-in-out;
 }
-.card:hover {
-	transform: scale(1.05);
-}
+
 .card img {
 	width: 144px;
 	height: 144px;
@@ -74,6 +72,9 @@
 }
 
 @media screen and (min-width: 768px) {
+	.card:hover {
+		transform: scale(1.05);
+	}
 	.blockDescr {
 		min-height: 121px;
 	}
