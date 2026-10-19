@@ -28,9 +28,6 @@ const Delivery = () => {
 					Знайдіть найближчого дилера та дізнайтеся більше про продукцію й умови
 					придбання.
 				</p>
-				<Link href="/dylery" className={s.btnDeliv}>
-					Наші дилери
-				</Link>
 				<Button variant="filled" href="/dylery" className={s.btnDeliv}>
 					Наші дилери
 				</Button>

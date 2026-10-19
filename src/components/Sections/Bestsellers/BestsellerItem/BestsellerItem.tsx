@@ -15,28 +15,30 @@ export const BestsellerItem: React.FC<ProductCardProps> = ({ product }) => {
 
 	return (
 		<li className={s.card}>
-			{product.images?.[0] && (
-				<Link href={`/${slug}`}>
-					<Image
-						src={product.images[0]}
-						alt={product.title}
-						width={180}
-						height={165}
-					/>
-				</Link>
-			)}
-			<div className={s.blockDescr}>
-				<Link href={`/${slug}`}>
-					<h3 className={s.title}>{product.title}</h3>
-				</Link>
-				<p className={s.description}>{product.shortDescription}</p>
-			</div>
-			<p className={s.price}>{product.price}</p>
-			<div className={s.linkWrapp}>
-				<Button href={`/${slug}`} variant="filled" className={s.link}>
-					Дізнатись більше
-				</Button>
-			</div>
+			<Link href={`/${slug}`}>
+				{product.images?.[0] && (
+					
+						<Image
+							src={product.images[0]}
+							alt={product.title}
+							width={180}
+							height={165}
+						/>
+				
+				)}
+				<div className={s.blockDescr}>
+				
+						<h3 className={s.title}>{product.title}</h3>
+			
+					<p className={s.description}>{product.shortDescription}</p>
+				</div>
+				<p className={s.price}>{product.price}</p>
+				<div className={s.linkWrapp}>
+					<Button variant="filled" className={s.link}>
+						Дізнатись більше
+					</Button>
+				</div>
+			</Link>
 		</li>
 	);
 };

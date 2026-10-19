@@ -55,6 +55,12 @@
 	gap: 10px;
 	margin-top: 24px;
 }
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px !important;
+}
 
 .navButton {
 	width: 40px;

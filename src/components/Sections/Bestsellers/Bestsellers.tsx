@@ -8,6 +8,7 @@ import { db } from "../../../../firebaseConfig";
 import { ProductWithId } from "../../../../utils/types";
 import useScrollAnimation from "../../../../utils/UseScrollAnimation/useScrollAnimation";
 import useSlider from "../../../../utils/useSlider";
+import Loader from "../UI/Loader/Loader";
 
 const Bestsellers = () => {
 	const [aboutTitleRef, aboutTitleVisible] = useScrollAnimation() as [
@@ -18,22 +19,29 @@ const Bestsellers = () => {
 	const { listRef, thumbRef, scrollSmooth } = useSlider();
 
 	const [products, setProducts] = useState<ProductWithId[]>([]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchBestsellers = async () => {
-			const q = query(
-				collection(db, "products"),
-				orderBy("createdAt", "asc"),
-				where("isBestseller", "==", true),
-			);
+			try {
+				const q = query(
+					collection(db, "products"),
+					orderBy("createdAt", "asc"),
+					where("isBestseller", "==", true),
+				);
 
-			const snapshot = await getDocs(q);
-			const data = snapshot.docs.map((doc) => ({
-				id: doc.id,
-				...(doc.data() as Omit<ProductWithId, "id">),
-			}));
+				const snapshot = await getDocs(q);
+				const data = snapshot.docs.map((doc) => ({
+					id: doc.id,
+					...(doc.data() as Omit<ProductWithId, "id">),
+				}));
 
-			setProducts(data);
+				setProducts(data);
+			} catch (error) {
+				console.error("Помилка завантаження хітів продажу:", error);
+			} finally {
+				setLoading(false);
+			}
 		};
 
 		fetchBestsellers();
@@ -55,11 +63,17 @@ const Bestsellers = () => {
 					ресурси
 				</p>
 
-				<ul className={s.list} ref={listRef}>
-					{products.map((product) => (
-						<BestsellerItem key={product.id} product={product} />
-					))}
-				</ul>
+				{loading ? (
+					<div className={s.loader}>
+						<Loader size="large" />
+					</div>
+				) : (
+					<ul className={s.list} ref={listRef}>
+						{products.map((product) => (
+							<BestsellerItem key={product.id} product={product} />
+						))}
+					</ul>
+				)}
 
 				<div className={s.sliderControls}>
 					<button onClick={() => scrollSmooth("left")} className={s.navButton}>
